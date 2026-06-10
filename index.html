@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>Sophia Vane — Portfolio</title>
+<title>Photographer Name — Portfolio</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
@@ -14,19 +14,19 @@
 :root{
   --font-serif:'Playfair Display',Georgia,serif;
   --font-sans:'DM Sans',sans-serif;
-  --bg-primary:#0e0a09;
-  --accent:#c9956b;
-  --text-primary:#f5ede4;
-  --text-secondary:#9e8878;
+  --bg-primary:#F2EDE4;
+  --accent:#7A4F2D;
+  --text-primary:#1A1916;
+  --text-secondary:#5C5649;
 }
 
 html{scroll-behavior:smooth;}
 
 body{
-  background:#0e0a09;
+  background:#F2EDE4;
   font-family:'DM Sans',sans-serif;
   overflow-x:hidden;
-  color:#f5ede4;
+  color:#1A1916;
 }
 
 /* ── Global grain overlay ──────────────────── */
@@ -52,7 +52,7 @@ section{ position:relative; z-index:3; }
   display:flex;
   align-items:center;
   justify-content:space-between;
-  background:#0e0a09;
+  background:#F2EDE4;
   border-bottom:1px solid rgba(139,108,79,0.12);
   transition:background 0.4s ease;
 }
@@ -66,9 +66,9 @@ section{ position:relative; z-index:3; }
   font-style:italic;
   font-weight:300;
   font-size:18px;
-  color:#f5ede4;
+  color:#1A1916;
   text-decoration:none;
-  letter-spacing:0.15em;
+  letter-spacing:0.04em;
 }
 .nav-cta{
   font-size:0.72rem;
@@ -80,7 +80,7 @@ section{ position:relative; z-index:3; }
   cursor:pointer;
   text-decoration:none;
   transition:background 0.3s ease;
-  background:#f5ede4;
+  background:#1A1916;
 }
 .nav-cta:hover{
   background:#2e2c28;
@@ -107,7 +107,7 @@ section{ position:relative; z-index:3; }
   transform:translateX(-50%);
   width:130%;
   height:75%;
-  background: linear-gradient(to bottom, rgba(14,10,9,0.45) 0%, rgba(14,10,9,0.15) 50%, rgba(14,10,9,0.7) 100%);
+  background:radial-gradient(ellipse at 50% 0%,#E8DDD0 0%,#F2EDE4 60%);
   pointer-events:none;
   z-index:0;
 }
@@ -133,30 +133,19 @@ section{ position:relative; z-index:3; }
 }
 .hero-eyebrow{
   font-size:9px;
-  letter-spacing:0.15em;
+  letter-spacing:0.55em;
   text-transform:uppercase;
-  color:#c9956b;
+  color:#7A4F2D;
   margin-bottom:28px;
   position:relative;
   z-index:2;
-  display:flex;
-  align-items:center;
-  gap:12px;
-}
-.hero-eyebrow::before, .hero-eyebrow::after {
-  content:'';
-  display:block;
-  height:1px;
-  width:28px;
-  background:#c9956b;
-  opacity:0.4;
 }
 .hero-title{
   font-family:'Playfair Display',serif;
   font-weight:300;
-  font-size:7vw;
+  font-size:clamp(56px,9vw,118px);
   line-height:1.0;
-  color:#f5ede4;
+  color:#1A1916;
   margin-bottom:26px;
   position:relative;
   z-index:2;
@@ -165,7 +154,7 @@ section{ position:relative; z-index:3; }
   display:block;
   width:28px;
   height:1px;
-  background:#c9956b;
+  background:#7A4F2D;
   margin:0 auto 28px;
   position:relative;
   z-index:2;
@@ -175,7 +164,7 @@ section{ position:relative; z-index:3; }
   font-style:italic;
   font-weight:300;
   font-size:clamp(17px,2.2vw,24px);
-  color:#9e8878;
+  color:#5C5649;
   margin-bottom:52px;
   letter-spacing:0.03em;
   position:relative;
@@ -183,7 +172,7 @@ section{ position:relative; z-index:3; }
 }
 .hero-cta{
   display:inline-block;
-  background:#c9956b;
+  background:#7A4F2D;
   color:#F5F0E8;
   font-family:'DM Sans',sans-serif;
   font-size:10px;
@@ -234,7 +223,7 @@ section{ position:relative; z-index:3; }
 ══════════════════════════════════════════════ */
 #the-space{
   padding:80px 0 40px;
-  background:#0e0a09;
+  background:#F2EDE4;
   overflow:visible;
 }
 .space-header{
@@ -246,22 +235,11 @@ section{ position:relative; z-index:3; }
 }
 .space-supertitle{
   font-size:9px;
-  letter-spacing:0.15em;
+  letter-spacing:0.58em;
   text-transform:uppercase;
-  color:#c9956b;
+  color:#7A4F2D;
   margin-bottom:16px;
   opacity:0.7;
-  display:flex;
-  align-items:center;
-  gap:12px;
-}
-.space-supertitle::before, .space-supertitle::after {
-  content:'';
-  display:block;
-  height:1px;
-  width:28px;
-  background:#c9956b;
-  opacity:0.4;
 }
 .space-header-row{
   display:flex;
@@ -279,7 +257,7 @@ section{ position:relative; z-index:3; }
   font-style:italic;
   font-weight:300;
   font-size:54px;
-  color:#f5ede4;
+  color:#1A1916;
   line-height:1;
 }
 /* ══════════════════════════════════════════════
@@ -415,7 +393,7 @@ section{ position:relative; z-index:3; }
   font-size:9px;
   letter-spacing:0.52em;
   text-transform:uppercase;
-  color:#c9956b;
+  color:#7A4F2D;
   margin-bottom:20px;
 }
 .inc-title{
@@ -423,7 +401,7 @@ section{ position:relative; z-index:3; }
   font-style:italic;
   font-weight:300;
   font-size:clamp(38px,5vw,60px);
-  color:#f5ede4;
+  color:#1A1916;
   line-height:1.05;
   margin-bottom:22px;
 }
@@ -431,7 +409,7 @@ section{ position:relative; z-index:3; }
   display:block;
   width:28px;
   height:1px;
-  background:#c9956b;
+  background:#7A4F2D;
   margin:0 auto;
 }
 .inc-grid{
@@ -473,7 +451,7 @@ section{ position:relative; z-index:3; }
   display:block;
   width:36px;
   height:36px;
-  color:#c9956b;
+  color:#7A4F2D;
   margin-bottom:20px;
   flex-shrink:0;
   opacity:0.85;
@@ -487,7 +465,7 @@ section{ position:relative; z-index:3; }
   font-family:'Playfair Display',serif;
   font-weight:300;
   font-size:19px;
-  color:#f5ede4;
+  color:#1A1916;
   line-height:1.25;
   margin-bottom:10px;
 }
@@ -520,36 +498,26 @@ section{ position:relative; z-index:3; }
 ══════════════════════════════════════════════ */
 #rates{
   padding:80px 64px 100px;
-  background:#0e0a09;
+  background:#F2EDE4;
 }
 .rates-header{
   text-align:center;
   margin-bottom:68px;
 }
 .rates-eyebrow{
-  display:flex;
-  align-items:center;
-  gap:12px;
-  font-size:9px;
-  letter-spacing:0.15em;
-  text-transform:uppercase;
-  color:#c9956b;
-  margin-bottom:20px;
-}
-.rates-eyebrow::before, .rates-eyebrow::after {
-  content:'';
   display:block;
-  height:1px;
-  width:28px;
-  background:#c9956b;
-  opacity:0.4;
+  font-size:9px;
+  letter-spacing:0.52em;
+  text-transform:uppercase;
+  color:#7A4F2D;
+  margin-bottom:20px;
 }
 .rates-title{
   font-family:'Playfair Display',serif;
   font-style:italic;
   font-weight:300;
   font-size:clamp(38px,5vw,60px);
-  color:#f5ede4;
+  color:#1A1916;
   line-height:1.05;
 }
 .rates-grid{
@@ -591,7 +559,7 @@ section{ position:relative; z-index:3; }
   font-size:9px;
   letter-spacing:0.52em;
   text-transform:uppercase;
-  color:#c9956b;
+  color:#7A4F2D;
   margin-bottom:24px;
 }
 .rate-name{
@@ -599,7 +567,7 @@ section{ position:relative; z-index:3; }
   font-style:italic;
   font-weight:300;
   font-size:38px;
-  color:#f5ede4;
+  color:#1A1916;
   line-height:1.08;
   margin-bottom:10px;
 }
@@ -622,7 +590,7 @@ section{ position:relative; z-index:3; }
   font-style:italic;
   font-weight:300;
   font-size:20px;
-  color:#c9956b;
+  color:#7A4F2D;
   margin-bottom:32px;
 }
 .rate-cta{
@@ -630,7 +598,7 @@ section{ position:relative; z-index:3; }
   font-size:9px;
   letter-spacing:0.4em;
   text-transform:uppercase;
-  color:#c9956b;
+  color:#7A4F2D;
   border:1px solid rgba(122,79,45,0.38);
   padding:12px 30px;
   cursor:pointer;
@@ -677,7 +645,7 @@ section{ position:relative; z-index:3; }
   font-size:9px;
   letter-spacing:0.52em;
   text-transform:uppercase;
-  color:#c9956b;
+  color:#7A4F2D;
   margin-bottom:22px;
 }
 .fp-title{
@@ -685,7 +653,7 @@ section{ position:relative; z-index:3; }
   font-style:italic;
   font-weight:300;
   font-size:clamp(36px,4vw,58px);
-  color:#f5ede4;
+  color:#1A1916;
   line-height:1.05;
   margin-bottom:24px;
 }
@@ -693,13 +661,13 @@ section{ position:relative; z-index:3; }
   display:block;
   width:28px;
   height:1px;
-  background:#c9956b;
+  background:#7A4F2D;
   margin-bottom:28px;
 }
 .fp-body{
   font-size:13px;
   line-height:1.95;
-  color:#9e8878;
+  color:#5C5649;
   margin-bottom:36px;
   max-width:420px;
 }
@@ -723,7 +691,7 @@ section{ position:relative; z-index:3; }
   display:block;
   width:14px;
   height:1px;
-  background:#c9956b;
+  background:#7A4F2D;
   flex-shrink:0;
   opacity:0.6;
 }
@@ -779,30 +747,20 @@ section{ position:relative; z-index:3; }
   pointer-events:none;
 }
 .loc-eyebrow{
-  display:flex;
-  align-items:center;
-  gap:12px;
+  display:block;
   font-size:9px;
-  letter-spacing:0.15em;
+  letter-spacing:0.52em;
   text-transform:uppercase;
-  color:#c9956b;
+  color:#7A4F2D;
   margin-bottom:24px;
   position:relative;
-}
-.loc-eyebrow::before, .loc-eyebrow::after {
-  content:'';
-  display:block;
-  height:1px;
-  width:28px;
-  background:#c9956b;
-  opacity:0.4;
 }
 .loc-title{
   font-family:'Playfair Display',serif;
   font-style:italic;
   font-weight:300;
   font-size:clamp(36px,5vw,58px);
-  color:#f5ede4;
+  color:#1A1916;
   line-height:1.05;
   margin-bottom:28px;
   position:relative;
@@ -811,7 +769,7 @@ section{ position:relative; z-index:3; }
   display:block;
   width:28px;
   height:1px;
-  background:#c9956b;
+  background:#7A4F2D;
   margin:0 auto 28px;
   position:relative;
 }
@@ -839,36 +797,26 @@ section{ position:relative; z-index:3; }
 ══════════════════════════════════════════════ */
 #book-section{
   padding:80px 64px 120px;
-  background:#0e0a09;
+  background:#F2EDE4;
 }
 .book-header{
   text-align:center;
   margin-bottom:68px;
 }
 .book-eyebrow{
-  display:flex;
-  align-items:center;
-  gap:12px;
-  font-size:9px;
-  letter-spacing:0.15em;
-  text-transform:uppercase;
-  color:#c9956b;
-  margin-bottom:20px;
-}
-.book-eyebrow::before, .book-eyebrow::after {
-  content:'';
   display:block;
-  height:1px;
-  width:28px;
-  background:#c9956b;
-  opacity:0.4;
+  font-size:9px;
+  letter-spacing:0.52em;
+  text-transform:uppercase;
+  color:#7A4F2D;
+  margin-bottom:20px;
 }
 .book-title{
   font-family:'Playfair Display',serif;
   font-style:italic;
   font-weight:300;
   font-size:clamp(38px,5vw,60px);
-  color:#f5ede4;
+  color:#1A1916;
   line-height:1.05;
   margin-bottom:22px;
 }
@@ -876,7 +824,7 @@ section{ position:relative; z-index:3; }
   display:block;
   width:28px;
   height:1px;
-  background:#c9956b;
+  background:#7A4F2D;
   margin:0 auto;
 }
 .book-form-wrap{
@@ -903,7 +851,7 @@ section{ position:relative; z-index:3; }
   background:transparent;
   border:none;
   border-bottom:1px solid rgba(122,79,45,0.3);
-  color:#f5ede4;
+  color:#1A1916;
   font-family:'Playfair Display',serif;
   font-style:italic;
   font-size:17px;
@@ -926,7 +874,7 @@ select.b-input{
 }
 select.b-input option{
   background:#EDE7DC;
-  color:#f5ede4;
+  color:#1A1916;
 }
 textarea.b-input{ resize:none; }
 .b-submit{
@@ -934,7 +882,7 @@ textarea.b-input{ resize:none; }
   width:100%;
   background:#8B6C4F;
   border:none;
-  color:#0e0a09;
+  color:#F2EDE4;
   font-family:'Playfair Display',serif;
   font-style:italic;
   font-size:19px;
@@ -951,7 +899,7 @@ textarea.b-input{ resize:none; }
 
 /* ── Footer ──────────────────────────────────── */
 footer{
-  background:#0e0a09;
+  background:#F2EDE4;
   border-top:1px solid rgba(26,25,22,0.1);
   padding:52px 64px;
   display:flex;
@@ -965,13 +913,13 @@ footer{
   font-style:italic;
   font-weight:300;
   font-size:22px;
-  color:#f5ede4;
+  color:#1A1916;
 }
 .footer-meta{
   font-size:9px;
   letter-spacing:0.4em;
   text-transform:uppercase;
-  color:#9e8878;
+  color:#5C5649;
   text-align:right;
   line-height:1.9;
 }
@@ -984,7 +932,7 @@ footer{
 ══════════════════════════════════════════════ */
 #about{
   padding:120px 64px 80px;
-  background:#0e0a09;
+  background:#F2EDE4;
 }
 .about-inner{
   display:grid;
@@ -1002,28 +950,17 @@ footer{
 }
 .about-label{
   font-size:0.7rem;
-  letter-spacing:0.15em;
+  letter-spacing:0.52em;
   text-transform:uppercase;
-  color:#c9956b;
+  color:#7A4F2D;
   margin-bottom:18px;
-  display:flex;
-  align-items:center;
-  gap:12px;
-}
-.about-label::before, .about-label::after {
-  content:'';
-  display:block;
-  height:1px;
-  width:28px;
-  background:#c9956b;
-  opacity:0.4;
 }
 .about-name{
   font-family:'Playfair Display',serif;
   font-style:italic;
   font-weight:300;
   font-size:3rem;
-  color:#f5ede4;
+  color:#1A1916;
   line-height:1.1;
   margin-bottom:8px;
 }
@@ -1031,13 +968,13 @@ footer{
   font-family:'DM Sans',sans-serif;
   font-weight:300;
   font-size:0.9rem;
-  color:#9e8878;
+  color:#5C5649;
 }
 .about-rule{
   display:block;
   width:40px;
   height:1px;
-  background:#c9956b;
+  background:#7A4F2D;
   margin:16px 0;
 }
 .about-bio{
@@ -1045,14 +982,14 @@ footer{
   font-weight:300;
   font-size:1rem;
   line-height:1.9;
-  color:#9e8878;
+  color:#5C5649;
 }
 .about-tagline{
   font-family:'DM Sans',sans-serif;
   font-weight:300;
   font-size:1rem;
   line-height:1.9;
-  color:#9e8878;
+  color:#5C5649;
   margin-top:1em;
 }
 
@@ -1069,29 +1006,19 @@ footer{
   margin-bottom:60px;
 }
 .testi-label{
-  display:flex;
-  align-items:center;
-  gap:12px;
-  font-size:0.7rem;
-  letter-spacing:0.15em;
-  text-transform:uppercase;
-  color:#c9956b;
-  margin-bottom:20px;
-}
-.testi-label::before, .testi-label::after {
-  content:'';
   display:block;
-  height:1px;
-  width:28px;
-  background:#c9956b;
-  opacity:0.4;
+  font-size:0.7rem;
+  letter-spacing:0.52em;
+  text-transform:uppercase;
+  color:#7A4F2D;
+  margin-bottom:20px;
 }
 .testi-title{
   font-family:'Playfair Display',serif;
   font-style:italic;
   font-weight:300;
   font-size:3rem;
-  color:#f5ede4;
+  color:#1A1916;
   line-height:1.1;
   margin-bottom:20px;
 }
@@ -1099,7 +1026,7 @@ footer{
   display:block;
   width:40px;
   height:1px;
-  background:#c9956b;
+  background:#7A4F2D;
   margin:0 auto;
 }
 .testi-grid{
@@ -1110,7 +1037,7 @@ footer{
   margin:0 auto;
 }
 .testi-card{
-  background:#0e0a09;
+  background:#F2EDE4;
   padding:48px;
   border-top:2px solid rgba(122,79,45,0.3);
   position:relative;
@@ -1123,7 +1050,7 @@ footer{
   font-family:'Playfair Display',serif;
   font-size:5rem;
   line-height:1;
-  color:#c9956b;
+  color:#7A4F2D;
   opacity:0.25;
   pointer-events:none;
   user-select:none;
@@ -1134,7 +1061,7 @@ footer{
   font-weight:300;
   font-size:1.1rem;
   line-height:1.8;
-  color:#f5ede4;
+  color:#1A1916;
   position:relative;
   z-index:1;
 }
@@ -1142,7 +1069,7 @@ footer{
   font-family:'DM Sans',sans-serif;
   font-weight:300;
   font-size:0.8rem;
-  color:#9e8878;
+  color:#5C5649;
   margin-top:24px;
 }
 
@@ -1246,7 +1173,7 @@ footer{
 
 <!-- ── Navigation ──────────────────────────────── -->
 <nav id="site-nav">
-  <a href="#hero" class="nav-name" data-af="business-name">Sophia Vane</a>
+  <a href="#hero" class="nav-name" data-af="business-name">Photographer Name</a>
   <a href="#book-section" class="nav-cta">Get In Touch</a>
 </nav>
 
@@ -1258,18 +1185,18 @@ footer{
   <canvas id="depth-particles-canvas" style="position:absolute;top:0;left:0;width:100%;height:100%;z-index:1;pointer-events:none;opacity:0.35;"></canvas>
   <canvas id="heroParticles" style="position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;opacity:0.5;"></canvas>
   <!-- Parallax background layer -->
-  <div id="heroBg" style="position:absolute;inset:-20%;z-index:0;background:#0e0a09;pointer-events:none;"></div>
+  <div id="heroBg" style="position:absolute;inset:-20%;z-index:0;background:#F2EDE4;pointer-events:none;"></div>
   <!-- Light bloom top right -->
   <div style="position:absolute;top:-60px;right:-60px;width:320px;height:320px;border-radius:50%;background:radial-gradient(circle,rgba(245,230,200,0.18) 0%,rgba(201,169,110,0.08) 40%,transparent 70%);pointer-events:none;z-index:1;"></div>
   <!-- Self-drawing rule -->
   <div id="heroRule" style="position:absolute;bottom:80px;left:0;height:1px;background:linear-gradient(90deg,transparent 0%,rgba(139,108,79,0.25) 20%,rgba(139,108,79,0.25) 80%,transparent 100%);width:100%;z-index:1;"></div>
   <canvas id="hero-dust-canvas" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;"></canvas>
   <div class="hero-text-wrapper">
-    <div class="hero-eyebrow" data-af="location">New York, NY</div>
-    <h1 class="hero-title" data-af="business-name">You Deserve To Feel This Way.</h1>
+    <div class="hero-eyebrow" data-af="location">Your City, ST</div>
+    <h1 class="hero-title" data-af="business-name">Photographer Name</h1>
     <span class="hero-rule"></span>
-    <p class="hero-subtitle" data-af="tagline">Boudoir photography for women ready to see themselves differently.</p>
-    <a href="#book-section" class="hero-cta">Book Your Session</a>
+    <p class="hero-subtitle" data-af="tagline">Photography that books more clients and builds your brand.</p>
+    <a href="#book-section" class="hero-cta">Check Availability</a>
     <p style="margin-top:18px;font-family:var(--font-sans);font-size:0.65rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--text-secondary);opacity:0.7;" data-af="hero-sub-note">No commitment. Just a conversation.</p>
   </div>
   <div class="scroll-hint">
@@ -1290,10 +1217,10 @@ footer{
     </div>
     <div class="reveal-up">
       <div class="about-label">About</div>
-      <div class="about-name" data-af="business-name">Sophia Vane</div>
-      <div class="about-location" data-af="location">New York, NY</div>
+      <div class="about-name" data-af="business-name">Your Name</div>
+      <div class="about-location" data-af="location">Your City, ST</div>
       <span class="about-rule"></span>
-      <p class="about-bio" data-af="bio">I photograph women who are done waiting for permission to feel beautiful. Every session is private, unhurried, and built entirely around you.</p>
+      <p class="about-bio" data-af="bio">We&rsquo;re a Your City-based studio known for work that speaks before you do. Every client gets our full attention, from first inquiry to final delivery.</p>
       <p class="about-tagline" data-af="tagline">Trusted by clients who care about quality.</p>
       <a href="#book-section" style="display:inline-block;margin-top:28px;font-family:var(--font-sans);font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(122,79,45,0.4);padding-bottom:2px;transition:opacity 0.2s ease;" onmouseover="this.style.opacity='0.6'" onmouseout="this.style.opacity='1'" data-af="about-cta">Work With Me &rarr;</a>
     </div>
@@ -1371,7 +1298,7 @@ footer{
 </div>
 <section id="mid-cta" style="padding:60px 60px 80px;text-align:center;background:var(--bg-primary);">
   <p style="font-family:var(--font-sans);font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent);margin-bottom:16px;" data-af="mid-cta-eyebrow">READY TO START?</p>
-  <h2 style="font-family:var(--font-serif);font-size:clamp(2rem,5vw,3.2rem);color:var(--text-primary);margin-bottom:24px;font-style:italic;" data-af="mid-cta-heading">Your session is waiting.</h2>
+  <h2 style="font-family:var(--font-serif);font-size:clamp(2rem,5vw,3.2rem);color:var(--text-primary);margin-bottom:24px;font-style:italic;" data-af="mid-cta-heading">Let&rsquo;s Make Something Together</h2>
   <a href="#book-section" class="hero-cta" data-af="mid-cta-button" style="display:inline-block;">Book a Session</a>
 </section>
 
@@ -1396,7 +1323,7 @@ footer{
         <line x1="24" y1="16" x2="24" y2="21"/>
         <line x1="15" y1="24" x2="15" y2="29"/>
       </svg>
-      <div class="inc-item-text" data-af="inc-title-01">The Boudoir Experience</div>
+      <div class="inc-item-text" data-af="inc-title-01">Service One</div>
       <div class="inc-item-desc" data-af="inc-desc-01">Short description here</div>
       <a href="#book-section" style="display:inline-block;margin-top:20px;font-family:var(--font-sans);font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(139,108,79,0.3);padding-bottom:2px;transition:border-color 0.3s ease;" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='rgba(139,108,79,0.3)'">Book This &rarr;</a>
       <div class="inc-item-num">01</div>
@@ -1413,7 +1340,7 @@ footer{
         <rect x="3" y="25" width="13" height="6" rx="0.5"/>
         <rect x="20" y="25" width="13" height="6" rx="0.5"/>
       </svg>
-      <div class="inc-item-text" data-af="inc-title-02">Couples Session</div>
+      <div class="inc-item-text" data-af="inc-title-02">Service Two</div>
       <div class="inc-item-desc" data-af="inc-desc-02">Short description here</div>
       <a href="#book-section" style="display:inline-block;margin-top:20px;font-family:var(--font-sans);font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(139,108,79,0.3);padding-bottom:2px;transition:border-color 0.3s ease;" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='rgba(139,108,79,0.3)'">Book This &rarr;</a>
       <div class="inc-item-num">02</div>
@@ -1428,7 +1355,7 @@ footer{
         <rect x="13" y="6" width="6" height="4" rx="1"/>
         <circle cx="27" cy="14" r="1.5"/>
       </svg>
-      <div class="inc-item-text" data-af="inc-title-03">Bridal Boudoir</div>
+      <div class="inc-item-text" data-af="inc-title-03">Service Three</div>
       <div class="inc-item-desc" data-af="inc-desc-03">Short description here</div>
       <a href="#book-section" style="display:inline-block;margin-top:20px;font-family:var(--font-sans);font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(139,108,79,0.3);padding-bottom:2px;transition:border-color 0.3s ease;" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='rgba(139,108,79,0.3)'">Book This &rarr;</a>
       <div class="inc-item-num">03</div>
@@ -1444,7 +1371,7 @@ footer{
         <line x1="11" y1="26" x2="11" y2="30"/>
         <line x1="25" y1="26" x2="25" y2="30"/>
       </svg>
-      <div class="inc-item-text" data-af="inc-title-04">Fine Art</div>
+      <div class="inc-item-text" data-af="inc-title-04">Service Four</div>
       <div class="inc-item-desc" data-af="inc-desc-04">Short description here</div>
       <a href="#book-section" style="display:inline-block;margin-top:20px;font-family:var(--font-sans);font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(139,108,79,0.3);padding-bottom:2px;transition:border-color 0.3s ease;" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='rgba(139,108,79,0.3)'">Book This &rarr;</a>
       <div class="inc-item-num">04</div>
@@ -1459,7 +1386,7 @@ footer{
         <line x1="18" y1="6" x2="18" y2="30"/>
         <polyline points="12,23 18,30 24,23"/>
       </svg>
-      <div class="inc-item-text" data-af="inc-title-05">Gift Sessions</div>
+      <div class="inc-item-text" data-af="inc-title-05">Service Five</div>
       <div class="inc-item-desc" data-af="inc-desc-05">Short description here</div>
       <a href="#book-section" style="display:inline-block;margin-top:20px;font-family:var(--font-sans);font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(139,108,79,0.3);padding-bottom:2px;transition:border-color 0.3s ease;" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='rgba(139,108,79,0.3)'">Book This &rarr;</a>
       <div class="inc-item-num">05</div>
@@ -1473,7 +1400,7 @@ footer{
         <polyline points="10,14 14,9 18,14"/>
         <polyline points="18,22 22,27 26,22"/>
       </svg>
-      <div class="inc-item-text" data-af="inc-title-06">VIP Full Day</div>
+      <div class="inc-item-text" data-af="inc-title-06">Service Six</div>
       <div class="inc-item-desc" data-af="inc-desc-06">Short description here</div>
       <a href="#book-section" style="display:inline-block;margin-top:20px;font-family:var(--font-sans);font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(139,108,79,0.3);padding-bottom:2px;transition:border-color 0.3s ease;" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='rgba(139,108,79,0.3)'">Book This &rarr;</a>
       <div class="inc-item-num">06</div>
@@ -1564,17 +1491,17 @@ footer{
   <div class="testi-grid">
     <div class="testi-card reveal-up delay-1">
       <div class="testi-quote-mark">&ldquo;</div>
-      <div class="testi-quote" data-af="testimonial-1-quote">I cried when I saw the first image. I had no idea I could look like that.</div>
+      <div class="testi-quote" data-af="testimonial-1-quote">Working with them was effortless. The result exceeded every expectation.</div>
       <div class="testi-name" data-af="testimonial-1-name">&mdash; Client Name, City</div>
     </div>
     <div class="testi-card reveal-up delay-2">
       <div class="testi-quote-mark">&ldquo;</div>
-      <div class="testi-quote" data-af="testimonial-2-quote">Sophia made me feel completely safe. The photos changed how I see myself.</div>
+      <div class="testi-quote" data-af="testimonial-2-quote">Working with them was effortless. The result exceeded every expectation.</div>
       <div class="testi-name" data-af="testimonial-2-name">&mdash; Client Name, City</div>
     </div>
     <div class="testi-card reveal-up delay-3">
       <div class="testi-quote-mark">&ldquo;</div>
-      <div class="testi-quote" data-af="testimonial-3-quote">The most empowering thing I have ever done for myself.</div>
+      <div class="testi-quote" data-af="testimonial-3-quote">Working with them was effortless. The result exceeded every expectation.</div>
       <div class="testi-name" data-af="testimonial-3-name">&mdash; Client Name, City</div>
     </div>
   </div>
@@ -1596,10 +1523,10 @@ footer{
 ══════════════════════════════════ -->
 <section id="location">
   <span class="loc-eyebrow">Find Us</span>
-  <div class="loc-title" data-af="location">New York, NY</div>
+  <div class="loc-title" data-af="location">Your City, ST</div>
   <span class="loc-rule"></span>
-  <div class="loc-address" data-af="address">123 Your Street<br>New York, NY 00000</div>
-  <div class="loc-sub" data-af="contact-email">hello@sophiavane.com</div>
+  <div class="loc-address" data-af="address">123 Your Street<br>Your City, ST 00000</div>
+  <div class="loc-sub" data-af="contact-email">hello@yoursite.com</div>
   <div style="margin-top:40px;">
     <a href="#book-section" class="hero-cta" data-af="location-cta-button">Book Your Session</a>
   </div>
@@ -1655,11 +1582,11 @@ footer{
 
 <!-- Footer -->
 <footer>
-  <span class="footer-name" data-af="business-name">Sophia Vane</span>
+  <span class="footer-name" data-af="business-name">Photographer Name</span>
   <div class="footer-meta">
-    <div data-af="contact-email">hello@sophiavane.com</div>
+    <div data-af="contact-email">hello@yoursite.com</div>
     <div data-af="contact-phone">+1 (000) 000-0000</div>
-    <div style="margin-top:6px;color:#9e8878;">MMXXVI</div>
+    <div style="margin-top:6px;color:#5C5649;">MMXXVI</div>
   </div>
 </footer>
 
@@ -2113,7 +2040,7 @@ gsap.to(".hero-text-wrapper",{
     <div style="font-size:9px;letter-spacing:0.5em;text-transform:uppercase;color:#555;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid #1a1a1a;">General</div>
     <label style="display:block;margin-bottom:16px;">
       <span style="display:block;font-size:11px;color:#888;margin-bottom:6px;">Business Name</span>
-      <input id="af-business-name" type="text" value="Sophia Vane"
+      <input id="af-business-name" type="text" value="Photographer Name"
         style="width:100%;background:#111;border:1px solid #2a2a2a;border-radius:3px;color:#fff;font-size:13px;padding:9px 12px;outline:none;box-sizing:border-box;"/>
     </label>
     <label style="display:block;margin-bottom:16px;">
@@ -2123,7 +2050,7 @@ gsap.to(".hero-text-wrapper",{
     </label>
     <label style="display:block;margin-bottom:24px;">
       <span style="display:block;font-size:11px;color:#888;margin-bottom:6px;">Location</span>
-      <input id="af-location" type="text" value="New York, NY"
+      <input id="af-location" type="text" value="Your City, ST"
         style="width:100%;background:#111;border:1px solid #2a2a2a;border-radius:3px;color:#fff;font-size:13px;padding:9px 12px;outline:none;box-sizing:border-box;"/>
     </label>
 
@@ -2136,7 +2063,7 @@ gsap.to(".hero-text-wrapper",{
     <label style="display:block;margin-bottom:24px;">
       <span style="display:block;font-size:11px;color:#888;margin-bottom:6px;">Bio</span>
       <textarea id="af-bio" rows="3"
-        style="width:100%;background:#111;border:1px solid #2a2a2a;border-radius:3px;color:#fff;font-size:13px;padding:9px 12px;outline:none;box-sizing:border-box;resize:vertical;line-height:1.6;">I photograph women who are done waiting for permission to feel beautiful. Every session is private, unhurried, and built entirely around you.</textarea>
+        style="width:100%;background:#111;border:1px solid #2a2a2a;border-radius:3px;color:#fff;font-size:13px;padding:9px 12px;outline:none;box-sizing:border-box;resize:vertical;line-height:1.6;">We're a [Your City]-based studio known for work that speaks before you do. Every client gets our full attention, from first inquiry to final delivery.</textarea>
     </label>
 
     <div style="font-size:9px;letter-spacing:0.5em;text-transform:uppercase;color:#555;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid #1a1a1a;">Gallery</div>
@@ -2194,7 +2121,7 @@ gsap.to(".hero-text-wrapper",{
     <div style="font-size:9px;letter-spacing:0.5em;text-transform:uppercase;color:#555;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid #1a1a1a;">Contact</div>
     <label style="display:block;margin-bottom:16px;">
       <span style="display:block;font-size:11px;color:#888;margin-bottom:6px;">Email</span>
-      <input id="af-contact-email" type="text" value="hello@sophiavane.com"
+      <input id="af-contact-email" type="text" value="hello@yoursite.com"
         style="width:100%;background:#111;border:1px solid #2a2a2a;border-radius:3px;color:#fff;font-size:13px;padding:9px 12px;outline:none;box-sizing:border-box;"/>
     </label>
     <label style="display:block;margin-bottom:24px;">
@@ -2207,19 +2134,19 @@ gsap.to(".hero-text-wrapper",{
 
     <div style="margin-bottom:20px;padding:14px;background:#111;border-radius:4px;border:1px solid #1f1f1f;">
       <div style="font-size:9px;letter-spacing:0.4em;text-transform:uppercase;color:#C9A84C;margin-bottom:12px;">Testimonial 1</div>
-      <label style="display:block;margin-bottom:10px;"><span style="display:block;font-size:11px;color:#666;margin-bottom:4px;">Quote</span><textarea id="af-testimonial-1-quote" rows="2" style="width:100%;background:#0d0d0d;border:1px solid #2a2a2a;border-radius:3px;color:#fff;font-size:13px;padding:7px 10px;outline:none;box-sizing:border-box;resize:vertical;line-height:1.5;">I cried when I saw the first image. I had no idea I could look like that.</textarea></label>
+      <label style="display:block;margin-bottom:10px;"><span style="display:block;font-size:11px;color:#666;margin-bottom:4px;">Quote</span><textarea id="af-testimonial-1-quote" rows="2" style="width:100%;background:#0d0d0d;border:1px solid #2a2a2a;border-radius:3px;color:#fff;font-size:13px;padding:7px 10px;outline:none;box-sizing:border-box;resize:vertical;line-height:1.5;">Working with them was effortless. The result exceeded every expectation.</textarea></label>
       <label style="display:block;"><span style="display:block;font-size:11px;color:#666;margin-bottom:4px;">Attribution</span><input id="af-testimonial-1-name" type="text" value="— Client Name, City" style="width:100%;background:#0d0d0d;border:1px solid #2a2a2a;border-radius:3px;color:#fff;font-size:13px;padding:7px 10px;outline:none;box-sizing:border-box;"/></label>
     </div>
 
     <div style="margin-bottom:20px;padding:14px;background:#111;border-radius:4px;border:1px solid #1f1f1f;">
       <div style="font-size:9px;letter-spacing:0.4em;text-transform:uppercase;color:#C9A84C;margin-bottom:12px;">Testimonial 2</div>
-      <label style="display:block;margin-bottom:10px;"><span style="display:block;font-size:11px;color:#666;margin-bottom:4px;">Quote</span><textarea id="af-testimonial-2-quote" rows="2" style="width:100%;background:#0d0d0d;border:1px solid #2a2a2a;border-radius:3px;color:#fff;font-size:13px;padding:7px 10px;outline:none;box-sizing:border-box;resize:vertical;line-height:1.5;">Sophia made me feel completely safe. The photos changed how I see myself.</textarea></label>
+      <label style="display:block;margin-bottom:10px;"><span style="display:block;font-size:11px;color:#666;margin-bottom:4px;">Quote</span><textarea id="af-testimonial-2-quote" rows="2" style="width:100%;background:#0d0d0d;border:1px solid #2a2a2a;border-radius:3px;color:#fff;font-size:13px;padding:7px 10px;outline:none;box-sizing:border-box;resize:vertical;line-height:1.5;">Working with them was effortless. The result exceeded every expectation.</textarea></label>
       <label style="display:block;"><span style="display:block;font-size:11px;color:#666;margin-bottom:4px;">Attribution</span><input id="af-testimonial-2-name" type="text" value="— Client Name, City" style="width:100%;background:#0d0d0d;border:1px solid #2a2a2a;border-radius:3px;color:#fff;font-size:13px;padding:7px 10px;outline:none;box-sizing:border-box;"/></label>
     </div>
 
     <div style="margin-bottom:24px;padding:14px;background:#111;border-radius:4px;border:1px solid #1f1f1f;">
       <div style="font-size:9px;letter-spacing:0.4em;text-transform:uppercase;color:#C9A84C;margin-bottom:12px;">Testimonial 3</div>
-      <label style="display:block;margin-bottom:10px;"><span style="display:block;font-size:11px;color:#666;margin-bottom:4px;">Quote</span><textarea id="af-testimonial-3-quote" rows="2" style="width:100%;background:#0d0d0d;border:1px solid #2a2a2a;border-radius:3px;color:#fff;font-size:13px;padding:7px 10px;outline:none;box-sizing:border-box;resize:vertical;line-height:1.5;">The most empowering thing I have ever done for myself.</textarea></label>
+      <label style="display:block;margin-bottom:10px;"><span style="display:block;font-size:11px;color:#666;margin-bottom:4px;">Quote</span><textarea id="af-testimonial-3-quote" rows="2" style="width:100%;background:#0d0d0d;border:1px solid #2a2a2a;border-radius:3px;color:#fff;font-size:13px;padding:7px 10px;outline:none;box-sizing:border-box;resize:vertical;line-height:1.5;">Working with them was effortless. The result exceeded every expectation.</textarea></label>
       <label style="display:block;"><span style="display:block;font-size:11px;color:#666;margin-bottom:4px;">Attribution</span><input id="af-testimonial-3-name" type="text" value="— Client Name, City" style="width:100%;background:#0d0d0d;border:1px solid #2a2a2a;border-radius:3px;color:#fff;font-size:13px;padding:7px 10px;outline:none;box-sizing:border-box;"/></label>
     </div>
 
