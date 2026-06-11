@@ -128,6 +128,30 @@ section{ position:relative; z-index:3; }
 .service-card-body{font-family:var(--font-body);font-size:15px;font-weight:400;color:var(--color-text-muted);margin-top:20px;line-height:1.7;}
 .service-card-cta{display:inline-block;font-family:var(--font-body);font-size:14px;font-weight:500;color:var(--color-steel);text-decoration:none;margin-top:24px;transition:opacity 0.2s ease;}
 .service-card-cta:hover{opacity:0.65;}
+
+/* ════════════════════════════════════════════
+   4. WHY IT MATTERS
+════════════════════════════════════════════ */
+#why-it-matters{background:var(--color-slate);padding:100px 0;}
+.why-inner{max-width:900px;margin:0 auto;padding:0 32px;}
+.why-header{margin-bottom:64px;}
+.why-stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;}
+.why-block{display:flex;flex-direction:column;gap:8px;}
+.why-stat{font-family:var(--font-heading);font-size:52px;font-weight:300;color:var(--color-navy);line-height:1;}
+.why-claim{font-family:var(--font-body);font-size:15px;font-weight:400;color:var(--color-text-muted);line-height:1.6;}
+
+/* ════════════════════════════════════════════
+   5. PROCESS
+════════════════════════════════════════════ */
+#process{background:#FFFFFF;padding:100px 0;}
+.process-inner{max-width:1000px;margin:0 auto;padding:0 32px;}
+.process-header{margin-bottom:64px;}
+.process-steps{display:flex;gap:40px;align-items:flex-start;}
+.process-step{flex:1;position:relative;padding-right:40px;}
+.process-step:not(:last-child)::after{content:'';position:absolute;top:0;right:0;width:1px;height:100%;background:var(--color-slate);}
+.step-number{font-family:var(--font-heading);font-size:72px;font-weight:300;color:var(--color-slate);line-height:1;margin-bottom:8px;}
+.step-title{font-family:var(--font-heading);font-size:24px;font-weight:500;color:var(--color-navy);line-height:1.2;margin-bottom:12px;}
+.step-body{font-family:var(--font-body);font-size:15px;font-weight:400;color:var(--color-text-muted);line-height:1.7;}
 /* ══════════════════════════════════════════════
    2. THE SPACE
 ══════════════════════════════════════════════ */
@@ -1028,6 +1052,10 @@ footer{
   .nav-name{ font-size:16px; }
   .social-proof-inner{flex-wrap:wrap;gap:24px;padding:0 24px;}
   .services-grid{grid-template-columns:1fr;padding:0 24px;}
+  .why-stat-grid{grid-template-columns:1fr;gap:28px;}
+  .process-steps{flex-direction:column;}
+  .process-step{padding-right:0;}
+  .process-step:not(:last-child)::after{display:none;}
   #the-space{ padding:60px 0 60px; }
   .space-header{ padding:0 24px 36px; }
   .space-title{ font-size:38px; }
@@ -1134,6 +1162,58 @@ footer{
       <p class="service-card-price">Custom pricing</p>
       <p class="service-card-body">Ongoing coverage for growing teams. New hires, promotions, headcount changes &#8212; handled. One consistent photographer, one consistent look.</p>
       <a href="#book-section" class="service-card-cta">Enquire &rarr;</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- Why It Matters -->
+<section id="why-it-matters">
+  <div class="why-inner">
+    <div class="why-header">
+      <p class="services-super">Why It Matters</p>
+      <h2 class="services-title">Your Photo Is Working Before You Are</h2>
+    </div>
+    <div class="why-stat-grid">
+      <div class="why-block">
+        <span class="why-stat">7 seconds</span>
+        <p class="why-claim">The time it takes someone to form a first impression from your photo. Make it count.</p>
+      </div>
+      <div class="why-block">
+        <span class="why-stat">3&times; more views</span>
+        <p class="why-claim">LinkedIn profiles with professional headshots receive significantly more profile visits.</p>
+      </div>
+      <div class="why-block">
+        <span class="why-stat">Boardroom-ready</span>
+        <p class="why-claim">Used in bios, press releases, pitch decks, and firm websites. One session, multiple assets.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Process -->
+<section id="process">
+  <div class="process-inner">
+    <div class="process-header">
+      <p class="services-super">How It Works</p>
+      <h2 class="services-title">Three Steps. No Faff.</h2>
+    </div>
+    <div class="process-steps">
+      <div class="process-step">
+        <div class="step-number">01</div>
+        <h3 class="step-title">Book Your Slot</h3>
+        <p class="step-body">Choose a time online. Morning sessions available Monday through Saturday. Same-week slots regularly open.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-number">02</div>
+        <h3 class="step-title">We Handle the Session</h3>
+        <p class="step-body">On-site at your office or our Austin studio. Professional lighting. Relaxed but efficient. Most sessions under 90 minutes.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-number">03</div>
+        <h3 class="step-title">Delivered in 48 Hours</h3>
+        <p class="step-body">Fully retouched, high-resolution files. Ready for LinkedIn, your website, and print. No back and forth.</p>
+      </div>
     </div>
   </div>
 </section>
