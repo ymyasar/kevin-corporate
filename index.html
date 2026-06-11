@@ -104,6 +104,30 @@ section{ position:relative; z-index:3; }
 .hero-sub{font-family:var(--font-body);font-size:16px;font-weight:400;color:var(--color-text-muted);margin-top:16px;line-height:1.6;}
 .hero-btn{display:inline-block;margin-top:32px;background:var(--color-navy);color:#fff;font-family:var(--font-body);font-size:14px;font-weight:600;letter-spacing:0.02em;padding:16px 36px;border:none;border-radius:2px;cursor:pointer;text-decoration:none;transition:background 0.25s ease;}
 .hero-btn:hover{background:var(--color-steel);}
+
+/* ════════════════════════════════════════════
+   2. SOCIAL PROOF BAR
+════════════════════════════════════════════ */
+#social-proof{background:var(--color-slate);padding:20px 0;}
+.social-proof-inner{display:flex;align-items:center;justify-content:center;gap:48px;flex-wrap:nowrap;}
+.sp-label{font-family:var(--font-body);font-size:13px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--color-text-muted);}
+.sp-divider{width:1px;height:16px;background:var(--color-steel);opacity:0.3;flex-shrink:0;}
+
+/* ════════════════════════════════════════════
+   3. SERVICES
+════════════════════════════════════════════ */
+#services{background:#FFFFFF;padding:100px 0;}
+.services-header{text-align:center;margin-bottom:64px;}
+.services-super{font-family:var(--font-body);font-size:12px;font-weight:400;letter-spacing:0.15em;text-transform:uppercase;color:var(--color-steel);margin-bottom:16px;}
+.services-title{font-family:var(--font-heading);font-size:42px;font-weight:400;color:var(--color-navy);line-height:1.1;}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;max-width:1100px;margin:0 auto;padding:0 32px;}
+.service-card{background:#FFFFFF;padding:40px 32px;}
+.service-card--featured{border-top:3px solid var(--color-navy);box-shadow:0 4px 24px rgba(13,31,53,0.08);}
+.service-card-title{font-family:var(--font-heading);font-size:26px;font-weight:500;color:var(--color-navy);line-height:1.2;}
+.service-card-price{font-family:var(--font-body);font-size:18px;font-weight:600;color:var(--color-steel);margin-top:8px;}
+.service-card-body{font-family:var(--font-body);font-size:15px;font-weight:400;color:var(--color-text-muted);margin-top:20px;line-height:1.7;}
+.service-card-cta{display:inline-block;font-family:var(--font-body);font-size:14px;font-weight:500;color:var(--color-steel);text-decoration:none;margin-top:24px;transition:opacity 0.2s ease;}
+.service-card-cta:hover{opacity:0.65;}
 /* ══════════════════════════════════════════════
    2. THE SPACE
 ══════════════════════════════════════════════ */
@@ -1002,7 +1026,8 @@ footer{
   #heroParticles{ display:none; }
   #site-nav{ padding:16px 24px; }
   .nav-name{ font-size:16px; }
-  #hero{ padding:100px 28px 80px; }
+  .social-proof-inner{flex-wrap:wrap;gap:24px;padding:0 24px;}
+  .services-grid{grid-template-columns:1fr;padding:0 24px;}
   #the-space{ padding:60px 0 60px; }
   .space-header{ padding:0 24px 36px; }
   .space-title{ font-size:38px; }
@@ -1066,6 +1091,50 @@ footer{
     <h1 class="hero-headline">The Photo That Gets You in the Room</h1>
     <p class="hero-sub">Trusted by law firms, executives, and real estate teams across Texas. Fast turnaround. Boardroom-ready results.</p>
     <a href="#book-section" class="hero-btn">Book Your Session&#8201;&#8212;&#8201;Spots Fill Fast</a>
+  </div>
+</section>
+
+
+<!-- Social Proof Bar -->
+<section id="social-proof">
+  <div class="social-proof-inner">
+    <span class="sp-label">Law Firms</span>
+    <span class="sp-divider"></span>
+    <span class="sp-label">Financial Services</span>
+    <span class="sp-divider"></span>
+    <span class="sp-label">Corporate Real Estate</span>
+    <span class="sp-divider"></span>
+    <span class="sp-label">Executive Teams</span>
+    <span class="sp-divider"></span>
+    <span class="sp-label">Tech Companies</span>
+  </div>
+</section>
+
+<!-- Services -->
+<section id="services">
+  <div class="services-header">
+    <p class="services-super">Services</p>
+    <h2 class="services-title">What We Offer</h2>
+  </div>
+  <div class="services-grid">
+    <div class="service-card">
+      <h3 class="service-card-title">Individual Session</h3>
+      <p class="service-card-price">From $350</p>
+      <p class="service-card-body">One executive, polished and ready. Delivered within 48 hours. Used for LinkedIn profiles, bios, press features, and pitch decks.</p>
+      <a href="#book-section" class="service-card-cta">Book Now &rarr;</a>
+    </div>
+    <div class="service-card service-card--featured">
+      <h3 class="service-card-title">Team Day Rate</h3>
+      <p class="service-card-price">From $1,200 / day</p>
+      <p class="service-card-body">Full-day on-site coverage for your team. Consistent lighting, consistent brand. Ideal for firm directories, recruitment pages, and annual reports.</p>
+      <a href="#book-section" class="service-card-cta">Book Now &rarr;</a>
+    </div>
+    <div class="service-card">
+      <h3 class="service-card-title">Annual Retainer</h3>
+      <p class="service-card-price">Custom pricing</p>
+      <p class="service-card-body">Ongoing coverage for growing teams. New hires, promotions, headcount changes &#8212; handled. One consistent photographer, one consistent look.</p>
+      <a href="#book-section" class="service-card-cta">Enquire &rarr;</a>
+    </div>
   </div>
 </section>
 
