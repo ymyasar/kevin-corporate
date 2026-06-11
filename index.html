@@ -171,6 +171,35 @@ section{ position:relative; z-index:3; }
 .portfolio-cta{text-align:center;margin-top:56px;}
 .portfolio-cta-btn{display:inline-block;font-family:var(--font-body);font-size:14px;font-weight:600;letter-spacing:0.02em;padding:16px 40px;border:1px solid #fff;background:transparent;color:#fff;cursor:pointer;text-decoration:none;transition:background 0.25s ease,color 0.25s ease;}
 .portfolio-cta-btn:hover{background:#fff;color:var(--color-navy);}
+
+/* ════════════════════════════════════════════
+   7. TESTIMONIALS
+════════════════════════════════════════════ */
+#testimonials{background:#FFFFFF;padding:100px 0;}
+.testimonials-inner{max-width:1000px;margin:0 auto;padding:0 32px;}
+.testimonials-header{margin-bottom:56px;}
+.testimonials-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;}
+.testimonial-card{background:var(--color-slate);padding:40px 32px;}
+.testimonial-quote{font-family:var(--font-heading);font-size:20px;font-weight:400;font-style:italic;color:var(--color-navy);line-height:1.6;}
+.testimonial-name{font-family:var(--font-body);font-size:14px;font-weight:600;color:var(--color-navy);margin-top:24px;}
+.testimonial-meta{font-family:var(--font-body);font-size:13px;font-weight:400;color:var(--color-text-muted);margin-top:4px;}
+
+/* ════════════════════════════════════════════
+   8. CONTACT
+════════════════════════════════════════════ */
+#contact{background:var(--color-navy);padding:100px 0;}
+.contact-inner{max-width:700px;margin:0 auto;padding:0 32px;}
+.contact-header{margin-bottom:48px;}
+.contact-super{font-family:var(--font-body);font-size:12px;font-weight:400;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:16px;}
+.contact-title{font-family:var(--font-heading);font-size:48px;font-weight:400;color:#fff;line-height:1.1;}
+.contact-sub{font-family:var(--font-body);font-size:16px;font-weight:400;color:rgba(255,255,255,0.7);margin-top:16px;line-height:1.6;}
+.contact-form{display:flex;flex-direction:column;gap:12px;margin-top:40px;}
+.contact-form input,.contact-form textarea{width:100%;background:#fff;color:var(--color-navy);border:1px solid rgba(255,255,255,0.2);padding:14px 18px;font-family:var(--font-body);font-size:15px;font-weight:400;outline:none;border-radius:2px;transition:border-color 0.2s ease;}
+.contact-form input:focus,.contact-form textarea:focus{border-color:var(--color-steel);}
+.contact-form textarea{resize:vertical;}
+.contact-submit{width:100%;background:var(--color-steel);color:#fff;border:none;font-family:var(--font-body);font-size:14px;font-weight:600;letter-spacing:0.02em;padding:18px;cursor:pointer;transition:background 0.25s ease,color 0.25s ease;border-radius:2px;}
+.contact-submit:hover{background:#fff;color:var(--color-navy);}
+.contact-note{font-family:var(--font-body);font-size:13px;font-weight:400;color:rgba(255,255,255,0.5);text-align:center;margin-top:20px;}
 /* ══════════════════════════════════════════════
    2. THE SPACE
 ══════════════════════════════════════════════ */
@@ -1077,6 +1106,8 @@ footer{
   .process-step:not(:last-child)::after{display:none;}
   .portfolio-grid.active{grid-template-columns:repeat(2,1fr);}
   .portfolio-inner{padding:0 16px;}
+  .testimonials-grid{grid-template-columns:1fr;}
+  .testimonials-inner,.contact-inner{padding:0 24px;}
   #the-space{ padding:60px 0 60px; }
   .space-header{ padding:0 24px 36px; }
   .space-title{ font-size:38px; }
@@ -1297,6 +1328,54 @@ footer{
     <div class="portfolio-cta">
       <a href="#book-section" class="portfolio-cta-btn">Book Your Session &#8212; Spots Fill Fast</a>
     </div>
+  </div>
+</section>
+
+
+<!-- Testimonials -->
+<section id="testimonials">
+  <div class="testimonials-inner">
+    <div class="testimonials-header">
+      <p class="services-super">Client Results</p>
+      <h2 class="services-title">What They Said</h2>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <p class="testimonial-quote">&#8220;The turnaround was extraordinary. New headshots live on our firm directory within 48 hours of the session. Professional, efficient, and exactly the look we needed.&#8221;</p>
+        <p class="testimonial-name">James R. Holloway</p>
+        <p class="testimonial-meta">Managing Partner &mdash; Holloway &amp; Associates LLP</p>
+      </div>
+      <div class="testimonial-card">
+        <p class="testimonial-quote">&#8220;We&#8217;ve used Kevin for two all-hands team shoots now. Consistent quality, consistent lighting, and no wasted time. Our team pages have never looked better.&#8221;</p>
+        <p class="testimonial-name">Sarah Chen</p>
+        <p class="testimonial-meta">Director of Marketing &mdash; Summit Capital Advisors</p>
+      </div>
+      <div class="testimonial-card">
+        <p class="testimonial-quote">&#8220;I&#8217;d been putting off a proper headshot for two years. Booked, shot, and delivered before my board presentation. Exactly the credibility lift I needed.&#8221;</p>
+        <p class="testimonial-name">Marcus Webb</p>
+        <p class="testimonial-meta">VP Commercial Development &mdash; Stratos Real Estate Group</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" id="book-section">
+  <div class="contact-inner">
+    <div class="contact-header">
+      <p class="contact-super">Get In Touch</p>
+      <h2 class="contact-title">Book Your Session</h2>
+      <p class="contact-sub">Same-week availability most weeks. Sessions from $350. Fast turnaround guaranteed.</p>
+    </div>
+    <form class="contact-form" name="contact" method="POST" action="#">
+      <input type="text" name="name" placeholder="Full Name" required>
+      <input type="text" name="company" placeholder="Company">
+      <input type="email" name="email" placeholder="Email" required>
+      <input type="tel" name="phone" placeholder="Phone (optional)">
+      <textarea name="message" rows="3" placeholder="Tell us about the session"></textarea>
+      <button type="submit" class="contact-submit">Book Your Session &#8212; Spots Fill Fast</button>
+    </form>
+    <p class="contact-note">Typically respond within 2 hours during business hours.</p>
   </div>
 </section>
 
