@@ -152,6 +152,25 @@ section{ position:relative; z-index:3; }
 .step-number{font-family:var(--font-heading);font-size:72px;font-weight:300;color:var(--color-slate);line-height:1;margin-bottom:8px;}
 .step-title{font-family:var(--font-heading);font-size:24px;font-weight:500;color:var(--color-navy);line-height:1.2;margin-bottom:12px;}
 .step-body{font-family:var(--font-body);font-size:15px;font-weight:400;color:var(--color-text-muted);line-height:1.7;}
+
+/* ════════════════════════════════════════════
+   6. PORTFOLIO
+════════════════════════════════════════════ */
+#portfolio{background:var(--color-navy);padding:100px 0;}
+.portfolio-inner{max-width:1100px;margin:0 auto;padding:0 32px;}
+.portfolio-header{text-align:center;margin-bottom:40px;}
+.portfolio-super{font-family:var(--font-body);font-size:12px;font-weight:400;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:16px;}
+.portfolio-title{font-family:var(--font-heading);font-size:42px;font-weight:400;color:#fff;line-height:1.1;}
+.portfolio-tabs{display:flex;justify-content:center;gap:8px;margin-bottom:32px;flex-wrap:wrap;}
+.portfolio-tab{font-family:var(--font-body);font-size:13px;font-weight:500;padding:10px 24px;border:1px solid rgba(255,255,255,0.2);background:transparent;color:rgba(255,255,255,0.6);cursor:pointer;transition:color 0.2s ease,background 0.2s ease,opacity 0.2s ease;}
+.portfolio-tab:hover{color:#fff;opacity:1;}
+.portfolio-tab.active{background:#fff;color:var(--color-navy);opacity:1;}
+.portfolio-grid{display:none;grid-template-columns:repeat(3,1fr);gap:3px;}
+.portfolio-grid.active{display:grid;}
+.portfolio-grid img{width:100%;aspect-ratio:3/4;object-fit:cover;display:block;}
+.portfolio-cta{text-align:center;margin-top:56px;}
+.portfolio-cta-btn{display:inline-block;font-family:var(--font-body);font-size:14px;font-weight:600;letter-spacing:0.02em;padding:16px 40px;border:1px solid #fff;background:transparent;color:#fff;cursor:pointer;text-decoration:none;transition:background 0.25s ease,color 0.25s ease;}
+.portfolio-cta-btn:hover{background:#fff;color:var(--color-navy);}
 /* ══════════════════════════════════════════════
    2. THE SPACE
 ══════════════════════════════════════════════ */
@@ -1056,6 +1075,8 @@ footer{
   .process-steps{flex-direction:column;}
   .process-step{padding-right:0;}
   .process-step:not(:last-child)::after{display:none;}
+  .portfolio-grid.active{grid-template-columns:repeat(2,1fr);}
+  .portfolio-inner{padding:0 16px;}
   #the-space{ padding:60px 0 60px; }
   .space-header{ padding:0 24px 36px; }
   .space-title{ font-size:38px; }
@@ -1214,6 +1235,67 @@ footer{
         <h3 class="step-title">Delivered in 48 Hours</h3>
         <p class="step-body">Fully retouched, high-resolution files. Ready for LinkedIn, your website, and print. No back and forth.</p>
       </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Portfolio -->
+<section id="portfolio">
+  <div class="portfolio-inner">
+    <div class="portfolio-header">
+      <p class="portfolio-super">Selected Work</p>
+      <h2 class="portfolio-title">The Work Speaks</h2>
+    </div>
+    <div class="portfolio-tabs">
+      <button class="portfolio-tab active" data-tab="legal">Legal</button>
+      <button class="portfolio-tab" data-tab="corporate">Corporate</button>
+      <button class="portfolio-tab" data-tab="realestate">Real Estate</button>
+      <button class="portfolio-tab" data-tab="tech">Tech</button>
+    </div>
+
+    <!-- Legal -->
+    <div class="portfolio-grid active" id="tab-legal">
+      <img src="https://images.unsplash.com/photo-1589391886645-d51941baf7fb?w=600&q=80" alt="Attorney headshot">
+      <img src="https://images.unsplash.com/photo-1521791055366-0d553872952f?w=600&q=80" alt="Lawyer portrait">
+      <img src="https://images.unsplash.com/photo-1604328698692-f76ea9498e76?w=600&q=80" alt="Legal professional">
+      <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80" alt="Attorney portrait">
+      <img src="https://images.unsplash.com/photo-1556157382-97eda2f9e2bf?w=600&q=80" alt="Law firm headshot">
+      <img src="https://images.unsplash.com/photo-1615462870566-1f564e1f7d72?w=600&q=80" alt="Legal team member">
+    </div>
+
+    <!-- Corporate -->
+    <div class="portfolio-grid" id="tab-corporate">
+      <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=600&q=80" alt="Executive portrait">
+      <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=600&q=80" alt="Corporate headshot">
+      <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=600&q=80" alt="Business executive">
+      <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=600&q=80" alt="Corporate professional">
+      <img src="https://images.unsplash.com/photo-1600878459138-e1123b37cb30?w=600&q=80" alt="Executive headshot">
+      <img src="https://images.unsplash.com/photo-1598550874175-4d0ef436c909?w=600&q=80" alt="Business portrait">
+    </div>
+
+    <!-- Real Estate -->
+    <div class="portfolio-grid" id="tab-realestate">
+      <img src="https://images.unsplash.com/photo-1611262588024-d12430b98920?w=600&q=80" alt="Real estate agent portrait">
+      <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=600&q=80" alt="Property professional">
+      <img src="https://images.unsplash.com/photo-1543269865-cbf427effbad?w=600&q=80" alt="Real estate headshot">
+      <img src="https://images.unsplash.com/photo-1595956553066-fe24a8c33395?w=600&q=80" alt="Agent headshot">
+      <img src="https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?w=600&q=80" alt="Real estate professional">
+      <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=600&q=80" alt="Property agent portrait">
+    </div>
+
+    <!-- Tech -->
+    <div class="portfolio-grid" id="tab-tech">
+      <img src="https://images.unsplash.com/photo-1537511446984-935f663eb1f4?w=600&q=80" alt="Tech professional">
+      <img src="https://images.unsplash.com/photo-1618085222557-8a4e0f892e01?w=600&q=80" alt="Software engineer portrait">
+      <img src="https://images.unsplash.com/photo-1487309078313-fad80c3ec1e5?w=600&q=80" alt="Tech executive headshot">
+      <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=600&q=80" alt="Startup founder portrait">
+      <img src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=600&q=80" alt="Tech team headshot">
+      <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=600&q=80" alt="Tech professional portrait">
+    </div>
+
+    <div class="portfolio-cta">
+      <a href="#book-section" class="portfolio-cta-btn">Book Your Session &#8212; Spots Fill Fast</a>
     </div>
   </div>
 </section>
@@ -1677,5 +1759,21 @@ footer{
 })();
 </script>
 
+
+<script>
+(function(){
+  var tabs = document.querySelectorAll('.portfolio-tab');
+  var grids = document.querySelectorAll('.portfolio-grid');
+  tabs.forEach(function(tab){
+    tab.addEventListener('click', function(){
+      tabs.forEach(function(t){ t.classList.remove('active'); });
+      grids.forEach(function(g){ g.classList.remove('active'); });
+      tab.classList.add('active');
+      var target = document.getElementById('tab-' + tab.dataset.tab);
+      if(target) target.classList.add('active');
+    });
+  });
+})();
+</script>
 </body>
 </html>
