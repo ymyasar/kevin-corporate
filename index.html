@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>Photographer Name — Portfolio</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+<title>Kevin Mercer Photography</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
@@ -12,21 +12,25 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 
 :root{
-  --font-serif:'Playfair Display',Georgia,serif;
-  --font-sans:'DM Sans',sans-serif;
-  --bg-primary:#F2EDE4;
-  --accent:#7A4F2D;
-  --text-primary:#1A1916;
-  --text-secondary:#5C5649;
+  --color-bg: #FAFAFA;
+  --color-navy: #0D1F35;
+  --color-steel: #4A6FA5;
+  --color-slate: #E4E8EE;
+  --color-text: #0D1F35;
+  --color-text-muted: #5A6A7A;
+  --color-cta: #4A6FA5;
+  --color-cta-hover: #0D1F35;
+  --font-heading: 'Cormorant Garamond', Georgia, serif;
+  --font-body: 'Inter', sans-serif;
 }
 
 html{scroll-behavior:smooth;}
 
 body{
-  background:#F2EDE4;
-  font-family:'DM Sans',sans-serif;
+  background:var(--color-bg);
+  font-family:var(--font-body);
   overflow-x:hidden;
-  color:#1A1916;
+  color:var(--color-text);
 }
 
 /* ── Global grain overlay ──────────────────── */
@@ -52,38 +56,39 @@ section{ position:relative; z-index:3; }
   display:flex;
   align-items:center;
   justify-content:space-between;
-  background:#F2EDE4;
-  border-bottom:1px solid rgba(139,108,79,0.12);
+  background:var(--color-bg);
+  border-bottom:1px solid var(--color-slate);
   transition:background 0.4s ease;
 }
 #site-nav.scrolled{
-  background:rgba(242,237,228,0.97);
+  background:rgba(250,250,250,0.97);
   backdrop-filter:blur(10px);
-  border-bottom:1px solid rgba(139,108,79,0.12);
+  border-bottom:1px solid var(--color-slate);
 }
 .nav-name{
-  font-family:'Playfair Display',serif;
+  font-family:var(--font-heading);
   font-style:italic;
-  font-weight:300;
+  font-weight:400;
   font-size:18px;
-  color:#1A1916;
+  color:var(--color-text);
   text-decoration:none;
   letter-spacing:0.04em;
 }
 .nav-cta{
+  font-family:var(--font-body);
   font-size:0.72rem;
   letter-spacing:0.12em;
   text-transform:uppercase;
-  color:#F5F0E8;
+  color:#fff;
   border:none;
   padding:10px 24px;
   cursor:pointer;
   text-decoration:none;
   transition:background 0.3s ease;
-  background:#1A1916;
+  background:var(--color-cta);
 }
 .nav-cta:hover{
-  background:#2e2c28;
+  background:var(--color-cta-hover);
 }
 
 /* ══════════════════════════════════════════════
@@ -141,7 +146,7 @@ section{ position:relative; z-index:3; }
   z-index:2;
 }
 .hero-title{
-  font-family:'Playfair Display',serif;
+  font-family:'Cormorant Garamond',serif;
   font-weight:300;
   font-size:clamp(56px,9vw,118px);
   line-height:1.0;
@@ -160,7 +165,7 @@ section{ position:relative; z-index:3; }
   z-index:2;
 }
 .hero-subtitle{
-  font-family:'Playfair Display',serif;
+  font-family:'Cormorant Garamond',serif;
   font-style:italic;
   font-weight:300;
   font-size:clamp(17px,2.2vw,24px);
@@ -174,7 +179,7 @@ section{ position:relative; z-index:3; }
   display:inline-block;
   background:#7A4F2D;
   color:#F5F0E8;
-  font-family:'DM Sans',sans-serif;
+  font-family:'Inter',sans-serif;
   font-size:10px;
   letter-spacing:0.4em;
   text-transform:uppercase;
@@ -253,7 +258,7 @@ section{ position:relative; z-index:3; }
   color:rgba(122,79,45,0.65);
 }
 .space-title{
-  font-family:'Playfair Display',serif;
+  font-family:'Cormorant Garamond',serif;
   font-style:italic;
   font-weight:300;
   font-size:54px;
@@ -397,7 +402,7 @@ section{ position:relative; z-index:3; }
   margin-bottom:20px;
 }
 .inc-title{
-  font-family:'Playfair Display',serif;
+  font-family:'Cormorant Garamond',serif;
   font-style:italic;
   font-weight:300;
   font-size:clamp(38px,5vw,60px);
@@ -462,7 +467,7 @@ section{ position:relative; z-index:3; }
   transform:translateY(-2px);
 }
 .inc-item-text{
-  font-family:'Playfair Display',serif;
+  font-family:'Cormorant Garamond',serif;
   font-weight:300;
   font-size:19px;
   color:#1A1916;
@@ -480,7 +485,7 @@ section{ position:relative; z-index:3; }
 .inc-item-num{
   position:absolute;
   top:16px;right:20px;
-  font-family:'Playfair Display',serif;
+  font-family:'Cormorant Garamond',serif;
   font-weight:300;
   font-size:48px;
   color:rgba(26,25,22,0.04);
@@ -513,7 +518,7 @@ section{ position:relative; z-index:3; }
   margin-bottom:20px;
 }
 .rates-title{
-  font-family:'Playfair Display',serif;
+  font-family:'Cormorant Garamond',serif;
   font-style:italic;
   font-weight:300;
   font-size:clamp(38px,5vw,60px);
@@ -563,7 +568,7 @@ section{ position:relative; z-index:3; }
   margin-bottom:24px;
 }
 .rate-name{
-  font-family:'Playfair Display',serif;
+  font-family:'Cormorant Garamond',serif;
   font-style:italic;
   font-weight:300;
   font-size:38px;
@@ -586,7 +591,7 @@ section{ position:relative; z-index:3; }
   margin:0 auto 28px;
 }
 .rate-price{
-  font-family:'Playfair Display',serif;
+  font-family:'Cormorant Garamond',serif;
   font-style:italic;
   font-weight:300;
   font-size:20px;
@@ -649,7 +654,7 @@ section{ position:relative; z-index:3; }
   margin-bottom:22px;
 }
 .fp-title{
-  font-family:'Playfair Display',serif;
+  font-family:'Cormorant Garamond',serif;
   font-style:italic;
   font-weight:300;
   font-size:clamp(36px,4vw,58px);
@@ -756,7 +761,7 @@ section{ position:relative; z-index:3; }
   position:relative;
 }
 .loc-title{
-  font-family:'Playfair Display',serif;
+  font-family:'Cormorant Garamond',serif;
   font-style:italic;
   font-weight:300;
   font-size:clamp(36px,5vw,58px);
@@ -774,7 +779,7 @@ section{ position:relative; z-index:3; }
   position:relative;
 }
 .loc-address{
-  font-family:'Playfair Display',serif;
+  font-family:'Cormorant Garamond',serif;
   font-weight:300;
   font-size:24px;
   color:rgba(26,25,22,0.8);
@@ -812,7 +817,7 @@ section{ position:relative; z-index:3; }
   margin-bottom:20px;
 }
 .book-title{
-  font-family:'Playfair Display',serif;
+  font-family:'Cormorant Garamond',serif;
   font-style:italic;
   font-weight:300;
   font-size:clamp(38px,5vw,60px);
@@ -852,7 +857,7 @@ section{ position:relative; z-index:3; }
   border:none;
   border-bottom:1px solid rgba(122,79,45,0.3);
   color:#1A1916;
-  font-family:'Playfair Display',serif;
+  font-family:'Cormorant Garamond',serif;
   font-style:italic;
   font-size:17px;
   padding:12px 0;
@@ -864,7 +869,7 @@ section{ position:relative; z-index:3; }
 }
 .b-input::placeholder{
   color:rgba(26,25,22,0.3);
-  font-family:'Playfair Display',serif;
+  font-family:'Cormorant Garamond',serif;
   font-style:italic;
 }
 .b-input:focus{ border-bottom-color:rgba(122,79,45,0.6); }
@@ -883,7 +888,7 @@ textarea.b-input{ resize:none; }
   background:#8B6C4F;
   border:none;
   color:#F2EDE4;
-  font-family:'Playfair Display',serif;
+  font-family:'Cormorant Garamond',serif;
   font-style:italic;
   font-size:19px;
   padding:20px;
@@ -909,7 +914,7 @@ footer{
   z-index:3;
 }
 .footer-name{
-  font-family:'Playfair Display',serif;
+  font-family:'Cormorant Garamond',serif;
   font-style:italic;
   font-weight:300;
   font-size:22px;
@@ -956,7 +961,7 @@ footer{
   margin-bottom:18px;
 }
 .about-name{
-  font-family:'Playfair Display',serif;
+  font-family:'Cormorant Garamond',serif;
   font-style:italic;
   font-weight:300;
   font-size:3rem;
@@ -965,7 +970,7 @@ footer{
   margin-bottom:8px;
 }
 .about-location{
-  font-family:'DM Sans',sans-serif;
+  font-family:'Inter',sans-serif;
   font-weight:300;
   font-size:0.9rem;
   color:#5C5649;
@@ -978,14 +983,14 @@ footer{
   margin:16px 0;
 }
 .about-bio{
-  font-family:'DM Sans',sans-serif;
+  font-family:'Inter',sans-serif;
   font-weight:300;
   font-size:1rem;
   line-height:1.9;
   color:#5C5649;
 }
 .about-tagline{
-  font-family:'DM Sans',sans-serif;
+  font-family:'Inter',sans-serif;
   font-weight:300;
   font-size:1rem;
   line-height:1.9;
@@ -1014,7 +1019,7 @@ footer{
   margin-bottom:20px;
 }
 .testi-title{
-  font-family:'Playfair Display',serif;
+  font-family:'Cormorant Garamond',serif;
   font-style:italic;
   font-weight:300;
   font-size:3rem;
@@ -1047,7 +1052,7 @@ footer{
   position:absolute;
   top:16px;
   left:24px;
-  font-family:'Playfair Display',serif;
+  font-family:'Cormorant Garamond',serif;
   font-size:5rem;
   line-height:1;
   color:#7A4F2D;
@@ -1056,7 +1061,7 @@ footer{
   user-select:none;
 }
 .testi-quote{
-  font-family:'Playfair Display',serif;
+  font-family:'Cormorant Garamond',serif;
   font-style:italic;
   font-weight:300;
   font-size:1.1rem;
@@ -1066,7 +1071,7 @@ footer{
   z-index:1;
 }
 .testi-name{
-  font-family:'DM Sans',sans-serif;
+  font-family:'Inter',sans-serif;
   font-weight:300;
   font-size:0.8rem;
   color:#5C5649;
@@ -1160,429 +1165,17 @@ footer{
 <div class="scroll-progress"></div>
 <!-- Light rays canvas -->
 <canvas id="dust-canvas" style="display:none;"></canvas>
-<!-- Dust particles canvas -->
-<canvas id="particles-canvas" style="display:none;"></canvas>
-<!-- Spotlight top -->
-<div style="display:none;"></div>
-<!-- Spotlight bottom -->
-<div style="display:none;"></div>
-<!-- Swinging lamp -->
-<canvas id="lampCanvas" style="display:none;"></canvas>
-<!-- Global grain -->
-<div class="grain-fixed"></div>
-
 <!-- ── Navigation ──────────────────────────────── -->
 <nav id="site-nav">
-  <a href="#hero" class="nav-name" data-af="business-name">Photographer Name</a>
+  <a href="#hero" class="nav-name" data-af="business-name">Kevin Mercer Photography</a>
   <a href="#book-section" class="nav-cta">Get In Touch</a>
 </nav>
 
-<!-- ══════════════════════════════════
-     1. HERO
-══════════════════════════════════ -->
-<section id="hero">
-  <canvas id="ripple-canvas" style="position:absolute;top:0;left:0;width:100%;height:100%;z-index:1;pointer-events:none;opacity:0.25;"></canvas>
-  <canvas id="depth-particles-canvas" style="position:absolute;top:0;left:0;width:100%;height:100%;z-index:1;pointer-events:none;opacity:0.35;"></canvas>
-  <canvas id="heroParticles" style="position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;opacity:0.5;"></canvas>
-  <!-- Parallax background layer -->
-  <div id="heroBg" style="position:absolute;inset:-20%;z-index:0;background:#F2EDE4;pointer-events:none;"></div>
-  <!-- Light bloom top right -->
-  <div style="position:absolute;top:-60px;right:-60px;width:320px;height:320px;border-radius:50%;background:radial-gradient(circle,rgba(245,230,200,0.18) 0%,rgba(201,169,110,0.08) 40%,transparent 70%);pointer-events:none;z-index:1;"></div>
-  <!-- Self-drawing rule -->
-  <div id="heroRule" style="position:absolute;bottom:80px;left:0;height:1px;background:linear-gradient(90deg,transparent 0%,rgba(139,108,79,0.25) 20%,rgba(139,108,79,0.25) 80%,transparent 100%);width:100%;z-index:1;"></div>
-  <canvas id="hero-dust-canvas" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;"></canvas>
-  <div class="hero-text-wrapper">
-    <div class="hero-eyebrow" data-af="location">Your City, ST</div>
-    <h1 class="hero-title" data-af="business-name">Photographer Name</h1>
-    <span class="hero-rule"></span>
-    <p class="hero-subtitle" data-af="tagline">Photography that books more clients and builds your brand.</p>
-    <a href="#book-section" class="hero-cta">Check Availability</a>
-    <p style="margin-top:18px;font-family:var(--font-sans);font-size:0.65rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--text-secondary);opacity:0.7;" data-af="hero-sub-note">No commitment. Just a conversation.</p>
-  </div>
-  <div class="scroll-hint">
-    <span>Explore</span>
-    <div class="scroll-hint-line"></div>
-  </div>
-</section>
-
-<!-- ══════════════════════════════════
-     ABOUT
-══════════════════════════════════ -->
-<section id="about">
-  <div class="about-inner">
-    <div>
-      <div class="about-photo">
-        <span style="display:none;color:#8B6C4F;font-size:3rem;opacity:0.4;line-height:1;">+</span>
-      </div>
-    </div>
-    <div class="reveal-up">
-      <div class="about-label">About</div>
-      <div class="about-name" data-af="business-name">Your Name</div>
-      <div class="about-location" data-af="location">Your City, ST</div>
-      <span class="about-rule"></span>
-      <p class="about-bio" data-af="bio">We&rsquo;re a Your City-based studio known for work that speaks before you do. Every client gets our full attention, from first inquiry to final delivery.</p>
-      <p class="about-tagline" data-af="tagline">Trusted by clients who care about quality.</p>
-      <a href="#book-section" style="display:inline-block;margin-top:28px;font-family:var(--font-sans);font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(122,79,45,0.4);padding-bottom:2px;transition:opacity 0.2s ease;" onmouseover="this.style.opacity='0.6'" onmouseout="this.style.opacity='1'" data-af="about-cta">Work With Me &rarr;</a>
-    </div>
-  </div>
-</section>
-
-<!-- ══════════════════════════════════
-     2. THE SPACE
-══════════════════════════════════ -->
-<section id="the-space">
-  <div class="space-header">
-    <span class="space-supertitle">The Work</span>
-    <div class="space-header-row">
-      <span class="space-title">The Portfolio</span>
-    </div>
-  </div>
-  <div class="filmstrip-track">
-    <div class="filmstrip-item" data-index="01">
-      <div class="filmstrip-img-wrap"><div class="filmstrip-placeholder"><img src="img1.jpeg" alt=""/></div></div>
-      <div class="filmstrip-meta">
-        <span class="filmstrip-category" data-af="gallery-1-category">PORTRAIT</span>
-        <span class="filmstrip-title" data-af="gallery-1-title">Session One</span>
-      </div>
-    </div>
-    <div class="filmstrip-item" data-index="02">
-      <div class="filmstrip-img-wrap"><div class="filmstrip-placeholder"><img src="img2.jpeg" alt=""/></div></div>
-      <div class="filmstrip-meta">
-        <span class="filmstrip-category" data-af="gallery-2-category">EDITORIAL</span>
-        <span class="filmstrip-title" data-af="gallery-2-title">Session Two</span>
-      </div>
-    </div>
-    <div class="filmstrip-item" data-index="03">
-      <div class="filmstrip-img-wrap"><div class="filmstrip-placeholder"><img src="img3.jpeg" alt=""/></div></div>
-      <div class="filmstrip-meta">
-        <span class="filmstrip-category" data-af="gallery-3-category">COMMERCIAL</span>
-        <span class="filmstrip-title" data-af="gallery-3-title">Session Three</span>
-      </div>
-    </div>
-    <div class="filmstrip-item" data-index="04">
-      <div class="filmstrip-img-wrap"><div class="filmstrip-placeholder"><img src="img4.jpeg" alt=""/></div></div>
-      <div class="filmstrip-meta">
-        <span class="filmstrip-category" data-af="gallery-4-category">WEDDING</span>
-        <span class="filmstrip-title" data-af="gallery-4-title">Session Four</span>
-      </div>
-    </div>
-    <div class="filmstrip-item" data-index="05">
-      <div class="filmstrip-img-wrap"><div class="filmstrip-placeholder"><img src="Warm1.jpeg" alt=""/></div></div>
-      <div class="filmstrip-meta">
-        <span class="filmstrip-category" data-af="gallery-5-category">LIFESTYLE</span>
-        <span class="filmstrip-title" data-af="gallery-5-title">Session Five</span>
-      </div>
-    </div>
-    <div class="filmstrip-item" data-index="06">
-      <div class="filmstrip-img-wrap"><div class="filmstrip-placeholder"><img src="Warm2.jpeg" alt=""/></div></div>
-      <div class="filmstrip-meta">
-        <span class="filmstrip-category" data-af="gallery-6-category">FINE ART</span>
-        <span class="filmstrip-title" data-af="gallery-6-title">Session Six</span>
-      </div>
-    </div>
-  </div>
-  <div class="filmstrip-counter">
-    <span class="filmstrip-current">01</span>
-    <span class="filmstrip-sep"> / </span>
-    <span class="filmstrip-total">06</span>
-  </div>
-  <div class="filmstrip-drag-hint">DRAG TO EXPLORE &rsaquo;&rsaquo;&rsaquo;</div>
-</section>
-
-<div id="trust-bar" style="background:var(--bg-primary);padding:28px 60px;border-top:1px solid rgba(139,108,79,0.12);border-bottom:1px solid rgba(139,108,79,0.12);display:flex;align-items:center;justify-content:center;gap:48px;flex-wrap:wrap;">
-  <span style="font-family:var(--font-sans);font-size:0.6rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--text-secondary);" data-af="trust-1">200+ Sessions Delivered</span>
-  <span style="color:rgba(139,108,79,0.3);font-size:0.6rem;">——</span>
-  <span style="font-family:var(--font-sans);font-size:0.6rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--text-secondary);" data-af="trust-2">5-Star Rated</span>
-  <span style="color:rgba(139,108,79,0.3);font-size:0.6rem;">——</span>
-  <span style="font-family:var(--font-sans);font-size:0.6rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--text-secondary);" data-af="trust-3">Bookings Open Now</span>
-</div>
-<section id="mid-cta" style="padding:60px 60px 80px;text-align:center;background:var(--bg-primary);">
-  <p style="font-family:var(--font-sans);font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent);margin-bottom:16px;" data-af="mid-cta-eyebrow">READY TO START?</p>
-  <h2 style="font-family:var(--font-serif);font-size:clamp(2rem,5vw,3.2rem);color:var(--text-primary);margin-bottom:24px;font-style:italic;" data-af="mid-cta-heading">Let&rsquo;s Make Something Together</h2>
-  <a href="#book-section" class="hero-cta" data-af="mid-cta-button" style="display:inline-block;">Book a Session</a>
-</section>
-
-<!-- ══════════════════════════════════
-     3. WHAT'S INCLUDED
-══════════════════════════════════ -->
-<section id="whats-included">
-  <div class="inc-header">
-    <span class="inc-eyebrow">What We Offer</span>
-    <div class="inc-title">Our Services</div>
-    <span class="inc-rule"></span>
-  </div>
-  <div class="inc-grid">
-
-    <!-- 01 -->
-    <div class="inc-item">
-      <svg class="inc-icon" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round">
-        <rect x="3" y="8" width="30" height="5" rx="0.5"/>
-        <rect x="3" y="16" width="30" height="5" rx="0.5"/>
-        <rect x="3" y="24" width="30" height="5" rx="0.5"/>
-        <line x1="12" y1="8" x2="12" y2="13"/>
-        <line x1="24" y1="16" x2="24" y2="21"/>
-        <line x1="15" y1="24" x2="15" y2="29"/>
-      </svg>
-      <div class="inc-item-text" data-af="inc-title-01">Service One</div>
-      <div class="inc-item-desc" data-af="inc-desc-01">Short description here</div>
-      <a href="#book-section" style="display:inline-block;margin-top:20px;font-family:var(--font-sans);font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(139,108,79,0.3);padding-bottom:2px;transition:border-color 0.3s ease;" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='rgba(139,108,79,0.3)'">Book This &rarr;</a>
-      <div class="inc-item-num">01</div>
-    </div>
-
-    <!-- 02 -->
-    <div class="inc-item">
-      <svg class="inc-icon" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round">
-        <rect x="3" y="5" width="13" height="6" rx="0.5"/>
-        <rect x="20" y="5" width="13" height="6" rx="0.5"/>
-        <rect x="3" y="15" width="8" height="6" rx="0.5"/>
-        <rect x="15" y="15" width="12" height="6" rx="0.5"/>
-        <rect x="31" y="15" width="2" height="6" rx="0.5"/>
-        <rect x="3" y="25" width="13" height="6" rx="0.5"/>
-        <rect x="20" y="25" width="13" height="6" rx="0.5"/>
-      </svg>
-      <div class="inc-item-text" data-af="inc-title-02">Service Two</div>
-      <div class="inc-item-desc" data-af="inc-desc-02">Short description here</div>
-      <a href="#book-section" style="display:inline-block;margin-top:20px;font-family:var(--font-sans);font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(139,108,79,0.3);padding-bottom:2px;transition:border-color 0.3s ease;" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='rgba(139,108,79,0.3)'">Book This &rarr;</a>
-      <div class="inc-item-num">02</div>
-    </div>
-
-    <!-- 03 -->
-    <div class="inc-item">
-      <svg class="inc-icon" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round">
-        <rect x="2" y="10" width="32" height="20" rx="2"/>
-        <circle cx="18" cy="20" r="6"/>
-        <circle cx="18" cy="20" r="2.5"/>
-        <rect x="13" y="6" width="6" height="4" rx="1"/>
-        <circle cx="27" cy="14" r="1.5"/>
-      </svg>
-      <div class="inc-item-text" data-af="inc-title-03">Service Three</div>
-      <div class="inc-item-desc" data-af="inc-desc-03">Short description here</div>
-      <a href="#book-section" style="display:inline-block;margin-top:20px;font-family:var(--font-sans);font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(139,108,79,0.3);padding-bottom:2px;transition:border-color 0.3s ease;" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='rgba(139,108,79,0.3)'">Book This &rarr;</a>
-      <div class="inc-item-num">03</div>
-    </div>
-
-    <!-- 04 -->
-    <div class="inc-item">
-      <svg class="inc-icon" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round">
-        <rect x="5" y="14" width="26" height="12" rx="3"/>
-        <path d="M5 20 V14 a3 3 0 0 1 3-3 h20 a3 3 0 0 1 3 3 V20"/>
-        <line x1="5" y1="26" x2="5" y2="30"/>
-        <line x1="31" y1="26" x2="31" y2="30"/>
-        <line x1="11" y1="26" x2="11" y2="30"/>
-        <line x1="25" y1="26" x2="25" y2="30"/>
-      </svg>
-      <div class="inc-item-text" data-af="inc-title-04">Service Four</div>
-      <div class="inc-item-desc" data-af="inc-desc-04">Short description here</div>
-      <a href="#book-section" style="display:inline-block;margin-top:20px;font-family:var(--font-sans);font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(139,108,79,0.3);padding-bottom:2px;transition:border-color 0.3s ease;" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='rgba(139,108,79,0.3)'">Book This &rarr;</a>
-      <div class="inc-item-num">04</div>
-    </div>
-
-    <!-- 05 -->
-    <div class="inc-item">
-      <svg class="inc-icon" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round">
-        <rect x="4" y="6" width="28" height="24" rx="1.5"/>
-        <line x1="4" y1="14" x2="32" y2="14"/>
-        <line x1="4" y1="20" x2="32" y2="20"/>
-        <line x1="18" y1="6" x2="18" y2="30"/>
-        <polyline points="12,23 18,30 24,23"/>
-      </svg>
-      <div class="inc-item-text" data-af="inc-title-05">Service Five</div>
-      <div class="inc-item-desc" data-af="inc-desc-05">Short description here</div>
-      <a href="#book-section" style="display:inline-block;margin-top:20px;font-family:var(--font-sans);font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(139,108,79,0.3);padding-bottom:2px;transition:border-color 0.3s ease;" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='rgba(139,108,79,0.3)'">Book This &rarr;</a>
-      <div class="inc-item-num">05</div>
-    </div>
-
-    <!-- 06 -->
-    <div class="inc-item">
-      <svg class="inc-icon" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round">
-        <rect x="6" y="3" width="24" height="30" rx="1.5"/>
-        <line x1="18" y1="3" x2="18" y2="33"/>
-        <polyline points="10,14 14,9 18,14"/>
-        <polyline points="18,22 22,27 26,22"/>
-      </svg>
-      <div class="inc-item-text" data-af="inc-title-06">Service Six</div>
-      <div class="inc-item-desc" data-af="inc-desc-06">Short description here</div>
-      <a href="#book-section" style="display:inline-block;margin-top:20px;font-family:var(--font-sans);font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(139,108,79,0.3);padding-bottom:2px;transition:border-color 0.3s ease;" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='rgba(139,108,79,0.3)'">Book This &rarr;</a>
-      <div class="inc-item-num">06</div>
-    </div>
-
-    <!-- 07 -->
-    <div class="inc-item">
-      <svg class="inc-icon" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round">
-        <line x1="18" y1="4" x2="18" y2="32"/>
-        <polyline points="12,10 18,4 24,10"/>
-        <polyline points="12,26 18,32 24,26"/>
-        <line x1="5" y1="4" x2="13" y2="4"/>
-        <line x1="5" y1="32" x2="13" y2="32"/>
-        <line x1="23" y1="4" x2="31" y2="4"/>
-        <line x1="23" y1="32" x2="31" y2="32"/>
-      </svg>
-      <div class="inc-item-text" data-af="inc-title-07">Service Seven</div>
-      <div class="inc-item-desc" data-af="inc-desc-07">Short description here</div>
-      <a href="#book-section" style="display:inline-block;margin-top:20px;font-family:var(--font-sans);font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(139,108,79,0.3);padding-bottom:2px;transition:border-color 0.3s ease;" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='rgba(139,108,79,0.3)'">Book This &rarr;</a>
-      <div class="inc-item-num">07</div>
-    </div>
-
-    <!-- 08 -->
-    <div class="inc-item">
-      <svg class="inc-icon" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M18 4 C12 4 8 9 8 14 C8 22 18 32 18 32 C18 32 28 22 28 14 C28 9 24 4 18 4 Z"/>
-        <circle cx="18" cy="14" r="4"/>
-      </svg>
-      <div class="inc-item-text" data-af="inc-title-08">Service Eight</div>
-      <div class="inc-item-desc" data-af="inc-desc-08">Short description here</div>
-      <a href="#book-section" style="display:inline-block;margin-top:20px;font-family:var(--font-sans);font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(139,108,79,0.3);padding-bottom:2px;transition:border-color 0.3s ease;" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='rgba(139,108,79,0.3)'">Book This &rarr;</a>
-      <div class="inc-item-num">08</div>
-    </div>
-
-  </div>
-  <div style="text-align:center;margin-top:64px;">
-    <p style="font-family:var(--font-sans);font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--text-secondary);opacity:0.7;margin-bottom:20px;" data-af="services-cta-note">Every session is custom. Let&rsquo;s talk about yours.</p>
-    <a href="#book-section" class="hero-cta" data-af="services-cta-button">See What&rsquo;s Included</a>
-  </div>
-</section>
-
-<!-- ══════════════════════════════════
-     4. RATES
-══════════════════════════════════ -->
-<section id="rates">
-  <div class="rates-header">
-    <span class="rates-eyebrow">Transparent Pricing</span>
-    <div class="rates-title">Pricing</div>
-  </div>
-  <div class="rates-grid">
-    <div class="rate-card">
-      <div class="rate-tier">Essential</div>
-      <div class="rate-name" data-af="service1-name">Essential</div>
-      <span class="rate-rule"></span>
-      <div class="rate-price" data-af="service1-price">Contact for rates</div>
-      <a href="#book-section" class="rate-cta">Inquire</a>
-    </div>
-    <div class="rate-card">
-      <div class="rate-tier">Standard</div>
-      <div class="rate-name" data-af="service2-name">Standard</div>
-      <span class="rate-rule"></span>
-      <div class="rate-price" data-af="service2-price">Contact for rates</div>
-      <a href="#book-section" class="rate-cta">Inquire</a>
-    </div>
-    <div class="rate-card">
-      <div class="rate-tier">Premium</div>
-      <div class="rate-name" data-af="service3-name">Premium</div>
-      <span class="rate-rule"></span>
-      <div class="rate-price" data-af="service3-price">Contact for rates</div>
-      <a href="#book-section" class="rate-cta">Inquire</a>
-    </div>
-  </div>
-  <div style="text-align:center;margin-top:48px;">
-    <a href="#book-section" class="hero-cta" data-af="rates-cta-button">Secure Your Date</a>
-  </div>
-</section>
-
-
-<!-- ══════════════════════════════════
-     TESTIMONIALS
-══════════════════════════════════ -->
-<section id="testimonials">
-  <div class="testi-header reveal-up">
-    <span class="testi-label">Kind Words</span>
-    <div class="testi-title">What Clients Say</div>
-    <span class="testi-rule"></span>
-  </div>
-  <div class="testi-grid">
-    <div class="testi-card reveal-up delay-1">
-      <div class="testi-quote-mark">&ldquo;</div>
-      <div class="testi-quote" data-af="testimonial-1-quote">Working with them was effortless. The result exceeded every expectation.</div>
-      <div class="testi-name" data-af="testimonial-1-name">&mdash; Client Name, City</div>
-    </div>
-    <div class="testi-card reveal-up delay-2">
-      <div class="testi-quote-mark">&ldquo;</div>
-      <div class="testi-quote" data-af="testimonial-2-quote">Working with them was effortless. The result exceeded every expectation.</div>
-      <div class="testi-name" data-af="testimonial-2-name">&mdash; Client Name, City</div>
-    </div>
-    <div class="testi-card reveal-up delay-3">
-      <div class="testi-quote-mark">&ldquo;</div>
-      <div class="testi-quote" data-af="testimonial-3-quote">Working with them was effortless. The result exceeded every expectation.</div>
-      <div class="testi-name" data-af="testimonial-3-name">&mdash; Client Name, City</div>
-    </div>
-  </div>
-  <div style="text-align:center;margin-top:56px;">
-    <a href="#book-section" class="hero-cta" data-af="testi-cta-button">Join Happy Clients</a>
-  </div>
-</section>
-
-<section id="urgency-block" style="background:var(--text-primary);padding:90px 60px;text-align:center;position:relative;z-index:3;">
-  <p id="urgency-month" style="font-family:var(--font-sans);font-size:0.6rem;letter-spacing:0.28em;text-transform:uppercase;color:rgba(139,108,79,0.7);margin-bottom:18px;"></p>
-  <h2 style="font-family:var(--font-serif);font-style:italic;font-weight:300;font-size:clamp(2rem,4vw,3rem);color:var(--bg-primary);line-height:1.1;margin-bottom:28px;" data-af="urgency-heading">Limited dates still available.<br>Don't miss your window.</h2>
-  <span style="display:block;width:28px;height:1px;background:rgba(139,108,79,0.5);margin:0 auto 36px;"></span>
-  <a href="#book-section" style="display:inline-block;background:var(--accent);color:#fff;font-family:var(--font-sans);font-size:0.65rem;letter-spacing:0.3em;text-transform:uppercase;padding:18px 48px;text-decoration:none;transition:opacity 0.3s ease;" data-af="urgency-cta-button" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'">Secure Your Date</a>
-  <p style="margin-top:20px;font-family:var(--font-sans);font-size:0.6rem;letter-spacing:0.16em;text-transform:uppercase;color:rgba(255,255,255,0.3);">Response within 24 hours. No pushy sales calls.</p>
-</section>
-
-<!-- ══════════════════════════════════
-     6. LOCATION
-══════════════════════════════════ -->
-<section id="location">
-  <span class="loc-eyebrow">Find Us</span>
-  <div class="loc-title" data-af="location">Your City, ST</div>
-  <span class="loc-rule"></span>
-  <div class="loc-address" data-af="address">123 Your Street<br>Your City, ST 00000</div>
-  <div class="loc-sub" data-af="contact-email">hello@yoursite.com</div>
-  <div style="margin-top:40px;">
-    <a href="#book-section" class="hero-cta" data-af="location-cta-button">Book Your Session</a>
-  </div>
-</section>
-
-<!-- ══════════════════════════════════
-     6. BOOK
-══════════════════════════════════ -->
-<section id="book-section">
-  <div class="book-header">
-    <span class="book-eyebrow">Start Here</span>
-    <div class="book-title">Get In Touch</div>
-    <span class="book-rule"></span>
-    <p style="margin-top:22px;font-family:var(--font-sans);font-size:0.65rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--text-secondary);opacity:0.7;" data-af="form-reassurance">Response within 24 hours. No pushy sales calls.</p>
-  </div>
-  <div class="book-form-wrap">
-    <form onsubmit="return false;">
-      <div class="b-grid">
-        <div class="b-field">
-          <label class="b-label-text">Name</label>
-          <input class="b-input" type="text" placeholder="Your full name"/>
-        </div>
-        <div class="b-field">
-          <label class="b-label-text">Email</label>
-          <input class="b-input" type="email" placeholder="your@email.com"/>
-        </div>
-        <div class="b-field">
-          <label class="b-label-text">Phone</label>
-          <input class="b-input" type="tel" placeholder="+1 (214) 000-0000"/>
-        </div>
-        <div class="b-field">
-          <label class="b-label-text">Preferred Date</label>
-          <input class="b-input" type="text" placeholder="MM / DD / YYYY"/>
-        </div>
-      </div>
-      <div class="b-field">
-        <label class="b-label-text">Service Type</label>
-        <select class="b-input">
-          <option value="" disabled selected>Select a service type</option>
-          <option value="full-day">Full Day (10 Hours)</option>
-          <option value="half-day">Half Day (5 Hours)</option>
-          <option value="hourly">Hourly (2hr min)</option>
-        </select>
-      </div>
-      <div class="b-field">
-        <label class="b-label-text">Message</label>
-        <textarea class="b-input" rows="4" placeholder="Tell us about your project&hellip;"></textarea>
-      </div>
-      <button type="submit" class="b-submit">Send Inquiry</button>
-    </form>
-  </div>
-</section>
+<main></main>
 
 <!-- Footer -->
 <footer>
-  <span class="footer-name" data-af="business-name">Photographer Name</span>
+  <span class="footer-name" data-af="business-name">Kevin Mercer Photography</span>
   <div class="footer-meta">
     <div data-af="contact-email">hello@yoursite.com</div>
     <div data-af="contact-phone">+1 (000) 000-0000</div>
@@ -1603,415 +1196,12 @@ footer{
 })();
 </script>
 
-
-
-<script>
-/* Light rays */
-(function(){
-  var canvas=document.getElementById('dust-canvas');
-  var ctx=canvas.getContext('2d');
-  var W, H;
-  function resize(){ W=canvas.width=window.innerWidth; H=canvas.height=window.innerHeight; }
-  window.addEventListener('resize', resize);
-  window.addEventListener('orientationchange', function(){ setTimeout(resize,200); });
-  if(window.visualViewport) window.visualViewport.addEventListener('resize', resize);
-  resize();
-  var TAU=Math.PI*2, t=0;
-  var beams=[
-    {base:-0.45,spread:0.13,speed:TAU/(25*60),phase:0.0,amp:0.10,alpha:0.05},
-    {base:-0.22,spread:0.11,speed:TAU/(22*60),phase:1.4,amp:0.12,alpha:0.04},
-    {base: 0.00,spread:0.16,speed:TAU/(30*60),phase:2.8,amp:0.09,alpha:0.07},
-    {base: 0.23,spread:0.12,speed:TAU/(20*60),phase:4.2,amp:0.11,alpha:0.05},
-    {base: 0.46,spread:0.10,speed:TAU/(27*60),phase:5.6,amp:0.10,alpha:0.04},
-  ];
-  function drawBeam(b){
-    var ox=W*0.5,oy=-60,len=Math.sqrt(W*W+H*H)*1.1;
-    var a=b.base+Math.sin(t*b.speed+b.phase)*b.amp, hs=b.spread/2;
-    var x1=ox+Math.sin(a-hs)*len, y1=oy+Math.cos(a-hs)*len;
-    var x2=ox+Math.sin(a+hs)*len, y2=oy+Math.cos(a+hs)*len;
-    var grad=ctx.createLinearGradient(ox,oy,(x1+x2)/2,(y1+y2)/2);
-    grad.addColorStop(0,  'rgba(201,168,76,'+b.alpha+')');
-    grad.addColorStop(0.5,'rgba(220,185,80,'+(b.alpha*0.55)+')');
-    grad.addColorStop(1,  'rgba(201,168,76,0)');
-    ctx.beginPath(); ctx.moveTo(ox,oy); ctx.lineTo(x1,y1); ctx.lineTo(x2,y2);
-    ctx.closePath(); ctx.fillStyle=grad; ctx.fill();
-  }
-  function draw(){ ctx.clearRect(0,0,W,H); beams.forEach(drawBeam); t++; requestAnimationFrame(draw); }
-  draw();
-})();
-</script>
-
-<script>
-/* Gold dust particles */
-(function(){
-  var canvas=document.getElementById('particles-canvas');
-  var ctx=canvas.getContext('2d');
-  var W, H;
-  function resize(){ W=canvas.width=window.innerWidth; H=canvas.height=window.innerHeight; }
-  window.addEventListener('resize', resize);
-  window.addEventListener('orientationchange', function(){ setTimeout(resize,200); });
-  if(window.visualViewport) window.visualViewport.addEventListener('resize', resize);
-  resize();
-  function rand(a,b){ return a+Math.random()*(b-a); }
-  var COUNT=320, particles=[];
-  function init(p,fromBottom){
-    p.x=rand(0,W); p.y=fromBottom?rand(H*0.85,H+10):rand(0,H);
-    p.r=rand(1.0,2.8); p.vy=rand(0.15,0.4); p.vx=rand(-0.12,0.12); p.alpha=rand(0.45,0.85);
-  }
-  for(var i=0;i<COUNT;i++){ var p={}; init(p,false); particles.push(p); }
-  function loop(){
-    ctx.clearRect(0,0,W,H);
-    particles.forEach(function(p){
-      p.x+=p.vx+rand(-0.06,0.06); p.y-=p.vy;
-      var prog=1-(p.y/H);
-      var fade=prog<0.08?prog/0.08:prog>0.82?1-(prog-0.82)/0.18:1;
-      ctx.beginPath(); ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
-      ctx.fillStyle='rgba(201,168,76,'+(p.alpha*fade)+')'; ctx.fill();
-      if(p.y<-2) init(p,true);
-    });
-    requestAnimationFrame(loop);
-  }
-  loop();
-})();
-</script>
-
-<script>
-/* Swinging lamp */
-(function(){
-  var canvas=document.getElementById('lampCanvas');
-  if(!canvas) return;
-  var ctx=canvas.getContext('2d');
-  canvas.width=300; canvas.height=500;
-  var CX=150, PERIOD=4000, AMP=8*Math.PI/180;
-  function draw(){
-    ctx.clearRect(0,0,300,500);
-    var angle=Math.sin(Date.now()/PERIOD*Math.PI*2)*AMP;
-    ctx.save();
-    ctx.translate(CX,0); ctx.rotate(angle); ctx.translate(-CX,0);
-    ctx.beginPath(); ctx.moveTo(CX,0); ctx.lineTo(CX,80);
-    ctx.strokeStyle='#8B6914'; ctx.lineWidth=2; ctx.stroke();
-    var sx=CX-30,sy=80,sw=60,sh=14,sr=5;
-    ctx.beginPath();
-    ctx.moveTo(sx+sr,sy); ctx.lineTo(sx+sw-sr,sy); ctx.arcTo(sx+sw,sy,sx+sw,sy+sr,sr);
-    ctx.lineTo(sx+sw,sy+sh-sr); ctx.arcTo(sx+sw,sy+sh,sx+sw-sr,sy+sh,sr);
-    ctx.lineTo(sx+sr,sy+sh); ctx.arcTo(sx,sy+sh,sx,sy+sh-sr,sr);
-    ctx.lineTo(sx,sy+sr); ctx.arcTo(sx,sy,sx+sr,sy,sr);
-    ctx.closePath(); ctx.fillStyle='#C9A84C'; ctx.fill();
-    var grad=ctx.createLinearGradient(CX,94,CX,480);
-    grad.addColorStop(0,'rgba(255,180,50,0.08)');
-    grad.addColorStop(0.5,'rgba(255,160,40,0.04)');
-    grad.addColorStop(1,'rgba(255,140,30,0)');
-    ctx.beginPath(); ctx.moveTo(CX,94); ctx.lineTo(CX-130,480); ctx.lineTo(CX+130,480);
-    ctx.closePath(); ctx.fillStyle=grad; ctx.fill();
-    ctx.restore();
-    requestAnimationFrame(draw);
-  }
-  draw();
-})();
-</script>
-
-
-<script>
-/* Hero dust */
-(function(){
-  var canvas = document.getElementById('hero-dust-canvas');
-  if(!canvas) return;
-  var ctx = canvas.getContext('2d');
-  var W, H;
-  function resize(){
-    var rect = canvas.parentElement.getBoundingClientRect();
-    W = canvas.width = rect.width || window.innerWidth;
-    H = canvas.height = rect.height || window.innerHeight;
-  }
-  window.addEventListener('resize', resize);
-  resize();
-  function rand(a,b){ return a + Math.random()*(b-a); }
-  var COUNT = 18, ps = [];
-  function spawn(p, fromBottom){
-    p.x = rand(0,W); p.y = fromBottom ? rand(H*0.85,H+10) : rand(0,H);
-    p.r = rand(0.5,1.8); p.vy = rand(0.15,0.45); p.vx = rand(-0.08,0.08); p.alpha = rand(0.18,0.55);
-  }
-  for(var i=0;i<COUNT;i++){ var p={}; spawn(p,false); ps.push(p); }
-  function loop(){
-    ctx.clearRect(0,0,W,H);
-    ps.forEach(function(p){
-      p.x += p.vx + rand(-0.04,0.04); p.y -= p.vy;
-      var prog = 1-(p.y/H);
-      var fade = prog<0.08 ? prog/0.08 : prog>0.82 ? 1-(prog-0.82)/0.18 : 1;
-      ctx.beginPath(); ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
-      ctx.fillStyle = 'rgba(201,168,76,'+(p.alpha*fade)+')'; ctx.fill();
-      if(p.y<-2) spawn(p,true);
-    });
-    requestAnimationFrame(loop);
-  }
-  loop();
-})();
-</script>
-
-<script>
-/* ═══════════════════════════════════════════════════════
-   FULL ANIMATION LAYER
-═══════════════════════════════════════════════════════ */
-(function(){
-  if(typeof gsap==='undefined'||typeof ScrollTrigger==='undefined') return;
-  gsap.registerPlugin(ScrollTrigger);
-  var isAdmin = new URLSearchParams(window.location.search).get('admin')==='rosetta';
-
-  /* ── Scroll progress (Animation 8) ── */
-  gsap.to('.scroll-progress',{
-    width:'100%', ease:'none',
-    scrollTrigger:{ trigger:'body', start:'top top', end:'bottom bottom', scrub:true }
-  });
-
-  /* ── Hero parallax (always on) ── */
-  gsap.to('.hero-text-wrapper',{
-    yPercent:-15, ease:'none',
-    scrollTrigger:{ trigger:'#hero', start:'top top', end:'bottom top', scrub:true }
-  });
-
-  /* ─────────────────────────────────────────────
-     ANIMATION 1 — HERO ENTRANCE
-  ───────────────────────────────────────────── */
-  (function(){
-    var nav      = document.getElementById('site-nav');
-    var eyebrow  = document.querySelector('.hero-eyebrow');
-    var titleEl  = document.querySelector('.hero-title');
-    var rule     = document.querySelector('.hero-rule');
-    var subtitle = document.querySelector('.hero-subtitle');
-    var cta      = document.querySelector('.hero-cta');
-    var hint     = document.querySelector('.scroll-hint');
-
-    /* Word split with metallic spans */
-    var wordSpans = [];
-    if(titleEl && !isAdmin){
-      var words = titleEl.textContent.trim().split(/\s+/);
-      titleEl.innerHTML = '';
-      words.forEach(function(w){
-        var s = document.createElement('span');
-        s.textContent = w;
-        s.style.cssText = 'display:inline-block;background:linear-gradient(135deg,#8B6C3E 0%,#C9A96E 35%,#8B6C3E 65%,#B8935A 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-right:0.22em;';
-        titleEl.appendChild(s);
-        wordSpans.push(s);
-      });
-    }
-
-    if(isAdmin) return;
-
-    gsap.set(nav,      { y:-60, opacity:0 });
-    if(eyebrow)  gsap.set(eyebrow,  { y:32, opacity:0 });
-    if(wordSpans.length) gsap.set(wordSpans, { y:90, opacity:0, rotateX:-28 });
-    if(rule)     gsap.set(rule,     { scaleX:0, transformOrigin:'left center' });
-    if(subtitle) gsap.set(subtitle, { y:30, opacity:0 });
-    if(cta)      gsap.set(cta,      { y:25, opacity:0, scale:0.95 });
-    if(hint)     gsap.set(hint,     { opacity:0 });
-
-    var tl = gsap.timeline({ defaults:{ ease:'expo.out' } });
-    tl.to(nav, { y:0, opacity:1, duration:0.69 });
-    if(eyebrow)  tl.to(eyebrow,  { y:0, opacity:1, duration:0.58 }, '+=0.1');
-    if(wordSpans.length)
-      tl.to(wordSpans, { y:0, opacity:1, rotateX:0, duration:1.1, stagger:0.13 }, '+=0.1');
-    if(rule)     tl.to(rule,     { scaleX:1, duration:0.8 }, wordSpans.length ? '-=0.3' : '+=0');
-    if(subtitle) tl.to(subtitle, { y:0, opacity:1, duration:0.9 }, '+=0.05');
-    if(cta)      tl.to(cta,      { y:0, opacity:1, scale:1, duration:0.7 }, '+=0.05');
-    if(hint)     tl.to(hint,     { opacity:1, duration:0.46 }, '+=0.1');
-  })();
-
-  /* ─────────────────────────────────────────────
-     ANIMATION 9 — SECTION LABEL REVEAL (all eyebrows)
-  ───────────────────────────────────────────── */
-  ['.space-supertitle','.inc-eyebrow','.rates-eyebrow',
-   '.book-eyebrow','.testi-label','.about-label','.loc-eyebrow'
-  ].forEach(function(sel){
-    document.querySelectorAll(sel).forEach(function(el){
-      gsap.fromTo(el,
-        { opacity:0, y:20 },
-        { opacity:1, y:0, duration:0.8, ease:'expo.out',
-          scrollTrigger:{ trigger:el, start:'top 88%', toggleActions:'play none none none' }
-        }
-      );
-    });
-  });
-
-  /* ─────────────────────────────────────────────
-     ANIMATION 2 — ABOUT SECTION
-  ───────────────────────────────────────────── */
-  (function(){
-    var section = document.getElementById('about');
-    if(!section) return;
-    var st = { trigger:section, start:'top 80%', toggleActions:'play none none none' };
-    var photo   = section.querySelector('.about-photo');
-    var name    = section.querySelector('.about-name');
-    var rule    = section.querySelector('.about-rule');
-    var bio     = section.querySelector('.about-bio');
-    var tagline = section.querySelector('.about-tagline');
-    if(photo) gsap.fromTo(photo, { x:-128, opacity:0 }, { x:0, opacity:1, duration:1.15, ease:'expo.out', scrollTrigger:st });
-    if(name)  gsap.fromTo(name,  { y:64,   opacity:0 }, { y:0, opacity:1, duration:0.92, ease:'expo.out', delay:0.15, scrollTrigger:st });
-    if(rule){
-      gsap.set(rule, { transformOrigin:'left center' });
-      gsap.fromTo(rule, { scaleX:0, opacity:0 }, { scaleX:1, opacity:1, duration:0.58, ease:'expo.out', delay:0.3, scrollTrigger:st });
-    }
-    [bio, tagline].filter(Boolean).forEach(function(el, i){
-      gsap.fromTo(el, { y:48, opacity:0 }, { y:0, opacity:1, duration:0.81, ease:'expo.out', delay:0.4+i*0.21, scrollTrigger:st });
-    });
-  })();
-
-  /* ─────────────────────────────────────────────
-     ANIMATION 3 — GALLERY CARDS
-  ───────────────────────────────────────────── */
-  (function(){
-    var spTitle = document.querySelector('.space-title');
-    if(spTitle) gsap.fromTo(spTitle,
-      { opacity:0, y:20 },
-      { opacity:1, y:0, duration:0.8, ease:'expo.out',
-        scrollTrigger:{ trigger:spTitle, start:'top 88%', toggleActions:'play none none none' }
-      }
-    );
-  })();
-  if(window.innerWidth > 767){
-    gsap.fromTo('.filmstrip-item',
-      { opacity:0, y:60, rotateY:4 },
-      { opacity:1, y:0, rotateY:0, duration:1.0, ease:'expo.out', stagger:0.12,
-        scrollTrigger:{ trigger:'.filmstrip-track', start:'top 85%', toggleActions:'play none none none' }
-      }
-    );
-  }
-
-  /* ─────────────────────────────────────────────
-     ANIMATION 4 — SERVICES GRID
-  ───────────────────────────────────────────── */
-  (function(){
-    var st = { trigger:'#whats-included', start:'top 85%', toggleActions:'play none none none' };
-    var title = document.querySelector('.inc-title');
-    var rule  = document.querySelector('.inc-rule');
-    if(title) gsap.fromTo(title, { opacity:0, y:20 }, { opacity:1, y:0, duration:0.8, ease:'expo.out', scrollTrigger:st });
-    if(rule)  gsap.fromTo(rule,  { scaleX:0, transformOrigin:'center', opacity:0 },
-                                 { scaleX:1, opacity:1, duration:0.58, ease:'expo.out', delay:0.1, scrollTrigger:st });
-    document.querySelectorAll('.inc-item').forEach(function(item, i){
-      gsap.fromTo(item,
-        { y:64, opacity:0 },
-        { y:0, opacity:1, duration:0.81, ease:'power3.out', delay:i*0.11, scrollTrigger:st }
-      );
-    });
-  })();
-
-  /* ─────────────────────────────────────────────
-     ANIMATION 5 — PRICING CARDS
-  ───────────────────────────────────────────── */
-  (function(){
-    var st = { trigger:'#rates', start:'top 85%', toggleActions:'play none none none' };
-    var rTitle = document.querySelector('.rates-title');
-    if(rTitle) gsap.fromTo(rTitle, { opacity:0, y:20 }, { opacity:1, y:0, duration:0.8, ease:'expo.out', scrollTrigger:st });
-    var cards = document.querySelectorAll('.rate-card');
-    var delays = [0, 0.25, 0.15];
-    cards.forEach(function(card, i){
-      gsap.fromTo(card,
-        { y:96, opacity:0, scale:0.96 },
-        { y:0, opacity:1, scale:1, duration:1.04, ease:'expo.out', delay:delays[i]||0, scrollTrigger:st }
-      );
-    });
-  })();
-
-  /* ─────────────────────────────────────────────
-     ANIMATION 6 — TESTIMONIALS
-  ───────────────────────────────────────────── */
-  (function(){
-    var st = { trigger:'#testimonials', start:'top 85%', toggleActions:'play none none none' };
-    var title = document.querySelector('.testi-title');
-    var trule = document.querySelector('.testi-rule');
-    if(title){
-      gsap.fromTo(title,
-        { opacity:0, y:20 },
-        { opacity:1, y:0, duration:0.8, ease:'expo.out', scrollTrigger:st }
-      );
-    }
-    if(trule){
-      gsap.set(trule, { transformOrigin:'center' });
-      gsap.fromTo(trule, { scaleX:0, opacity:0 }, { scaleX:1, opacity:1, duration:0.58, ease:'expo.out', delay:0.2, scrollTrigger:st });
-    }
-    document.querySelectorAll('.testi-card').forEach(function(card, i){
-      gsap.fromTo(card, { y:80, opacity:0 },
-        { y:0, opacity:1, duration:1.04, ease:'expo.out', delay:i*0.25, scrollTrigger:st });
-      var qm = card.querySelector('.testi-quote-mark');
-      if(qm) gsap.fromTo(qm, { opacity:0 },
-        { opacity:0.25, duration:0.46, ease:'expo.out', delay:i*0.25+0.3, scrollTrigger:st });
-    });
-  })();
-
-  /* ─────────────────────────────────────────────
-     ANIMATION 7 — FIND US + CONTACT FORM
-  ───────────────────────────────────────────── */
-  (function(){
-    var stLoc  = { trigger:'#location',     start:'top 85%', toggleActions:'play none none none' };
-    var stBook = { trigger:'#book-section', start:'top 85%', toggleActions:'play none none none' };
-
-    /* Char split loc-title */
-    var locTitle = document.querySelector('.loc-title');
-    if(locTitle && !isAdmin){
-      var chars = locTitle.textContent.trim().split('');
-      locTitle.innerHTML = '';
-      var cSpans = chars.map(function(ch){
-        var s = document.createElement('span');
-        s.textContent = ch===' '?' ':ch;
-        s.style.cssText = 'display:inline-block;background:linear-gradient(135deg,#8B6C3E 0%,#C9A96E 35%,#8B6C3E 65%,#B8935A 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;';
-        locTitle.appendChild(s);
-        return s;
-      });
-      gsap.fromTo(cSpans, { opacity:0, y:32 },
-        { opacity:1, y:0, duration:0.58, ease:'expo.out', stagger:0.03, scrollTrigger:stLoc });
-    } else if(locTitle){
-      gsap.fromTo(locTitle, { y:48, opacity:0 },
-        { y:0, opacity:1, duration:0.92, ease:'expo.out', scrollTrigger:stLoc });
-    }
-
-    var locRule = document.querySelector('.loc-rule');
-    if(locRule){
-      gsap.set(locRule, { transformOrigin:'center' });
-      gsap.fromTo(locRule, { scaleX:0 }, { scaleX:1, duration:0.58, ease:'expo.out', delay:0.3, scrollTrigger:stLoc });
-    }
-    [document.querySelector('.loc-address'), document.querySelector('.loc-sub')].filter(Boolean).forEach(function(el,i){
-      gsap.fromTo(el, { y:48, opacity:0 },
-        { y:0, opacity:1, duration:0.81, ease:'expo.out', delay:0.4+i*0.17, scrollTrigger:stLoc });
-    });
-
-    var bTitle = document.querySelector('.book-title');
-    var bRule  = document.querySelector('.book-rule');
-    if(bTitle) gsap.fromTo(bTitle, { opacity:0, y:20 }, { opacity:1, y:0, duration:0.8, ease:'expo.out', scrollTrigger:stBook });
-    if(bRule){ gsap.set(bRule,{transformOrigin:'center'}); gsap.fromTo(bRule,{scaleX:0},{scaleX:1,duration:0.58,ease:'expo.out',delay:0.1,scrollTrigger:stBook}); }
-
-    var fields = document.querySelectorAll('.b-field');
-    fields.forEach(function(f,i){
-      gsap.fromTo(f,{y:48,opacity:0},{y:0,opacity:1,duration:0.69,ease:'expo.out',delay:i*0.14,scrollTrigger:stBook});
-    });
-    var submit = document.querySelector('.b-submit');
-    if(submit) gsap.fromTo(submit,{y:32,opacity:0,scale:0.95},
-      {y:0,opacity:1,scale:1,duration:0.69,ease:'expo.out',delay:fields.length*0.14+0.1,scrollTrigger:stBook});
-  })();
-
-})();
-</script>
-
-<script>
-/* ── Cinematic hero effects ── */
-gsap.fromTo("#heroRule",
-  { scaleX:0, transformOrigin:"left center" },
-  { scaleX:1, duration:1.8, ease:"expo.inOut", delay:1.4 }
-);
-gsap.to("#heroBg",{
-  yPercent:15, ease:"none",
-  scrollTrigger:{ trigger:"#hero", start:"top top", end:"bottom top", scrub:true }
-});
-gsap.to(".hero-text-wrapper",{
-  opacity:0, y:-40, ease:"none",
-  scrollTrigger:{ trigger:"#hero", start:"top top", end:"40% top", scrub:true }
-});
-</script>
-
 <!-- ══════════════════════════════════════════════
      ADMIN PANEL — ?admin=rosetta
 ══════════════════════════════════════════════ -->
 
 <!-- ── Rosetta CMS Gate ── -->
-<div id="admin-gate-overlay" style="display:none;position:fixed;inset:0;background:#000;z-index:99999;font-family:'DM Sans',sans-serif;color:#fff;">
+<div id="admin-gate-overlay" style="display:none;position:fixed;inset:0;background:#000;z-index:99999;font-family:'Inter',sans-serif;color:#fff;">
   <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;gap:16px;padding:32px;">
     <div style="font-size:10px;letter-spacing:0.5em;text-transform:uppercase;color:#555;margin-bottom:8px;">Rosetta CMS</div>
     <div style="font-size:22px;font-weight:300;color:#fff;margin-bottom:8px;">Enter password</div>
@@ -2027,7 +1217,7 @@ gsap.to(".hero-text-wrapper",{
 </div>
 
 <!-- ── Rosetta CMS Panel ── -->
-<div id="admin-side-panel" style="display:none;position:fixed;top:0;right:0;width:350px;height:100vh;background:#0d0d0d;border-left:1px solid #222;z-index:99998;overflow-y:auto;font-family:'DM Sans',sans-serif;color:#fff;">
+<div id="admin-side-panel" style="display:none;position:fixed;top:0;right:0;width:350px;height:100vh;background:#0d0d0d;border-left:1px solid #222;z-index:99998;overflow-y:auto;font-family:'Inter',sans-serif;color:#fff;">
   <div style="position:sticky;top:0;background:#0d0d0d;border-bottom:1px solid #1a1a1a;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;">
     <div style="font-size:11px;letter-spacing:0.4em;text-transform:uppercase;color:#C9A84C;">Rosetta CMS</div>
     <button onclick="document.getElementById('admin-side-panel').style.display='none'"
@@ -2040,7 +1230,7 @@ gsap.to(".hero-text-wrapper",{
     <div style="font-size:9px;letter-spacing:0.5em;text-transform:uppercase;color:#555;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid #1a1a1a;">General</div>
     <label style="display:block;margin-bottom:16px;">
       <span style="display:block;font-size:11px;color:#888;margin-bottom:6px;">Business Name</span>
-      <input id="af-business-name" type="text" value="Photographer Name"
+      <input id="af-business-name" type="text" value="Kevin Mercer Photography"
         style="width:100%;background:#111;border:1px solid #2a2a2a;border-radius:3px;color:#fff;font-size:13px;padding:9px 12px;outline:none;box-sizing:border-box;"/>
     </label>
     <label style="display:block;margin-bottom:16px;">
