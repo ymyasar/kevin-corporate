@@ -3,7 +3,12 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>Kevin Mercer Photography</title>
+<title>Kevin Mercer Photography | Austin Corporate Headshots</title>
+<meta name="description" content="Professional corporate headshots for law firms, executives, and real estate teams in Austin, TX. Fast turnaround. Boardroom-ready results.">
+<meta property="og:title" content="Kevin Mercer Photography | Austin Corporate Headshots">
+<meta property="og:description" content="Professional corporate headshots for law firms, executives, and real estate teams in Austin, TX. Fast turnaround. Boardroom-ready results.">
+<meta property="og:type" content="website">
+<link rel="canonical" href="https://kevinmercerphotography.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
@@ -52,13 +57,13 @@ section{ position:relative; z-index:3; }
   position:fixed;
   top:0;left:0;right:0;
   z-index:100;
-  padding:18px 52px;
+  padding:16px 52px;
   display:flex;
   align-items:center;
   justify-content:space-between;
   background:var(--color-bg);
-  border-bottom:1px solid var(--color-slate);
-  transition:background 0.4s ease;
+  transition:background 0.3s ease,border-color 0.3s ease,box-shadow 0.3s ease;
+  border-bottom:1px solid transparent;
 }
 #site-nav.scrolled{
   background:rgba(250,250,250,0.97);
@@ -67,29 +72,43 @@ section{ position:relative; z-index:3; }
 }
 .nav-name{
   font-family:var(--font-heading);
-  font-style:italic;
-  font-weight:400;
-  font-size:18px;
-  color:var(--color-text);
+  font-style:normal;
+  font-weight:500;
+  font-size:22px;
+  color:var(--color-navy);
   text-decoration:none;
-  letter-spacing:0.04em;
+  letter-spacing:0.02em;
+  flex-shrink:0;
 }
+.nav-links{
+  display:flex;
+  align-items:center;
+  gap:32px;
+  margin:0 40px;
+}
+.nav-link{
+  font-family:var(--font-body);
+  font-size:13px;
+  font-weight:500;
+  color:var(--color-navy);
+  text-decoration:none;
+  transition:color 0.2s ease;
+}
+.nav-link:hover{color:var(--color-steel);}
 .nav-cta{
   font-family:var(--font-body);
-  font-size:0.72rem;
-  letter-spacing:0.12em;
-  text-transform:uppercase;
+  font-size:13px;
+  font-weight:600;
   color:#fff;
+  background:var(--color-navy);
   border:none;
-  padding:10px 24px;
+  padding:12px 24px;
   cursor:pointer;
   text-decoration:none;
-  transition:background 0.3s ease;
-  background:var(--color-cta);
+  transition:background 0.25s ease;
+  flex-shrink:0;
 }
-.nav-cta:hover{
-  background:var(--color-cta-hover);
-}
+.nav-cta:hover{background:var(--color-steel);}
 
 /* ══════════════════════════════════════════════
    1. HERO
@@ -890,20 +909,41 @@ footer{
   position:relative;
   z-index:3;
 }
-.footer-name{
-  font-family:'Cormorant Garamond',serif;
-  font-style:italic;
-  font-weight:300;
-  font-size:22px;
-  color:#1A1916;
+footer{
+  background:var(--color-navy);
+  padding:60px 52px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:32px;
 }
-.footer-meta{
-  font-size:9px;
-  letter-spacing:0.4em;
-  text-transform:uppercase;
-  color:#5C5649;
-  text-align:right;
-  line-height:1.9;
+.footer-logo{
+  font-family:var(--font-heading);
+  font-size:20px;
+  font-weight:400;
+  color:#fff;
+  text-decoration:none;
+  flex-shrink:0;
+}
+.footer-links{
+  display:flex;
+  gap:28px;
+}
+.footer-link{
+  font-family:var(--font-body);
+  font-size:12px;
+  font-weight:400;
+  color:rgba(255,255,255,0.5);
+  text-decoration:none;
+  transition:color 0.2s ease;
+}
+.footer-link:hover{color:#fff;}
+.footer-copy{
+  font-family:var(--font-body);
+  font-size:13px;
+  font-weight:400;
+  color:rgba(255,255,255,0.5);
+  flex-shrink:0;
 }
 
 /* ══════════════════════════════════════════════
@@ -1096,8 +1136,16 @@ footer{
 @media(max-width:767px){
   #lampCanvas{ display:none !important; }
   #heroParticles{ display:none; }
-  #site-nav{ padding:16px 24px; }
-  .nav-name{ font-size:16px; }
+  #site-nav{ padding:14px 20px; }
+  .nav-links{ display:none; }
+  .nav-name{ font-size:17px; }
+  .hero-bg{ flex-direction:column; }
+  .hero-bg-left{ height:50%; }
+  .hero-bg-right{ height:50%; }
+  .hero-overlay{ max-width:100%; margin:16px; padding:32px 24px; border-radius:2px; }
+  .hero-headline{ font-size:38px; }
+  footer{ flex-direction:column; align-items:flex-start; gap:20px; padding:40px 24px; }
+  .footer-copy{ font-size:12px; }
   .social-proof-inner{flex-wrap:wrap;gap:24px;padding:0 24px;}
   .services-grid{grid-template-columns:1fr;padding:0 24px;}
   .why-stat-grid{grid-template-columns:1fr;gap:28px;}
@@ -1153,8 +1201,14 @@ footer{
 <canvas id="dust-canvas" style="display:none;"></canvas>
 <!-- ── Navigation ──────────────────────────────── -->
 <nav id="site-nav">
-  <a href="#hero" class="nav-name" data-af="business-name">Kevin Mercer Photography</a>
-  <a href="#book-section" class="nav-cta">Get In Touch</a>
+  <a href="#hero" class="nav-name">Kevin Mercer Photography</a>
+  <div class="nav-links">
+    <a href="#services" class="nav-link">Services</a>
+    <a href="#portfolio" class="nav-link">Work</a>
+    <a href="#process" class="nav-link">Process</a>
+    <a href="#contact" class="nav-link">Contact</a>
+  </div>
+  <a href="#contact" class="nav-cta">Book Now</a>
 </nav>
 
 <section id="hero">
@@ -1360,7 +1414,7 @@ footer{
 </section>
 
 <!-- Contact -->
-<section id="contact" id="book-section">
+<section id="contact">
   <div class="contact-inner">
     <div class="contact-header">
       <p class="contact-super">Get In Touch</p>
@@ -1381,12 +1435,13 @@ footer{
 
 <!-- Footer -->
 <footer>
-  <span class="footer-name" data-af="business-name">Kevin Mercer Photography</span>
-  <div class="footer-meta">
-    <div data-af="contact-email">hello@yoursite.com</div>
-    <div data-af="contact-phone">+1 (000) 000-0000</div>
-    <div style="margin-top:6px;color:#5C5649;">MMXXVI</div>
+  <span class="footer-logo">Kevin Mercer Photography</span>
+  <div class="footer-links">
+    <a href="https://instagram.com" class="footer-link" target="_blank" rel="noopener">Instagram</a>
+    <a href="https://linkedin.com" class="footer-link" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="#contact" class="footer-link">Contact</a>
   </div>
+  <span class="footer-copy">&#169; 2025 Kevin Mercer Photography. Austin, TX.</span>
 </footer>
 
 <!-- ══════════════════════════════════════════════
