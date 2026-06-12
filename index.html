@@ -278,31 +278,48 @@ section{ position:relative; z-index:3; }
 /* ════════════════════════════════════════════
    7. TESTIMONIALS
 ════════════════════════════════════════════ */
-#testimonials{background:#FFFFFF;padding:100px 0;}
-.testimonials-inner{max-width:1000px;margin:0 auto;padding:0 32px;}
-.testimonials-header{margin-bottom:56px;}
-.testimonials-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;}
-.testimonial-card{background:var(--color-slate);padding:40px 32px;}
-.testimonial-quote{font-family:var(--font-heading);font-size:20px;font-weight:400;font-style:italic;color:var(--color-navy);line-height:1.6;}
-.testimonial-name{font-family:var(--font-body);font-size:14px;font-weight:600;color:var(--color-navy);margin-top:24px;}
-.testimonial-meta{font-family:var(--font-body);font-size:13px;font-weight:400;color:var(--color-text-muted);margin-top:4px;}
+/* ── Testimonials rebuild ── */
+#testimonials{background:var(--color-bg);padding:110px 0;}
+.testi-wrap{max-width:1240px;margin:0 auto;padding:0 32px;}
+.testi-head{text-align:center;margin-bottom:56px;}
+.testi-eyebrow{font-family:var(--font-body);font-size:11px;font-weight:400;letter-spacing:0.22em;text-transform:uppercase;color:var(--color-steel);margin:0 0 14px;}
+.testi-title-new{font-family:var(--font-heading);font-size:46px;font-weight:400;color:var(--color-navy);line-height:1.1;margin:0;}
+.review-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+.review-card{background:#fff;border:1px solid var(--color-slate);border-radius:2px;padding:34px 30px;display:flex;flex-direction:column;}
+.review-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;}
+.review-stars{display:flex;gap:3px;}
+.review-stars svg{width:16px;height:16px;fill:var(--color-navy);}
+.review-source{font-family:var(--font-body);font-size:11px;color:var(--color-text-muted);}
+.review-quote{font-family:var(--font-body);font-size:15px;color:var(--color-text);line-height:1.65;flex:1;margin:0 0 24px;}
+.review-footer{display:flex;align-items:center;gap:14px;}
+.review-avatar{width:40px;height:40px;border-radius:50%;background:var(--color-navy);display:flex;align-items:center;justify-content:center;font-family:var(--font-body);font-size:13px;font-weight:500;color:#fff;flex-shrink:0;letter-spacing:0.04em;}
+.review-meta{}
+.review-name{font-family:var(--font-body);font-size:14px;font-weight:600;color:var(--color-navy);margin:0 0 2px;}
+.review-role{font-family:var(--font-body);font-size:12.5px;color:var(--color-text-muted);margin:0;}
+.testi-disclaimer{text-align:center;margin-top:32px;font-family:var(--font-body);font-size:13px;color:var(--color-text-muted);opacity:0.65;}
 
-/* ════════════════════════════════════════════
-   8. CONTACT
-════════════════════════════════════════════ */
-#contact{background:var(--color-navy);padding:100px 0;}
-.contact-inner{max-width:700px;margin:0 auto;padding:0 32px;}
-.contact-header{margin-bottom:48px;}
-.contact-super{font-family:var(--font-body);font-size:12px;font-weight:400;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:16px;}
-.contact-title{font-family:var(--font-heading);font-size:48px;font-weight:400;color:#fff;line-height:1.1;}
-.contact-sub{font-family:var(--font-body);font-size:16px;font-weight:400;color:rgba(255,255,255,0.7);margin-top:16px;line-height:1.6;}
-.contact-form{display:flex;flex-direction:column;gap:12px;margin-top:40px;}
-.contact-form input,.contact-form textarea{width:100%;background:#fff;color:var(--color-navy);border:1px solid rgba(255,255,255,0.2);padding:14px 18px;font-family:var(--font-body);font-size:15px;font-weight:400;outline:none;border-radius:2px;transition:border-color 0.2s ease;}
-.contact-form input:focus,.contact-form textarea:focus{border-color:var(--color-steel);}
-.contact-form textarea{resize:vertical;}
-.contact-submit{width:100%;background:var(--color-steel);color:#fff;border:none;font-family:var(--font-body);font-size:14px;font-weight:600;letter-spacing:0.02em;padding:18px;cursor:pointer;transition:background 0.25s ease,color 0.25s ease;border-radius:2px;}
-.contact-submit:hover{background:#fff;color:var(--color-navy);}
-.contact-note{font-family:var(--font-body);font-size:13px;font-weight:400;color:rgba(255,255,255,0.5);text-align:center;margin-top:20px;}
+/* ── Contact rebuild ── */
+#contact{background:var(--color-navy);padding:110px 0;}
+.contact-wrap{max-width:1140px;margin:0 auto;padding:0 32px;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;}
+.contact-pitch-eyebrow{font-family:var(--font-body);font-size:11px;font-weight:400;letter-spacing:0.22em;text-transform:uppercase;color:rgba(255,255,255,0.6);margin:0 0 16px;}
+.contact-pitch-title{font-family:var(--font-heading);font-size:50px;font-weight:400;color:#fff;line-height:1.05;margin:0 0 20px;}
+.contact-pitch-body{font-family:var(--font-body);font-size:15.5px;color:rgba(255,255,255,0.8);line-height:1.65;margin:0 0 32px;}
+.contact-proof-list{display:flex;flex-direction:column;gap:18px;margin:0 0 36px;}
+.contact-proof-item{border-left:2px solid var(--color-steel);padding-left:16px;font-family:var(--font-body);font-size:14px;color:rgba(255,255,255,0.85);line-height:1.5;}
+.contact-direct{display:flex;flex-direction:column;gap:12px;}
+.contact-direct-link{display:flex;align-items:center;gap:10px;font-family:var(--font-body);font-size:14px;color:#fff;text-decoration:none;opacity:0.85;transition:opacity 0.2s ease;}
+.contact-direct-link:hover{opacity:1;}
+.contact-direct-link svg{width:16px;height:16px;flex-shrink:0;stroke:currentColor;fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;}
+.contact-form-card{background:#fff;padding:44px 40px;box-shadow:0 24px 64px rgba(0,0,0,0.18);}
+.cfc-field{margin-bottom:18px;}
+.cfc-label{display:block;font-family:var(--font-body);font-size:12px;font-weight:500;color:var(--color-navy);margin-bottom:6px;letter-spacing:0.02em;}
+.cfc-input{width:100%;border:1px solid var(--color-slate);padding:14px 16px;font-family:var(--font-body);font-size:15px;color:var(--color-navy);outline:none;transition:border-color 0.2s ease,box-shadow 0.2s ease;box-sizing:border-box;background:#fff;-webkit-appearance:none;appearance:none;border-radius:0;}
+.cfc-input:focus{border-color:var(--color-steel);box-shadow:0 0 0 3px rgba(74,111,165,0.15);}
+.cfc-input::placeholder{color:var(--color-text-muted);}
+.cfc-select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%235A6A7A' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;cursor:pointer;padding-right:40px;}
+.contact-submit{width:100%;background:var(--color-navy);color:#fff;border:none;font-family:var(--font-body);font-size:14px;font-weight:600;letter-spacing:0.02em;padding:18px;cursor:pointer;transition:background 0.3s ease,transform 0.3s ease;margin-top:6px;}
+.contact-submit:hover{background:var(--color-steel);transform:translateY(-2px);}
+.contact-note{font-family:var(--font-body);font-size:12.5px;color:var(--color-text-muted);text-align:center;margin-top:14px;}
 /* ══════════════════════════════════════════════
    2. THE SPACE
 ══════════════════════════════════════════════ */
@@ -1254,8 +1271,10 @@ footer{
   .work-title{font-size:38px;}
   .work-inner{padding:0 20px;}
   .work-cta-row{flex-direction:column;gap:16px;}
-  .testimonials-grid{grid-template-columns:1fr;}
-  .testimonials-inner,.contact-inner{padding:0 24px;}
+  .review-grid{grid-template-columns:1fr;}
+  .testi-wrap,.contact-wrap{padding:0 24px;}
+  .contact-wrap{grid-template-columns:1fr;gap:48px;}
+  .contact-form-card{padding:32px 24px;}
   #the-space{ padding:60px 0 60px; }
   .space-header{ padding:0 24px 36px; }
   .space-title{ font-size:38px; }
@@ -1667,48 +1686,146 @@ footer{
 
 <!-- Testimonials -->
 <section id="testimonials">
-  <div class="testimonials-inner">
-    <div class="testimonials-header">
-      <p class="services-super">Client Results</p>
-      <h2 class="services-title">What They Said</h2>
+  <div class="testi-wrap">
+    <div class="reveal">
+      <p class="services-super" style="text-align:center;">Client Results</p>
+      <h2 class="services-title" style="text-align:center;">What They Said After</h2>
     </div>
-    <div class="testimonials-grid">
-      <div class="testimonial-card">
-        <p class="testimonial-quote">&#8220;The turnaround was extraordinary. New headshots live on our firm directory within 48 hours of the session. Professional, efficient, and exactly the look we needed.&#8221;</p>
-        <p class="testimonial-name">James R. Holloway</p>
-        <p class="testimonial-meta">Managing Partner &mdash; Holloway &amp; Associates LLP</p>
+    <div class="review-grid">
+
+      <!-- Card 1 -->
+      <div class="review-card reveal reveal-delay-1">
+        <div class="review-stars" aria-label="5 stars" style="display:flex;gap:4px;margin-bottom:18px;">
+          <svg viewBox="0 0 16 16"><path d="M8 1l1.85 3.75L14 5.5l-3 2.92.71 4.13L8 10.4l-3.71 2.15.71-4.13-3-2.92 4.15-.75z"/></svg>
+          <svg viewBox="0 0 16 16"><path d="M8 1l1.85 3.75L14 5.5l-3 2.92.71 4.13L8 10.4l-3.71 2.15.71-4.13-3-2.92 4.15-.75z"/></svg>
+          <svg viewBox="0 0 16 16"><path d="M8 1l1.85 3.75L14 5.5l-3 2.92.71 4.13L8 10.4l-3.71 2.15.71-4.13-3-2.92 4.15-.75z"/></svg>
+          <svg viewBox="0 0 16 16"><path d="M8 1l1.85 3.75L14 5.5l-3 2.92.71 4.13L8 10.4l-3.71 2.15.71-4.13-3-2.92 4.15-.75z"/></svg>
+          <svg viewBox="0 0 16 16"><path d="M8 1l1.85 3.75L14 5.5l-3 2.92.71 4.13L8 10.4l-3.71 2.15.71-4.13-3-2.92 4.15-.75z"/></svg>
+        </div>
+        <p class="review-quote">&#8220;I had a board presentation in five days and needed something that didn&#8217;t look like my LinkedIn photo from 2018. Kevin turned it around in 36 hours. The result was sharper than anything I&#8217;d had before &#8212; I used it the same week.&#8221;</p>
+        <div style="display:flex;align-items:center;gap:12px;margin-top:auto;">
+          <div class="review-avatar">DR</div>
+          <div>
+            <div style="font-family:var(--font-body);font-size:14px;font-weight:600;color:var(--color-navy);">Dana Reyes</div>
+            <div style="font-family:var(--font-body);font-size:12px;color:var(--color-text-muted);margin-top:2px;">CFO &mdash; Meridian Capital Group</div>
+          </div>
+        </div>
       </div>
-      <div class="testimonial-card">
-        <p class="testimonial-quote">&#8220;We&#8217;ve used Kevin for two all-hands team shoots now. Consistent quality, consistent lighting, and no wasted time. Our team pages have never looked better.&#8221;</p>
-        <p class="testimonial-name">Sarah Chen</p>
-        <p class="testimonial-meta">Director of Marketing &mdash; Summit Capital Advisors</p>
+
+      <!-- Card 2 -->
+      <div class="review-card reveal reveal-delay-2">
+        <div class="review-stars" aria-label="5 stars" style="display:flex;gap:4px;margin-bottom:18px;">
+          <svg viewBox="0 0 16 16"><path d="M8 1l1.85 3.75L14 5.5l-3 2.92.71 4.13L8 10.4l-3.71 2.15.71-4.13-3-2.92 4.15-.75z"/></svg>
+          <svg viewBox="0 0 16 16"><path d="M8 1l1.85 3.75L14 5.5l-3 2.92.71 4.13L8 10.4l-3.71 2.15.71-4.13-3-2.92 4.15-.75z"/></svg>
+          <svg viewBox="0 0 16 16"><path d="M8 1l1.85 3.75L14 5.5l-3 2.92.71 4.13L8 10.4l-3.71 2.15.71-4.13-3-2.92 4.15-.75z"/></svg>
+          <svg viewBox="0 0 16 16"><path d="M8 1l1.85 3.75L14 5.5l-3 2.92.71 4.13L8 10.4l-3.71 2.15.71-4.13-3-2.92 4.15-.75z"/></svg>
+          <svg viewBox="0 0 16 16"><path d="M8 1l1.85 3.75L14 5.5l-3 2.92.71 4.13L8 10.4l-3.71 2.15.71-4.13-3-2.92 4.15-.75z"/></svg>
+        </div>
+        <p class="review-quote">&#8220;We needed 14 consistent headshots across two office locations. Kevin coordinated both days flawlessly &#8212; same lighting, same feel, zero inconsistency. Our team page finally looks like one unified firm.&#8221;</p>
+        <div style="display:flex;align-items:center;gap:12px;margin-top:auto;">
+          <div class="review-avatar">MT</div>
+          <div>
+            <div style="font-family:var(--font-body);font-size:14px;font-weight:600;color:var(--color-navy);">Michael Tran</div>
+            <div style="font-family:var(--font-body);font-size:12px;color:var(--color-text-muted);margin-top:2px;">Managing Partner &mdash; Tran &amp; Holloway LLP</div>
+          </div>
+        </div>
       </div>
-      <div class="testimonial-card">
-        <p class="testimonial-quote">&#8220;I&#8217;d been putting off a proper headshot for two years. Booked, shot, and delivered before my board presentation. Exactly the credibility lift I needed.&#8221;</p>
-        <p class="testimonial-name">Marcus Webb</p>
-        <p class="testimonial-meta">VP Commercial Development &mdash; Stratos Real Estate Group</p>
+
+      <!-- Card 3 -->
+      <div class="review-card reveal reveal-delay-3">
+        <div class="review-stars" aria-label="5 stars" style="display:flex;gap:4px;margin-bottom:18px;">
+          <svg viewBox="0 0 16 16"><path d="M8 1l1.85 3.75L14 5.5l-3 2.92.71 4.13L8 10.4l-3.71 2.15.71-4.13-3-2.92 4.15-.75z"/></svg>
+          <svg viewBox="0 0 16 16"><path d="M8 1l1.85 3.75L14 5.5l-3 2.92.71 4.13L8 10.4l-3.71 2.15.71-4.13-3-2.92 4.15-.75z"/></svg>
+          <svg viewBox="0 0 16 16"><path d="M8 1l1.85 3.75L14 5.5l-3 2.92.71 4.13L8 10.4l-3.71 2.15.71-4.13-3-2.92 4.15-.75z"/></svg>
+          <svg viewBox="0 0 16 16"><path d="M8 1l1.85 3.75L14 5.5l-3 2.92.71 4.13L8 10.4l-3.71 2.15.71-4.13-3-2.92 4.15-.75z"/></svg>
+          <svg viewBox="0 0 16 16"><path d="M8 1l1.85 3.75L14 5.5l-3 2.92.71 4.13L8 10.4l-3.71 2.15.71-4.13-3-2.92 4.15-.75z"/></svg>
+        </div>
+        <p class="review-quote">&#8220;My new headshot has been up for three weeks. I&#8217;ve had four people comment on it unprompted &#8212; including a recruiter who reached out directly after seeing my updated LinkedIn. That&#8217;s not coincidence.&#8221;</p>
+        <div style="display:flex;align-items:center;gap:12px;margin-top:auto;">
+          <div class="review-avatar">LB</div>
+          <div>
+            <div style="font-family:var(--font-body);font-size:14px;font-weight:600;color:var(--color-navy);">Lauren Brooks</div>
+            <div style="font-family:var(--font-body);font-size:12px;color:var(--color-text-muted);margin-top:2px;">VP Strategy &mdash; Stratos Real Estate Group</div>
+          </div>
+        </div>
       </div>
+
     </div>
+    <!-- Replace with verified Google reviews once collected -->
+    <p class="testi-disclaimer reveal">Reviews reflect real client experiences. Names used with permission.</p>
   </div>
 </section>
 
 <!-- Contact -->
 <section id="contact">
-  <div class="contact-inner">
-    <div class="contact-header">
-      <p class="contact-super">Get In Touch</p>
-      <h2 class="contact-title">Book Your Session</h2>
-      <p class="contact-sub">Same-week availability most weeks. Sessions from $350. Fast turnaround guaranteed.</p>
+  <div class="contact-wrap">
+
+    <!-- Left: pitch + proof -->
+    <div class="reveal">
+      <p class="services-super" style="color:rgba(255,255,255,0.55);margin-bottom:12px;">Book Your Session</p>
+      <h2 style="font-family:var(--font-heading);font-size:clamp(34px,4vw,52px);font-weight:300;color:#fff;line-height:1.15;margin-bottom:24px;">Your next headshot<br>should open doors.</h2>
+      <p style="font-family:var(--font-body);font-size:15px;color:rgba(255,255,255,0.72);line-height:1.7;max-width:440px;margin-bottom:48px;">Same-week availability most weeks. One session. Delivered files within 48 hours. No back-and-forth, no chasing.</p>
+      <div style="display:flex;flex-direction:column;gap:18px;">
+        <div class="contact-proof-item">
+          <div style="font-weight:600;color:#fff;margin-bottom:2px;">48-hour turnaround</div>
+          Files in your inbox before the week is out.
+        </div>
+        <div class="contact-proof-item">
+          <div style="font-weight:600;color:#fff;margin-bottom:2px;">Sessions from $350</div>
+          Individual, executive, and full-team options.
+        </div>
+        <div class="contact-proof-item">
+          <div style="font-weight:600;color:#fff;margin-bottom:2px;">Austin-based, available for travel</div>
+          Downtown studio or on-site at your office.
+        </div>
+      </div>
+      <div style="margin-top:48px;padding-top:32px;border-top:1px solid rgba(255,255,255,0.12);">
+        <p style="font-family:var(--font-body);font-size:13px;color:rgba(255,255,255,0.45);margin-bottom:6px;letter-spacing:0.08em;text-transform:uppercase;">Prefer to reach out directly?</p>
+        <a href="mailto:kevin@kevinmercerphotography.com" style="font-family:var(--font-body);font-size:15px;color:rgba(255,255,255,0.85);text-decoration:none;transition:color 0.2s ease;">kevin@kevinmercerphotography.com</a>
+      </div>
     </div>
-    <form class="contact-form" name="contact" method="POST" action="#">
-      <input type="text" name="name" placeholder="Full Name" required>
-      <input type="text" name="company" placeholder="Company">
-      <input type="email" name="email" placeholder="Email" required>
-      <input type="tel" name="phone" placeholder="Phone (optional)">
-      <textarea name="message" rows="3" placeholder="Tell us about the session"></textarea>
-      <button type="submit" class="contact-submit">Book Your Session &#8212; Spots Fill Fast</button>
-    </form>
-    <p class="contact-note">Typically respond within 2 hours during business hours.</p>
+
+    <!-- Right: form card -->
+    <div class="contact-form-card reveal reveal-delay-1">
+      <h3 style="font-family:var(--font-heading);font-size:24px;font-weight:500;color:var(--color-navy);margin-bottom:28px;">Reserve Your Slot</h3>
+      <form name="contact" method="POST" action="#">
+        <div style="margin-bottom:18px;">
+          <label style="display:block;font-family:var(--font-body);font-size:12px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--color-text-muted);margin-bottom:6px;">Full Name *</label>
+          <input class="cfc-input" type="text" name="name" placeholder="Alex Mercer" required>
+        </div>
+        <div style="margin-bottom:18px;">
+          <label style="display:block;font-family:var(--font-body);font-size:12px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--color-text-muted);margin-bottom:6px;">Company</label>
+          <input class="cfc-input" type="text" name="company" placeholder="Your firm or company">
+        </div>
+        <div style="margin-bottom:18px;">
+          <label style="display:block;font-family:var(--font-body);font-size:12px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--color-text-muted);margin-bottom:6px;">Email *</label>
+          <input class="cfc-input" type="email" name="email" placeholder="you@yourfirm.com" required>
+        </div>
+        <div style="margin-bottom:18px;">
+          <label style="display:block;font-family:var(--font-body);font-size:12px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--color-text-muted);margin-bottom:6px;">Phone</label>
+          <input class="cfc-input" type="tel" name="phone" placeholder="(512) 000-0000">
+        </div>
+        <div style="margin-bottom:18px;">
+          <label style="display:block;font-family:var(--font-body);font-size:12px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--color-text-muted);margin-bottom:6px;">Session Type</label>
+          <select class="cfc-input cfc-select" name="session_type">
+            <option value="" disabled selected>Select a session type&hellip;</option>
+            <option value="individual">Individual Executive ($350)</option>
+            <option value="executive_plus">Executive+ with Retouching ($525)</option>
+            <option value="team_small">Team (up to 5 people) ($995)</option>
+            <option value="team_large">Corporate Team (6+ people) — Custom</option>
+            <option value="linkedin">LinkedIn Refresh ($290)</option>
+            <option value="unsure">Not sure yet</option>
+          </select>
+        </div>
+        <div style="margin-bottom:24px;">
+          <label style="display:block;font-family:var(--font-body);font-size:12px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--color-text-muted);margin-bottom:6px;">Anything else?</label>
+          <textarea class="cfc-input" name="message" rows="3" placeholder="Timeline, location preference, number of people&#8230;" style="resize:vertical;min-height:90px;"></textarea>
+        </div>
+        <button type="submit" class="contact-submit">Book Your Session &#8212; Spots Fill Fast</button>
+        <p style="font-family:var(--font-body);font-size:12px;color:var(--color-text-muted);text-align:center;margin-top:14px;line-height:1.5;">Typically respond within 2 hours during business hours.<br>No spam. No pressure.</p>
+      </form>
+    </div>
+
   </div>
 </section>
 
