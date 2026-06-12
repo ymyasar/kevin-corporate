@@ -66,9 +66,11 @@ section{ position:relative; z-index:3; }
   border-bottom:1px solid transparent;
 }
 #site-nav.scrolled{
-  background:rgba(250,250,250,0.97);
-  backdrop-filter:blur(10px);
-  border-bottom:1px solid var(--color-slate);
+  background:rgba(250,250,250,0.85);
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(0,0,0,0.06);
+  box-shadow:0 2px 20px rgba(0,0,0,0.08);
 }
 .nav-name{
   font-family:var(--font-heading);
@@ -113,17 +115,26 @@ section{ position:relative; z-index:3; }
 /* ══════════════════════════════════════════════
    1. HERO
 ══════════════════════════════════════════════ */
-#hero{position:relative;height:100vh;min-height:600px;display:flex;}
-.hero-bg{position:absolute;inset:0;display:flex;z-index:0;}
-.hero-bg-left,.hero-bg-right{flex:1;overflow:hidden;}
-.hero-bg-left img,.hero-bg-right img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block;}
-.hero-overlay{position:relative;z-index:1;margin:auto;width:100%;max-width:600px;background:rgba(255,255,255,0.88);padding:48px;border-radius:4px;}
-.hero-label{font-family:var(--font-body);font-size:12px;font-weight:400;letter-spacing:0.15em;text-transform:uppercase;color:var(--color-steel);margin-bottom:20px;}
-.hero-headline{font-family:var(--font-heading);font-size:54px;font-weight:400;color:var(--color-navy);line-height:1.1;margin:0;}
-.hero-sub{font-family:var(--font-body);font-size:16px;font-weight:400;color:var(--color-text-muted);margin-top:16px;line-height:1.6;}
-.hero-trust{font-family:var(--font-body);font-size:13px;font-weight:400;color:var(--color-text-muted);margin-top:20px;}
-.hero-btn{display:inline-block;margin-top:32px;background:var(--color-navy);color:#fff;font-family:var(--font-body);font-size:14px;font-weight:600;letter-spacing:0.02em;padding:16px 36px;border:none;border-radius:2px;cursor:pointer;text-decoration:none;transition:background 0.25s ease;}
-.hero-btn:hover{background:var(--color-steel);}
+#hero{position:relative;height:100vh;min-height:600px;overflow:hidden;display:flex;align-items:flex-end;}
+.hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;z-index:0;transform-origin:center center;}
+@keyframes kenburns{0%{transform:scale(1);}100%{transform:scale(1.06);}}
+.hero-img{animation:kenburns 18s ease-out forwards;}
+@media(prefers-reduced-motion:reduce){.hero-img{animation:none;}}
+.hero-grad{position:absolute;inset:0;z-index:1;background:linear-gradient(135deg,rgba(13,31,53,0.85) 0%,transparent 65%);}
+.hero-content{position:relative;z-index:2;padding:0 0 110px 8vw;max-width:640px;}
+.hero-eyebrow{font-family:var(--font-body);font-size:12px;font-weight:400;letter-spacing:0.22em;text-transform:uppercase;color:rgba(255,255,255,0.7);margin:0 0 20px;}
+.hero-headline{font-family:var(--font-heading);font-size:64px;font-weight:400;color:#fff;line-height:1.05;margin:0;}
+.hero-sub{font-family:var(--font-body);font-size:17px;font-weight:400;color:rgba(255,255,255,0.85);margin-top:20px;line-height:1.65;}
+.hero-cta-row{display:flex;gap:16px;margin-top:36px;flex-wrap:wrap;}
+.hero-btn-primary{font-family:var(--font-body);font-size:14px;font-weight:600;padding:17px 38px;background:#fff;color:var(--color-navy);border:none;cursor:pointer;text-decoration:none;transition:background 0.3s ease,color 0.3s ease,transform 0.3s ease;display:inline-block;}
+.hero-btn-primary:hover{background:var(--color-steel);color:#fff;transform:translateY(-2px);}
+.hero-btn-secondary{font-family:var(--font-body);font-size:14px;font-weight:400;padding:17px 38px;background:transparent;color:#fff;border:1px solid rgba(255,255,255,0.7);cursor:pointer;text-decoration:none;transition:background 0.3s ease,color 0.3s ease,border-color 0.3s ease;display:inline-block;}
+.hero-btn-secondary:hover{background:#fff;color:var(--color-navy);border-color:#fff;}
+.hero-scroll-cue{position:absolute;bottom:36px;left:50%;transform:translateX(-50%);z-index:2;}
+.hero-scroll-line{width:1px;height:40px;background:#fff;opacity:0.5;display:block;}
+@keyframes scroll-pulse{0%,100%{transform:scaleY(1);opacity:0.5;}50%{transform:scaleY(0.4);opacity:0.2;}}
+.hero-scroll-line{animation:scroll-pulse 2s ease-in-out infinite;}
+@media(prefers-reduced-motion:reduce){.hero-scroll-line{animation:none;}}
 
 /* ════════════════════════════════════════════
    2. SOCIAL PROOF BAR
@@ -1117,9 +1128,13 @@ footer{
   background-clip:text;
 }
 
-/* ── Scroll reveal — GSAP handles this; class retained for targeting ── */
-.reveal-up{ }
-.reveal-up.is-visible{ }
+/* ── Scroll reveal system ── */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity 0.8s cubic-bezier(0.16,1,0.3,1),transform 0.8s cubic-bezier(0.16,1,0.3,1);}
+.reveal.revealed{opacity:1;transform:translateY(0);}
+.reveal-delay-1{transition-delay:0.15s;}
+.reveal-delay-2{transition-delay:0.3s;}
+.reveal-delay-3{transition-delay:0.45s;}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none;}}
 
 /* ── Scroll progress bar ── */
 .scroll-progress{
@@ -1147,11 +1162,10 @@ footer{
   #site-nav{ padding:14px 20px; }
   .nav-links{ display:none; }
   .nav-name{ font-size:17px; }
-  .hero-bg{ flex-direction:column; }
-  .hero-bg-left{ height:50%; }
-  .hero-bg-right{ height:50%; }
-  .hero-overlay{ max-width:100%; margin:16px; padding:32px 24px; border-radius:2px; }
-  .hero-headline{ font-size:38px; }
+  .hero-content{padding:0 24px 80px;}
+  .hero-headline{font-size:40px;}
+  .hero-cta-row{flex-direction:column;}
+  .hero-btn-primary,.hero-btn-secondary{text-align:center;}
   footer{ flex-direction:column; align-items:flex-start; gap:20px; padding:40px 24px; }
   .footer-copy{ font-size:12px; }
   .wm{font-size:18px;padding:0 32px;} .wm-caps{font-size:12px;padding:0 32px;} .marquee-inner{animation-duration:25s;}
@@ -1212,7 +1226,7 @@ footer{
   <a href="#hero" class="nav-name">Kevin Mercer Photography</a>
   <div class="nav-links">
     <a href="#services" class="nav-link">Services</a>
-    <a href="#portfolio" class="nav-link">Work</a>
+    <a href="#work" class="nav-link">Work</a>
     <a href="#process" class="nav-link">Process</a>
     <a href="#contact" class="nav-link">Contact</a>
   </div>
@@ -1220,20 +1234,19 @@ footer{
 </nav>
 
 <section id="hero">
-  <div class="hero-bg">
-    <div class="hero-bg-left">
-      <img src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?w=1200&q=80" alt="Male attorney in suit" width="960" height="1200">
-    </div>
-    <div class="hero-bg-right">
-      <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=1200&q=80" alt="Female executive portrait, window light" width="960" height="1200">
+  <img class="hero-img" src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=2400&q=85" alt="Corporate executive portrait" width="2400" height="3200" fetchpriority="high">
+  <div class="hero-grad"></div>
+  <div class="hero-content">
+    <p class="hero-eyebrow reveal">AUSTIN HEADSHOT PHOTOGRAPHER &#8212; CORPORATE &amp; EXECUTIVE</p>
+    <h1 class="hero-headline reveal reveal-delay-1">The Photo That Gets You in the Room</h1>
+    <p class="hero-sub reveal reveal-delay-2">Corporate headshots for law firms, executive teams, and companies across Austin. Shot at your office or our studio. Delivered in 48 hours.</p>
+    <div class="hero-cta-row reveal reveal-delay-3">
+      <a href="#book-section" class="hero-btn-primary">Book Your Session</a>
+      <a href="#work" class="hero-btn-secondary">View the Work &#8594;</a>
     </div>
   </div>
-  <div class="hero-overlay">
-    <p class="hero-label">Austin, TX &#8212; Corporate Headshots &amp; Executive Portraits</p>
-    <h1 class="hero-headline">The Photo That Gets You in the Room</h1>
-    <p class="hero-sub">Trusted by law firms, executives, and real estate teams across Texas. Fast turnaround. Boardroom-ready results.</p>
-    <p class="hero-trust">Sessions at your office or our studio. Delivered in 48 hours.</p>
-    <a href="#book-section" class="hero-btn">Book Your Session&#8201;&#8212;&#8201;Spots Fill Fast</a>
+  <div class="hero-scroll-cue" aria-hidden="true">
+    <span class="hero-scroll-line"></span>
   </div>
 </section>
 
@@ -1350,6 +1363,7 @@ footer{
 
 
 <!-- Portfolio -->
+<div id="work" aria-hidden="true" style="display:block;height:0;overflow:hidden;"></div>
 <section id="portfolio">
   <div class="portfolio-inner">
     <div class="portfolio-header">
@@ -1936,5 +1950,26 @@ footer{
 </script>
 
 
+
+<script>
+/* ── Scroll reveal — IntersectionObserver ── */
+(function(){
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var els = document.querySelectorAll('.reveal');
+  if(reduced){
+    els.forEach(function(el){ el.classList.add('revealed'); });
+    return;
+  }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){
+        entry.target.classList.add('revealed');
+        io.unobserve(entry.target);
+      }
+    });
+  },{threshold:0.15});
+  els.forEach(function(el){ io.observe(el); });
+})();
+</script>
 </body>
 </html>
