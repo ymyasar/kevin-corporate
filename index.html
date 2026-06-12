@@ -127,10 +127,18 @@ section{ position:relative; z-index:3; }
 /* ════════════════════════════════════════════
    2. SOCIAL PROOF BAR
 ════════════════════════════════════════════ */
-#social-proof{background:var(--color-slate);padding:20px 0;}
-.social-proof-inner{display:flex;align-items:center;justify-content:center;gap:48px;flex-wrap:nowrap;}
-.sp-label{font-family:var(--font-body);font-size:13px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--color-text-muted);}
-.sp-divider{width:1px;height:16px;background:var(--color-steel);opacity:0.3;flex-shrink:0;}
+#social-proof{background:var(--color-slate);padding:36px 0;}
+.sp-eyebrow{text-align:center;font-family:var(--font-body);font-size:11px;font-weight:400;letter-spacing:0.2em;text-transform:uppercase;color:var(--color-text-muted);margin-bottom:20px;}
+.marquee-outer{overflow:hidden;-webkit-mask-image:linear-gradient(to right,transparent 0%,#000 60px,#000 calc(100% - 60px),transparent 100%);mask-image:linear-gradient(to right,transparent 0%,#000 60px,#000 calc(100% - 60px),transparent 100%);}
+.marquee-inner{display:flex;align-items:center;width:max-content;animation:marquee-scroll 35s linear infinite;}
+.marquee-outer:hover .marquee-inner{animation-play-state:paused;}
+.wm{font-family:var(--font-heading);font-size:22px;font-weight:500;color:var(--color-navy);opacity:0.45;white-space:nowrap;padding:0 48px;transition:opacity 0.3s ease;cursor:default;}
+.wm:hover{opacity:1;}
+.wm-amp{font-style:italic;font-size:26px;line-height:1;}
+.wm-caps{font-family:var(--font-body);font-size:14px;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;color:var(--color-navy);opacity:0.45;white-space:nowrap;padding:0 48px;transition:opacity 0.3s ease;cursor:default;}
+.wm-caps:hover{opacity:1;}
+@keyframes marquee-scroll{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
+@media(prefers-reduced-motion:reduce){.marquee-inner{animation:none;flex-wrap:wrap;justify-content:center;gap:16px 0;width:auto;}}
 
 /* ════════════════════════════════════════════
    3. SERVICES
@@ -1145,7 +1153,7 @@ footer{
   .hero-headline{ font-size:38px; }
   footer{ flex-direction:column; align-items:flex-start; gap:20px; padding:40px 24px; }
   .footer-copy{ font-size:12px; }
-  .social-proof-inner{flex-wrap:wrap;gap:24px;padding:0 24px;}
+  .wm{font-size:18px;padding:0 32px;} .wm-caps{font-size:12px;padding:0 32px;} .marquee-inner{animation-duration:25s;}
   .services-grid{grid-template-columns:1fr;padding:0 24px;}
   .why-stat-grid{grid-template-columns:1fr;gap:28px;}
   .process-steps{flex-direction:column;}
@@ -1229,17 +1237,32 @@ footer{
 
 
 <!-- Social Proof Bar -->
+<!-- CLIENT MARQUEE: replace wordmarks with Kevin's real client list after discovery call -->
 <section id="social-proof">
-  <div class="social-proof-inner">
-    <span class="sp-label">Law Firms</span>
-    <span class="sp-divider"></span>
-    <span class="sp-label">Financial Services</span>
-    <span class="sp-divider"></span>
-    <span class="sp-label">Corporate Real Estate</span>
-    <span class="sp-divider"></span>
-    <span class="sp-label">Executive Teams</span>
-    <span class="sp-divider"></span>
-    <span class="sp-label">Tech Companies</span>
+  <p class="sp-eyebrow">Trusted by Teams at</p>
+  <div class="marquee-outer">
+    <div class="marquee-inner">
+      <span class="wm">Meridian <span class="wm-amp">&</span> Cole LLP</span>
+      <span class="wm">Westlake Capital</span>
+      <span class="wm-caps">Brazos Commercial Realty</span>
+      <span class="wm">Hilltop Ventures</span>
+      <span class="wm">Sterling McNair Law</span>
+      <span class="wm">Lonestar Financial Group</span>
+      <span class="wm-caps">Atlas Title Co.</span>
+      <span class="wm">Congress Avenue Partners</span>
+      <span class="wm">Barton Creek Advisors</span>
+      <span class="wm">Redline Technologies</span>
+      <span class="wm">Meridian <span class="wm-amp">&</span> Cole LLP</span>
+      <span class="wm">Westlake Capital</span>
+      <span class="wm-caps">Brazos Commercial Realty</span>
+      <span class="wm">Hilltop Ventures</span>
+      <span class="wm">Sterling McNair Law</span>
+      <span class="wm">Lonestar Financial Group</span>
+      <span class="wm-caps">Atlas Title Co.</span>
+      <span class="wm">Congress Avenue Partners</span>
+      <span class="wm">Barton Creek Advisors</span>
+      <span class="wm">Redline Technologies</span>
+    </div>
   </div>
 </section>
 
