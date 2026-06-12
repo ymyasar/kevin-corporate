@@ -139,18 +139,26 @@ section{ position:relative; z-index:3; }
 /* ════════════════════════════════════════════
    2. SOCIAL PROOF BAR
 ════════════════════════════════════════════ */
-#social-proof{background:var(--color-slate);padding:36px 0;}
-.sp-eyebrow{text-align:center;font-family:var(--font-body);font-size:11px;font-weight:400;letter-spacing:0.2em;text-transform:uppercase;color:var(--color-text-muted);margin-bottom:20px;}
+#social-proof{background:#fff;padding:64px 0;border-top:1px solid var(--color-slate);border-bottom:1px solid var(--color-slate);}
+.sp-intro{text-align:center;margin-bottom:40px;}
+.sp-eyebrow{font-family:var(--font-body);font-size:11px;font-weight:400;letter-spacing:0.24em;text-transform:uppercase;color:var(--color-steel);margin:0 0 10px;}
+.sp-tagline{font-family:var(--font-heading);font-size:20px;font-weight:400;font-style:italic;color:var(--color-text-muted);margin:0;}
+.marquee-rows{display:flex;flex-direction:column;gap:28px;}
 .marquee-outer{overflow:hidden;-webkit-mask-image:linear-gradient(to right,transparent 0%,#000 60px,#000 calc(100% - 60px),transparent 100%);mask-image:linear-gradient(to right,transparent 0%,#000 60px,#000 calc(100% - 60px),transparent 100%);}
-.marquee-inner{display:flex;align-items:center;width:max-content;animation:marquee-scroll 35s linear infinite;}
-.marquee-outer:hover .marquee-inner{animation-play-state:paused;}
-.wm{font-family:var(--font-heading);font-size:22px;font-weight:500;color:var(--color-navy);opacity:0.45;white-space:nowrap;padding:0 48px;transition:opacity 0.3s ease;cursor:default;}
-.wm:hover{opacity:1;}
-.wm-amp{font-style:italic;font-size:26px;line-height:1;}
-.wm-caps{font-family:var(--font-body);font-size:14px;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;color:var(--color-navy);opacity:0.45;white-space:nowrap;padding:0 48px;transition:opacity 0.3s ease;cursor:default;}
-.wm-caps:hover{opacity:1;}
+.marquee-inner{display:flex;align-items:center;width:max-content;animation:marquee-scroll 45s linear infinite;}
+.marquee-inner-rev{display:flex;align-items:center;width:max-content;animation:marquee-scroll-rev 55s linear infinite;}
+.marquee-outer:hover .marquee-inner,.marquee-outer:hover .marquee-inner-rev{animation-play-state:paused;}
+.wm{font-family:var(--font-heading);font-size:26px;font-weight:500;color:var(--color-navy);opacity:0.35;white-space:nowrap;padding:0 20px;transition:opacity 0.35s ease,transform 0.35s ease;cursor:default;display:inline-block;}
+.wm:hover{opacity:1;transform:scale(1.04);}
+.wm-amp{font-style:italic;font-size:30px;line-height:1;}
+.wm-caps{font-family:var(--font-body);font-size:15px;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;color:var(--color-navy);opacity:0.35;white-space:nowrap;padding:0 20px;transition:opacity 0.35s ease,transform 0.35s ease;cursor:default;display:inline-block;}
+.wm-caps:hover{opacity:1;transform:scale(1.04);}
+.wm-sep{display:inline-block;width:4px;height:4px;background:var(--color-slate);transform:rotate(45deg);vertical-align:middle;flex-shrink:0;}
+.ind-tag{font-family:var(--font-body);font-size:12px;font-weight:400;letter-spacing:0.18em;text-transform:uppercase;color:var(--color-navy);opacity:0.25;white-space:nowrap;padding:0 16px;cursor:default;}
+.ind-sep{display:inline-block;width:3px;height:3px;background:var(--color-slate);transform:rotate(45deg);vertical-align:middle;flex-shrink:0;opacity:0.6;}
 @keyframes marquee-scroll{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
-@media(prefers-reduced-motion:reduce){.marquee-inner{animation:none;flex-wrap:wrap;justify-content:center;gap:16px 0;width:auto;}}
+@keyframes marquee-scroll-rev{0%{transform:translateX(-50%);}100%{transform:translateX(0);}}
+@media(prefers-reduced-motion:reduce){.marquee-inner,.marquee-inner-rev{animation:none;flex-wrap:wrap;justify-content:center;gap:12px;width:auto;}}
 
 /* ════════════════════════════════════════════
    3. SERVICES
@@ -1168,7 +1176,7 @@ footer{
   .hero-btn-primary,.hero-btn-secondary{text-align:center;}
   footer{ flex-direction:column; align-items:flex-start; gap:20px; padding:40px 24px; }
   .footer-copy{ font-size:12px; }
-  .wm{font-size:18px;padding:0 32px;} .wm-caps{font-size:12px;padding:0 32px;} .marquee-inner{animation-duration:25s;}
+  .wm{font-size:19px;padding:0 14px;} .wm-caps{font-size:12px;padding:0 14px;} .marquee-inner{animation-duration:30s;} .marquee-inner-rev{animation-duration:38s;} .sp-tagline{font-size:17px;}
   .services-grid{grid-template-columns:1fr;padding:0 24px;}
   .why-stat-grid{grid-template-columns:1fr;gap:28px;}
   .process-steps{flex-direction:column;}
@@ -1254,29 +1262,56 @@ footer{
 <!-- Social Proof Bar -->
 <!-- CLIENT MARQUEE: replace wordmarks with Kevin's real client list after discovery call -->
 <section id="social-proof">
-  <p class="sp-eyebrow">Trusted by Teams at</p>
-  <div class="marquee-outer">
-    <div class="marquee-inner">
-      <span class="wm">Meridian <span class="wm-amp">&</span> Cole LLP</span>
-      <span class="wm">Westlake Capital</span>
-      <span class="wm-caps">Brazos Commercial Realty</span>
-      <span class="wm">Hilltop Ventures</span>
-      <span class="wm">Sterling McNair Law</span>
-      <span class="wm">Lonestar Financial Group</span>
-      <span class="wm-caps">Atlas Title Co.</span>
-      <span class="wm">Congress Avenue Partners</span>
-      <span class="wm">Barton Creek Advisors</span>
-      <span class="wm">Redline Technologies</span>
-      <span class="wm">Meridian <span class="wm-amp">&</span> Cole LLP</span>
-      <span class="wm">Westlake Capital</span>
-      <span class="wm-caps">Brazos Commercial Realty</span>
-      <span class="wm">Hilltop Ventures</span>
-      <span class="wm">Sterling McNair Law</span>
-      <span class="wm">Lonestar Financial Group</span>
-      <span class="wm-caps">Atlas Title Co.</span>
-      <span class="wm">Congress Avenue Partners</span>
-      <span class="wm">Barton Creek Advisors</span>
-      <span class="wm">Redline Technologies</span>
+  <div class="sp-intro">
+    <p class="sp-eyebrow reveal">TRUSTED ON THE WALLS AND WEBSITES OF</p>
+    <p class="sp-tagline reveal reveal-delay-1">Two hundred Austin teams and counting.</p>
+  </div>
+  <div class="marquee-rows">
+    <!-- Row 1: client wordmarks, forward -->
+    <div class="marquee-outer">
+      <div class="marquee-inner">
+        <span class="wm">Meridian <span class="wm-amp">&</span> Cole LLP</span><span class="wm-sep"></span>
+        <span class="wm">Westlake Capital</span><span class="wm-sep"></span>
+        <span class="wm-caps">Brazos Commercial Realty</span><span class="wm-sep"></span>
+        <span class="wm">Hilltop Ventures</span><span class="wm-sep"></span>
+        <span class="wm">Sterling McNair Law</span><span class="wm-sep"></span>
+        <span class="wm">Lonestar Financial Group</span><span class="wm-sep"></span>
+        <span class="wm-caps">Atlas Title Co.</span><span class="wm-sep"></span>
+        <span class="wm">Congress Avenue Partners</span><span class="wm-sep"></span>
+        <span class="wm">Barton Creek Advisors</span><span class="wm-sep"></span>
+        <span class="wm">Redline Technologies</span><span class="wm-sep"></span>
+        <span class="wm">Meridian <span class="wm-amp">&</span> Cole LLP</span><span class="wm-sep"></span>
+        <span class="wm">Westlake Capital</span><span class="wm-sep"></span>
+        <span class="wm-caps">Brazos Commercial Realty</span><span class="wm-sep"></span>
+        <span class="wm">Hilltop Ventures</span><span class="wm-sep"></span>
+        <span class="wm">Sterling McNair Law</span><span class="wm-sep"></span>
+        <span class="wm">Lonestar Financial Group</span><span class="wm-sep"></span>
+        <span class="wm-caps">Atlas Title Co.</span><span class="wm-sep"></span>
+        <span class="wm">Congress Avenue Partners</span><span class="wm-sep"></span>
+        <span class="wm">Barton Creek Advisors</span><span class="wm-sep"></span>
+        <span class="wm">Redline Technologies</span><span class="wm-sep"></span>
+      </div>
+    </div>
+    <!-- Row 2: industry descriptors, reverse -->
+    <div class="marquee-outer">
+      <div class="marquee-inner-rev">
+        <span class="ind-tag">Law Firms</span><span class="ind-sep"></span>
+        <span class="ind-tag">Financial Services</span><span class="ind-sep"></span>
+        <span class="ind-tag">Commercial Real Estate</span><span class="ind-sep"></span>
+        <span class="ind-tag">Tech</span><span class="ind-sep"></span>
+        <span class="ind-tag">Healthcare</span><span class="ind-sep"></span>
+        <span class="ind-tag">Consulting</span><span class="ind-sep"></span>
+        <span class="ind-tag">Private Equity</span><span class="ind-sep"></span>
+        <span class="ind-tag">Architecture</span><span class="ind-sep"></span>
+        <span class="ind-tag">Law Firms</span><span class="ind-sep"></span>
+        <span class="ind-tag">Financial Services</span><span class="ind-sep"></span>
+        <span class="ind-tag">Commercial Real Estate</span><span class="ind-sep"></span>
+        <span class="ind-tag">Tech</span><span class="ind-sep"></span>
+        <span class="ind-tag">Healthcare</span><span class="ind-sep"></span>
+        <span class="ind-tag">Consulting</span><span class="ind-sep"></span>
+        <span class="ind-tag">Private Equity</span><span class="ind-sep"></span>
+        <span class="ind-tag">Architecture</span><span class="ind-sep"></span>
+      </div>
     </div>
   </div>
 </section>
