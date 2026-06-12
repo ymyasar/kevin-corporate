@@ -176,17 +176,16 @@ section{ position:relative; z-index:3; }
    6. PORTFOLIO
 ════════════════════════════════════════════ */
 #portfolio{background:var(--color-navy);padding:100px 0;}
-.portfolio-inner{max-width:1100px;margin:0 auto;padding:0 32px;}
+.portfolio-inner{max-width:1300px;margin:0 auto;padding:0 32px;}
 .portfolio-header{text-align:center;margin-bottom:40px;}
 .portfolio-super{font-family:var(--font-body);font-size:12px;font-weight:400;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:16px;}
 .portfolio-title{font-family:var(--font-heading);font-size:42px;font-weight:400;color:#fff;line-height:1.1;}
-.portfolio-tabs{display:flex;justify-content:center;gap:8px;margin-bottom:32px;flex-wrap:wrap;}
-.portfolio-tab{font-family:var(--font-body);font-size:13px;font-weight:500;padding:10px 24px;border:1px solid rgba(255,255,255,0.2);background:transparent;color:rgba(255,255,255,0.6);cursor:pointer;transition:color 0.2s ease,background 0.2s ease,opacity 0.2s ease;}
-.portfolio-tab:hover{color:#fff;opacity:1;}
-.portfolio-tab.active{background:#fff;color:var(--color-navy);opacity:1;}
-.portfolio-grid{display:none;grid-template-columns:repeat(3,1fr);gap:3px;}
-.portfolio-grid.active{display:grid;}
-.portfolio-grid img{width:100%;aspect-ratio:3/4;object-fit:cover;display:block;}
+.portfolio-subtitle{font-family:var(--font-body);font-size:15px;color:rgba(255,255,255,0.6);margin-top:14px;}
+.masonry-wall{column-count:3;column-gap:4px;}
+.masonry-item{break-inside:avoid;margin-bottom:4px;overflow:hidden;position:relative;}
+.masonry-item img{width:100%;display:block;transition:transform 0.4s ease;object-fit:cover;}
+@media(hover:hover){.masonry-item:hover img{transform:scale(1.02);}.masonry-item:hover .masonry-label{opacity:1;}}
+.masonry-label{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(to top,rgba(0,0,0,0.72) 0%,transparent 100%);padding:28px 14px 14px;font-family:var(--font-body);font-size:12px;font-weight:500;letter-spacing:0.13em;text-transform:uppercase;color:#fff;opacity:0;transition:opacity 0.4s ease;pointer-events:none;}
 .portfolio-cta{text-align:center;margin-top:56px;}
 .portfolio-cta-btn{display:inline-block;font-family:var(--font-body);font-size:14px;font-weight:600;letter-spacing:0.02em;padding:16px 40px;border:1px solid #fff;background:transparent;color:#fff;cursor:pointer;text-decoration:none;transition:background 0.25s ease,color 0.25s ease;}
 .portfolio-cta-btn:hover{background:#fff;color:var(--color-navy);}
@@ -1152,7 +1151,7 @@ footer{
   .process-steps{flex-direction:column;}
   .process-step{padding-right:0;}
   .process-step:not(:last-child)::after{display:none;}
-  .portfolio-grid.active{grid-template-columns:repeat(2,1fr);}
+  .masonry-wall{column-count:2;column-gap:3px;}
   .portfolio-inner{padding:0 16px;}
   .testimonials-grid{grid-template-columns:1fr;}
   .testimonials-inner,.contact-inner{padding:0 24px;}
@@ -1331,52 +1330,70 @@ footer{
     <div class="portfolio-header">
       <p class="portfolio-super">Selected Work</p>
       <h2 class="portfolio-title">The Work Speaks</h2>
-    </div>
-    <div class="portfolio-tabs">
-      <button class="portfolio-tab active" data-tab="legal">Legal</button>
-      <button class="portfolio-tab" data-tab="corporate">Corporate</button>
-      <button class="portfolio-tab" data-tab="realestate">Real Estate</button>
-      <button class="portfolio-tab" data-tab="tech">Tech</button>
+      <p class="portfolio-subtitle">Every face here got hired, promoted, or published. Scroll the proof.</p>
     </div>
 
-    <!-- Legal -->
-    <div class="portfolio-grid active" id="tab-legal">
-      <img src="https://images.unsplash.com/photo-1589391886645-d51941baf7fb?w=600&q=80" alt="Attorney headshot">
-      <img src="https://images.unsplash.com/photo-1521791055366-0d553872952f?w=600&q=80" alt="Lawyer portrait">
-      <img src="https://images.unsplash.com/photo-1604328698692-f76ea9498e76?w=600&q=80" alt="Legal professional">
-      <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80" alt="Attorney portrait">
-      <img src="https://images.unsplash.com/photo-1556157382-97eda2f9e2bf?w=600&q=80" alt="Law firm headshot">
-      <img src="https://images.unsplash.com/photo-1615462870566-1f564e1f7d72?w=600&q=80" alt="Legal team member">
-    </div>
-
-    <!-- Corporate -->
-    <div class="portfolio-grid" id="tab-corporate">
-      <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=600&q=80" alt="Executive portrait">
-      <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=600&q=80" alt="Corporate headshot">
-      <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=600&q=80" alt="Business executive">
-      <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=600&q=80" alt="Corporate professional">
-      <img src="https://images.unsplash.com/photo-1600878459138-e1123b37cb30?w=600&q=80" alt="Executive headshot">
-      <img src="https://images.unsplash.com/photo-1598550874175-4d0ef436c909?w=600&q=80" alt="Business portrait">
-    </div>
-
-    <!-- Real Estate -->
-    <div class="portfolio-grid" id="tab-realestate">
-      <img src="https://images.unsplash.com/photo-1611262588024-d12430b98920?w=600&q=80" alt="Real estate agent portrait">
-      <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=600&q=80" alt="Property professional">
-      <img src="https://images.unsplash.com/photo-1543269865-cbf427effbad?w=600&q=80" alt="Real estate headshot">
-      <img src="https://images.unsplash.com/photo-1595956553066-fe24a8c33395?w=600&q=80" alt="Agent headshot">
-      <img src="https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?w=600&q=80" alt="Real estate professional">
-      <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=600&q=80" alt="Property agent portrait">
-    </div>
-
-    <!-- Tech -->
-    <div class="portfolio-grid" id="tab-tech">
-      <img src="https://images.unsplash.com/photo-1537511446984-935f663eb1f4?w=600&q=80" alt="Tech professional">
-      <img src="https://images.unsplash.com/photo-1618085222557-8a4e0f892e01?w=600&q=80" alt="Software engineer portrait">
-      <img src="https://images.unsplash.com/photo-1487309078313-fad80c3ec1e5?w=600&q=80" alt="Tech executive headshot">
-      <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=600&q=80" alt="Startup founder portrait">
-      <img src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=600&q=80" alt="Tech team headshot">
-      <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=600&q=80" alt="Tech professional portrait">
+    <div class="masonry-wall">
+      <div class="masonry-item">
+        <img src="https://images.unsplash.com/photo-1589391886645-d51941baf7fb?w=800&q=80" alt="Male attorney portrait" style="aspect-ratio:3/4;" loading="lazy">
+        <span class="masonry-label">Legal</span>
+      </div>
+      <div class="masonry-item">
+        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=800&q=80" alt="Female executive portrait" style="aspect-ratio:1/1;" loading="lazy">
+        <span class="masonry-label">Executive</span>
+      </div>
+      <div class="masonry-item">
+        <img src="https://images.unsplash.com/photo-1521791055366-0d553872952f?w=800&q=80" alt="Businessman suit headshot" style="aspect-ratio:3/4;" loading="lazy">
+        <span class="masonry-label">Corporate</span>
+      </div>
+      <div class="masonry-item">
+        <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=800&q=80" alt="Businesswoman blazer headshot" style="aspect-ratio:1/1;" loading="lazy">
+        <span class="masonry-label">Real Estate</span>
+      </div>
+      <div class="masonry-item">
+        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=800&q=80" alt="Male tech founder portrait" style="aspect-ratio:3/4;" loading="lazy">
+        <span class="masonry-label">Tech</span>
+      </div>
+      <div class="masonry-item">
+        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80" alt="Female lawyer portrait" style="aspect-ratio:4/5;" loading="lazy">
+        <span class="masonry-label">Legal</span>
+      </div>
+      <div class="masonry-item">
+        <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=800&q=80" alt="Older executive grey hair portrait" style="aspect-ratio:1/1;" loading="lazy">
+        <span class="masonry-label">Executive</span>
+      </div>
+      <div class="masonry-item">
+        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=800&q=80" alt="Young professional headshot" style="aspect-ratio:3/4;" loading="lazy">
+        <span class="masonry-label">Corporate</span>
+      </div>
+      <div class="masonry-item">
+        <img src="https://images.unsplash.com/photo-1611262588024-d12430b98920?w=800&q=80" alt="Female realtor portrait" style="aspect-ratio:4/5;" loading="lazy">
+        <span class="masonry-label">Real Estate</span>
+      </div>
+      <div class="masonry-item">
+        <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=800&q=80" alt="Male finance professional portrait" style="aspect-ratio:1/1;" loading="lazy">
+        <span class="masonry-label">Tech</span>
+      </div>
+      <div class="masonry-item">
+        <img src="https://images.unsplash.com/photo-1543269865-cbf427effbad?w=800&q=80" alt="Smiling businesswoman headshot" style="aspect-ratio:3/4;" loading="lazy">
+        <span class="masonry-label">Legal</span>
+      </div>
+      <div class="masonry-item">
+        <img src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=800&q=80" alt="Corporate team member portrait" style="aspect-ratio:1/1;" loading="lazy">
+        <span class="masonry-label">Executive</span>
+      </div>
+      <div class="masonry-item">
+        <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=800&q=80" alt="Male doctor white coat portrait" style="aspect-ratio:3/4;" loading="lazy">
+        <span class="masonry-label">Corporate</span>
+      </div>
+      <div class="masonry-item">
+        <img src="https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?w=800&q=80" alt="Female consultant portrait" style="aspect-ratio:4/5;" loading="lazy">
+        <span class="masonry-label">Real Estate</span>
+      </div>
+      <div class="masonry-item">
+        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=800&q=80" alt="Executive against window portrait" style="aspect-ratio:1/1;" loading="lazy">
+        <span class="masonry-label">Tech</span>
+      </div>
     </div>
 
     <div class="portfolio-cta">
@@ -1894,20 +1911,5 @@ footer{
 </script>
 
 
-<script>
-(function(){
-  var tabs = document.querySelectorAll('.portfolio-tab');
-  var grids = document.querySelectorAll('.portfolio-grid');
-  tabs.forEach(function(tab){
-    tab.addEventListener('click', function(){
-      tabs.forEach(function(t){ t.classList.remove('active'); });
-      grids.forEach(function(g){ g.classList.remove('active'); });
-      tab.classList.add('active');
-      var target = document.getElementById('tab-' + tab.dataset.tab);
-      if(target) target.classList.add('active');
-    });
-  });
-})();
-</script>
 </body>
 </html>
