@@ -214,15 +214,42 @@ section{ position:relative; z-index:3; }
 /* ════════════════════════════════════════════
    5. PROCESS
 ════════════════════════════════════════════ */
-#process{background:#FFFFFF;padding:100px 0;}
-.process-inner{max-width:1000px;margin:0 auto;padding:0 32px;}
-.process-header{margin-bottom:64px;}
-.process-steps{display:flex;gap:40px;align-items:flex-start;}
-.process-step{flex:1;position:relative;padding-right:40px;}
-.process-step:not(:last-child)::after{content:'';position:absolute;top:0;right:0;width:1px;height:100%;background:var(--color-slate);}
-.step-number{font-family:var(--font-heading);font-size:72px;font-weight:300;color:var(--color-slate);line-height:1;margin-bottom:8px;}
-.step-title{font-family:var(--font-heading);font-size:24px;font-weight:500;color:var(--color-navy);line-height:1.2;margin-bottom:12px;}
-.step-body{font-family:var(--font-body);font-size:15px;font-weight:400;color:var(--color-text-muted);line-height:1.7;}
+/* ── Process rebuild ── */
+#process{background:var(--color-bg);padding:110px 0;}
+.proc-inner{max-width:1100px;margin:0 auto;padding:0 32px;}
+.proc-header{margin-bottom:64px;}
+.proc-eyebrow{font-family:var(--font-body);font-size:11px;font-weight:400;letter-spacing:0.22em;text-transform:uppercase;color:var(--color-steel);margin:0 0 14px;}
+.proc-title{font-family:var(--font-heading);font-size:46px;font-weight:400;color:var(--color-navy);line-height:1.1;margin:0;}
+.proc-steps{display:flex;align-items:flex-start;position:relative;}
+.proc-steps::before{content:'';position:absolute;top:28px;left:calc(50% / 3);right:calc(50% / 3);height:1px;background:var(--color-slate);z-index:0;}
+.proc-step{flex:1;padding:0 24px;position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;}
+.proc-step-circle{width:56px;height:56px;position:relative;margin-bottom:24px;flex-shrink:0;}
+.proc-step-circle svg{width:56px;height:56px;display:block;}
+.proc-step-circle-bg{fill:none;stroke:var(--color-slate);stroke-width:1;}
+.proc-step-circle-draw{fill:none;stroke:var(--color-navy);stroke-width:1;stroke-dasharray:170;stroke-dashoffset:170;transition:stroke-dashoffset 0.9s ease;stroke-linecap:round;}
+.proc-step.revealed .proc-step-circle-draw{stroke-dashoffset:0;}
+@media(prefers-reduced-motion:reduce){.proc-step-circle-draw{stroke-dashoffset:0;transition:none;}}
+.proc-step-num{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:var(--font-body);font-size:16px;font-weight:600;color:var(--color-navy);}
+.proc-step-title{font-family:var(--font-heading);font-size:25px;font-weight:400;color:var(--color-navy);line-height:1.2;margin:0 0 12px;text-align:center;}
+.proc-step-body{font-family:var(--font-body);font-size:14.5px;color:var(--color-text-muted);line-height:1.65;text-align:center;}
+/* ── About section ── */
+#about{background:#FFFFFF;padding:110px 0;}
+.about-inner{max-width:1140px;margin:0 auto;padding:0 32px;display:grid;grid-template-columns:1fr 1.15fr;gap:80px;align-items:center;}
+.about-img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block;}
+.about-copy{}
+.about-eyebrow{font-family:var(--font-body);font-size:11px;font-weight:400;letter-spacing:0.22em;text-transform:uppercase;color:var(--color-steel);margin:0 0 16px;}
+.about-title{font-family:var(--font-heading);font-size:44px;font-weight:400;color:var(--color-navy);line-height:1.1;margin:0 0 28px;}
+.about-body p{font-family:var(--font-body);font-size:15.5px;color:var(--color-text-muted);line-height:1.7;margin:0 0 18px;}
+.about-body p:last-child{margin-bottom:0;}
+.about-cta{display:inline-block;font-family:var(--font-body);font-size:14px;font-weight:500;color:var(--color-navy);text-decoration:none;margin-top:28px;letter-spacing:0.04em;transition:letter-spacing 0.3s ease;}
+.about-cta:hover{letter-spacing:0.1em;}
+/* ── The Standard ── */
+#the-standard{background:var(--color-navy);padding:90px 0;text-align:center;}
+.standard-inner{max-width:760px;margin:0 auto;padding:0 32px;}
+.standard-eyebrow{font-family:var(--font-body);font-size:11px;font-weight:400;letter-spacing:0.24em;text-transform:uppercase;color:rgba(255,255,255,0.6);margin:0 0 28px;}
+.standard-statement{font-family:var(--font-heading);font-size:38px;font-weight:400;color:#fff;line-height:1.35;margin:0 0 40px;}
+.standard-btn{display:inline-block;font-family:var(--font-body);font-size:14px;font-weight:400;padding:17px 38px;background:transparent;color:#fff;border:1px solid rgba(255,255,255,0.7);text-decoration:none;transition:background 0.3s ease,color 0.3s ease,border-color 0.3s ease;}
+.standard-btn:hover{background:#fff;color:var(--color-navy);border-color:#fff;}
 
 /* ════════════════════════════════════════════
    6. PORTFOLIO
@@ -1212,9 +1239,16 @@ footer{
   .galleries-grid{grid-template-columns:1fr;}
   .gallery-card{aspect-ratio:4/3;}
   .galleries-inner{padding:0 20px;}
-  .process-steps{flex-direction:column;}
-  .process-step{padding-right:0;}
-  .process-step:not(:last-child)::after{display:none;}
+  .proc-steps{flex-direction:column;gap:0;}
+  .proc-steps::before{display:none;}
+  .proc-step{flex-direction:row;align-items:flex-start;padding:0 0 40px 0;gap:20px;}
+  .proc-step:not(:last-child)::after{content:'';position:absolute;left:28px;top:56px;bottom:0;width:1px;background:var(--color-slate);}
+  .proc-step-circle{flex-shrink:0;margin-bottom:0;}
+  .proc-step-title,.proc-step-body{text-align:left;}
+  .proc-title{font-size:36px;}
+  .about-inner{grid-template-columns:1fr;gap:40px;}
+  .about-title{font-size:36px;}
+  .standard-statement{font-size:30px;}
   .portfolio-grid{grid-template-columns:1fr;}
   .pg-large,.pg-tall,.pg-square{grid-column:span 1;aspect-ratio:4/5;}
   .work-title{font-size:38px;}
@@ -1562,28 +1596,71 @@ footer{
 
 <!-- Process -->
 <section id="process">
-  <div class="process-inner">
-    <div class="process-header">
-      <p class="services-super">How It Works</p>
-      <h2 class="services-title">Three Steps. No Faff.</h2>
+  <div class="proc-inner">
+    <div class="proc-header reveal">
+      <p class="proc-eyebrow">THE PROCESS</p>
+      <h2 class="proc-title">From Booked to Delivered in 72 Hours</h2>
     </div>
-    <div class="process-steps">
-      <div class="process-step">
-        <div class="step-number">01</div>
-        <h3 class="step-title">Book Your Slot</h3>
-        <p class="step-body">Choose a time online. Morning sessions available Monday through Saturday. Same-week slots regularly open.</p>
+    <div class="proc-steps">
+      <div class="proc-step reveal">
+        <div class="proc-step-circle">
+          <svg viewBox="0 0 56 56" aria-hidden="true">
+            <circle class="proc-step-circle-bg" cx="28" cy="28" r="27"/>
+            <circle class="proc-step-circle-draw" cx="28" cy="28" r="27" transform="rotate(-90 28 28)"/>
+          </svg>
+          <span class="proc-step-num">01</span>
+        </div>
+        <h3 class="proc-step-title">Book in Two Minutes</h3>
+        <p class="proc-step-body">Pick a session and a time online. For team sessions, we coordinate the schedule with your office manager so your staff barely leave their desks.</p>
       </div>
-      <div class="process-step">
-        <div class="step-number">02</div>
-        <h3 class="step-title">We Handle the Session</h3>
-        <p class="step-body">On-site at your office or our Austin studio. Professional lighting. Relaxed but efficient. Most sessions under 90 minutes.</p>
+      <div class="proc-step reveal reveal-delay-1">
+        <div class="proc-step-circle">
+          <svg viewBox="0 0 56 56" aria-hidden="true">
+            <circle class="proc-step-circle-bg" cx="28" cy="28" r="27"/>
+            <circle class="proc-step-circle-draw" cx="28" cy="28" r="27" transform="rotate(-90 28 28)"/>
+          </svg>
+          <span class="proc-step-num">02</span>
+        </div>
+        <h3 class="proc-step-title">A Session That Runs Itself</h3>
+        <p class="proc-step-body">We arrive with a mobile studio or host you at ours. Professional lighting, clear direction, no awkwardness. Individuals done in under an hour; teams of 75 in a single day.</p>
       </div>
-      <div class="process-step">
-        <div class="step-number">03</div>
-        <h3 class="step-title">Delivered in 48 Hours</h3>
-        <p class="step-body">Fully retouched, high-resolution files. Ready for LinkedIn, your website, and print. No back and forth.</p>
+      <div class="proc-step reveal reveal-delay-2">
+        <div class="proc-step-circle">
+          <svg viewBox="0 0 56 56" aria-hidden="true">
+            <circle class="proc-step-circle-bg" cx="28" cy="28" r="27"/>
+            <circle class="proc-step-circle-draw" cx="28" cy="28" r="27" transform="rotate(-90 28 28)"/>
+          </svg>
+          <span class="proc-step-num">03</span>
+        </div>
+        <h3 class="proc-step-title">Delivered, Retouched, Done</h3>
+        <p class="proc-step-body">Fully retouched, high-resolution files within 48 hours. Sized for LinkedIn, your website, and print. No endless revision loops.</p>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- ABOUT: replace copy and portrait with Kevin's real bio and photo after discovery call -->
+<section id="about">
+  <div class="about-inner">
+    <img class="about-img reveal" src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=900&q=85" alt="Kevin Mercer — Austin headshot photographer" loading="lazy">
+    <div class="about-copy reveal reveal-delay-1">
+      <p class="about-eyebrow">ABOUT KEVIN</p>
+      <h2 class="about-title">The Photographer Companies Keep on Speed Dial</h2>
+      <div class="about-body">
+        <p>Kevin Mercer has photographed Austin&#8217;s professionals for over a decade &#8212; from solo founders updating a LinkedIn profile to law firms refreshing seventy-five headshots in a single day.</p>
+        <p>His approach is built around one idea: the session should be the easiest meeting on your calendar. Clear direction, efficient setups, and a calm presence that works even for people who hate being photographed.</p>
+        <p>Based in Austin. Shooting in offices, studios, and boardrooms across Central Texas.</p>
+      </div>
+      <a href="#contact" class="about-cta">Book a session with Kevin &#8594;</a>
+    </div>
+  </div>
+</section>
+
+<section id="the-standard">
+  <div class="standard-inner reveal">
+    <p class="standard-eyebrow">THE STANDARD</p>
+    <p class="standard-statement">Every person we photograph walks out more confident than they walked in. Every company gets a team page they&#8217;re proud to send to clients. That&#8217;s the bar &#8212; every session, no exceptions.</p>
+    <a href="#book-section" class="standard-btn">Book Your Session</a>
   </div>
 </section>
 
