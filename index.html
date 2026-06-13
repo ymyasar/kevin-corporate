@@ -275,15 +275,13 @@ section{ position:relative; z-index:3; }
 .work-eyebrow{font-family:var(--font-body);font-size:11px;font-weight:400;letter-spacing:0.22em;text-transform:uppercase;color:var(--color-steel);margin:0 0 16px;}
 .work-title{font-family:var(--font-heading);font-size:52px;font-weight:400;color:var(--color-navy);line-height:1.1;margin:0;}
 .work-sub{font-family:var(--font-body);font-size:16px;color:var(--color-text-muted);margin-top:14px;}
-.portfolio-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:14px;}
-.pg-item{overflow:hidden;position:relative;}
-.pg-item img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.6s cubic-bezier(0.16,1,0.3,1);}
-.pg-inset{position:absolute;inset:12px;border:1px solid var(--color-navy);opacity:0;transition:opacity 0.6s cubic-bezier(0.16,1,0.3,1);pointer-events:none;}
-.pg-caption{position:absolute;bottom:16px;left:16px;background:var(--color-navy);padding:6px 10px;font-family:var(--font-body);font-size:11px;font-weight:400;letter-spacing:0.16em;text-transform:uppercase;color:#fff;opacity:0;transform:translateY(8px);transition:opacity 0.6s cubic-bezier(0.16,1,0.3,1),transform 0.6s cubic-bezier(0.16,1,0.3,1);pointer-events:none;}
-@media(hover:hover){.pg-item:hover img{transform:scale(1.04);}.pg-item:hover .pg-inset{opacity:1;}.pg-item:hover .pg-caption{opacity:1;transform:translateY(0);}}
-.pg-large{grid-column:span 6;aspect-ratio:4/5;}
-.pg-tall{grid-column:span 3;aspect-ratio:3/4;}
-.pg-square{grid-column:span 3;aspect-ratio:1/1;}
+#portfolio-masonry{column-count:4;column-gap:14px;max-width:1340px;margin:0 auto;padding:0 24px;}
+@media(max-width:1100px){#portfolio-masonry{column-count:3;}}
+@media(max-width:760px){#portfolio-masonry{column-count:2;column-gap:10px;}}
+.pf-item{break-inside:avoid;margin-bottom:14px;border-radius:10px;overflow:hidden;position:relative;display:block;background:var(--color-slate);text-decoration:none;}
+.pf-item img{width:100%;height:auto;display:block;transition:transform 0.7s cubic-bezier(0.16,1,0.3,1);}
+@media(hover:hover){.pf-item:hover img{transform:scale(1.05);}.pf-item:hover::after{opacity:1;}}
+.pf-item::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(13,31,53,0.45),transparent 45%);opacity:0;transition:opacity .4s;pointer-events:none;}
 .work-cta-row{text-align:center;margin-top:64px;display:flex;align-items:center;justify-content:center;gap:32px;flex-wrap:wrap;}
 .work-cta-btn{font-family:var(--font-body);font-size:14px;font-weight:600;padding:17px 38px;background:var(--color-navy);color:#fff;border:none;cursor:pointer;text-decoration:none;transition:background 0.3s ease,transform 0.3s ease;display:inline-block;}
 .work-cta-btn:hover{background:var(--color-steel);transform:translateY(-2px);}
@@ -1281,8 +1279,6 @@ footer{
   .about-inner{grid-template-columns:1fr;gap:40px;}
   .about-title{font-size:36px;}
   .standard-statement{font-size:30px;}
-  .portfolio-grid{grid-template-columns:1fr;}
-  .pg-large,.pg-tall,.pg-square{grid-column:span 1;aspect-ratio:4/5;}
   .work-title{font-size:38px;}
   .work-inner{padding:0 20px;}
   .work-cta-row{flex-direction:column;gap:16px;}
@@ -1326,7 +1322,6 @@ footer{
 }
 
 @media(max-width:1024px) and (min-width:768px){
-  .pg-large,.pg-tall,.pg-square{grid-column:span 6;aspect-ratio:4/5;}
   .work-inner{padding:0 24px;}
 }
 
@@ -1416,6 +1411,7 @@ footer{
   }
 }
 </script>
+<script src="/images-manifest.js"></script>
 </head>
 <body>
 
@@ -1519,72 +1515,7 @@ footer{
       <h2 class="work-title">Proof, Not Promises</h2>
       <p class="work-sub">Recent corporate and executive work from Austin sessions.</p>
     </div>
-    <div class="portfolio-grid">
-      <!-- Row 1: large · tall · tall -->
-      <div class="pg-item pg-large reveal">
-        <img src="https://images.unsplash.com/photo-1589391886645-d51941baf7fb?w=1100&q=85" alt="Corporate headshot of a male attorney in dark suit — Austin headshot photographer" loading="lazy">
-        <div class="pg-inset"></div>
-        <span class="pg-caption">Managing Partner</span>
-      </div>
-      <div class="pg-item pg-tall reveal reveal-delay-1">
-        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=1100&q=85" alt="Corporate headshot of a senior male executive — Austin headshot photographer" loading="lazy">
-        <div class="pg-inset"></div>
-        <span class="pg-caption">VP Finance</span>
-      </div>
-      <div class="pg-item pg-tall reveal reveal-delay-2">
-        <img src="https://images.unsplash.com/photo-1566492031773-4f4e44671857?w=1100&q=85" alt="Corporate headshot of a businessman in professional attire — Austin headshot photographer" loading="lazy">
-        <div class="pg-inset"></div>
-        <span class="pg-caption">Founder</span>
-      </div>
-      <!-- Row 2: square · square · large -->
-      <div class="pg-item pg-square reveal">
-        <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=1100&q=85" alt="Corporate headshot of a businesswoman in blazer — Austin headshot photographer" loading="lazy">
-        <div class="pg-inset"></div>
-        <span class="pg-caption">General Counsel</span>
-      </div>
-      <div class="pg-item pg-square reveal reveal-delay-1">
-        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=1100&q=85" alt="Corporate headshot of a male tech professional — Austin headshot photographer" loading="lazy">
-        <div class="pg-inset"></div>
-        <span class="pg-caption">Director</span>
-      </div>
-      <div class="pg-item pg-large reveal reveal-delay-2">
-        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1100&q=85" alt="Corporate headshot of a confident male professional — Austin headshot photographer" loading="lazy">
-        <div class="pg-inset"></div>
-        <span class="pg-caption">Principal</span>
-      </div>
-      <!-- Row 3: large · tall · tall -->
-      <div class="pg-item pg-large reveal">
-        <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=1100&q=85" alt="Corporate headshot of a senior executive with distinguished grey hair — Austin headshot photographer" loading="lazy">
-        <div class="pg-inset"></div>
-        <span class="pg-caption">Managing Partner</span>
-      </div>
-      <div class="pg-item pg-tall reveal reveal-delay-1">
-        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=1100&q=85" alt="Corporate headshot of a young professional woman — Austin headshot photographer" loading="lazy">
-        <div class="pg-inset"></div>
-        <span class="pg-caption">VP Finance</span>
-      </div>
-      <div class="pg-item pg-tall reveal reveal-delay-2">
-        <img src="https://images.unsplash.com/photo-1611262588024-d12430b98920?w=1100&q=85" alt="Corporate headshot of a female real estate executive — Austin headshot photographer" loading="lazy">
-        <div class="pg-inset"></div>
-        <span class="pg-caption">Founder</span>
-      </div>
-      <!-- Row 4: square · square · large -->
-      <div class="pg-item pg-square reveal">
-        <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=1100&q=85" alt="Corporate headshot of a male finance professional — Austin headshot photographer" loading="lazy">
-        <div class="pg-inset"></div>
-        <span class="pg-caption">General Counsel</span>
-      </div>
-      <div class="pg-item pg-square reveal reveal-delay-1">
-        <img src="https://images.unsplash.com/photo-1543269865-cbf427effbad?w=1100&q=85" alt="Corporate headshot of a smiling businesswoman — Austin headshot photographer" loading="lazy">
-        <div class="pg-inset"></div>
-        <span class="pg-caption">Director</span>
-      </div>
-      <div class="pg-item pg-large reveal reveal-delay-2">
-        <img src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=1100&q=85" alt="Corporate headshot of a corporate executive in tailored suit — Austin headshot photographer" loading="lazy">
-        <div class="pg-inset"></div>
-        <span class="pg-caption">Principal</span>
-      </div>
-    </div>
+    <div id="portfolio-masonry"></div>
     <div class="work-cta-row reveal">
       <a href="#book-section" class="work-cta-btn">Book Your Session</a>
       <a href="#contact" class="work-cta-link">See team sessions &#8594;</a>
@@ -2475,6 +2406,32 @@ footer{
 </script>
 
 
+
+<script>
+/* ── Portfolio masonry renderer ── */
+(function(){
+  var container = document.getElementById('portfolio-masonry');
+  if(!container){ return; }
+  if(typeof window.KEVIN_IMAGES === 'undefined' || !window.KEVIN_IMAGES.length){
+    console.warn('KEVIN_IMAGES not found or empty — portfolio not rendered');
+    return;
+  }
+  var delays = ['', ' reveal-delay-1', ' reveal-delay-2'];
+  window.KEVIN_IMAGES.forEach(function(img, i){
+    var a = document.createElement('a');
+    a.className = 'pf-item reveal' + delays[i % 3];
+    a.href = '#contact';
+    var el = document.createElement('img');
+    el.src = img.src;
+    el.alt = img.alt;
+    el.width = img.w;
+    el.height = img.h;
+    el.loading = 'lazy';
+    a.appendChild(el);
+    container.appendChild(a);
+  });
+})();
+</script>
 
 <script>
 /* ── Scroll reveal — IntersectionObserver ── */
