@@ -169,6 +169,8 @@ section{ position:relative; z-index:3; }
 .wm-amp{font-style:italic;font-size:30px;line-height:1;}
 .wm-caps{font-family:var(--font-body);font-size:15px;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;color:var(--color-navy);opacity:0.35;white-space:nowrap;padding:0 20px;transition:opacity 0.35s ease,transform 0.35s ease;cursor:default;display:inline-block;}
 .wm-caps:hover{opacity:1;transform:scale(1.04);}
+.wm-brand{font-family:var(--font-body);font-size:22px;font-weight:600;opacity:0.5;white-space:nowrap;padding:0 22px;transition:opacity 0.35s ease,transform 0.35s ease;cursor:default;display:inline-block;}
+.wm-brand:hover{opacity:1;transform:scale(1.04);}
 .wm-sep{display:inline-block;width:4px;height:4px;background:var(--color-slate);transform:rotate(45deg);vertical-align:middle;flex-shrink:0;}
 .ind-tag{font-family:var(--font-body);font-size:12px;font-weight:400;letter-spacing:0.18em;text-transform:uppercase;color:var(--color-navy);opacity:0.25;white-space:nowrap;padding:0 16px;cursor:default;}
 .ind-sep{display:inline-block;width:3px;height:3px;background:var(--color-slate);transform:rotate(45deg);vertical-align:middle;flex-shrink:0;opacity:0.6;}
@@ -1327,6 +1329,28 @@ footer{
   .work-inner{padding:0 24px;}
 }
 
+/* ── Stats trust bar ── */
+#stats-bar{background:#fff;padding:28px 0;border-top:1px solid rgba(13,31,53,0.08);border-bottom:1px solid rgba(13,31,53,0.08);}
+.stats-row{max-width:1100px;margin:0 auto;padding:0 32px;display:flex;align-items:center;justify-content:center;}
+.stat-item{text-align:center;padding:0 40px;flex:1;}
+.stat-divider{width:1px;height:40px;background:rgba(13,31,53,0.12);flex-shrink:0;}
+.stat-num{font-family:var(--font-heading);font-size:26px;font-weight:400;color:var(--color-navy);line-height:1.1;display:block;}
+.stat-label{font-family:var(--font-body);font-size:10px;font-weight:400;letter-spacing:0.16em;text-transform:uppercase;color:var(--color-text-muted);display:block;margin-top:4px;}
+/* ── Hero Google rating ── */
+.hero-rating{display:flex;align-items:center;gap:8px;margin-bottom:20px;}
+.hero-rating-stars{display:flex;align-items:center;gap:2px;}
+.hero-rating-score{font-family:var(--font-body);font-size:14px;font-weight:600;color:#fff;line-height:1;}
+.hero-rating-dot{width:3px;height:3px;border-radius:50%;background:rgba(255,255,255,0.4);flex-shrink:0;}
+.hero-rating-source{font-family:var(--font-body);font-size:12px;color:rgba(255,255,255,0.7);line-height:1;}
+@media(max-width:767px){
+  .stats-row{display:grid;grid-template-columns:1fr 1fr;gap:24px;padding:0 24px;}
+  .stat-divider{display:none;}
+  .stat-item{padding:12px 0;}
+  .hero-rating-stars svg{width:12px;height:12px;}
+  .hero-rating-score{font-size:13px;}
+  .hero-rating-source{font-size:11px;}
+}
+
 /* ══════════════════════════════════════════════
    FAQ
 ══════════════════════════════════════════════ */
@@ -1439,6 +1463,19 @@ footer{
   <div class="hero-grad"></div>
   <div class="hero-content">
     <p class="hero-eyebrow reveal">AUSTIN HEADSHOT PHOTOGRAPHER &#8212; CORPORATE &amp; EXECUTIVE</p>
+    <!-- RATING: confirm Kevin's real Google rating + count -->
+    <div class="hero-rating reveal">
+      <div class="hero-rating-stars" aria-label="5 out of 5 stars">
+        <svg viewBox="0 0 14 14" width="14" height="14" aria-hidden="true"><path d="M7 1l1.6 3.25L12 4.85l-2.5 2.43.59 3.44L7 9.1l-3.09 1.72.59-3.44L2 4.85l3.4-.6z" fill="#E8B84B"/></svg>
+        <svg viewBox="0 0 14 14" width="14" height="14" aria-hidden="true"><path d="M7 1l1.6 3.25L12 4.85l-2.5 2.43.59 3.44L7 9.1l-3.09 1.72.59-3.44L2 4.85l3.4-.6z" fill="#E8B84B"/></svg>
+        <svg viewBox="0 0 14 14" width="14" height="14" aria-hidden="true"><path d="M7 1l1.6 3.25L12 4.85l-2.5 2.43.59 3.44L7 9.1l-3.09 1.72.59-3.44L2 4.85l3.4-.6z" fill="#E8B84B"/></svg>
+        <svg viewBox="0 0 14 14" width="14" height="14" aria-hidden="true"><path d="M7 1l1.6 3.25L12 4.85l-2.5 2.43.59 3.44L7 9.1l-3.09 1.72.59-3.44L2 4.85l3.4-.6z" fill="#E8B84B"/></svg>
+        <svg viewBox="0 0 14 14" width="14" height="14" aria-hidden="true"><path d="M7 1l1.6 3.25L12 4.85l-2.5 2.43.59 3.44L7 9.1l-3.09 1.72.59-3.44L2 4.85l3.4-.6z" fill="#E8B84B"/></svg>
+      </div>
+      <span class="hero-rating-score">5.0</span>
+      <span class="hero-rating-dot" aria-hidden="true"></span>
+      <span class="hero-rating-source">Google Reviews</span>
+    </div>
     <h1 class="hero-headline reveal reveal-delay-1">Austin&#8217;s Corporate Headshot Photographer</h1>
     <h2 class="hero-brand-line reveal reveal-delay-1">The Photo That Gets You in the Room</h2>
     <p class="hero-sub reveal reveal-delay-2">Corporate headshots for law firms, executive teams, and companies across Austin. Shot at your office or our studio. Delivered in 48 hours.</p>
@@ -1453,37 +1490,64 @@ footer{
 </section>
 
 
+<!-- TRUST BAR: confirm real numbers with Kevin -->
+<section id="stats-bar">
+  <div class="stats-row">
+    <div class="stat-item reveal">
+      <span class="stat-num">10+</span>
+      <span class="stat-label">Years</span>
+    </div>
+    <div class="stat-divider" aria-hidden="true"></div>
+    <div class="stat-item reveal reveal-delay-1">
+      <span class="stat-num">500+</span>
+      <span class="stat-label">Professionals Photographed</span>
+    </div>
+    <div class="stat-divider" aria-hidden="true"></div>
+    <div class="stat-item reveal reveal-delay-2">
+      <span class="stat-num">48-Hour</span>
+      <span class="stat-label">Delivery</span>
+    </div>
+    <div class="stat-divider" aria-hidden="true"></div>
+    <div class="stat-item reveal reveal-delay-3">
+      <span class="stat-num">75</span>
+      <span class="stat-label">Teams in a Day</span>
+    </div>
+  </div>
+</section>
+
+<!-- DEMO PLACEHOLDER LOGOS: brand-colour wordmarks for client demo only. Replace entirely with Kevin's real, authorised client list before going live. Do NOT publish with these. -->
 <!-- Social Proof Bar -->
 <!-- CLIENT MARQUEE: replace wordmarks with Kevin's real client list after discovery call -->
 <section id="social-proof">
   <div class="sp-intro">
-    <p class="sp-eyebrow reveal">TRUSTED ON THE WALLS AND WEBSITES OF</p>
-    <p class="sp-tagline reveal reveal-delay-1">Two hundred Austin teams and counting.</p>
+    <p class="sp-eyebrow reveal">TRUSTED BY TEAMS AT</p>
+    <p class="sp-tagline reveal reveal-delay-1">Placeholder logos &#8212; Kevin&#8217;s real client list goes here.</p>
   </div>
   <div class="marquee-rows">
-    <!-- Row 1: client wordmarks, forward -->
+    <!-- Row 1: brand-colour wordmarks, forward -->
     <div class="marquee-outer">
       <div class="marquee-inner">
-        <span class="wm">Meridian <span class="wm-amp">&</span> Cole LLP</span><span class="wm-sep"></span>
-        <span class="wm">Westlake Capital</span><span class="wm-sep"></span>
-        <span class="wm-caps">Brazos Commercial Realty</span><span class="wm-sep"></span>
-        <span class="wm">Hilltop Ventures</span><span class="wm-sep"></span>
-        <span class="wm">Sterling McNair Law</span><span class="wm-sep"></span>
-        <span class="wm">Lonestar Financial Group</span><span class="wm-sep"></span>
-        <span class="wm-caps">Atlas Title Co.</span><span class="wm-sep"></span>
-        <span class="wm">Congress Avenue Partners</span><span class="wm-sep"></span>
-        <span class="wm">Barton Creek Advisors</span><span class="wm-sep"></span>
-        <span class="wm">Redline Technologies</span><span class="wm-sep"></span>
-        <span class="wm">Meridian <span class="wm-amp">&</span> Cole LLP</span><span class="wm-sep"></span>
-        <span class="wm">Westlake Capital</span><span class="wm-sep"></span>
-        <span class="wm-caps">Brazos Commercial Realty</span><span class="wm-sep"></span>
-        <span class="wm">Hilltop Ventures</span><span class="wm-sep"></span>
-        <span class="wm">Sterling McNair Law</span><span class="wm-sep"></span>
-        <span class="wm">Lonestar Financial Group</span><span class="wm-sep"></span>
-        <span class="wm-caps">Atlas Title Co.</span><span class="wm-sep"></span>
-        <span class="wm">Congress Avenue Partners</span><span class="wm-sep"></span>
-        <span class="wm">Barton Creek Advisors</span><span class="wm-sep"></span>
-        <span class="wm">Redline Technologies</span><span class="wm-sep"></span>
+        <span class="wm-brand" style="color:#1d1d1f;">Apple</span><span class="wm-sep"></span>
+        <span class="wm-brand" style="color:#737373;">Microsoft</span><span class="wm-sep"></span><!-- Microsoft grey placeholder -->
+        <span class="wm-brand" style="color:#1428A0;">Samsung</span><span class="wm-sep"></span>
+        <span class="wm-brand" style="color:#007DB8;">Dell</span><span class="wm-sep"></span>
+        <span class="wm-brand" style="color:#CD040B;">Verizon</span><span class="wm-sep"></span>
+        <span class="wm-brand" style="color:#00A8E0;">AT&amp;T</span><span class="wm-sep"></span>
+        <span class="wm-brand" style="color:#E20074;">T&#8209;Mobile</span><span class="wm-sep"></span>
+        <span class="wm-brand" style="color:#C8A04B;">Hennessy</span><span class="wm-sep"></span>
+        <span class="wm-brand" style="color:#C74634;">Oracle</span><span class="wm-sep"></span>
+        <span class="wm-brand" style="color:#FA0F00;">Adobe</span><span class="wm-sep"></span>
+        <!-- duplicate for seamless loop -->
+        <span class="wm-brand" style="color:#1d1d1f;">Apple</span><span class="wm-sep"></span>
+        <span class="wm-brand" style="color:#737373;">Microsoft</span><span class="wm-sep"></span>
+        <span class="wm-brand" style="color:#1428A0;">Samsung</span><span class="wm-sep"></span>
+        <span class="wm-brand" style="color:#007DB8;">Dell</span><span class="wm-sep"></span>
+        <span class="wm-brand" style="color:#CD040B;">Verizon</span><span class="wm-sep"></span>
+        <span class="wm-brand" style="color:#00A8E0;">AT&amp;T</span><span class="wm-sep"></span>
+        <span class="wm-brand" style="color:#E20074;">T&#8209;Mobile</span><span class="wm-sep"></span>
+        <span class="wm-brand" style="color:#C8A04B;">Hennessy</span><span class="wm-sep"></span>
+        <span class="wm-brand" style="color:#C74634;">Oracle</span><span class="wm-sep"></span>
+        <span class="wm-brand" style="color:#FA0F00;">Adobe</span><span class="wm-sep"></span>
       </div>
     </div>
     <!-- Row 2: industry descriptors, reverse -->
