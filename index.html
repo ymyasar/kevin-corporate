@@ -3,26 +3,25 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>Austin Headshot Photographer | Corporate &amp; Executive Headshots &#8212; Kevin Mercer</title>
+<title>Austin Headshot Photographer | Corporate &amp; Executive Headshots &#8212; Kevin Nguyen</title>
 <meta name="description" content="Austin headshot photographer for corporate teams, executives, and professionals. On-site or studio sessions, 48-hour delivery, teams up to 75 in one day. Book your session.">
 <!-- Open Graph -->
-<meta property="og:title" content="Austin Headshot Photographer | Corporate &amp; Executive Headshots &#8212; Kevin Mercer">
+<meta property="og:title" content="Austin Headshot Photographer | Corporate &amp; Executive Headshots &#8212; Kevin Nguyen">
 <meta property="og:description" content="Austin headshot photographer for corporate teams, executives, and professionals. On-site or studio sessions, 48-hour delivery, teams up to 75 in one day. Book your session.">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="en_US">
 <meta property="og:url" content="https://kevinheadshots.com/">
-<meta property="og:image" content="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=1200&q=85">
+<meta property="og:image" content="https://kevinheadshots.com/images/corporate-headshot-austin-01.jpeg">
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Austin Headshot Photographer | Corporate &amp; Executive Headshots &#8212; Kevin Mercer">
+<meta name="twitter:title" content="Austin Headshot Photographer | Corporate &amp; Executive Headshots &#8212; Kevin Nguyen">
 <meta name="twitter:description" content="Austin headshot photographer for corporate teams, executives, and professionals. On-site or studio sessions, 48-hour delivery, teams up to 75 in one day. Book your session.">
-<meta name="twitter:image" content="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=1200&q=85">
+<meta name="twitter:image" content="https://kevinheadshots.com/images/corporate-headshot-austin-01.jpeg">
 <!-- swap canonical to live domain at handover -->
 <link rel="canonical" href="https://kevinheadshots.com/">
 <!-- Preconnect -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preconnect" href="https://images.unsplash.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
@@ -118,13 +117,15 @@ section{ position:relative; z-index:3; }
   color:#fff;
   background:var(--color-navy);
   border:none;
-  padding:12px 24px;
+  padding:12px 28px;
+  border-radius:999px;
   cursor:pointer;
   text-decoration:none;
-  transition:background 0.25s ease;
+  letter-spacing:0.01em;
+  transition:background 0.35s cubic-bezier(0.16,1,0.3,1),transform 0.35s cubic-bezier(0.16,1,0.3,1),box-shadow 0.35s cubic-bezier(0.16,1,0.3,1);
   flex-shrink:0;
 }
-.nav-cta:hover{background:var(--color-steel);}
+.nav-cta:hover{background:var(--color-steel);transform:translateY(-2px);box-shadow:0 10px 24px rgba(13,31,53,0.18);}
 
 /* ══════════════════════════════════════════════
    1. HERO
@@ -141,10 +142,10 @@ section{ position:relative; z-index:3; }
 .hero-brand-line{font-family:var(--font-heading);font-size:30px;font-weight:300;color:rgba(255,255,255,0.82);line-height:1.2;margin-top:10px;}
 .hero-sub{font-family:var(--font-body);font-size:17px;font-weight:400;color:rgba(255,255,255,0.85);margin-top:20px;line-height:1.65;}
 .hero-cta-row{display:flex;gap:16px;margin-top:36px;flex-wrap:wrap;}
-.hero-btn-primary{font-family:var(--font-body);font-size:14px;font-weight:600;padding:17px 38px;background:#fff;color:var(--color-navy);border:none;cursor:pointer;text-decoration:none;transition:background 0.3s ease,color 0.3s ease,transform 0.3s ease;display:inline-block;}
-.hero-btn-primary:hover{background:var(--color-steel);color:#fff;transform:translateY(-2px);}
-.hero-btn-secondary{font-family:var(--font-body);font-size:14px;font-weight:400;padding:17px 38px;background:transparent;color:#fff;border:1px solid rgba(255,255,255,0.7);cursor:pointer;text-decoration:none;transition:background 0.3s ease,color 0.3s ease,border-color 0.3s ease;display:inline-block;}
-.hero-btn-secondary:hover{background:#fff;color:var(--color-navy);border-color:#fff;}
+.hero-btn-primary{font-family:var(--font-body);font-size:14px;font-weight:600;padding:16px 40px;background:#fff;color:var(--color-navy);border:none;border-radius:999px;cursor:pointer;text-decoration:none;letter-spacing:0.01em;transition:background 0.35s cubic-bezier(0.16,1,0.3,1),color 0.35s cubic-bezier(0.16,1,0.3,1),transform 0.35s cubic-bezier(0.16,1,0.3,1),box-shadow 0.35s cubic-bezier(0.16,1,0.3,1);display:inline-block;}
+.hero-btn-primary:hover{background:var(--color-steel);color:#fff;transform:translateY(-2px);box-shadow:0 10px 24px rgba(13,31,53,0.18);}
+.hero-btn-secondary{font-family:var(--font-body);font-size:14px;font-weight:600;padding:16px 40px;background:transparent;color:#fff;border:1px solid rgba(255,255,255,0.7);border-radius:999px;cursor:pointer;text-decoration:none;letter-spacing:0.01em;transition:background 0.35s cubic-bezier(0.16,1,0.3,1),color 0.35s cubic-bezier(0.16,1,0.3,1),border-color 0.35s cubic-bezier(0.16,1,0.3,1),transform 0.35s cubic-bezier(0.16,1,0.3,1),box-shadow 0.35s cubic-bezier(0.16,1,0.3,1);display:inline-block;}
+.hero-btn-secondary:hover{background:#fff;color:var(--color-navy);border-color:#fff;transform:translateY(-2px);box-shadow:0 10px 24px rgba(13,31,53,0.18);}
 .hero-scroll-cue{position:absolute;bottom:36px;left:50%;transform:translateX(-50%);z-index:2;}
 .hero-scroll-line{width:1px;height:40px;background:#fff;opacity:0.5;display:block;}
 @keyframes scroll-pulse{0%,100%{transform:scaleY(1);opacity:0.5;}50%{transform:scaleY(0.4);opacity:0.2;}}
@@ -203,7 +204,7 @@ section{ position:relative; z-index:3; }
 .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
 .svc-card{background:#fff;border:1px solid var(--color-slate);padding:36px 30px;display:flex;flex-direction:column;transition:transform 0.35s ease,border-color 0.35s ease,box-shadow 0.35s ease;}
 .svc-card:hover{transform:translateY(-6px);border-color:var(--color-navy);box-shadow:0 20px 40px rgba(13,31,53,0.08);}
-.svc-card:hover .svc-cta{letter-spacing:0.12em;}
+.svc-card:hover .svc-cta{transform:translateX(4px);}
 .svc-card-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:16px;}
 .svc-cat{font-family:var(--font-body);font-size:11px;font-weight:400;letter-spacing:0.18em;text-transform:uppercase;color:var(--color-steel);}
 .svc-duration{font-family:var(--font-body);font-size:12px;color:var(--color-text-muted);}
@@ -212,7 +213,8 @@ section{ position:relative; z-index:3; }
 .svc-from{font-family:var(--font-body);font-size:13px;color:var(--color-text-muted);}
 .svc-price{font-family:var(--font-body);font-size:30px;font-weight:600;color:var(--color-navy);line-height:1;}
 .svc-body{font-family:var(--font-body);font-size:14.5px;color:var(--color-text-muted);line-height:1.6;flex:1;margin:0 0 24px;}
-.svc-cta{font-family:var(--font-body);font-size:13px;font-weight:500;color:var(--color-steel);text-decoration:none;letter-spacing:0.06em;transition:letter-spacing 0.3s ease;margin-top:auto;}
+.svc-cta{font-family:var(--font-body);font-size:13px;font-weight:500;color:var(--color-steel);text-decoration:none;letter-spacing:0.06em;transition:transform 0.3s ease,color 0.2s ease;margin-top:auto;display:inline-block;}
+.svc-cta:hover{transform:translateX(4px);}
 .svc-card--featured{background:var(--color-navy);border-color:var(--color-navy);}
 .svc-card--featured:hover{border-color:#3a6b99;box-shadow:0 20px 40px rgba(13,31,53,0.25);}
 .svc-card--featured .svc-cat,.svc-card--featured .svc-duration{color:rgba(255,255,255,0.5);}
@@ -220,8 +222,8 @@ section{ position:relative; z-index:3; }
 .svc-card--featured .svc-from{color:rgba(255,255,255,0.5);}
 .svc-card--featured .svc-body{color:rgba(255,255,255,0.72);}
 .svc-tag{display:inline-block;font-family:var(--font-body);font-size:10px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;background:rgba(100,150,190,0.2);color:#8ab8d4;padding:4px 10px;margin-bottom:14px;}
-.svc-cta-btn{display:inline-block;font-family:var(--font-body);font-size:13px;font-weight:600;padding:13px 28px;background:#fff;color:var(--color-navy);text-decoration:none;transition:background 0.25s ease,transform 0.25s ease;margin-top:auto;text-align:center;}
-.svc-cta-btn:hover{background:var(--color-steel);color:#fff;transform:translateY(-2px);}
+.svc-cta-btn{display:inline-block;font-family:var(--font-body);font-size:14px;font-weight:600;padding:16px 40px;background:#fff;color:var(--color-navy);border-radius:999px;text-decoration:none;letter-spacing:0.01em;transition:background 0.35s cubic-bezier(0.16,1,0.3,1),color 0.35s cubic-bezier(0.16,1,0.3,1),transform 0.35s cubic-bezier(0.16,1,0.3,1),box-shadow 0.35s cubic-bezier(0.16,1,0.3,1);margin-top:auto;text-align:center;}
+.svc-cta-btn:hover{background:var(--color-steel);color:#fff;transform:translateY(-2px);box-shadow:0 10px 24px rgba(13,31,53,0.18);}
 /* Shared section utilities (Process, Testimonials) */
 .services-super{font-family:var(--font-body);font-size:12px;font-weight:400;letter-spacing:0.15em;text-transform:uppercase;color:var(--color-steel);margin-bottom:16px;}
 .services-title{font-family:var(--font-heading);font-size:42px;font-weight:400;color:var(--color-navy);line-height:1.1;}
@@ -256,15 +258,15 @@ section{ position:relative; z-index:3; }
 .about-title{font-family:var(--font-heading);font-size:44px;font-weight:400;color:var(--color-navy);line-height:1.1;margin:0 0 28px;}
 .about-body p{font-family:var(--font-body);font-size:15.5px;color:var(--color-text-muted);line-height:1.7;margin:0 0 18px;}
 .about-body p:last-child{margin-bottom:0;}
-.about-cta{display:inline-block;font-family:var(--font-body);font-size:14px;font-weight:500;color:var(--color-navy);text-decoration:none;margin-top:28px;letter-spacing:0.04em;transition:letter-spacing 0.3s ease;}
-.about-cta:hover{letter-spacing:0.1em;}
+.about-cta{display:inline-block;font-family:var(--font-body);font-size:14px;font-weight:500;color:var(--color-navy);text-decoration:none;margin-top:28px;letter-spacing:0.04em;transition:transform 0.3s ease,color 0.2s ease;}
+.about-cta:hover{transform:translateX(4px);}
 /* ── The Standard ── */
 #the-standard{background:var(--color-navy);padding:90px 0;text-align:center;}
 .standard-inner{max-width:760px;margin:0 auto;padding:0 32px;}
 .standard-eyebrow{font-family:var(--font-body);font-size:11px;font-weight:400;letter-spacing:0.24em;text-transform:uppercase;color:rgba(255,255,255,0.6);margin:0 0 28px;}
 .standard-statement{font-family:var(--font-heading);font-size:38px;font-weight:400;color:#fff;line-height:1.35;margin:0 0 40px;}
-.standard-btn{display:inline-block;font-family:var(--font-body);font-size:14px;font-weight:400;padding:17px 38px;background:transparent;color:#fff;border:1px solid rgba(255,255,255,0.7);text-decoration:none;transition:background 0.3s ease,color 0.3s ease,border-color 0.3s ease;}
-.standard-btn:hover{background:#fff;color:var(--color-navy);border-color:#fff;}
+.standard-btn{display:inline-block;font-family:var(--font-body);font-size:14px;font-weight:600;padding:16px 40px;background:transparent;color:#fff;border:1px solid rgba(255,255,255,0.7);border-radius:999px;text-decoration:none;letter-spacing:0.01em;transition:background 0.35s cubic-bezier(0.16,1,0.3,1),color 0.35s cubic-bezier(0.16,1,0.3,1),border-color 0.35s cubic-bezier(0.16,1,0.3,1),transform 0.35s cubic-bezier(0.16,1,0.3,1),box-shadow 0.35s cubic-bezier(0.16,1,0.3,1);}
+.standard-btn:hover{background:#fff;color:var(--color-navy);border-color:#fff;transform:translateY(-2px);box-shadow:0 10px 24px rgba(13,31,53,0.18);}
 
 /* ════════════════════════════════════════════
    6. PORTFOLIO
@@ -283,10 +285,10 @@ section{ position:relative; z-index:3; }
 @media(hover:hover){.pf-item:hover img{transform:scale(1.05);}.pf-item:hover::after{opacity:1;}}
 .pf-item::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(13,31,53,0.45),transparent 45%);opacity:0;transition:opacity .4s;pointer-events:none;}
 .work-cta-row{text-align:center;margin-top:64px;display:flex;align-items:center;justify-content:center;gap:32px;flex-wrap:wrap;}
-.work-cta-btn{font-family:var(--font-body);font-size:14px;font-weight:600;padding:17px 38px;background:var(--color-navy);color:#fff;border:none;cursor:pointer;text-decoration:none;transition:background 0.3s ease,transform 0.3s ease;display:inline-block;}
-.work-cta-btn:hover{background:var(--color-steel);transform:translateY(-2px);}
-.work-cta-link{font-family:var(--font-body);font-size:14px;font-weight:400;color:var(--color-text-muted);text-decoration:none;transition:color 0.2s ease;}
-.work-cta-link:hover{color:var(--color-navy);}
+.work-cta-btn{font-family:var(--font-body);font-size:14px;font-weight:600;padding:16px 40px;background:var(--color-navy);color:#fff;border:none;border-radius:999px;cursor:pointer;text-decoration:none;letter-spacing:0.01em;transition:background 0.35s cubic-bezier(0.16,1,0.3,1),transform 0.35s cubic-bezier(0.16,1,0.3,1),box-shadow 0.35s cubic-bezier(0.16,1,0.3,1);display:inline-block;}
+.work-cta-btn:hover{background:var(--color-steel);transform:translateY(-2px);box-shadow:0 10px 24px rgba(13,31,53,0.18);}
+.work-cta-link{font-family:var(--font-body);font-size:14px;font-weight:400;color:var(--color-text-muted);text-decoration:none;display:inline-block;transition:color 0.2s ease,transform 0.3s ease;}
+.work-cta-link:hover{color:var(--color-navy);transform:translateX(4px);}
 
 /* ════════════════════════════════════════════
    7. TESTIMONIALS
@@ -330,8 +332,8 @@ section{ position:relative; z-index:3; }
 .cfc-input:focus{border-color:var(--color-steel);box-shadow:0 0 0 3px rgba(74,111,165,0.15);}
 .cfc-input::placeholder{color:var(--color-text-muted);}
 .cfc-select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%235A6A7A' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;cursor:pointer;padding-right:40px;}
-.contact-submit{width:100%;background:var(--color-navy);color:#fff;border:none;font-family:var(--font-body);font-size:14px;font-weight:600;letter-spacing:0.02em;padding:18px;cursor:pointer;transition:background 0.3s ease,transform 0.3s ease;margin-top:6px;}
-.contact-submit:hover{background:var(--color-steel);transform:translateY(-2px);}
+.contact-submit{width:100%;background:var(--color-navy);color:#fff;border:none;border-radius:999px;font-family:var(--font-body);font-size:14px;font-weight:600;letter-spacing:0.01em;padding:16px 40px;cursor:pointer;transition:background 0.35s cubic-bezier(0.16,1,0.3,1),transform 0.35s cubic-bezier(0.16,1,0.3,1),box-shadow 0.35s cubic-bezier(0.16,1,0.3,1);margin-top:6px;}
+.contact-submit:hover{background:var(--color-steel);transform:translateY(-2px);box-shadow:0 10px 24px rgba(13,31,53,0.18);}
 .contact-note{font-family:var(--font-body);font-size:12.5px;color:var(--color-text-muted);text-align:center;margin-top:14px;}
 /* ══════════════════════════════════════════════
    2. THE SPACE
@@ -1346,7 +1348,7 @@ footer{
 {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
-  "name": "Kevin Mercer Photography",
+  "name": "Kevin Nguyen Headshots",
   "description": "Austin headshot photographer for corporate teams, executives, and professionals. On-site or studio sessions, 48-hour delivery, teams up to 75 in one day.",
   "telephone": "+15125650046",
   "email": "KevinHeadshots@gmail.com",
@@ -1421,7 +1423,7 @@ footer{
 <canvas id="dust-canvas" style="display:none;"></canvas>
 <!-- ── Navigation ──────────────────────────────── -->
 <nav id="site-nav">
-  <a href="#hero" class="nav-name">Kevin Mercer Photography</a>
+  <a href="#hero" class="nav-name">Kevin Nguyen Headshots</a>
   <div class="nav-links">
     <a href="#services" class="nav-link">Services</a>
     <a href="#work" class="nav-link">Work</a>
@@ -1432,7 +1434,8 @@ footer{
 </nav>
 
 <section id="hero">
-  <img class="hero-img" src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=2400&q=85" alt="Austin TX corporate headshot photographer — professional executive portrait session" width="2400" height="3200" fetchpriority="high">
+  <!-- HERO IMAGE: swap to Kevin's chosen hero shot by editing the index in the hero script -->
+  <img class="hero-img" alt="Austin TX corporate headshot photographer — professional executive portrait session" fetchpriority="high">
   <div class="hero-grad"></div>
   <div class="hero-content">
     <p class="hero-eyebrow reveal">AUSTIN HEADSHOT PHOTOGRAPHER &#8212; CORPORATE &amp; EXECUTIVE</p>
@@ -1532,7 +1535,8 @@ footer{
     </div>
     <div class="galleries-grid">
       <a href="#contact" class="gallery-card reveal">
-        <img src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?w=1200&q=85" alt="Executive headshot session — Austin corporate photographer" loading="lazy">
+        <!-- GALLERY CARD A: swap by changing the filename below -->
+        <img src="/images/corporate-headshot-austin-02.jpeg" alt="Executive headshot session — Austin corporate photographer by Kevin Nguyen" loading="lazy">
         <div class="gallery-card-grad"></div>
         <div class="gallery-card-info">
           <p class="gallery-card-label">Executive Headshots</p>
@@ -1541,7 +1545,8 @@ footer{
         <span class="gallery-card-arrow">&#8594;</span>
       </a>
       <a href="#contact" class="gallery-card reveal reveal-delay-1">
-        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1200&q=85" alt="Corporate team photography session — Austin headshot photographer" loading="lazy">
+        <!-- GALLERY CARD B: swap by changing the filename below (use landscape if available) -->
+        <img src="/images/corporate-headshot-austin-03.jpeg" alt="Corporate team photography session — Austin headshot photographer by Kevin Nguyen" loading="lazy">
         <div class="gallery-card-grad"></div>
         <div class="gallery-card-info">
           <p class="gallery-card-label">Corporate Teams</p>
@@ -1693,12 +1698,13 @@ footer{
 <!-- ABOUT: replace copy and portrait with Kevin's real bio and photo after discovery call -->
 <section id="about">
   <div class="about-inner">
-    <img class="about-img reveal" src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=900&q=85" alt="Kevin Mercer — Austin headshot photographer" loading="lazy">
+    <!-- ABOUT IMAGE: replace with Kevin's real photo -->
+    <img class="about-img reveal" src="/images/corporate-headshot-austin-04.jpeg" alt="Kevin Nguyen — Austin headshot photographer" loading="lazy">
     <div class="about-copy reveal reveal-delay-1">
       <p class="about-eyebrow">ABOUT KEVIN</p>
       <h2 class="about-title">The Photographer Companies Keep on Speed Dial</h2>
       <div class="about-body">
-        <p>Kevin Mercer has photographed Austin&#8217;s professionals for over a decade &#8212; from solo founders updating a LinkedIn profile to law firms refreshing seventy-five headshots in a single day.</p>
+        <p>Kevin Nguyen has photographed Austin&#8217;s professionals for over a decade &#8212; from solo founders updating a LinkedIn profile to law firms refreshing seventy-five headshots in a single day.</p>
         <p>His approach is built around one idea: the session should be the easiest meeting on your calendar. Clear direction, efficient setups, and a calm presence that works even for people who hate being photographed.</p>
         <p>Based in Austin. Shooting in offices, studios, and boardrooms across Central Texas.</p>
       </div>
@@ -1945,14 +1951,14 @@ footer{
 
 <!-- Footer -->
 <footer>
-  <span class="footer-logo">Kevin Mercer Photography</span>
+  <span class="footer-logo">Kevin Nguyen Headshots</span>
   <div class="footer-links">
     <a href="https://instagram.com" class="footer-link" target="_blank" rel="noopener">Instagram</a>
     <a href="https://linkedin.com" class="footer-link" target="_blank" rel="noopener">LinkedIn</a>
     <a href="#contact" class="footer-link">Contact</a>
   </div>
-  <span class="footer-copy">&#169; 2026 Kevin Mercer Photography. Austin, TX.</span>
-  <p style="font-family:var(--font-body);font-size:12.5px;color:rgba(255,255,255,0.6);text-align:center;margin-top:14px;line-height:1.6;">Kevin Mercer Photography &middot; Austin, TX &middot; 512-565-0046 &middot; KevinHeadshots@gmail.com</p>
+  <span class="footer-copy">&#169; 2026 Kevin Nguyen Headshots. Austin, TX.</span>
+  <p style="font-family:var(--font-body);font-size:12.5px;color:rgba(255,255,255,0.6);text-align:center;margin-top:14px;line-height:1.6;">Kevin Nguyen Headshots &middot; Austin, TX &middot; 512-565-0046 &middot; KevinHeadshots@gmail.com</p>
   <p style="font-family:var(--font-body);font-size:12px;color:rgba(255,255,255,0.4);text-align:center;margin-top:4px;line-height:1.6;">Serving Austin, Round Rock, Cedar Park, Georgetown, Pflugerville, and Central Texas.</p>
 </footer>
 
@@ -2003,7 +2009,7 @@ footer{
     <div style="font-size:9px;letter-spacing:0.5em;text-transform:uppercase;color:#555;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid #1a1a1a;">General</div>
     <label style="display:block;margin-bottom:16px;">
       <span style="display:block;font-size:11px;color:#888;margin-bottom:6px;">Business Name</span>
-      <input id="af-business-name" type="text" value="Kevin Mercer Photography"
+      <input id="af-business-name" type="text" value="Kevin Nguyen Headshots"
         style="width:100%;background:#111;border:1px solid #2a2a2a;border-radius:3px;color:#fff;font-size:13px;padding:9px 12px;outline:none;box-sizing:border-box;"/>
     </label>
     <label style="display:block;margin-bottom:16px;">
@@ -2406,6 +2412,18 @@ footer{
 </script>
 
 
+
+<script>
+/* ── Hero image from manifest ── */
+(function(){
+  if(!window.KEVIN_IMAGES || !window.KEVIN_IMAGES.length) return;
+  /* change heroIdx to pick a different photo — 0 = first portrait found */
+  var heroIdx = 0;
+  var pick = window.KEVIN_IMAGES.find(function(i){ return i.orientation === 'portrait'; }) || window.KEVIN_IMAGES[heroIdx];
+  var el = document.querySelector('.hero-img');
+  if(el){ el.src = pick.src; el.alt = pick.alt; }
+})();
+</script>
 
 <script>
 /* ── Portfolio masonry renderer ── */
