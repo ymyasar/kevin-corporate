@@ -5,27 +5,34 @@
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <title>Austin Headshot Photographer | Corporate &amp; Executive Headshots &#8212; Kevin Nguyen</title>
 <meta name="description" content="Austin headshot photographer for corporate teams, executives, and professionals. On-site or studio sessions, 48-hour delivery, teams up to 75 in one day. Book your session.">
-<!-- Open Graph -->
-<meta property="og:title" content="Austin Headshot Photographer | Corporate &amp; Executive Headshots &#8212; Kevin Nguyen">
-<meta property="og:description" content="Austin headshot photographer for corporate teams, executives, and professionals. On-site or studio sessions, 48-hour delivery, teams up to 75 in one day. Book your session.">
+<!-- Open Graph — swap kevinheadshots.com to live domain at handover -->
+<meta property="og:title" content="Kevin Nguyen Headshots | Austin Corporate &amp; Executive Headshots">
+<meta property="og:description" content="Austin's corporate headshot photographer. Executive &amp; team sessions delivered in 48 hours. On-site at your office or our studio. Teams up to 75 in one day.">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="en_US">
 <meta property="og:url" content="https://kevinheadshots.com/">
-<meta property="og:image" content="https://kevinheadshots.com/images/corporate-headshot-austin-01.jpeg">
+<meta property="og:image" content="https://kevinheadshots.com/images/og-image.jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Corporate executive headshot by Kevin Nguyen Photography — Austin TX">
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Austin Headshot Photographer | Corporate &amp; Executive Headshots &#8212; Kevin Nguyen">
-<meta name="twitter:description" content="Austin headshot photographer for corporate teams, executives, and professionals. On-site or studio sessions, 48-hour delivery, teams up to 75 in one day. Book your session.">
-<meta name="twitter:image" content="https://kevinheadshots.com/images/corporate-headshot-austin-01.jpeg">
+<meta name="twitter:title" content="Kevin Nguyen Headshots | Austin Corporate &amp; Executive Headshots">
+<meta name="twitter:description" content="Austin's corporate headshot photographer. Executive &amp; team sessions delivered in 48 hours. On-site at your office or our studio. Teams up to 75 in one day.">
+<meta name="twitter:image" content="https://kevinheadshots.com/images/og-image.jpeg">
 <!-- swap canonical to live domain at handover -->
 <link rel="canonical" href="https://kevinheadshots.com/">
+<!-- Favicon -->
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <!-- Preconnect -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<!-- Non-critical scripts deferred -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 
@@ -1026,51 +1033,80 @@ textarea.b-input{ resize:none; }
 }
 
 /* ── Footer ──────────────────────────────────── */
+/* ── Footer rebuild ── */
 footer{
-  background:#F2EDE4;
-  border-top:1px solid rgba(26,25,22,0.1);
-  padding:52px 64px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
+  background:var(--color-navy);
+  padding:64px 0 40px;
   position:relative;
   z-index:3;
 }
-footer{
-  background:var(--color-navy);
-  padding:60px 52px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:32px;
+.footer-inner{
+  max-width:1200px;
+  margin:0 auto;
+  padding:0 40px;
 }
-.footer-logo{
+.footer-grid{
+  display:grid;
+  grid-template-columns:1.6fr 1fr 1fr 1.2fr;
+  gap:40px;
+  padding-bottom:48px;
+}
+.footer-brand-name{
   font-family:var(--font-heading);
-  font-size:20px;
+  font-size:22px;
   font-weight:400;
   color:#fff;
-  text-decoration:none;
-  flex-shrink:0;
+  line-height:1.2;
+  margin:0 0 10px;
 }
-.footer-links{
+.footer-brand-tag{
+  font-family:var(--font-body);
+  font-size:13px;
+  color:rgba(255,255,255,0.5);
+  line-height:1.5;
+  margin:0;
+}
+.footer-col-label{
+  font-family:var(--font-body);
+  font-size:10px;
+  font-weight:500;
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+  color:rgba(255,255,255,0.35);
+  margin:0 0 16px;
+}
+.footer-col-links{
   display:flex;
-  gap:28px;
+  flex-direction:column;
+  gap:10px;
 }
 .footer-link{
   font-family:var(--font-body);
-  font-size:12px;
-  font-weight:400;
-  color:rgba(255,255,255,0.5);
+  font-size:13.5px;
+  color:rgba(255,255,255,0.6);
   text-decoration:none;
   transition:color 0.2s ease;
+  line-height:1.4;
 }
 .footer-link:hover{color:#fff;}
+.footer-bottom{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
+  padding-top:24px;
+  border-top:1px solid rgba(255,255,255,0.12);
+}
 .footer-copy{
   font-family:var(--font-body);
-  font-size:13px;
-  font-weight:400;
-  color:rgba(255,255,255,0.5);
-  flex-shrink:0;
+  font-size:12.5px;
+  color:rgba(255,255,255,0.4);
+}
+.footer-service-area{
+  font-family:var(--font-body);
+  font-size:12px;
+  color:rgba(255,255,255,0.3);
+  text-align:right;
 }
 
 /* ══════════════════════════════════════════════
@@ -1600,16 +1636,12 @@ body.nav-open{overflow:hidden;}
   }
   .contact-submit{min-height:48px;}
 
-  /* ── Footer: stacked, centred, clear of sticky bar ── */
-  footer{
-    flex-direction:column;
-    align-items:center;
-    text-align:center;
-    padding:40px 24px 80px;
-    gap:20px;
-  }
-  .footer-links{justify-content:center;}
-  .footer-logo,.footer-copy{text-align:center;}
+  /* ── Footer: stacked, clear of sticky bar ── */
+  footer{ padding:48px 0 80px; }
+  .footer-inner{ padding:0 24px; }
+  .footer-grid{ grid-template-columns:1fr; gap:32px; padding-bottom:36px; }
+  .footer-bottom{ flex-direction:column; align-items:flex-start; gap:8px; }
+  .footer-service-area{ text-align:left; }
 
   /* ── Tap targets ── */
   .footer-link{min-height:44px;display:inline-flex;align-items:center;}
@@ -1632,7 +1664,7 @@ body.nav-open{overflow:hidden;}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "ProfessionalService",
+  "@type": ["LocalBusiness","ProfessionalService"],
   "name": "Kevin Nguyen Headshots",
   "description": "Austin headshot photographer for corporate teams, executives, and professionals. On-site or studio sessions, 48-hour delivery, teams up to 75 in one day.",
   "telephone": "+15125650046",
@@ -2242,7 +2274,7 @@ body.nav-open{overflow:hidden;}
       </div>
       <div style="margin-top:48px;padding-top:32px;border-top:1px solid rgba(255,255,255,0.12);">
         <p style="font-family:var(--font-body);font-size:13px;color:rgba(255,255,255,0.45);margin-bottom:6px;letter-spacing:0.08em;text-transform:uppercase;">Prefer to reach out directly?</p>
-        <a href="mailto:kevin@kevinmercerphotography.com" style="font-family:var(--font-body);font-size:15px;color:rgba(255,255,255,0.85);text-decoration:none;transition:color 0.2s ease;">kevin@kevinmercerphotography.com</a>
+        <a href="mailto:KevinHeadshots@gmail.com" style="font-family:var(--font-body);font-size:15px;color:rgba(255,255,255,0.85);text-decoration:none;transition:color 0.2s ease;">KevinHeadshots@gmail.com</a>
       </div>
     </div>
 
@@ -2292,15 +2324,61 @@ body.nav-open{overflow:hidden;}
 
 <!-- Footer -->
 <footer>
-  <span class="footer-logo">Kevin Nguyen Headshots</span>
-  <div class="footer-links">
-    <a href="https://instagram.com" class="footer-link" target="_blank" rel="noopener">Instagram</a>
-    <a href="https://linkedin.com" class="footer-link" target="_blank" rel="noopener">LinkedIn</a>
-    <a href="#contact" class="footer-link">Contact</a>
+  <div class="footer-inner">
+
+    <!-- Row 1: 4-column grid -->
+    <div class="footer-grid">
+
+      <!-- Col 1: Brand -->
+      <div>
+        <p class="footer-brand-name">Kevin Nguyen Headshots</p>
+        <p class="footer-brand-tag">Austin corporate &amp; executive headshots.</p>
+      </div>
+
+      <!-- Col 2: Explore -->
+      <div>
+        <p class="footer-col-label">Explore</p>
+        <div class="footer-col-links">
+          <a href="#work" class="footer-link">Work</a>
+          <a href="#services" class="footer-link">Services</a>
+          <a href="#process" class="footer-link">Process</a>
+          <a href="#contact" class="footer-link">Contact</a>
+        </div>
+      </div>
+
+      <!-- Col 3: Sessions -->
+      <div>
+        <p class="footer-col-label">Sessions</p>
+        <div class="footer-col-links">
+          <a href="#services" class="footer-link">Standard</a>
+          <a href="#services" class="footer-link">Enterprise</a>
+          <a href="#services" class="footer-link">Corporate Team</a>
+          <a href="#services" class="footer-link">Personal Branding</a>
+        </div>
+      </div>
+
+      <!-- Col 4: Contact -->
+      <div>
+        <p class="footer-col-label">Contact</p>
+        <div class="footer-col-links">
+          <a href="tel:+15125650046" class="footer-link">512-565-0046</a>
+          <a href="mailto:KevinHeadshots@gmail.com" class="footer-link">KevinHeadshots@gmail.com</a>
+          <!-- Replace href="#" with real URLs before going live -->
+          <a href="#" class="footer-link" target="_blank" rel="noopener">Instagram</a>
+          <a href="#" class="footer-link" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="#" class="footer-link" target="_blank" rel="noopener">Google</a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Row 2: copyright + service area -->
+    <div class="footer-bottom">
+      <span class="footer-copy">&#169; 2026 Kevin Nguyen Headshots &middot; Austin, TX</span>
+      <span class="footer-service-area">Serving Austin, Round Rock, Cedar Park, Georgetown, Pflugerville &amp; Central Texas</span>
+    </div>
+
   </div>
-  <span class="footer-copy">&#169; 2026 Kevin Nguyen Headshots. Austin, TX.</span>
-  <p style="font-family:var(--font-body);font-size:12.5px;color:rgba(255,255,255,0.6);text-align:center;margin-top:14px;line-height:1.6;">Kevin Nguyen Headshots &middot; Austin, TX &middot; 512-565-0046 &middot; KevinHeadshots@gmail.com</p>
-  <p style="font-family:var(--font-body);font-size:12px;color:rgba(255,255,255,0.4);text-align:center;margin-top:4px;line-height:1.6;">Serving Austin, Round Rock, Cedar Park, Georgetown, Pflugerville, and Central Texas.</p>
 </footer>
 
 <!-- ══════════════════════════════════════════════
