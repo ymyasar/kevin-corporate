@@ -1379,6 +1379,254 @@ footer{
 a:focus-visible,button:focus-visible{outline:3px solid rgba(74,111,165,0.25);outline-offset:2px;}
 .cfc-input:focus-visible{outline:3px solid rgba(74,111,165,0.25);outline-offset:2px;}
 
+/* ══════════════════════════════════════════════
+   STICKY MOBILE CTA BAR (hidden on desktop)
+══════════════════════════════════════════════ */
+#mobile-cta-bar{display:none;}
+
+/* ══════════════════════════════════════════════
+   NAV HAMBURGER (hidden on desktop)
+══════════════════════════════════════════════ */
+#nav-hamburger{display:none;}
+
+/* ══════════════════════════════════════════════
+   NAV OVERLAY (hidden by default everywhere)
+══════════════════════════════════════════════ */
+#nav-overlay{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  position:fixed;
+  inset:0;
+  z-index:9999;
+  background:var(--color-bg);
+  opacity:0;
+  pointer-events:none;
+  transition:opacity 0.35s var(--ease);
+}
+body.nav-open #nav-overlay{opacity:1;pointer-events:auto;}
+body.nav-open{overflow:hidden;}
+.nav-overlay-links{display:flex;flex-direction:column;align-items:center;gap:0;margin-bottom:36px;}
+.nav-overlay-link{
+  font-family:var(--font-heading);
+  font-size:42px;
+  font-weight:400;
+  color:var(--color-navy);
+  text-decoration:none;
+  padding:14px 0;
+  min-height:64px;
+  display:flex;
+  align-items:center;
+  transition:color 0.2s ease;
+}
+.nav-overlay-link:hover{color:var(--color-steel);}
+.nav-overlay-cta{
+  font-family:var(--font-body);
+  font-size:15px;
+  font-weight:600;
+  color:#fff;
+  background:var(--color-navy);
+  border:none;
+  padding:15px 40px;
+  border-radius:999px;
+  cursor:pointer;
+  text-decoration:none;
+  letter-spacing:0.01em;
+  min-height:48px;
+  display:flex;
+  align-items:center;
+}
+
+/* ══════════════════════════════════════════════
+   FULL MOBILE PASS — max-width: 760px
+══════════════════════════════════════════════ */
+@media(max-width:760px){
+
+  /* ── Sticky bottom CTA bar ── */
+  #mobile-cta-bar{
+    display:block;
+    position:fixed;
+    bottom:0;left:0;right:0;
+    z-index:9000;
+    background:var(--color-navy);
+    padding:12px 16px;
+    padding-bottom:calc(12px + env(safe-area-inset-bottom,0px));
+    box-shadow:0 -8px 24px rgba(13,31,53,0.10),0 -24px 60px rgba(13,31,53,0.12);
+    transform:translateY(0);
+    opacity:1;
+    transition:transform 0.4s var(--ease),opacity 0.4s var(--ease);
+  }
+  #mobile-cta-bar.cta-hidden{transform:translateY(100%);opacity:0;}
+  .mobile-cta-btn{
+    display:block;
+    width:100%;
+    text-align:center;
+    font-family:var(--font-body);
+    font-size:15px;
+    font-weight:600;
+    color:#fff;
+    background:var(--color-steel);
+    border:none;
+    border-radius:999px;
+    padding:14px 16px;
+    min-height:48px;
+    text-decoration:none;
+    letter-spacing:0.01em;
+  }
+
+  /* ── Nav: hamburger + overlay ── */
+  #site-nav{padding:12px 20px;}
+  .nav-links{display:none;}
+  .nav-cta{display:none;}
+  #nav-hamburger{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    gap:5px;
+    width:44px;
+    height:44px;
+    cursor:pointer;
+    background:none;
+    border:none;
+    padding:0;
+    flex-shrink:0;
+  }
+  #nav-hamburger span{
+    display:block;
+    width:24px;
+    height:1.5px;
+    background:var(--color-navy);
+    transition:transform 0.3s var(--ease),opacity 0.3s ease;
+    transform-origin:center;
+  }
+  body.nav-open #nav-hamburger span:nth-child(1){transform:translateY(6.5px) rotate(45deg);}
+  body.nav-open #nav-hamburger span:nth-child(2){opacity:0;transform:scaleX(0);}
+  body.nav-open #nav-hamburger span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg);}
+
+  /* ── Hero ── */
+  .hero-headline{font-size:clamp(34px,9vw,44px);}
+  .hero-content{padding:0 24px 96px;}
+  .hero-cta-row{flex-direction:column;gap:12px;}
+  .hero-btn-primary,.hero-btn-secondary{
+    display:block;
+    width:100%;
+    text-align:center;
+    box-sizing:border-box;
+    min-height:48px;
+    padding:14px 24px;
+  }
+  .hero-img{object-position:center 15%;}
+  .hero-brand-line{font-size:22px;}
+
+  /* ── Stats bar → 2×2 grid ── */
+  .stats-row{display:grid;grid-template-columns:1fr 1fr;gap:0;padding:0;}
+  .stat-divider{display:none;}
+  .stat-item{padding:20px 16px;border-bottom:1px solid var(--hairline);}
+  .stat-item:nth-child(odd){border-right:1px solid var(--hairline);}
+
+  /* ── Marquee: smaller, faster ── */
+  .wm-brand{font-size:17px;padding:0 14px;}
+  .wm{font-size:16px;padding:0 12px;}
+  .wm-caps{font-size:11px;padding:0 12px;}
+  .ind-tag{font-size:11px;padding:0 12px;}
+  .marquee-inner{animation-duration:28s;}
+  .marquee-inner-rev{animation-duration:36s;}
+  .sp-tagline{font-size:17px;}
+
+  /* ── Portfolio masonry → 2 col ── */
+  #portfolio-masonry{column-count:2;column-gap:10px;padding:0 16px;}
+  .pf-item{margin-bottom:10px;}
+  .work-inner{padding:0 20px;}
+  .work-title{font-size:38px;}
+  .work-cta-row{flex-direction:column;gap:16px;}
+
+  /* ── Galleries → stack, 4/3 ── */
+  .galleries-grid{grid-template-columns:1fr;}
+  .gallery-card{aspect-ratio:4/3;}
+  .galleries-inner{padding:0 20px;}
+
+  /* ── Services → single column ── */
+  .svc-grid{grid-template-columns:1fr;}
+  .svc-inner{padding:0 20px;}
+
+  /* ── Process → vertical with left line ── */
+  .proc-steps{flex-direction:column;gap:0;}
+  .proc-steps::before{display:none;}
+  .proc-step{flex-direction:row;align-items:flex-start;padding:0 0 40px 0;gap:20px;}
+  .proc-step:not(:last-child)::after{
+    content:'';
+    position:absolute;
+    left:28px;top:56px;bottom:0;
+    width:1px;
+    background:var(--hairline);
+  }
+  .proc-step-circle{flex-shrink:0;margin-bottom:0;}
+  .proc-step-title,.proc-step-body{text-align:left;}
+  .proc-title{font-size:36px;}
+  .proc-inner{padding:0 20px;}
+
+  /* ── About → image first, then copy ── */
+  .about-inner{grid-template-columns:1fr;gap:36px;}
+  .about-title{font-size:34px;}
+  .about-inner .about-img{order:-1;}
+
+  /* ── The Standard: clamp big quote ── */
+  .standard-statement{font-size:clamp(22px,6.5vw,32px);}
+  .standard-inner{padding:0 24px;}
+
+  /* ── Testimonials → single column ── */
+  .review-grid{grid-template-columns:1fr;}
+  .testi-wrap{padding:0 20px;}
+  .testi-title-new{font-size:34px;}
+
+  /* ── FAQ: full width, 44px tap targets ── */
+  .faq-wrap{padding:0 20px;}
+  .faq-title{font-size:32px;}
+  .faq-item summary{
+    font-size:15px;
+    padding:16px 44px 16px 0;
+    min-height:44px;
+  }
+  .faq-body{padding-right:0;}
+
+  /* ── Contact: stack, pitch first then form, 16px font, 48px inputs ── */
+  .contact-wrap{grid-template-columns:1fr;gap:40px;padding:0 20px;}
+  .contact-form-card{padding:28px 20px;}
+  .cfc-input{
+    min-height:48px;
+    font-size:16px;
+  }
+  .contact-submit{min-height:48px;}
+
+  /* ── Footer: stacked, centred, clear of sticky bar ── */
+  footer{
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+    padding:40px 24px 80px;
+    gap:20px;
+  }
+  .footer-links{justify-content:center;}
+  .footer-logo,.footer-copy{text-align:center;}
+
+  /* ── Tap targets ── */
+  .footer-link{min-height:44px;display:inline-flex;align-items:center;}
+  .svc-cta{min-height:44px;display:inline-flex;align-items:center;}
+  .about-cta{min-height:44px;display:inline-flex;align-items:center;}
+  .work-cta-link{min-height:44px;display:inline-flex;align-items:center;}
+  .hero-btn-primary,.hero-btn-secondary,.work-cta-btn,.standard-btn,.contact-submit{min-height:48px;}
+
+  /* ── Overflow guard (360/390/414px) ── */
+  #social-proof{overflow:hidden;}
+  .marquee-outer{max-width:100%;overflow:hidden;}
+  .work-inner,.svc-inner,.proc-inner,.about-inner,.testi-wrap,.contact-wrap,.faq-wrap,.galleries-inner,.standard-inner{
+    max-width:100%;
+    overflow:hidden;
+  }
+}
+
 </style>
 
 <script type="application/ld+json">
@@ -1467,8 +1715,24 @@ a:focus-visible,button:focus-visible{outline:3px solid rgba(74,111,165,0.25);out
     <a href="#process" class="nav-link">Process</a>
     <a href="#contact" class="nav-link">Contact</a>
   </div>
+  <button id="nav-hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="nav-overlay">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
   <a href="#contact" class="nav-cta">Book Now</a>
 </nav>
+
+<!-- Full-screen mobile nav overlay -->
+<div id="nav-overlay" role="dialog" aria-label="Navigation" aria-modal="true">
+  <nav class="nav-overlay-links">
+    <a href="#services" class="nav-overlay-link">Services</a>
+    <a href="#work" class="nav-overlay-link">Work</a>
+    <a href="#process" class="nav-overlay-link">Process</a>
+    <a href="#contact" class="nav-overlay-link">Contact</a>
+  </nav>
+  <a href="#contact" class="nav-overlay-cta">Book Now</a>
+</div>
 
 <section id="hero">
   <!-- HERO IMAGE: swap to Kevin's chosen hero shot by editing the index in the hero script -->
@@ -2548,5 +2812,51 @@ a:focus-visible,button:focus-visible{outline:3px solid rgba(74,111,165,0.25);out
   els.forEach(function(el){ io.observe(el); });
 })();
 </script>
+
+<script>
+/* ── Mobile hamburger menu ── */
+(function(){
+  var btn = document.getElementById('nav-hamburger');
+  var overlay = document.getElementById('nav-overlay');
+  if(!btn || !overlay) return;
+
+  function openMenu(){
+    document.body.classList.add('nav-open');
+    btn.setAttribute('aria-expanded','true');
+  }
+  function closeMenu(){
+    document.body.classList.remove('nav-open');
+    btn.setAttribute('aria-expanded','false');
+  }
+  btn.addEventListener('click', function(){
+    document.body.classList.contains('nav-open') ? closeMenu() : openMenu();
+  });
+  overlay.querySelectorAll('a').forEach(function(link){
+    link.addEventListener('click', closeMenu);
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape') closeMenu();
+  });
+})();
+
+/* ── Sticky mobile CTA: hide when contact is visible ── */
+(function(){
+  var bar = document.getElementById('mobile-cta-bar');
+  var contact = document.getElementById('contact');
+  if(!bar || !contact) return;
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      bar.classList.toggle('cta-hidden', entry.isIntersecting);
+    });
+  },{threshold:0.05});
+  io.observe(contact);
+})();
+</script>
+
+<!-- Sticky mobile CTA bar -->
+<div id="mobile-cta-bar" aria-hidden="true">
+  <a href="#contact" class="mobile-cta-btn">Book Your Session</a>
+</div>
+
 </body>
 </html>
