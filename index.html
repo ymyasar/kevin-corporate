@@ -1836,54 +1836,42 @@ body.nav-open{overflow:hidden;}
     <p class="sp-tagline reveal reveal-delay-1">Placeholder logos &#8212; Kevin&#8217;s real client list goes here.</p>
   </div>
   <div class="marquee-rows">
-    <!-- Row 1: brand logo SVGs, forward (9 brands — Hennessy dropped, not in simple-icons v16) -->
-    <!-- DEMO PLACEHOLDER — replace with Kevin's real authorised client list before going live. Do NOT publish with these brand names/logos. -->
+    <!-- Row 1: 4 brand logos, forward — DEMO PLACEHOLDER, swap for Kevin's real client list before launch -->
     <div class="marquee-outer">
-      <div class="marquee-inner">
+      <div class="marquee-inner" id="mq-r1">
         <img src="/images/logos/apple.svg"     alt="Apple"     class="marquee-logo"><span class="wm-sep"></span>
         <img src="/images/logos/microsoft.svg" alt="Microsoft" class="marquee-logo"><span class="wm-sep"></span>
         <img src="/images/logos/samsung.svg"   alt="Samsung"   class="marquee-logo"><span class="wm-sep"></span>
         <img src="/images/logos/dell.svg"      alt="Dell"      class="marquee-logo"><span class="wm-sep"></span>
-        <img src="/images/logos/verizon.svg"   alt="Verizon"   class="marquee-logo"><span class="wm-sep"></span>
-        <img src="/images/logos/atandt.svg"    alt="AT&amp;T"  class="marquee-logo"><span class="wm-sep"></span>
-        <img src="/images/logos/tmobile.svg"   alt="T-Mobile"  class="marquee-logo"><span class="wm-sep"></span>
-        <img src="/images/logos/oracle.svg"    alt="Oracle"    class="marquee-logo"><span class="wm-sep"></span>
-        <img src="/images/logos/adobe.svg"     alt="Adobe"     class="marquee-logo"><span class="wm-sep"></span>
-        <!-- duplicate for seamless loop -->
-        <img src="/images/logos/apple.svg"     alt="Apple"     class="marquee-logo"><span class="wm-sep"></span>
-        <img src="/images/logos/microsoft.svg" alt="Microsoft" class="marquee-logo"><span class="wm-sep"></span>
-        <img src="/images/logos/samsung.svg"   alt="Samsung"   class="marquee-logo"><span class="wm-sep"></span>
-        <img src="/images/logos/dell.svg"      alt="Dell"      class="marquee-logo"><span class="wm-sep"></span>
-        <img src="/images/logos/verizon.svg"   alt="Verizon"   class="marquee-logo"><span class="wm-sep"></span>
-        <img src="/images/logos/atandt.svg"    alt="AT&amp;T"  class="marquee-logo"><span class="wm-sep"></span>
-        <img src="/images/logos/tmobile.svg"   alt="T-Mobile"  class="marquee-logo"><span class="wm-sep"></span>
-        <img src="/images/logos/oracle.svg"    alt="Oracle"    class="marquee-logo"><span class="wm-sep"></span>
-        <img src="/images/logos/adobe.svg"     alt="Adobe"     class="marquee-logo"><span class="wm-sep"></span>
       </div>
     </div>
-    <!-- Row 2: industry descriptors, reverse -->
+    <!-- Row 2: 3 brand logos, reverse -->
     <div class="marquee-outer">
-      <div class="marquee-inner-rev">
-        <span class="ind-tag">Law Firms</span><span class="ind-sep"></span>
-        <span class="ind-tag">Financial Services</span><span class="ind-sep"></span>
-        <span class="ind-tag">Commercial Real Estate</span><span class="ind-sep"></span>
-        <span class="ind-tag">Tech</span><span class="ind-sep"></span>
-        <span class="ind-tag">Healthcare</span><span class="ind-sep"></span>
-        <span class="ind-tag">Consulting</span><span class="ind-sep"></span>
-        <span class="ind-tag">Private Equity</span><span class="ind-sep"></span>
-        <span class="ind-tag">Architecture</span><span class="ind-sep"></span>
-        <span class="ind-tag">Law Firms</span><span class="ind-sep"></span>
-        <span class="ind-tag">Financial Services</span><span class="ind-sep"></span>
-        <span class="ind-tag">Commercial Real Estate</span><span class="ind-sep"></span>
-        <span class="ind-tag">Tech</span><span class="ind-sep"></span>
-        <span class="ind-tag">Healthcare</span><span class="ind-sep"></span>
-        <span class="ind-tag">Consulting</span><span class="ind-sep"></span>
-        <span class="ind-tag">Private Equity</span><span class="ind-sep"></span>
-        <span class="ind-tag">Architecture</span><span class="ind-sep"></span>
+      <div class="marquee-inner-rev" id="mq-r2">
+        <img src="/images/logos/verizon.svg" alt="Verizon"  class="marquee-logo"><span class="wm-sep"></span>
+        <img src="/images/logos/atandt.svg"  alt="AT&amp;T" class="marquee-logo"><span class="wm-sep"></span>
+        <img src="/images/logos/oracle.svg"  alt="Oracle"   class="marquee-logo"><span class="wm-sep"></span>
       </div>
     </div>
   </div>
 </section>
+<script>
+/* Marquee fill — clone logo sets until first-half width >= viewport, then double for seamless -50% loop */
+(function(){
+  ['mq-r1','mq-r2'].forEach(function(id){
+    var el=document.getElementById(id);
+    if(!el) return;
+    var orig=Array.from(el.children);
+    var vw=Math.max(window.innerWidth||1280,1280);
+    /* fill first half */
+    while(el.scrollWidth < vw + 80){
+      orig.forEach(function(c){ el.appendChild(c.cloneNode(true)); });
+    }
+    /* duplicate first half for seamless loop (translateX -50%) */
+    Array.from(el.children).forEach(function(c){ el.appendChild(c.cloneNode(true)); });
+  });
+})();
+</script>
 
 <!-- Portfolio / Flagship Work -->
 <section id="work">
@@ -2814,8 +2802,9 @@ body.nav-open{overflow:hidden;}
 /* ── Hero image from manifest ── */
 (function(){
   if(!window.KEVIN_IMAGES || !window.KEVIN_IMAGES.length) return;
-  var heroIdx = 15; /* austin-16: lawyer in black suit, arms crossed, bookshelf */
-  var pick = window.KEVIN_IMAGES[heroIdx];
+  /* change heroIdx to pick a different photo — 0 = first portrait found */
+  var heroIdx = 0;
+  var pick = window.KEVIN_IMAGES.find(function(i){ return i.orientation === 'portrait'; }) || window.KEVIN_IMAGES[heroIdx];
   var el = document.querySelector('.hero-img');
   if(el){ el.src = pick.src; el.alt = pick.alt; }
 })();
