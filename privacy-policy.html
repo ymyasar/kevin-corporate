@@ -1,0 +1,318 @@
+<!-- LEGAL: review with Kevin before publishing. This is standard boilerplate, not legal advice. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Privacy Policy — Kevin Nguyen Headshots | Austin, TX</title>
+<meta name="robots" content="noindex,follow">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@1,400;1,500;1,600&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+
+:root{
+  --color-bg:#FAFAFA;
+  --color-navy:#0D1F35;
+  --color-steel:#4A6FA5;
+  --color-slate:#E4E8EE;
+  --color-text:#0D1F35;
+  --color-text-muted:#5A6A7A;
+  --color-body:#3A4654;
+  --hairline:rgba(13,31,53,0.10);
+  --font-heading:'Cormorant Garamond',Georgia,serif;
+  --font-body:'Inter',sans-serif;
+  --font-display:'Playfair Display',Georgia,serif;
+  --ease:cubic-bezier(0.16,1,0.3,1);
+  --shadow-sm:0 1px 2px rgba(13,31,53,0.04),0 1px 3px rgba(13,31,53,0.06);
+}
+
+html{scroll-behavior:smooth;}
+body{background:var(--color-bg);font-family:var(--font-body);overflow-x:hidden;color:var(--color-text);}
+
+/* ── Nav ── */
+#site-nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  padding:16px 52px;
+  display:flex;align-items:center;justify-content:space-between;
+  background:var(--color-bg);
+  border-bottom:1px solid var(--hairline);
+  box-shadow:var(--shadow-sm);
+}
+.nav-name{
+  font-family:var(--font-display);font-style:italic;font-weight:500;font-size:22px;
+  color:var(--color-navy);text-decoration:none;letter-spacing:0.02em;flex-shrink:0;
+}
+.nav-links{display:flex;align-items:center;gap:32px;margin:0 40px;}
+.nav-link{font-family:var(--font-body);font-size:13px;font-weight:500;color:var(--color-navy);text-decoration:none;transition:color 0.2s ease;}
+.nav-link:hover{color:var(--color-steel);}
+.nav-cta{
+  font-family:var(--font-body);font-size:13px;font-weight:600;color:#fff;
+  background:var(--color-navy);border:none;padding:12px 28px;border-radius:999px;
+  cursor:pointer;text-decoration:none;letter-spacing:0.01em;flex-shrink:0;
+  transition:background 0.35s var(--ease),transform 0.35s var(--ease);
+}
+.nav-cta:hover{background:var(--color-steel);transform:translateY(-2px);}
+#nav-hamburger{display:none;}
+#nav-overlay{
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  position:fixed;inset:0;z-index:9999;
+  background:var(--color-bg);opacity:0;pointer-events:none;
+  transition:opacity 0.35s var(--ease);
+}
+body.nav-open #nav-overlay{opacity:1;pointer-events:auto;}
+body.nav-open{overflow:hidden;}
+.nav-overlay-links{display:flex;flex-direction:column;align-items:center;gap:0;margin-bottom:36px;}
+.nav-overlay-link{
+  font-family:var(--font-heading);font-size:42px;font-weight:400;color:var(--color-navy);
+  text-decoration:none;padding:14px 0;display:flex;align-items:center;transition:color 0.2s ease;
+}
+.nav-overlay-link:hover{color:var(--color-steel);}
+.nav-overlay-cta{
+  font-family:var(--font-body);font-size:15px;font-weight:600;color:#fff;
+  background:var(--color-navy);border:none;padding:15px 40px;border-radius:999px;
+  cursor:pointer;text-decoration:none;letter-spacing:0.01em;display:inline-flex;align-items:center;
+}
+
+/* ── Page header ── */
+.page-header{
+  background:var(--color-navy);
+  padding:140px 40px 72px;
+  text-align:center;
+}
+.page-header-eyebrow{
+  font-family:var(--font-body);font-size:11px;font-weight:400;
+  letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.55);
+  margin:0 0 16px;
+}
+.page-header-title{
+  font-family:var(--font-heading);font-size:52px;font-weight:400;
+  color:#fff;line-height:1.05;letter-spacing:-0.01em;margin:0;
+}
+
+/* ── Content ── */
+.page-content{
+  max-width:720px;margin:0 auto;
+  padding:72px 40px 96px;
+}
+.legal-last-updated{
+  font-family:var(--font-body);font-size:12.5px;color:var(--color-text-muted);
+  margin-bottom:56px;padding-bottom:24px;border-bottom:1px solid var(--hairline);
+}
+.legal-section{margin-bottom:48px;}
+.legal-h2{
+  font-family:var(--font-heading);font-size:30px;font-weight:400;
+  color:var(--color-navy);margin-bottom:16px;letter-spacing:-0.01em;
+}
+.legal-body{
+  font-family:var(--font-body);font-size:15px;color:var(--color-body);
+  line-height:1.75;margin-bottom:14px;
+}
+.legal-body a{color:var(--color-steel);text-decoration:none;}
+.legal-body a:hover{text-decoration:underline;}
+.legal-body strong{color:var(--color-navy);font-weight:600;}
+
+/* ── Footer ── */
+footer{background:var(--color-navy);padding:64px 0 40px;position:relative;z-index:3;}
+.footer-inner{max-width:1200px;margin:0 auto;padding:0 40px;}
+.footer-grid{
+  display:grid;grid-template-columns:1.6fr 1fr 1fr 1.2fr;
+  gap:40px;padding-bottom:48px;
+}
+.footer-brand-name{font-family:var(--font-display);font-style:italic;font-size:22px;font-weight:400;color:#fff;line-height:1.2;margin:0 0 10px;}
+.footer-brand-tag{font-family:var(--font-body);font-size:13px;color:rgba(255,255,255,0.5);line-height:1.5;margin:0;}
+.footer-col-label{font-family:var(--font-body);font-size:10px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.35);margin:0 0 16px;}
+.footer-col-links{display:flex;flex-direction:column;gap:10px;}
+.footer-link{font-family:var(--font-body);font-size:13.5px;color:rgba(255,255,255,0.6);text-decoration:none;transition:color 0.2s ease;line-height:1.4;}
+.footer-link:hover{color:#fff;}
+.footer-bottom{
+  display:flex;align-items:center;justify-content:space-between;gap:24px;
+  padding-top:24px;border-top:1px solid rgba(255,255,255,0.12);flex-wrap:wrap;
+}
+.footer-copy{font-family:var(--font-body);font-size:12.5px;color:rgba(255,255,255,0.4);}
+.footer-legal-links{display:flex;gap:20px;}
+.footer-legal-link{font-family:var(--font-body);font-size:12px;color:rgba(255,255,255,0.35);text-decoration:none;transition:color 0.2s ease;}
+.footer-legal-link:hover{color:rgba(255,255,255,0.7);}
+.footer-service-area{font-family:var(--font-body);font-size:12px;color:rgba(255,255,255,0.3);text-align:right;}
+
+/* ── Mobile ── */
+@media(max-width:767px){
+  #site-nav{padding:12px 20px;}
+  .nav-links,.nav-cta{display:none;}
+  #nav-hamburger{
+    display:flex;flex-direction:column;justify-content:center;align-items:center;
+    gap:5px;width:44px;height:44px;cursor:pointer;background:none;border:none;padding:0;flex-shrink:0;
+  }
+  #nav-hamburger span{
+    display:block;width:24px;height:1.5px;background:var(--color-navy);
+    transition:transform 0.3s var(--ease),opacity 0.3s ease;transform-origin:center;
+  }
+  body.nav-open #nav-hamburger span:nth-child(1){transform:translateY(6.5px) rotate(45deg);}
+  body.nav-open #nav-hamburger span:nth-child(2){opacity:0;transform:scaleX(0);}
+  body.nav-open #nav-hamburger span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg);}
+  .page-header{padding:110px 24px 56px;}
+  .page-header-title{font-size:36px;}
+  .page-content{padding:48px 24px 72px;}
+  .legal-h2{font-size:24px;}
+  .footer-inner{padding:0 24px;}
+  .footer-grid{grid-template-columns:1fr;gap:32px;padding-bottom:36px;}
+  .footer-bottom{flex-direction:column;align-items:flex-start;gap:12px;}
+  .footer-service-area{text-align:left;}
+  .nav-name{font-size:17px;}
+}
+</style>
+</head>
+<body>
+
+<nav id="site-nav">
+  <a href="index.html" class="nav-name">Kevin Nguyen Headshots</a>
+  <div class="nav-links">
+    <a href="index.html#services" class="nav-link">Services</a>
+    <a href="index.html#work" class="nav-link">Work</a>
+    <a href="index.html#process" class="nav-link">Process</a>
+    <a href="index.html#contact" class="nav-link">Contact</a>
+  </div>
+  <button id="nav-hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="nav-overlay">
+    <span></span><span></span><span></span>
+  </button>
+  <a href="index.html#contact" class="nav-cta">Book Now</a>
+</nav>
+
+<div id="nav-overlay" role="dialog" aria-label="Navigation" aria-modal="true">
+  <nav class="nav-overlay-links">
+    <a href="index.html#services" class="nav-overlay-link">Services</a>
+    <a href="index.html#work" class="nav-overlay-link">Work</a>
+    <a href="index.html#process" class="nav-overlay-link">Process</a>
+    <a href="index.html#contact" class="nav-overlay-link">Contact</a>
+  </nav>
+  <a href="index.html#contact" class="nav-overlay-cta">Book Now</a>
+</div>
+
+<header class="page-header">
+  <p class="page-header-eyebrow">Legal</p>
+  <h1 class="page-header-title">Privacy Policy</h1>
+</header>
+
+<main class="page-content">
+
+  <p class="legal-last-updated">Last updated: <!-- CONFIRM WITH KEVIN: insert final review date before publishing --> June 2026</p>
+
+  <div class="legal-section">
+    <h2 class="legal-h2">Who We Are</h2>
+    <p class="legal-body">This website is operated by <strong>Kevin Nguyen Headshots</strong>, a corporate and executive photography studio based in Austin, Texas. We provide professional headshot sessions for individuals, executives, and corporate teams across Austin and Central Texas.</p>
+    <p class="legal-body">Questions about this policy may be directed to <a href="mailto:KevinHeadshots@gmail.com">KevinHeadshots@gmail.com</a>.</p>
+  </div>
+
+  <div class="legal-section">
+    <h2 class="legal-h2">What Data We Collect</h2>
+    <p class="legal-body">We collect only the information you voluntarily submit through our contact and booking form. This includes:</p>
+    <p class="legal-body">Name, company name, email address, phone number, session type preference, and any additional message you choose to include.</p>
+    <p class="legal-body"><strong>No payment data is collected through this website.</strong> Any payment processing for sessions is handled separately and directly with Kevin Nguyen Headshots outside of this site.</p>
+  </div>
+
+  <div class="legal-section">
+    <h2 class="legal-h2">How We Use It</h2>
+    <p class="legal-body">The information you submit is used solely to respond to your booking inquiry and schedule your photography session. We do not sell, rent, or share your personal information with any third parties for marketing or other purposes.</p>
+  </div>
+
+  <div class="legal-section">
+    <h2 class="legal-h2">Cookies &amp; Analytics</h2>
+    <!-- CONFIRM WITH KEVIN: does the live site use Google Analytics or similar? Update this section accordingly. Currently states no tracking. -->
+    <p class="legal-body">This website does not currently use cookies or third-party analytics tracking. If analytics are added in the future, this policy will be updated accordingly.</p>
+  </div>
+
+  <div class="legal-section">
+    <h2 class="legal-h2">Third-Party Services</h2>
+    <p class="legal-body">This site uses <strong>Google Fonts</strong> to load typography. Google Fonts may log your IP address when fonts are requested. You can review Google's privacy practices at <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a>.</p>
+  </div>
+
+  <div class="legal-section">
+    <h2 class="legal-h2">Data Retention</h2>
+    <p class="legal-body">Booking inquiry information is retained only for as long as reasonably necessary to respond to your request and fulfil any resulting session. We do not store form submission data beyond that purpose.</p>
+  </div>
+
+  <div class="legal-section">
+    <h2 class="legal-h2">Your Rights</h2>
+    <p class="legal-body">You may request access to, correction of, or deletion of any personal information we hold about you. To make such a request, please contact us at <a href="mailto:KevinHeadshots@gmail.com">KevinHeadshots@gmail.com</a>. We will respond within a reasonable time frame.</p>
+  </div>
+
+  <div class="legal-section">
+    <h2 class="legal-h2">Changes to This Policy</h2>
+    <p class="legal-body">We may update this Privacy Policy from time to time. The "Last updated" date at the top of this page reflects when the most recent changes were made. Continued use of this website after any changes constitutes acceptance of the updated policy.</p>
+  </div>
+
+  <div class="legal-section">
+    <h2 class="legal-h2">Contact</h2>
+    <p class="legal-body">
+      Kevin Nguyen Headshots<br>
+      Austin, TX<br>
+      <a href="mailto:KevinHeadshots@gmail.com">KevinHeadshots@gmail.com</a><br>
+      <a href="tel:+15125650046">512-565-0046</a>
+    </p>
+  </div>
+
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div>
+        <p class="footer-brand-name">Kevin Nguyen Headshots</p>
+        <p class="footer-brand-tag">Austin corporate &amp; executive headshots.</p>
+      </div>
+      <div>
+        <p class="footer-col-label">Explore</p>
+        <div class="footer-col-links">
+          <a href="index.html#work" class="footer-link">Work</a>
+          <a href="index.html#services" class="footer-link">Services</a>
+          <a href="index.html#process" class="footer-link">Process</a>
+          <a href="index.html#contact" class="footer-link">Contact</a>
+        </div>
+      </div>
+      <div>
+        <p class="footer-col-label">Sessions</p>
+        <div class="footer-col-links">
+          <a href="index.html#services" class="footer-link">Standard</a>
+          <a href="index.html#services" class="footer-link">Enterprise</a>
+          <a href="index.html#services" class="footer-link">Corporate Team</a>
+          <a href="index.html#services" class="footer-link">Personal Branding</a>
+        </div>
+      </div>
+      <div>
+        <p class="footer-col-label">Contact</p>
+        <div class="footer-col-links">
+          <a href="tel:+15125650046" class="footer-link">512-565-0046</a>
+          <a href="mailto:KevinHeadshots@gmail.com" class="footer-link">KevinHeadshots@gmail.com</a>
+          <a href="#" class="footer-link" target="_blank" rel="noopener">Instagram</a>
+          <a href="#" class="footer-link" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="#" class="footer-link" target="_blank" rel="noopener">Google</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">&#169; 2026 Kevin Nguyen Headshots &middot; Austin, TX</span>
+      <div class="footer-legal-links">
+        <a href="privacy-policy.html" class="footer-legal-link">Privacy Policy</a>
+        <a href="terms.html" class="footer-legal-link">Terms of Use</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var btn = document.getElementById('nav-hamburger');
+  var overlay = document.getElementById('nav-overlay');
+  if(!btn || !overlay) return;
+  function openMenu(){ document.body.classList.add('nav-open'); btn.setAttribute('aria-expanded','true'); }
+  function closeMenu(){ document.body.classList.remove('nav-open'); btn.setAttribute('aria-expanded','false'); }
+  btn.addEventListener('click', function(){ document.body.classList.contains('nav-open') ? closeMenu() : openMenu(); });
+  overlay.querySelectorAll('a').forEach(function(link){ link.addEventListener('click', closeMenu); });
+  document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeMenu(); });
+})();
+</script>
+
+</body>
+</html>

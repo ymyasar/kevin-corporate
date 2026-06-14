@@ -1114,6 +1114,15 @@ footer{
   font-size:12.5px;
   color:rgba(255,255,255,0.4);
 }
+.footer-legal-links{display:flex;gap:20px;}
+.footer-legal-link{
+  font-family:var(--font-body);
+  font-size:12px;
+  color:rgba(255,255,255,0.35);
+  text-decoration:none;
+  transition:color 0.2s ease;
+}
+.footer-legal-link:hover{color:rgba(255,255,255,0.7);}
 .footer-service-area{
   font-family:var(--font-body);
   font-size:12px;
@@ -2336,9 +2345,13 @@ body.nav-open{overflow:hidden;}
 
     </div>
 
-    <!-- Row 2: copyright + service area -->
+    <!-- Row 2: copyright + legal links + service area -->
     <div class="footer-bottom">
       <span class="footer-copy">&#169; 2026 Kevin Nguyen Headshots &middot; Austin, TX</span>
+      <div class="footer-legal-links">
+        <a href="privacy-policy.html" class="footer-legal-link">Privacy Policy</a>
+        <a href="terms.html" class="footer-legal-link">Terms of Use</a>
+      </div>
       <span class="footer-service-area">Serving Austin, Round Rock, Cedar Park, Georgetown, Pflugerville &amp; Central Texas</span>
     </div>
 
