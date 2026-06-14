@@ -148,7 +148,7 @@ section{ position:relative; z-index:3; }
 ══════════════════════════════════════════════ */
 #hero{position:relative;height:100vh;min-height:640px;overflow:hidden;display:flex;align-items:center;justify-content:flex-start;background:#0D1F35;}
 #hero::before{content:'';position:absolute;inset:0;z-index:1;pointer-events:none;opacity:0.04;mix-blend-mode:overlay;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E");background-size:200px 200px;}
-#hero::after{content:'';position:absolute;inset:0;z-index:1;pointer-events:none;background-image:linear-gradient(rgba(255,255,255,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.03) 1px,transparent 1px);background-size:80px 80px;}
+#hero::after{content:'';position:absolute;inset:0;z-index:1;pointer-events:none;background-image:linear-gradient(rgba(255,255,255,0.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.05) 1px,transparent 1px);background-size:80px 80px;}
 .hero-blob{position:absolute;border-radius:50%;filter:blur(80px);z-index:0;pointer-events:none;}
 .hero-blob--1{width:700px;height:700px;background:radial-gradient(ellipse,#1A2E45 0%,transparent 70%);top:-180px;left:-150px;animation:hblob1 23s ease-in-out infinite alternate;}
 .hero-blob--2{width:550px;height:550px;background:radial-gradient(ellipse,#16263A 0%,transparent 70%);top:10%;right:-120px;animation:hblob2 31s ease-in-out infinite alternate;}
@@ -173,11 +173,19 @@ section{ position:relative; z-index:3; }
 .hero-btn-primary:hover{background:var(--color-steel);color:#fff;transform:translateY(-2px);box-shadow:0 10px 24px rgba(13,31,53,0.18);}
 .hero-btn-secondary{font-family:var(--font-body);font-size:14px;font-weight:600;padding:16px 40px;background:transparent;color:#fff;border:1px solid rgba(255,255,255,0.7);border-radius:999px;cursor:pointer;text-decoration:none;letter-spacing:0.01em;transition:background 0.35s cubic-bezier(0.16,1,0.3,1),color 0.35s cubic-bezier(0.16,1,0.3,1),border-color 0.35s cubic-bezier(0.16,1,0.3,1),transform 0.35s cubic-bezier(0.16,1,0.3,1),box-shadow 0.35s cubic-bezier(0.16,1,0.3,1);display:inline-block;}
 .hero-btn-secondary:hover{background:#fff;color:var(--color-navy);border-color:#fff;transform:translateY(-2px);box-shadow:0 10px 24px rgba(13,31,53,0.18);}
-.hero-scroll-cue{position:absolute;bottom:36px;left:50%;transform:translateX(-50%);z-index:2;}
-.hero-scroll-line{width:1px;height:40px;background:#fff;opacity:0.5;display:block;}
-@keyframes scroll-pulse{0%,100%{transform:scaleY(1);opacity:0.5;}50%{transform:scaleY(0.4);opacity:0.2;}}
-.hero-scroll-line{animation:scroll-pulse 2s ease-in-out infinite;}
-@media(prefers-reduced-motion:reduce){.hero-scroll-line{animation:none;}}
+.hero-scroll-cue{position:absolute;bottom:32px;left:50%;transform:translateX(-50%);z-index:2;}
+.hero-scroll-chevron{display:block;animation:scroll-bob 2s ease-in-out infinite;}
+@keyframes scroll-bob{0%,100%{transform:translateY(0);}50%{transform:translateY(8px);}}
+@media(prefers-reduced-motion:reduce){.hero-scroll-chevron{animation:none;}}
+/* Proof card — desktop wide only */
+.hero-proof{position:absolute;right:clamp(40px,6vw,96px);top:50%;transform:translateY(-50%) scale(0.96);z-index:3;width:264px;border-radius:var(--radius-feature);border:1px solid rgba(255,255,255,0.14);box-shadow:0 8px 24px rgba(13,31,53,0.24),0 24px 60px rgba(13,31,53,0.28);overflow:hidden;opacity:0;transition:opacity 0.9s var(--ease),transform 0.9s var(--ease),box-shadow 0.4s ease;pointer-events:auto;}
+.hero-proof.revealed{opacity:1;transform:translateY(-50%) scale(1);}
+.hero-proof.revealed:hover{transform:translateY(calc(-50% - 4px)) scale(1);box-shadow:0 16px 48px rgba(13,31,53,0.32),0 40px 80px rgba(13,31,53,0.30);}
+.hero-proof-img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center top;}
+.hero-proof-caption{position:absolute;bottom:0;left:0;right:0;padding:32px 14px 14px;background:linear-gradient(transparent,rgba(13,31,53,0.82));font-family:var(--font-body);font-size:10px;font-weight:500;letter-spacing:0.16em;text-transform:uppercase;color:rgba(255,255,255,0.72);}
+@media(max-width:1199px){.hero-proof{display:none;}}
+/* Desktop: cap hero height so content fills ~80% of viewport */
+@media(min-width:761px){#hero{height:clamp(600px,86vh,820px);}}
 
 /* ════════════════════════════════════════════
    2. SOCIAL PROOF BAR
@@ -1570,6 +1578,7 @@ body.nav-open{overflow:hidden;}
   .hero-content{padding:0 24px 80px;text-align:center;margin-left:0;max-width:100%;}
   .hero-content::before{display:none;}
   .hero-corner{display:none;}
+  .hero-proof{display:none;}
   .hero-rating{justify-content:center;}
   .hero-cta-row{flex-direction:column;gap:12px;justify-content:center;}
   .hero-btn-primary,.hero-btn-secondary{
@@ -1824,8 +1833,15 @@ body.nav-open{overflow:hidden;}
   </div>
   <!-- CONFIRM WITH KEVIN: founding year — "2016" aligns with 10+ years as of 2026 -->
   <div class="hero-corner" aria-hidden="true">Austin, TX &middot; Est.&nbsp;2016</div>
+  <!-- CONFIRM WITH KEVIN: update caption with real session category -->
+  <div class="hero-proof" id="hero-proof" aria-hidden="true">
+    <img class="hero-proof-img" src="/images/corporate-headshot-austin-05.jpeg" alt="" loading="eager">
+    <p class="hero-proof-caption">Recent Session &mdash; Professional</p>
+  </div>
   <div class="hero-scroll-cue" aria-hidden="true">
-    <span class="hero-scroll-line"></span>
+    <svg class="hero-scroll-chevron" width="20" height="11" viewBox="0 0 20 11" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M1 1L10 10L19 1" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
   </div>
 </section>
 
@@ -2855,6 +2871,10 @@ body.nav-open{overflow:hidden;}
   items.forEach(function(el, i){
     setTimeout(function(){ el.classList.add('revealed'); }, delays[i] !== undefined ? delays[i] : 80 + i*130);
   });
+  setTimeout(function(){
+    var proof = document.getElementById('hero-proof');
+    if(proof) proof.classList.add('revealed');
+  }, 900);
 })();
 
 /* ── Scroll reveal — individual elements (excludes data-stagger children) ── */
@@ -2905,27 +2925,37 @@ body.nav-open{overflow:hidden;}
 /* ── Trust bar count-up ── */
 (function(){
   var reduced = window.matchMedia('(prefers-reduced-motion:reduce)').matches;
-  var nums = document.querySelectorAll('.stat-num[data-count]');
   if(reduced) return;
-  function easeOut(t){ return 1 - Math.pow(1 - t, 3); }
-  var io = new IntersectionObserver(function(entries){
-    entries.forEach(function(entry){
-      if(!entry.isIntersecting) return;
-      var el = entry.target;
-      var target = parseInt(el.dataset.count, 10);
-      var suffix = el.dataset.suffix !== undefined ? el.dataset.suffix : '';
-      var duration = 1200;
+  var nums = Array.from(document.querySelectorAll('.stat-num[data-count]'));
+  if(!nums.length) return;
+  var DURATION = 2200;
+  var STAGGER  = 150;
+  function easeOutCubic(t){ return 1 - Math.pow(1 - t, 3); }
+  function animateNum(el, delay){
+    var target = parseInt(el.dataset.count, 10);
+    var suffix = el.dataset.suffix !== undefined ? el.dataset.suffix : '';
+    setTimeout(function(){
       var start = null;
-      (function tick(ts){
+      function tick(ts){
         if(!start) start = ts;
-        var progress = Math.min((ts - start) / duration, 1);
-        el.textContent = Math.round(easeOut(progress) * target) + suffix;
-        if(progress < 1) requestAnimationFrame(tick);
-      })(performance.now());
-      io.unobserve(el);
-    });
-  },{threshold:0.6});
-  nums.forEach(function(el){ io.observe(el); });
+        var p = Math.min((ts - start) / DURATION, 1);
+        el.textContent = Math.round(easeOutCubic(p) * target) + suffix;
+        if(p < 1) requestAnimationFrame(tick);
+      }
+      requestAnimationFrame(tick);
+    }, delay);
+  }
+  var fired = false;
+  var bar = document.getElementById('stats-bar');
+  if(!bar) return;
+  var io = new IntersectionObserver(function(entries){
+    if(fired) return;
+    if(!entries[0].isIntersecting) return;
+    fired = true;
+    nums.forEach(function(el, i){ animateNum(el, i * STAGGER); });
+    io.disconnect();
+  },{threshold:0.4});
+  io.observe(bar);
 })();
 </script>
 
