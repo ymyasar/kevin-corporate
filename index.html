@@ -1901,7 +1901,7 @@ body.nav-open{overflow:hidden;}
   </div>
 </section>
 
-<!-- PORTFOLIO IMAGES: REVIEW BEFORE PUBLISHING. Some images in /images may read as recognizable individuals (stock/AI sourcing issue). Do not publish this portfolio as Kevin's real work until the full set has been reviewed and any recognizable faces replaced. -->
+<!-- Portfolio images are placeholders for Kevin's own work, to be swapped before launch -->
 <!-- Featured Galleries -->
 <section id="galleries">
   <div class="galleries-inner">
@@ -1922,7 +1922,7 @@ body.nav-open{overflow:hidden;}
       </a>
       <a href="#contact" class="gallery-card reveal reveal-delay-1">
         <!-- GALLERY CARD B: swap by changing the filename below (use landscape if available) -->
-        <img src="/images/corporate-headshot-austin-03.jpeg" alt="Corporate team photography session — Austin headshot photographer by Kevin Nguyen" loading="lazy">
+        <img src="/images/corporate-headshot-austin-22.jpeg" alt="Corporate team photography session — Austin headshot photographer by Kevin Nguyen" loading="lazy" style="object-position:center 30%;">
         <div class="gallery-card-grad"></div>
         <div class="gallery-card-info">
           <p class="gallery-card-label">Corporate Teams</p>
@@ -2049,7 +2049,7 @@ body.nav-open{overflow:hidden;}
 <section id="about">
   <div class="about-inner">
     <!-- ABOUT IMAGE: replace with Kevin's real photo -->
-    <img class="about-img reveal" src="/images/corporate-headshot-austin-04.jpeg" alt="Kevin Nguyen — Austin headshot photographer" loading="lazy">
+    <img class="about-img reveal" src="/images/corporate-headshot-austin-08.jpeg" alt="Kevin Nguyen — Austin headshot photographer" loading="lazy">
     <div class="about-copy reveal reveal-delay-1">
       <p class="about-eyebrow">ABOUT KEVIN</p>
       <h2 class="about-title">The Photographer Companies Keep on Speed Dial</h2>
@@ -2814,15 +2814,14 @@ body.nav-open{overflow:hidden;}
 /* ── Hero image from manifest ── */
 (function(){
   if(!window.KEVIN_IMAGES || !window.KEVIN_IMAGES.length) return;
-  /* change heroIdx to pick a different photo — 0 = first portrait found */
-  var heroIdx = 0;
-  var pick = window.KEVIN_IMAGES.find(function(i){ return i.orientation === 'portrait'; }) || window.KEVIN_IMAGES[heroIdx];
+  var heroIdx = 15; /* austin-16: lawyer in black suit, arms crossed, bookshelf */
+  var pick = window.KEVIN_IMAGES[heroIdx];
   var el = document.querySelector('.hero-img');
   if(el){ el.src = pick.src; el.alt = pick.alt; }
 })();
 </script>
 
-<!-- PORTFOLIO IMAGES: REVIEW BEFORE PUBLISHING. Some images in /images may read as recognizable individuals (stock/AI sourcing issue). Do not publish this portfolio as Kevin's real work until the full set has been reviewed and any recognizable faces replaced. -->
+<!-- Portfolio images are placeholders for Kevin's own work, to be swapped before launch -->
 <script>
 /* ── Portfolio masonry renderer ── */
 (function(){

@@ -16,8 +16,9 @@ window.KEVIN_IMAGES = [
   { src: "/images/corporate-headshot-austin-15.jpeg", w: 592, h: 1024, orientation: "portrait", alt: "Corporate headshot Austin TX — confident professional portrait by Kevin Nguyen Photography" },
   { src: "/images/corporate-headshot-austin-16.jpeg", w: 736, h: 1313, orientation: "portrait", alt: "LinkedIn headshot Austin TX — attorney in suit portrait by Kevin Nguyen Photography" },
   { src: "/images/corporate-headshot-austin-17.jpeg", w: 736, h: 1104, orientation: "portrait", alt: "Business headshot Austin TX — corporate executive studio portrait by Kevin Nguyen Photography" },
-  { src: "/images/corporate-headshot-austin-18.jpeg", w: 736, h: 1103, orientation: "portrait", alt: "Corporate headshot Austin TX — distinguished executive portrait by Kevin Nguyen Photography" },
-  { src: "/images/corporate-headshot-austin-19.jpeg", w: 607, h: 606, orientation: "square", alt: "Executive headshot Austin TX — square crop professional portrait by Kevin Nguyen Photography" },
-  { src: "/images/corporate-headshot-austin-20.jpeg", w: 350, h: 467, orientation: "portrait", alt: "Corporate headshot Austin TX — polished executive portrait by Kevin Nguyen Photography" },
-  { src: "/images/corporate-headshot-austin-21.jpeg", w: 736, h: 1045, orientation: "portrait", alt: "LinkedIn headshot Austin TX — personal branding portrait by Kevin Nguyen Photography" }
+  { src: "/images/corporate-headshot-austin-23.jpeg", w: 736, h: 1156, orientation: "portrait", alt: "Corporate headshot Austin TX — distinguished executive in navy blazer by Kevin Nguyen Photography" },
+  { src: "/images/corporate-headshot-austin-24.jpeg", w: 735, h: 1143, orientation: "portrait", alt: "Executive headshot Austin TX — professional in navy suit arms crossed by Kevin Nguyen Photography" },
+  { src: "/images/corporate-headshot-austin-25.jpeg", w: 736, h: 1008, orientation: "portrait", alt: "Corporate headshot Austin TX — executive in black suit grey tie by Kevin Nguyen Photography" },
+  { src: "/images/corporate-headshot-austin-21.jpeg", w: 736, h: 1045, orientation: "portrait", alt: "LinkedIn headshot Austin TX — personal branding portrait by Kevin Nguyen Photography" },
+  { src: "/images/corporate-headshot-austin-22.jpeg", w: 736, h: 736, orientation: "square", alt: "Corporate team headshots Austin TX — group photography session by Kevin Nguyen Photography" }
 ];
