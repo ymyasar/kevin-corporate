@@ -145,13 +145,21 @@ section{ position:relative; z-index:3; }
 /* ══════════════════════════════════════════════
    1. HERO
 ══════════════════════════════════════════════ */
-#hero{position:relative;height:100vh;min-height:600px;overflow:hidden;display:flex;align-items:flex-end;}
-.hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;z-index:0;transform-origin:center center;}
-@keyframes kenburns{0%{transform:scale(1);}100%{transform:scale(1.06);}}
-.hero-img{animation:kenburns 18s ease-out forwards;}
-@media(prefers-reduced-motion:reduce){.hero-img{animation:none;}}
-.hero-grad{position:absolute;inset:0;z-index:1;background:linear-gradient(135deg,rgba(13,31,53,0.85) 0%,transparent 65%);}
-.hero-content{position:relative;z-index:2;padding:0 0 110px 8vw;max-width:640px;}
+#hero{position:relative;height:100vh;min-height:640px;overflow:hidden;display:flex;align-items:center;justify-content:center;background:#0D1F35;}
+#hero::before{content:'';position:absolute;inset:0;z-index:1;pointer-events:none;opacity:0.04;mix-blend-mode:overlay;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E");background-size:200px 200px;}
+.hero-blob{position:absolute;border-radius:50%;filter:blur(80px);z-index:0;pointer-events:none;}
+.hero-blob--1{width:700px;height:700px;background:radial-gradient(ellipse,#1A2E45 0%,transparent 70%);top:-180px;left:-150px;animation:hblob1 23s ease-in-out infinite alternate;}
+.hero-blob--2{width:550px;height:550px;background:radial-gradient(ellipse,#16263A 0%,transparent 70%);top:10%;right:-120px;animation:hblob2 31s ease-in-out infinite alternate;}
+.hero-blob--3{width:480px;height:480px;background:radial-gradient(ellipse,#0A1825 0%,transparent 70%);bottom:-100px;left:35%;animation:hblob3 19s ease-in-out infinite alternate;}
+@keyframes hblob1{0%{transform:translate(0,0) scale(1);}50%{transform:translate(80px,50px) scale(1.1);}100%{transform:translate(-50px,90px) scale(0.92);}}
+@keyframes hblob2{0%{transform:translate(0,0) scale(1);}40%{transform:translate(-70px,60px) scale(1.08);}100%{transform:translate(60px,-80px) scale(0.95);}}
+@keyframes hblob3{0%{transform:translate(0,0) scale(1);}60%{transform:translate(50px,-70px) scale(1.06);}100%{transform:translate(-70px,40px) scale(0.97);}}
+@media(prefers-reduced-motion:reduce){.hero-blob{animation:none;}}
+.hero-content{position:relative;z-index:2;padding:0 40px;max-width:720px;width:100%;text-align:center;}
+.hero-cta-row{display:flex;gap:16px;margin-top:36px;flex-wrap:wrap;justify-content:center;}
+.hero-reveal{opacity:0;transform:translateY(24px);transition:opacity 0.8s var(--ease),transform 0.8s var(--ease);}
+.hero-reveal.revealed{opacity:1;transform:translateY(0);}
+@media(prefers-reduced-motion:reduce){.hero-reveal{opacity:1;transform:none;transition:none;}}
 .hero-eyebrow{font-family:var(--font-body);font-size:11px;font-weight:400;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.7);margin:0 0 20px;}
 .hero-headline{font-family:var(--font-heading);font-size:64px;font-weight:400;color:#fff;line-height:1.05;letter-spacing:-0.01em;margin:0;}
 .hero-brand-line{font-family:var(--font-heading);font-size:30px;font-weight:300;color:rgba(255,255,255,0.82);line-height:1.2;margin-top:10px;}
@@ -1545,7 +1553,7 @@ body.nav-open{overflow:hidden;}
 
   /* ── Hero ── */
   .hero-headline{font-size:clamp(34px,9vw,44px);}
-  .hero-content{padding:0 24px 96px;}
+  .hero-content{padding:0 24px 80px;}
   .hero-cta-row{flex-direction:column;gap:12px;}
   .hero-btn-primary,.hero-btn-secondary{
     display:block;
@@ -1555,7 +1563,6 @@ body.nav-open{overflow:hidden;}
     min-height:48px;
     padding:14px 24px;
   }
-  .hero-img{object-position:center 15%;}
   .hero-brand-line{font-size:22px;}
 
   /* ── Stats bar → 2×2 grid ── */
@@ -1770,13 +1777,13 @@ body.nav-open{overflow:hidden;}
 </div>
 
 <section id="hero">
-  <!-- HERO IMAGE: swap to Kevin's chosen hero shot by editing the index in the hero script -->
-  <img class="hero-img" alt="Austin TX corporate headshot photographer — professional executive portrait session" fetchpriority="high">
-  <div class="hero-grad"></div>
+  <div class="hero-blob hero-blob--1" aria-hidden="true"></div>
+  <div class="hero-blob hero-blob--2" aria-hidden="true"></div>
+  <div class="hero-blob hero-blob--3" aria-hidden="true"></div>
   <div class="hero-content">
-    <p class="hero-eyebrow reveal">AUSTIN HEADSHOT PHOTOGRAPHER &#8212; CORPORATE &amp; EXECUTIVE</p>
+    <p class="hero-eyebrow hero-reveal">AUSTIN HEADSHOT PHOTOGRAPHER &#8212; CORPORATE &amp; EXECUTIVE</p>
     <!-- RATING: confirm Kevin's real Google rating + count -->
-    <div class="hero-rating reveal">
+    <div class="hero-rating hero-reveal">
       <div class="hero-rating-stars" aria-label="5 out of 5 stars">
         <svg viewBox="0 0 14 14" width="14" height="14" aria-hidden="true"><path d="M7 1l1.6 3.25L12 4.85l-2.5 2.43.59 3.44L7 9.1l-3.09 1.72.59-3.44L2 4.85l3.4-.6z" fill="#E8B84B"/></svg>
         <svg viewBox="0 0 14 14" width="14" height="14" aria-hidden="true"><path d="M7 1l1.6 3.25L12 4.85l-2.5 2.43.59 3.44L7 9.1l-3.09 1.72.59-3.44L2 4.85l3.4-.6z" fill="#E8B84B"/></svg>
@@ -1788,10 +1795,10 @@ body.nav-open{overflow:hidden;}
       <span class="hero-rating-dot" aria-hidden="true"></span>
       <span class="hero-rating-source">Google Reviews</span>
     </div>
-    <h1 class="hero-headline reveal reveal-delay-1">Austin&#8217;s Corporate Headshot Photographer</h1>
-    <h2 class="hero-brand-line reveal reveal-delay-1">The Photo That Gets You in the Room</h2>
-    <p class="hero-sub reveal reveal-delay-2">Corporate headshots for law firms, executive teams, and companies across Austin. Shot at your office or our studio. Delivered in 48 hours.</p>
-    <div class="hero-cta-row reveal reveal-delay-3">
+    <h1 class="hero-headline hero-reveal">Austin&#8217;s Corporate Headshot Photographer</h1>
+    <h2 class="hero-brand-line hero-reveal">The Photo That Gets You in the Room</h2>
+    <p class="hero-sub hero-reveal">Corporate headshots for law firms, executive teams, and companies across Austin. Shot at your office or our studio. Delivered in 48 hours.</p>
+    <div class="hero-cta-row hero-reveal">
       <a href="#book-section" class="hero-btn-primary">Book Your Session</a>
       <a href="#work" class="hero-btn-secondary">View the Work &#8594;</a>
     </div>
@@ -1804,7 +1811,7 @@ body.nav-open{overflow:hidden;}
 
 <!-- TRUST BAR: confirm real numbers with Kevin -->
 <section id="stats-bar">
-  <div class="stats-row">
+  <div class="stats-row" data-stagger>
     <div class="stat-item reveal">
       <span class="stat-num">10+</span>
       <span class="stat-label">Years</span>
@@ -1870,7 +1877,7 @@ body.nav-open{overflow:hidden;}
       <h2 class="work-title">Proof, Not Promises</h2>
       <p class="work-sub">Recent corporate and executive work from Austin sessions.</p>
     </div>
-    <div id="portfolio-masonry"></div>
+    <div id="portfolio-masonry" data-stagger></div>
     <div class="work-cta-row reveal">
       <a href="#book-section" class="work-cta-btn">Book Your Session</a>
       <a href="#contact" class="work-cta-link">See team sessions &#8594;</a>
@@ -1918,7 +1925,7 @@ body.nav-open{overflow:hidden;}
       <p class="svc-eyebrow">SESSIONS &amp; PRICING</p>
       <h2 class="svc-title">Built for How Companies Buy</h2>
     </div>
-    <div class="svc-grid">
+    <div class="svc-grid" data-stagger>
       <div class="svc-card reveal">
         <div class="svc-card-top">
           <span class="svc-cat">Headshot</span>
@@ -1984,7 +1991,7 @@ body.nav-open{overflow:hidden;}
       <p class="proc-eyebrow">THE PROCESS</p>
       <h2 class="proc-title">From Booked to Delivered in 48 Hours</h2>
     </div>
-    <div class="proc-steps">
+    <div class="proc-steps" data-stagger>
       <div class="proc-step reveal">
         <div class="proc-step-circle">
           <svg viewBox="0 0 56 56" aria-hidden="true">
@@ -2057,7 +2064,7 @@ body.nav-open{overflow:hidden;}
       <p class="services-super" style="text-align:center;">Client Results</p>
       <h2 class="services-title" style="text-align:center;">What They Said After</h2>
     </div>
-    <div class="review-grid">
+    <div class="review-grid" data-stagger>
 
       <!-- Card 1 -->
       <div class="review-card reveal reveal-delay-1">
@@ -2787,18 +2794,6 @@ body.nav-open{overflow:hidden;}
 
 
 
-<script>
-/* ── Hero image from manifest ── */
-(function(){
-  if(!window.KEVIN_IMAGES || !window.KEVIN_IMAGES.length) return;
-  /* change heroIdx to pick a different photo — 0 = first portrait found */
-  var heroIdx = 0;
-  var pick = window.KEVIN_IMAGES.find(function(i){ return i.orientation === 'portrait'; }) || window.KEVIN_IMAGES[heroIdx];
-  var el = document.querySelector('.hero-img');
-  if(el){ el.src = pick.src; el.alt = pick.alt; }
-})();
-</script>
-
 <!-- Portfolio images are placeholders for Kevin's own work, to be swapped before launch -->
 <script>
 /* ── Portfolio masonry renderer ── */
@@ -2809,10 +2804,9 @@ body.nav-open{overflow:hidden;}
     console.warn('KEVIN_IMAGES not found or empty — portfolio not rendered');
     return;
   }
-  var delays = ['', ' reveal-delay-1', ' reveal-delay-2'];
-  window.KEVIN_IMAGES.forEach(function(img, i){
+  window.KEVIN_IMAGES.forEach(function(img){
     var a = document.createElement('a');
-    a.className = 'pf-item reveal' + delays[i % 3];
+    a.className = 'pf-item reveal';
     a.href = '#contact';
     var el = document.createElement('img');
     el.src = img.src;
@@ -2827,12 +2821,23 @@ body.nav-open{overflow:hidden;}
 </script>
 
 <script>
-/* ── Scroll reveal — IntersectionObserver ── */
+/* ── Hero load reveal — staggered fade-up on page load ── */
+(function(){
+  var reduced = window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+  var items = document.querySelectorAll('.hero-reveal');
+  if(reduced){ items.forEach(function(el){ el.classList.add('revealed'); }); return; }
+  var delays = [80, 200, 350, 480, 610, 740];
+  items.forEach(function(el, i){
+    setTimeout(function(){ el.classList.add('revealed'); }, delays[i] !== undefined ? delays[i] : 80 + i*130);
+  });
+})();
+
+/* ── Scroll reveal — individual elements (excludes data-stagger children) ── */
 (function(){
   var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var els = document.querySelectorAll('.reveal');
+  var els = document.querySelectorAll('.reveal:not([data-stagger] .reveal)');
   if(reduced){
-    els.forEach(function(el){ el.classList.add('revealed'); });
+    document.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('revealed'); });
     return;
   }
   var io = new IntersectionObserver(function(entries){
@@ -2844,6 +2849,32 @@ body.nav-open{overflow:hidden;}
     });
   },{threshold:0.15});
   els.forEach(function(el){ io.observe(el); });
+})();
+
+/* ── Scroll reveal — staggered children of [data-stagger] containers ── */
+(function(){
+  var reduced = window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+  var STAGGER = 80; /* ms between each child */
+  var MAX_DELAY = 560; /* cap so large grids don't drag on forever */
+  var groups = document.querySelectorAll('[data-stagger]');
+  if(reduced){
+    groups.forEach(function(g){
+      g.querySelectorAll('.reveal').forEach(function(c){ c.classList.add('revealed'); });
+    });
+    return;
+  }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(!entry.isIntersecting) return;
+      var children = Array.from(entry.target.querySelectorAll('.reveal'));
+      children.forEach(function(child, i){
+        var delay = Math.min(i * STAGGER, MAX_DELAY);
+        setTimeout(function(){ child.classList.add('revealed'); }, delay);
+      });
+      io.unobserve(entry.target);
+    });
+  },{threshold:0.1});
+  groups.forEach(function(g){ io.observe(g); });
 })();
 </script>
 
