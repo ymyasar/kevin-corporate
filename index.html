@@ -146,8 +146,9 @@ section{ position:relative; z-index:3; }
 /* ══════════════════════════════════════════════
    1. HERO
 ══════════════════════════════════════════════ */
-#hero{position:relative;height:100vh;min-height:640px;overflow:hidden;display:flex;align-items:center;justify-content:center;background:#0D1F35;}
+#hero{position:relative;height:100vh;min-height:640px;overflow:hidden;display:flex;align-items:center;justify-content:flex-start;background:#0D1F35;}
 #hero::before{content:'';position:absolute;inset:0;z-index:1;pointer-events:none;opacity:0.04;mix-blend-mode:overlay;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E");background-size:200px 200px;}
+#hero::after{content:'';position:absolute;inset:0;z-index:1;pointer-events:none;background-image:linear-gradient(rgba(255,255,255,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.03) 1px,transparent 1px);background-size:80px 80px;}
 .hero-blob{position:absolute;border-radius:50%;filter:blur(80px);z-index:0;pointer-events:none;}
 .hero-blob--1{width:700px;height:700px;background:radial-gradient(ellipse,#1A2E45 0%,transparent 70%);top:-180px;left:-150px;animation:hblob1 23s ease-in-out infinite alternate;}
 .hero-blob--2{width:550px;height:550px;background:radial-gradient(ellipse,#16263A 0%,transparent 70%);top:10%;right:-120px;animation:hblob2 31s ease-in-out infinite alternate;}
@@ -156,16 +157,18 @@ section{ position:relative; z-index:3; }
 @keyframes hblob2{0%{transform:translate(0,0) scale(1);}40%{transform:translate(-70px,60px) scale(1.08);}100%{transform:translate(60px,-80px) scale(0.95);}}
 @keyframes hblob3{0%{transform:translate(0,0) scale(1);}60%{transform:translate(50px,-70px) scale(1.06);}100%{transform:translate(-70px,40px) scale(0.97);}}
 @media(prefers-reduced-motion:reduce){.hero-blob{animation:none;}}
-.hero-content{position:relative;z-index:2;padding:0 40px;max-width:720px;width:100%;text-align:center;}
-.hero-cta-row{display:flex;gap:16px;margin-top:36px;flex-wrap:wrap;justify-content:center;}
+.hero-content{position:relative;z-index:2;padding:0 48px 0 32px;max-width:680px;width:100%;text-align:left;margin-left:clamp(60px,8vw,140px);}
+.hero-content::before{content:'';position:absolute;left:0;top:0;bottom:0;width:1px;background:rgba(255,255,255,0.18);pointer-events:none;}
+.hero-meta{margin-bottom:28px;}
+.hero-corner{position:absolute;bottom:40px;right:52px;z-index:2;font-family:var(--font-body);font-size:10px;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.35);}
+.hero-cta-row{display:flex;gap:16px;margin-top:36px;flex-wrap:wrap;justify-content:flex-start;}
 .hero-reveal{opacity:0;transform:translateY(24px);transition:opacity 0.8s var(--ease),transform 0.8s var(--ease);}
 .hero-reveal.revealed{opacity:1;transform:translateY(0);}
 @media(prefers-reduced-motion:reduce){.hero-reveal{opacity:1;transform:none;transition:none;}}
-.hero-eyebrow{font-family:var(--font-body);font-size:11px;font-weight:400;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.7);margin:0 0 20px;}
+.hero-eyebrow{font-family:var(--font-body);font-size:11px;font-weight:400;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.7);margin:0 0 7px;}
 .hero-headline{font-family:var(--font-heading);font-size:64px;font-weight:400;color:#fff;line-height:1.05;letter-spacing:-0.01em;margin:0;}
 .hero-brand-line{font-family:var(--font-heading);font-size:30px;font-weight:300;color:rgba(255,255,255,0.82);line-height:1.2;margin-top:10px;}
-.hero-sub{font-family:var(--font-body);font-size:17px;font-weight:400;color:rgba(255,255,255,0.85);margin-top:20px;line-height:1.7;max-width:62ch;}
-.hero-cta-row{display:flex;gap:16px;margin-top:36px;flex-wrap:wrap;}
+.hero-sub{font-family:var(--font-body);font-size:17px;font-weight:400;color:rgba(255,255,255,0.85);margin-top:20px;line-height:1.7;}
 .hero-btn-primary{font-family:var(--font-body);font-size:14px;font-weight:600;padding:16px 40px;background:#fff;color:var(--color-navy);border:none;border-radius:999px;cursor:pointer;text-decoration:none;letter-spacing:0.01em;transition:background 0.35s cubic-bezier(0.16,1,0.3,1),color 0.35s cubic-bezier(0.16,1,0.3,1),transform 0.35s cubic-bezier(0.16,1,0.3,1),box-shadow 0.35s cubic-bezier(0.16,1,0.3,1);display:inline-block;}
 .hero-btn-primary:hover{background:var(--color-steel);color:#fff;transform:translateY(-2px);box-shadow:0 10px 24px rgba(13,31,53,0.18);}
 .hero-btn-secondary{font-family:var(--font-body);font-size:14px;font-weight:600;padding:16px 40px;background:transparent;color:#fff;border:1px solid rgba(255,255,255,0.7);border-radius:999px;cursor:pointer;text-decoration:none;letter-spacing:0.01em;transition:background 0.35s cubic-bezier(0.16,1,0.3,1),color 0.35s cubic-bezier(0.16,1,0.3,1),border-color 0.35s cubic-bezier(0.16,1,0.3,1),transform 0.35s cubic-bezier(0.16,1,0.3,1),box-shadow 0.35s cubic-bezier(0.16,1,0.3,1);display:inline-block;}
@@ -1400,10 +1403,10 @@ footer{
 .stats-row{max-width:1100px;margin:0 auto;padding:0 32px;display:flex;align-items:center;justify-content:center;}
 .stat-item{text-align:center;padding:0 40px;flex:1;}
 .stat-divider{width:1px;height:40px;background:rgba(13,31,53,0.12);flex-shrink:0;}
-.stat-num{font-family:var(--font-body)!important;font-size:clamp(2rem,4vw,2.75rem)!important;font-weight:700!important;letter-spacing:-0.02em!important;color:var(--color-navy);line-height:1.1;display:block;}
+.stat-num{font-family:var(--font-body)!important;font-size:clamp(2rem,4vw,2.75rem)!important;font-weight:500!important;letter-spacing:0.01em!important;color:var(--color-navy);line-height:1.1;display:block;}
 .stat-label{font-family:var(--font-body);font-size:10px;font-weight:400;letter-spacing:0.16em;text-transform:uppercase;color:var(--color-text-muted);display:block;margin-top:4px;}
 /* ── Hero Google rating ── */
-.hero-rating{display:flex;align-items:center;gap:8px;margin-bottom:20px;}
+.hero-rating{display:flex;align-items:center;gap:8px;margin-bottom:0;}
 .hero-rating-stars{display:flex;align-items:center;gap:2px;}
 .hero-rating-score{font-family:var(--font-body);font-size:14px;font-weight:600;color:#fff;line-height:1;}
 .hero-rating-dot{width:3px;height:3px;border-radius:50%;background:rgba(255,255,255,0.4);flex-shrink:0;}
@@ -1564,8 +1567,11 @@ body.nav-open{overflow:hidden;}
 
   /* ── Hero ── */
   .hero-headline{font-size:clamp(34px,9vw,44px);}
-  .hero-content{padding:0 24px 80px;}
-  .hero-cta-row{flex-direction:column;gap:12px;}
+  .hero-content{padding:0 24px 80px;text-align:center;margin-left:0;max-width:100%;}
+  .hero-content::before{display:none;}
+  .hero-corner{display:none;}
+  .hero-rating{justify-content:center;}
+  .hero-cta-row{flex-direction:column;gap:12px;justify-content:center;}
   .hero-btn-primary,.hero-btn-secondary{
     display:block;
     width:100%;
@@ -1792,19 +1798,21 @@ body.nav-open{overflow:hidden;}
   <div class="hero-blob hero-blob--2" aria-hidden="true"></div>
   <div class="hero-blob hero-blob--3" aria-hidden="true"></div>
   <div class="hero-content">
-    <p class="hero-eyebrow hero-reveal">AUSTIN HEADSHOT PHOTOGRAPHER &#8212; CORPORATE &amp; EXECUTIVE</p>
-    <!-- RATING: confirm Kevin's real Google rating + count -->
-    <div class="hero-rating hero-reveal">
-      <div class="hero-rating-stars" aria-label="5 out of 5 stars">
-        <svg viewBox="0 0 14 14" width="14" height="14" aria-hidden="true"><path d="M7 1l1.6 3.25L12 4.85l-2.5 2.43.59 3.44L7 9.1l-3.09 1.72.59-3.44L2 4.85l3.4-.6z" fill="#E8B84B"/></svg>
-        <svg viewBox="0 0 14 14" width="14" height="14" aria-hidden="true"><path d="M7 1l1.6 3.25L12 4.85l-2.5 2.43.59 3.44L7 9.1l-3.09 1.72.59-3.44L2 4.85l3.4-.6z" fill="#E8B84B"/></svg>
-        <svg viewBox="0 0 14 14" width="14" height="14" aria-hidden="true"><path d="M7 1l1.6 3.25L12 4.85l-2.5 2.43.59 3.44L7 9.1l-3.09 1.72.59-3.44L2 4.85l3.4-.6z" fill="#E8B84B"/></svg>
-        <svg viewBox="0 0 14 14" width="14" height="14" aria-hidden="true"><path d="M7 1l1.6 3.25L12 4.85l-2.5 2.43.59 3.44L7 9.1l-3.09 1.72.59-3.44L2 4.85l3.4-.6z" fill="#E8B84B"/></svg>
-        <svg viewBox="0 0 14 14" width="14" height="14" aria-hidden="true"><path d="M7 1l1.6 3.25L12 4.85l-2.5 2.43.59 3.44L7 9.1l-3.09 1.72.59-3.44L2 4.85l3.4-.6z" fill="#E8B84B"/></svg>
+    <div class="hero-meta hero-reveal">
+      <p class="hero-eyebrow">AUSTIN HEADSHOT PHOTOGRAPHER &#8212; CORPORATE &amp; EXECUTIVE</p>
+      <!-- RATING: confirm Kevin's real Google rating + count -->
+      <div class="hero-rating">
+        <div class="hero-rating-stars" aria-label="5 out of 5 stars">
+          <svg viewBox="0 0 14 14" width="14" height="14" aria-hidden="true"><path d="M7 1l1.6 3.25L12 4.85l-2.5 2.43.59 3.44L7 9.1l-3.09 1.72.59-3.44L2 4.85l3.4-.6z" fill="#E8B84B"/></svg>
+          <svg viewBox="0 0 14 14" width="14" height="14" aria-hidden="true"><path d="M7 1l1.6 3.25L12 4.85l-2.5 2.43.59 3.44L7 9.1l-3.09 1.72.59-3.44L2 4.85l3.4-.6z" fill="#E8B84B"/></svg>
+          <svg viewBox="0 0 14 14" width="14" height="14" aria-hidden="true"><path d="M7 1l1.6 3.25L12 4.85l-2.5 2.43.59 3.44L7 9.1l-3.09 1.72.59-3.44L2 4.85l3.4-.6z" fill="#E8B84B"/></svg>
+          <svg viewBox="0 0 14 14" width="14" height="14" aria-hidden="true"><path d="M7 1l1.6 3.25L12 4.85l-2.5 2.43.59 3.44L7 9.1l-3.09 1.72.59-3.44L2 4.85l3.4-.6z" fill="#E8B84B"/></svg>
+          <svg viewBox="0 0 14 14" width="14" height="14" aria-hidden="true"><path d="M7 1l1.6 3.25L12 4.85l-2.5 2.43.59 3.44L7 9.1l-3.09 1.72.59-3.44L2 4.85l3.4-.6z" fill="#E8B84B"/></svg>
+        </div>
+        <span class="hero-rating-score">5.0</span>
+        <span class="hero-rating-dot" aria-hidden="true"></span>
+        <span class="hero-rating-source">Google Reviews</span>
       </div>
-      <span class="hero-rating-score">5.0</span>
-      <span class="hero-rating-dot" aria-hidden="true"></span>
-      <span class="hero-rating-source">Google Reviews</span>
     </div>
     <h1 class="hero-headline hero-reveal">Austin&#8217;s Corporate Headshot Photographer</h1>
     <h2 class="hero-brand-line hero-reveal">The Photo That Gets You in the Room</h2>
@@ -1814,6 +1822,8 @@ body.nav-open{overflow:hidden;}
       <a href="#work" class="hero-btn-secondary">View the Work &#8594;</a>
     </div>
   </div>
+  <!-- CONFIRM WITH KEVIN: founding year — "2016" aligns with 10+ years as of 2026 -->
+  <div class="hero-corner" aria-hidden="true">Austin, TX &middot; Est.&nbsp;2016</div>
   <div class="hero-scroll-cue" aria-hidden="true">
     <span class="hero-scroll-line"></span>
   </div>
@@ -1824,22 +1834,22 @@ body.nav-open{overflow:hidden;}
 <section id="stats-bar">
   <div class="stats-row" data-stagger>
     <div class="stat-item reveal">
-      <span class="stat-num">10+</span>
+      <span class="stat-num" data-count="10" data-suffix="+">10+</span>
       <span class="stat-label">Years</span>
     </div>
     <div class="stat-divider" aria-hidden="true"></div>
     <div class="stat-item reveal reveal-delay-1">
-      <span class="stat-num">500+</span>
+      <span class="stat-num" data-count="500" data-suffix="+">500+</span>
       <span class="stat-label">Professionals Photographed</span>
     </div>
     <div class="stat-divider" aria-hidden="true"></div>
     <div class="stat-item reveal reveal-delay-2">
-      <span class="stat-num">48-Hour</span>
+      <span class="stat-num" data-count="48" data-suffix="-Hour">48-Hour</span>
       <span class="stat-label">Delivery</span>
     </div>
     <div class="stat-divider" aria-hidden="true"></div>
     <div class="stat-item reveal reveal-delay-3">
-      <span class="stat-num">75</span>
+      <span class="stat-num" data-count="75" data-suffix="">75</span>
       <span class="stat-label">Teams in a Day</span>
     </div>
   </div>
@@ -2890,6 +2900,32 @@ body.nav-open{overflow:hidden;}
     });
   },{threshold:0.1});
   groups.forEach(function(g){ io.observe(g); });
+})();
+
+/* ── Trust bar count-up ── */
+(function(){
+  var reduced = window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+  var nums = document.querySelectorAll('.stat-num[data-count]');
+  if(reduced) return;
+  function easeOut(t){ return 1 - Math.pow(1 - t, 3); }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(!entry.isIntersecting) return;
+      var el = entry.target;
+      var target = parseInt(el.dataset.count, 10);
+      var suffix = el.dataset.suffix !== undefined ? el.dataset.suffix : '';
+      var duration = 1200;
+      var start = null;
+      (function tick(ts){
+        if(!start) start = ts;
+        var progress = Math.min((ts - start) / duration, 1);
+        el.textContent = Math.round(easeOut(progress) * target) + suffix;
+        if(progress < 1) requestAnimationFrame(tick);
+      })(performance.now());
+      io.unobserve(el);
+    });
+  },{threshold:0.6});
+  nums.forEach(function(el){ io.observe(el); });
 })();
 </script>
 
