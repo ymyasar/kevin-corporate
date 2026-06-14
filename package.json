@@ -1,5 +1,8 @@
 {
   "name": "kevin-corporate",
   "version": "1.0.0",
-  "description": "Kevin Mercer Photography — corporate site"
+  "description": "Kevin Mercer Photography — corporate site",
+  "devDependencies": {
+    "simple-icons": "^16.23.0"
+  }
 }

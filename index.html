@@ -186,6 +186,8 @@ section{ position:relative; z-index:3; }
 .wm-caps:hover{opacity:1;transform:scale(1.04);}
 .wm-brand{font-family:var(--font-body);font-size:22px;font-weight:600;opacity:0.5;white-space:nowrap;padding:0 22px;transition:opacity 0.35s ease,transform 0.35s ease;cursor:default;display:inline-block;}
 .wm-brand:hover{opacity:1;transform:scale(1.04);}
+.marquee-logo{height:28px;width:auto;object-fit:contain;opacity:0.75;transition:opacity 0.4s var(--ease);display:inline-block;vertical-align:middle;padding:0 24px;flex-shrink:0;}
+.marquee-outer:hover .marquee-logo{opacity:1;}
 .wm-sep{display:inline-block;width:4px;height:4px;background:var(--color-slate);transform:rotate(45deg);vertical-align:middle;flex-shrink:0;}
 .ind-tag{font-family:var(--font-body);font-size:12px;font-weight:400;letter-spacing:0.18em;text-transform:uppercase;color:var(--color-navy);opacity:0.25;white-space:nowrap;padding:0 16px;cursor:default;}
 .ind-sep{display:inline-block;width:3px;height:3px;background:var(--color-slate);transform:rotate(45deg);vertical-align:middle;flex-shrink:0;opacity:0.6;}
@@ -218,7 +220,7 @@ section{ position:relative; z-index:3; }
 .svc-header{text-align:center;margin-bottom:64px;}
 .svc-eyebrow{font-family:var(--font-body);font-size:11px;font-weight:400;letter-spacing:0.2em;text-transform:uppercase;color:var(--color-steel);margin:0 0 14px;}
 .svc-title{font-family:var(--font-heading);font-size:46px;font-weight:400;color:var(--color-navy);line-height:1.05;letter-spacing:-0.01em;margin:0;}
-.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+.svc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;}
 .svc-card{background:#fff;border:1px solid var(--hairline);border-radius:var(--radius-card);padding:36px 30px;display:flex;flex-direction:column;box-shadow:var(--shadow-sm);transition:transform 0.4s var(--ease),border-color 0.4s var(--ease),box-shadow 0.4s var(--ease);}
 .svc-card:hover{transform:translateY(-6px);border-color:var(--color-navy);box-shadow:var(--shadow-md);}
 .svc-card:hover .svc-cta{transform:translateX(4px);}
@@ -1564,6 +1566,7 @@ body.nav-open{overflow:hidden;}
 
   /* ── Marquee: smaller, faster ── */
   .wm-brand{font-size:17px;padding:0 14px;}
+  .marquee-logo{height:22px;padding:0 14px;}
   .wm{font-size:16px;padding:0 12px;}
   .wm-caps{font-size:11px;padding:0 12px;}
   .ind-tag{font-size:11px;padding:0 12px;}
@@ -1833,30 +1836,29 @@ body.nav-open{overflow:hidden;}
     <p class="sp-tagline reveal reveal-delay-1">Placeholder logos &#8212; Kevin&#8217;s real client list goes here.</p>
   </div>
   <div class="marquee-rows">
-    <!-- Row 1: brand-colour wordmarks, forward -->
+    <!-- Row 1: brand logo SVGs, forward (9 brands — Hennessy dropped, not in simple-icons v16) -->
+    <!-- DEMO PLACEHOLDER — replace with Kevin's real authorised client list before going live. Do NOT publish with these brand names/logos. -->
     <div class="marquee-outer">
       <div class="marquee-inner">
-        <span class="wm-brand" style="color:#1d1d1f;">Apple</span><span class="wm-sep"></span>
-        <span class="wm-brand" style="color:#737373;">Microsoft</span><span class="wm-sep"></span><!-- Microsoft grey placeholder -->
-        <span class="wm-brand" style="color:#1428A0;">Samsung</span><span class="wm-sep"></span>
-        <span class="wm-brand" style="color:#007DB8;">Dell</span><span class="wm-sep"></span>
-        <span class="wm-brand" style="color:#CD040B;">Verizon</span><span class="wm-sep"></span>
-        <span class="wm-brand" style="color:#00A8E0;">AT&amp;T</span><span class="wm-sep"></span>
-        <span class="wm-brand" style="color:#E20074;">T&#8209;Mobile</span><span class="wm-sep"></span>
-        <span class="wm-brand" style="color:#C8A04B;">Hennessy</span><span class="wm-sep"></span>
-        <span class="wm-brand" style="color:#C74634;">Oracle</span><span class="wm-sep"></span>
-        <span class="wm-brand" style="color:#FA0F00;">Adobe</span><span class="wm-sep"></span>
+        <img src="/images/logos/apple.svg"     alt="Apple"     class="marquee-logo"><span class="wm-sep"></span>
+        <img src="/images/logos/microsoft.svg" alt="Microsoft" class="marquee-logo"><span class="wm-sep"></span>
+        <img src="/images/logos/samsung.svg"   alt="Samsung"   class="marquee-logo"><span class="wm-sep"></span>
+        <img src="/images/logos/dell.svg"      alt="Dell"      class="marquee-logo"><span class="wm-sep"></span>
+        <img src="/images/logos/verizon.svg"   alt="Verizon"   class="marquee-logo"><span class="wm-sep"></span>
+        <img src="/images/logos/atandt.svg"    alt="AT&amp;T"  class="marquee-logo"><span class="wm-sep"></span>
+        <img src="/images/logos/tmobile.svg"   alt="T-Mobile"  class="marquee-logo"><span class="wm-sep"></span>
+        <img src="/images/logos/oracle.svg"    alt="Oracle"    class="marquee-logo"><span class="wm-sep"></span>
+        <img src="/images/logos/adobe.svg"     alt="Adobe"     class="marquee-logo"><span class="wm-sep"></span>
         <!-- duplicate for seamless loop -->
-        <span class="wm-brand" style="color:#1d1d1f;">Apple</span><span class="wm-sep"></span>
-        <span class="wm-brand" style="color:#737373;">Microsoft</span><span class="wm-sep"></span>
-        <span class="wm-brand" style="color:#1428A0;">Samsung</span><span class="wm-sep"></span>
-        <span class="wm-brand" style="color:#007DB8;">Dell</span><span class="wm-sep"></span>
-        <span class="wm-brand" style="color:#CD040B;">Verizon</span><span class="wm-sep"></span>
-        <span class="wm-brand" style="color:#00A8E0;">AT&amp;T</span><span class="wm-sep"></span>
-        <span class="wm-brand" style="color:#E20074;">T&#8209;Mobile</span><span class="wm-sep"></span>
-        <span class="wm-brand" style="color:#C8A04B;">Hennessy</span><span class="wm-sep"></span>
-        <span class="wm-brand" style="color:#C74634;">Oracle</span><span class="wm-sep"></span>
-        <span class="wm-brand" style="color:#FA0F00;">Adobe</span><span class="wm-sep"></span>
+        <img src="/images/logos/apple.svg"     alt="Apple"     class="marquee-logo"><span class="wm-sep"></span>
+        <img src="/images/logos/microsoft.svg" alt="Microsoft" class="marquee-logo"><span class="wm-sep"></span>
+        <img src="/images/logos/samsung.svg"   alt="Samsung"   class="marquee-logo"><span class="wm-sep"></span>
+        <img src="/images/logos/dell.svg"      alt="Dell"      class="marquee-logo"><span class="wm-sep"></span>
+        <img src="/images/logos/verizon.svg"   alt="Verizon"   class="marquee-logo"><span class="wm-sep"></span>
+        <img src="/images/logos/atandt.svg"    alt="AT&amp;T"  class="marquee-logo"><span class="wm-sep"></span>
+        <img src="/images/logos/tmobile.svg"   alt="T-Mobile"  class="marquee-logo"><span class="wm-sep"></span>
+        <img src="/images/logos/oracle.svg"    alt="Oracle"    class="marquee-logo"><span class="wm-sep"></span>
+        <img src="/images/logos/adobe.svg"     alt="Adobe"     class="marquee-logo"><span class="wm-sep"></span>
       </div>
     </div>
     <!-- Row 2: industry descriptors, reverse -->
@@ -1991,32 +1993,6 @@ body.nav-open{overflow:hidden;}
           <span class="svc-price">$1,500</span>
         </div>
         <p class="svc-body">10 retouched headshots plus product photos, unlimited outfit changes, studio or location, creative planning included.</p>
-        <a href="#book-section" class="svc-cta">Book this session &#8594;</a>
-      </div>
-      <div class="svc-card reveal reveal-delay-1">
-        <div class="svc-card-top">
-          <span class="svc-cat">Headshot</span>
-          <span class="svc-duration">1 hr</span>
-        </div>
-        <h3 class="svc-name">Actor &amp; Model</h3>
-        <div class="svc-price-row">
-          <span class="svc-from">from</span>
-          <span class="svc-price">$475</span>
-        </div>
-        <p class="svc-body">3 retouched headshots, up to 3 outfit changes, studio or on location, print files.</p>
-        <a href="#book-section" class="svc-cta">Book this session &#8594;</a>
-      </div>
-      <div class="svc-card reveal reveal-delay-2">
-        <div class="svc-card-top">
-          <span class="svc-cat">Lifestyle</span>
-          <span class="svc-duration">1 hr</span>
-        </div>
-        <h3 class="svc-name">Dating Profile</h3>
-        <div class="svc-price-row">
-          <span class="svc-from">from</span>
-          <span class="svc-price">$350</span>
-        </div>
-        <p class="svc-body">5 retouched headshots, unlimited outfit changes, multiple locations.</p>
         <a href="#book-section" class="svc-cta">Book this session &#8594;</a>
       </div>
     </div>
