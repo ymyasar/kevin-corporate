@@ -1306,12 +1306,13 @@ footer{
 }
 
 /* ── Scroll reveal system ── */
-.reveal{opacity:0;transform:translateY(20px);transition:opacity 0.7s var(--ease),transform 0.7s var(--ease);}
-.reveal.revealed{opacity:1;transform:translateY(0);}
+.reveal{opacity:0;transform:translateY(20px);transition:opacity 0.7s var(--ease),transform 0.7s var(--ease);animation:reveal-show 0s 0.8s forwards;}
+.reveal.revealed{opacity:1;transform:translateY(0);animation:none;}
+@keyframes reveal-show{to{opacity:1;transform:none;}}
 .reveal-delay-1{transition-delay:0.15s;}
 .reveal-delay-2{transition-delay:0.3s;}
 .reveal-delay-3{transition-delay:0.45s;}
-@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none;}}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none;animation:none;}}
 
 /* ── Scroll progress bar ── */
 .scroll-progress{
@@ -1894,16 +1895,32 @@ body.nav-open{overflow:hidden;}
   </div>
 </section>
 <script>
-/* Marquee fill — clone logo set until first-half width >= viewport, then double for seamless -50% loop */
-(function(){
-  var el=document.getElementById('mq-r1');
-  if(!el) return;
-  var orig=Array.from(el.children);
-  var vw=Math.max(window.innerWidth||1280,1280);
-  while(el.scrollWidth < vw + 80){
-    orig.forEach(function(c){ el.appendChild(c.cloneNode(true)); });
+(function() {
+  function initMarquee(id) {
+    const inner = document.getElementById(id);
+    if (!inner) return;
+
+    // Remove any existing clones first
+    const clones = inner.querySelectorAll('[data-clone]');
+    clones.forEach(c => c.remove());
+
+    // Clone original content once — translateX(-50%) keyframe needs exactly 2 copies
+    const items = Array.from(inner.children);
+    items.forEach(item => {
+      const clone = item.cloneNode(true);
+      clone.setAttribute('data-clone', '1');
+      clone.setAttribute('aria-hidden', 'true');
+      inner.appendChild(clone);
+    });
   }
-  Array.from(el.children).forEach(function(c){ el.appendChild(c.cloneNode(true)); });
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', function() {
+      initMarquee('mq-r1');
+    });
+  } else {
+    initMarquee('mq-r1');
+  }
 })();
 </script>
 
