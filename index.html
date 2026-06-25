@@ -355,7 +355,8 @@ section{ position:relative; z-index:3; }
 
 /* ── Contact rebuild ── */
 #contact{background:var(--color-navy);padding:clamp(72px,9vw,120px) 0;}
-.contact-wrap{max-width:1140px;margin:0 auto;padding:0 32px;display:grid;grid-template-columns:1fr;gap:48px;align-items:start;}
+.contact-wrap{max-width:1140px;margin:0 auto;padding:0 32px;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;}
+.contact-acuity-row{grid-column:1 / -1;margin-top:8px;}
 .contact-pitch-eyebrow{font-family:var(--font-body);font-size:11px;font-weight:400;letter-spacing:0.22em;text-transform:uppercase;color:rgba(255,255,255,0.6);margin:0 0 16px;}
 .contact-pitch-title{font-family:var(--font-heading);font-size:50px;font-weight:400;color:#fff;line-height:1.05;margin:0 0 20px;}
 .contact-pitch-body{font-family:var(--font-body);font-size:15.5px;color:rgba(255,255,255,0.8);line-height:1.65;margin:0 0 32px;}
@@ -1366,7 +1367,7 @@ footer{
   .work-cta-row{flex-direction:column;gap:16px;}
   .review-grid{grid-template-columns:1fr;}
   .testi-wrap,.contact-wrap{padding:0 24px;}
-  .contact-wrap{grid-template-columns:1fr;gap:48px;}
+  .contact-wrap{grid-template-columns:1fr;gap:40px;}
   .contact-form-card{padding:32px 24px;}
   #the-space{ padding:60px 0 60px; }
   .space-header{ padding:0 24px 36px; }
@@ -1701,6 +1702,13 @@ body.nav-open{overflow:hidden;}
   max-width: 960px;
   margin: 0 auto;
 }
+.booking-trust{display:flex;flex-direction:column;justify-content:center;gap:16px;padding:40px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:12px;}
+.booking-stars{color:#f5c518;font-size:24px;letter-spacing:2px;}
+.booking-review-count{font-size:14px;text-transform:uppercase;letter-spacing:0.1em;opacity:0.6;margin:0;color:#fff;}
+.booking-pull-quote{font-family:'Cormorant Garamond',serif;font-size:clamp(18px,2vw,22px);font-style:italic;line-height:1.5;margin:0;opacity:0.9;color:#fff;}
+.booking-pull-attr{font-size:13px;opacity:0.55;margin:0;color:#fff;}
+.booking-google-link{font-size:13px;opacity:0.7;text-decoration:underline;color:#fff;}
+.booking-google-link:hover{opacity:1;}
 </style>
 
 <script type="application/ld+json">
@@ -2301,10 +2309,17 @@ body.nav-open{overflow:hidden;}
       </div>
     </div>
 
-    <!-- Right: form card -->
-    <div class="contact-form-card reveal reveal-delay-1">
-      <h3 style="font-family:var(--font-heading);font-size:24px;font-weight:500;color:var(--color-navy);margin-bottom:28px;">Reserve Your Slot</h3>
-      <!-- Replace ACUITY_OWNER_ID with Kevin's Acuity owner ID from his Acuity account settings page -->
+    <!-- Right: trust / review block -->
+    <div class="booking-trust reveal reveal-delay-1">
+      <div class="booking-stars">★★★★★</div>
+      <p class="booking-review-count">109 five-star reviews</p>
+      <blockquote class="booking-pull-quote">"Kevin turned it around in 36 hours. The result was sharper than anything I'd had before."</blockquote>
+      <p class="booking-pull-attr">— Dana Reyes, CFO · Meridian Capital Group</p>
+      <a href="https://www.google.com/maps/search/?api=1&query=Kevin+Nguyen+Headshots+Austin" target="_blank" rel="noopener" class="booking-google-link">Read reviews on Google →</a>
+    </div>
+
+    <!-- Full-width: Acuity iframe -->
+    <div class="contact-acuity-row">
       <div class="acuity-embed-wrapper">
         <script src="https://embed.acuityscheduling.com/js/embed.js" type="text/javascript"></script>
         <iframe src="https://kevinheadshots.as.me/" width="100%" height="700" frameBorder="0"></iframe>
