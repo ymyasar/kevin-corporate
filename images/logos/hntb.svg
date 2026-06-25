@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   version="1.0"
+   width="2602pt"
+   height="757pt"
+   viewBox="0 0 2602 757"
+   id="svg2">
+  <title
+     id="title2988">HNTB logo</title>
+  <defs
+     id="defs18" />
+  <metadata
+     id="metadata4">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title>HNTB logo</dc:title>
+        <cc:license
+           rdf:resource="http://creativecommons.org/licenses/publicdomain/" />
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>User:Jbarta at en.wikipedia.org</dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <dc:rights>
+          <cc:Agent>
+            <dc:title>public domain</dc:title>
+          </cc:Agent>
+        </dc:rights>
+        <dc:description>logo of HNTB Corporation</dc:description>
+      </cc:Work>
+      <cc:License
+         rdf:about="http://creativecommons.org/licenses/publicdomain/">
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#Reproduction" />
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#Distribution" />
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#DerivativeWorks" />
+      </cc:License>
+    </rdf:RDF>
+  </metadata>
+  <g
+     transform="matrix(0.1,0,0,-0.1,0,757)"
+     id="g6"
+     style="fill:#000000;stroke:none">
+    <path
+       d="m 280,240 2080,0 0,2600 2080,0 0,-2600 2080,0 0,7080 -2080,0 0,-2360 -2080,0 0,2360 -2080,0 0,-2360 0,-2120 z"
+       id="path8"
+       style="fill:#101010;fill-opacity:1" />
+    <path
+       d="m 7520,240 2080,0 0,3120 2160,-3120 1640,0 0,7080 -2040,0 0,-3040 -2120,3040 -1720,0 z"
+       id="path10"
+       style="fill:#101010;fill-opacity:1" />
+    <path
+       d="m 14000,5280 1600,0 0,-5040 2080,0 0,5040 1600,0 0,2040 -5280,0 z"
+       id="path12"
+       style="fill:#101010;fill-opacity:1" />
+    <path
+       d="m 19880,240 1768,0 c 1718,0 1782,1 1937,20 197,25 382,61 536,105 847,244 1413,823 1594,1632 53,233 58,292 59,578 0,239 -2,281 -21,366 -61,274 -165,505 -322,716 -81,109 -240,270 -343,347 -43,32 -78,61 -78,64 0,3 39,46 88,96 144,150 224,265 313,451 58,122 100,246 131,385 19,89 22,134 22,295 0,288 -45,534 -140,775 -281,705 -944,1170 -1861,1245 -363,5 -763,5 -763,5 l -2920,0 z m 3405,5486 c 231,-69 358,-220 380,-452 19,-203 -99,-418 -277,-503 -125,-59 -169,-51 -908,-51 l -640,0 0,1040 680,0 c 633,-3 710,-18 765,-34 z m 35,-2624 c 136,-36 224,-84 306,-166 115,-116 164,-250 164,-451 0,-309 -145,-521 -422,-616 -46,-15 -125,-24 -168,-29 -49,-7 -317,0 -720,0 l -640,0 0,1280 680,0 c 690,-3 716,4 800,-18 z"
+       id="path14"
+       style="fill:#101010;fill-opacity:1" />
+  </g>
+  <rect
+     width="207.99994"
+     height="211.99998"
+     ry="0"
+     x="28"
+     y="261"
+     id="rect2995"
+     style="fill:#f75a21;fill-opacity:1;stroke:none" />
+</svg>
