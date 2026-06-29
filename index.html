@@ -268,9 +268,9 @@ section{ position:relative; z-index:3; }
 .svc-card--featured .svc-name,.svc-card--featured .svc-price{color:#fff;}
 .svc-card--featured .svc-from{color:rgba(255,255,255,0.5);}
 .svc-card--featured .svc-body{color:rgba(255,255,255,0.72);}
-.svc-tag{display:inline-block;font-family:var(--font-body);font-size:10px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;background:rgba(100,150,190,0.2);color:#8ab8d4;padding:4px 10px;margin-bottom:14px;}
-.svc-cta-btn{display:inline-block;font-family:var(--font-body);font-size:14px;font-weight:600;padding:16px 40px;background:#fff;color:var(--color-navy);border-radius:999px;text-decoration:none;letter-spacing:0.01em;transition:background 0.35s cubic-bezier(0.16,1,0.3,1),color 0.35s cubic-bezier(0.16,1,0.3,1),transform 0.35s cubic-bezier(0.16,1,0.3,1),box-shadow 0.35s cubic-bezier(0.16,1,0.3,1);margin-top:auto;text-align:center;}
-.svc-cta-btn:hover{background:var(--color-steel);color:#fff;transform:translateY(-2px);box-shadow:0 10px 24px rgba(13,31,53,0.18);}
+.svc-tag{display:inline-block;font-family:var(--font-body);font-size:10px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;background:rgba(13,31,53,0.07);color:var(--color-navy);padding:4px 10px;margin-bottom:14px;}
+.svc-cta-btn{display:inline-block;font-family:var(--font-body);font-size:14px;font-weight:600;padding:14px 36px;background:#fff;color:var(--color-navy);border:1.5px solid var(--color-navy);border-radius:999px;text-decoration:none;letter-spacing:0.01em;transition:background 0.2s ease,color 0.2s ease,border-color 0.2s ease,box-shadow 0.2s ease;margin-top:auto;text-align:center;cursor:pointer;min-height:44px;}
+.svc-cta-btn:hover{background:var(--color-steel);border-color:var(--color-steel);color:#fff;box-shadow:0 8px 20px rgba(13,31,53,0.18);}
 /* Shared section utilities (Process, Testimonials) */
 .services-super{font-family:var(--font-body);font-size:11px;font-weight:400;letter-spacing:0.2em;text-transform:uppercase;color:var(--color-steel);margin-bottom:16px;}
 .services-title{font-family:var(--font-heading);font-size:42px;font-weight:400;color:var(--color-navy);line-height:1.05;letter-spacing:-0.01em;}
@@ -1678,6 +1678,15 @@ body.nav-open{overflow:hidden;}
   max-width: 960px;
   margin: 0 auto;
 }
+.acuity-embed-wrapper iframe {
+  display: block;
+  width: 90%;
+  margin: 0 auto;
+  height: 900px;
+}
+@media(max-width:768px) {
+  .acuity-embed-wrapper iframe { width: 100%; height: 900px; }
+}
 .booking-trust{display:flex;flex-direction:column;justify-content:center;gap:16px;padding:40px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:12px;}
 .booking-stars{color:#f5c518;font-size:24px;letter-spacing:2px;}
 .booking-review-count{font-size:14px;text-transform:uppercase;letter-spacing:0.1em;opacity:0.6;margin:0;color:#fff;}
@@ -1853,22 +1862,22 @@ body.nav-open{overflow:hidden;}
   <div class="marquee-outer">
     <div class="marquee-inner" id="mq-r1">
       <img src="/images/logos/amazon.png"               alt="Amazon"               class="marquee-logo"><span class="wm-sep"></span>
-      <img src="/images/logos/atpe.jpg"              alt="ATPE"                 class="marquee-logo"><span class="wm-sep"></span>
+      <img src="/images/logos/atpe.jpg"              alt="ATPE"                 class="marquee-logo" style="height:26px"><span class="wm-sep"></span>
       <img src="/images/logos/eaton-corporation.png" alt="Eaton Corporation"    class="marquee-logo"><span class="wm-sep"></span>
       <img src="/images/logos/epaypolicy.webp"       alt="ePayPolicy"           class="marquee-logo"><span class="wm-sep"></span>
       <img src="/images/logos/expedia.jpg"           alt="Expedia"              class="marquee-logo"><span class="wm-sep"></span>
       <img src="/images/logos/fgma.png"              alt="FGMA"                 class="marquee-logo"><span class="wm-sep"></span>
       <img src="/images/logos/gecko-robotics.jpg"    alt="Gecko Robotics"       class="marquee-logo"><span class="wm-sep"></span>
-      <img src="/images/logos/google.png"            alt="Google"               class="marquee-logo"><span class="wm-sep"></span>
-      <img src="/images/logos/healthcare2u.png"      alt="Healthcare2U"         class="marquee-logo"><span class="wm-sep"></span>
+      <img src="/images/logos/google.png"            alt="Google"               class="marquee-logo" style="height:26px"><span class="wm-sep"></span>
+      <img src="/images/logos/healthcare2u.png"      alt="Healthcare2U"         class="marquee-logo" style="height:30px"><span class="wm-sep"></span>
       <img src="/images/logos/hitt-contracting.jpg"  alt="HITT Contracting"     class="marquee-logo"><span class="wm-sep"></span>
       <img src="/images/logos/hntb.svg"              alt="HNTB"                 class="marquee-logo"><span class="wm-sep"></span>
       <img src="/images/logos/novo.webp"             alt="NOVO"                 class="marquee-logo"><span class="wm-sep"></span>
-      <img src="/images/logos/oracle.png"            alt="Oracle"               class="marquee-logo"><span class="wm-sep"></span>
-      <img src="/images/logos/reup-education.png"    alt="REUP Education"       class="marquee-logo"><span class="wm-sep"></span>
-      <img src="/images/logos/rider-levett-bucknall.png" alt="Rider Levett Bucknall" class="marquee-logo"><span class="wm-sep"></span>
-      <img src="/images/logos/samsung.avif"          alt="Samsung"              class="marquee-logo"><span class="wm-sep"></span>
-      <img src="/images/logos/ufcu.png"              alt="UFCU"                 class="marquee-logo"><span class="wm-sep"></span>
+      <img src="/images/logos/oracle.png"            alt="Oracle"               class="marquee-logo" style="height:34px"><span class="wm-sep"></span>
+      <img src="/images/logos/reup-education.png"    alt="REUP Education"       class="marquee-logo" style="height:34px"><span class="wm-sep"></span>
+      <img src="/images/logos/rider-levett-bucknall.png" alt="Rider Levett Bucknall" class="marquee-logo" style="height:26px"><span class="wm-sep"></span>
+      <img src="/images/logos/samsung.avif"          alt="Samsung"              class="marquee-logo" style="height:28px"><span class="wm-sep"></span>
+      <img src="/images/logos/ufcu.png"              alt="UFCU"                 class="marquee-logo" style="height:36px"><span class="wm-sep"></span>
     </div>
   </div>
 </section>
@@ -1994,7 +2003,7 @@ body.nav-open{overflow:hidden;}
           <span class="svc-price">$350</span>
         </div>
         <p class="svc-body">2 retouched headshots, 2 outfit changes, consultation included. Extra retouched images $50 each.</p>
-        <a href="#contact" class="svc-cta">Book this session &#8594;</a>
+        <a href="#contact" class="svc-cta-btn">Book this session</a>
       </div>
       <div class="svc-card reveal reveal-delay-1">
         <div class="svc-card-top">
@@ -2007,9 +2016,9 @@ body.nav-open{overflow:hidden;}
           <span class="svc-price">$425</span>
         </div>
         <p class="svc-body">3 retouched headshots, up to 3 outfit changes, consultation included.</p>
-        <a href="#contact" class="svc-cta">Book this session &#8594;</a>
+        <a href="#contact" class="svc-cta-btn">Book this session</a>
       </div>
-      <div class="svc-card svc-card--featured reveal reveal-delay-2">
+      <div class="svc-card reveal reveal-delay-2">
         <span class="svc-tag">Most Booked by Companies</span>
         <div class="svc-card-top">
           <span class="svc-cat">Teams</span>
@@ -2034,7 +2043,7 @@ body.nav-open{overflow:hidden;}
           <span class="svc-price">$1,500</span>
         </div>
         <p class="svc-body">10 retouched headshots plus product photos, unlimited outfit changes, studio or location, creative planning included.</p>
-        <a href="#contact" class="svc-cta">Book this session &#8594;</a>
+        <a href="#contact" class="svc-cta-btn">Book this session</a>
       </div>
     </div>
   </div>
@@ -2309,7 +2318,7 @@ body.nav-open{overflow:hidden;}
     <div class="contact-acuity-row">
       <div class="acuity-embed-wrapper">
         <script src="https://embed.acuityscheduling.com/js/embed.js" type="text/javascript"></script>
-        <iframe src="https://kevinheadshots.as.me/" width="100%" height="700" frameBorder="0"></iframe>
+        <iframe src="https://kevinheadshots.as.me/" frameBorder="0"></iframe>
       </div>
     </div>
 
