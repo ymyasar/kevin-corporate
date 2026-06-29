@@ -188,10 +188,15 @@ section{ position:relative; z-index:3; }
 /* Desktop: cap hero height so content fills ~80% of viewport */
 @media(min-width:761px){#hero{height:clamp(600px,86vh,820px);}}
 /* Fan wrap — desktop only, absolutely positioned in hero right space */
-#hero-fan-wrap{display:none;position:absolute;z-index:3;pointer-events:none;}
+#hero-fan-wrap{display:none;position:absolute;z-index:3;}
 @media(min-width:1025px){#hero-fan-wrap{display:block;}.hero-proof{display:none;}}
-.hero-fan-card{position:absolute;border-radius:10px;overflow:hidden;box-shadow:0 16px 48px rgba(13,31,53,0.22),0 4px 12px rgba(13,31,53,0.12);border:3px solid rgba(255,255,255,0.9);}
+.hero-fan-card{position:absolute;border-radius:10px;overflow:hidden;box-shadow:0 16px 48px rgba(13,31,53,0.22),0 4px 12px rgba(13,31,53,0.12);border:3px solid rgba(255,255,255,0.9);transform:rotate(var(--rot,0deg));transition:transform 0.3s ease,box-shadow 0.3s ease;cursor:pointer;}
+.hero-fan-card:nth-child(1){z-index:1;}
+.hero-fan-card:nth-child(2){z-index:2;}
+.hero-fan-card:nth-child(3){z-index:3;}
 .hero-fan-card img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block;}
+#hero-fan-wrap:hover .hero-fan-card{transform:rotate(var(--rot-hover,var(--rot,0deg))) translateX(var(--hx,0px));}
+#hero-fan-wrap .hero-fan-card:hover{transform:rotate(var(--rot-hover,var(--rot,0deg))) translateX(var(--hx,0px)) translateY(-22px) scale(1.05);z-index:10;box-shadow:0 24px 64px rgba(13,31,53,0.32),0 8px 20px rgba(13,31,53,0.18);}
 
 /* ════════════════════════════════════════════
    2. SOCIAL PROOF BAR
@@ -2918,9 +2923,9 @@ body.nav-open{overflow:hidden;}
     var pad = 48;
     var cardH = Math.min(280, availH - pad * 2);
     var cardW = Math.round(cardH * 0.7);
-    var spread = Math.min(60, (availW - cardW) / 4);
-    var totalW = cardW + spread * 2 + 20;
-    var totalH = cardH + 20;
+    var spread = Math.min(80, (availW - cardW) / 3);
+    var totalW = cardW + spread * 2 + 24;
+    var totalH = cardH + 24;
     var fanLeft = contentRight + (availW - totalW) / 2;
     var fanTop = (availH - totalH) / 2;
     wrap.style.left = Math.round(fanLeft) + 'px';
@@ -2928,15 +2933,19 @@ body.nav-open{overflow:hidden;}
     wrap.style.width = totalW + 'px';
     wrap.style.height = totalH + 'px';
     var cards = wrap.querySelectorAll('.hero-fan-card');
-    var rotations = [-9, 0, 9];
+    var rotations = [-14, 0, 14];
+    var hoverRotations = [-22, 0, 22];
     var xOff = [0, spread, spread * 2];
+    var hoverXDelta = [-Math.round(spread * 0.4), 0, Math.round(spread * 0.4)];
     var yOff = [10, 0, 10];
     cards.forEach(function(card, i){
       card.style.width = cardW + 'px';
       card.style.height = cardH + 'px';
       card.style.left = xOff[i] + 'px';
       card.style.top = yOff[i] + 'px';
-      card.style.transform = 'rotate(' + rotations[i] + 'deg)';
+      card.style.setProperty('--rot', rotations[i] + 'deg');
+      card.style.setProperty('--rot-hover', hoverRotations[i] + 'deg');
+      card.style.setProperty('--hx', hoverXDelta[i] + 'px');
     });
   }
   function init(){ fitFan(); if(document.fonts && document.fonts.ready) document.fonts.ready.then(fitFan); }
