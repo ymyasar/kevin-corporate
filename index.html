@@ -147,7 +147,7 @@ section{ position:relative; z-index:3; }
 ══════════════════════════════════════════════ */
 #hero{position:relative;height:100vh;min-height:640px;overflow:hidden;display:flex;align-items:center;justify-content:flex-start;background:#0D1F35;}
 #hero::before{content:'';position:absolute;inset:0;z-index:1;pointer-events:none;opacity:0.04;mix-blend-mode:overlay;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E");background-size:200px 200px;}
-#hero::after{content:'';position:absolute;inset:0;z-index:1;pointer-events:none;background-image:linear-gradient(rgba(255,255,255,0.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.05) 1px,transparent 1px);background-size:80px 80px;}
+#hero::after{content:'';position:absolute;inset:0;z-index:1;pointer-events:none;background-image:none;}
 .hero-blob{position:absolute;border-radius:50%;filter:blur(80px);z-index:0;pointer-events:none;}
 .hero-blob--1{width:700px;height:700px;background:radial-gradient(ellipse,#1A2E45 0%,transparent 70%);top:-180px;left:-150px;animation:hblob1 23s ease-in-out infinite alternate;}
 .hero-blob--2{width:550px;height:550px;background:radial-gradient(ellipse,#16263A 0%,transparent 70%);top:10%;right:-120px;animation:hblob2 31s ease-in-out infinite alternate;}
@@ -182,19 +182,21 @@ section{ position:relative; z-index:3; }
 .hero-proof.revealed:hover{transform:translateY(calc(-50% - 4px)) scale(1);box-shadow:0 16px 48px rgba(13,31,53,0.32),0 40px 80px rgba(13,31,53,0.30);}
 .hero-proof-img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center top;}
 .hero-proof-caption{position:absolute;bottom:0;left:0;right:0;padding:32px 14px 14px;background:linear-gradient(transparent,rgba(13,31,53,0.82));font-family:var(--font-body);font-size:10px;font-weight:500;letter-spacing:0.16em;text-transform:uppercase;color:rgba(255,255,255,0.72);}
-@media(max-width:1199px){.hero-proof{display:none;}}
+@media(max-width:1024px){.hero-proof{display:none;}}
 /* Desktop: cap hero height so content fills ~80% of viewport */
 @media(min-width:761px){#hero{height:clamp(600px,86vh,820px);}}
-/* Fan wrap — desktop only, absolutely positioned in hero right space */
-#hero-fan-wrap{display:none;position:absolute;z-index:3;}
-@media(min-width:1025px){#hero-fan-wrap{display:block;}.hero-proof{display:none;}}
-.hero-fan-card{position:absolute;border-radius:10px;overflow:hidden;box-shadow:0 16px 48px rgba(13,31,53,0.22),0 4px 12px rgba(13,31,53,0.12);border:3px solid rgba(255,255,255,0.9);transform:rotate(var(--rot,0deg));transition:transform 0.3s ease,box-shadow 0.3s ease;cursor:pointer;}
-.hero-fan-card:nth-child(1){z-index:1;}
-.hero-fan-card:nth-child(2){z-index:2;}
-.hero-fan-card:nth-child(3){z-index:3;}
-.hero-fan-card img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block;}
-#hero-fan-wrap:hover .hero-fan-card{transform:rotate(var(--rot-hover,var(--rot,0deg))) translateX(var(--hx,0px));}
-#hero-fan-wrap .hero-fan-card:hover{transform:rotate(var(--rot-hover,var(--rot,0deg))) translateX(var(--hx,0px)) translateY(-22px) scale(1.05);z-index:10;box-shadow:0 24px 64px rgba(13,31,53,0.32),0 8px 20px rgba(13,31,53,0.18);}
+/* Carousel — inside .hero-proof, visible ≥1025px */
+.hc-track{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;}
+.hc-track::-webkit-scrollbar{display:none;}
+.hc-slide{flex:0 0 100%;scroll-snap-align:start;}
+.hc-slide img{display:block;width:100%;aspect-ratio:2/3;object-fit:cover;object-position:center top;}
+.hc-btn{position:absolute;top:50%;transform:translateY(-50%);background:rgba(13,31,53,0.55);border:none;color:#fff;width:28px;height:28px;border-radius:50%;cursor:pointer;font-size:20px;line-height:1;display:flex;align-items:center;justify-content:center;z-index:2;padding:0;transition:background 0.2s;}
+.hc-btn:hover{background:rgba(13,31,53,0.82);}
+.hc-prev{left:8px;}
+.hc-next{right:8px;}
+.hc-dots{position:absolute;bottom:10px;left:0;right:0;display:flex;justify-content:center;gap:6px;z-index:2;}
+.hc-dot{width:6px;height:6px;border-radius:50%;border:none;background:rgba(255,255,255,0.38);cursor:pointer;padding:0;transition:background 0.2s;}
+.hc-dot.hc-dot--active{background:#fff;}
 
 /* ════════════════════════════════════════════
    2. SOCIAL PROOF BAR
@@ -1832,24 +1834,37 @@ body.nav-open{overflow:hidden;}
   </div>
   <div class="hero-corner" aria-hidden="true">Austin, TX &middot; Est.&nbsp;2016</div>
   <div class="hero-proof" id="hero-proof" aria-hidden="true">
-    <img class="hero-proof-img" src="/images/corporate-headshot-austin-executive-36.jpg" alt="Corporate headshot session — Austin executive portrait by Kevin Nguyen Photography" loading="eager" fetchpriority="high">
-    <p class="hero-proof-caption">Recent Session &mdash; Professional</p>
+    <div class="hc-track">
+      <div class="hc-slide">
+        <img src="/images/corporate-headshot-austin-executive-36.jpg" alt="Corporate headshot — Austin executive" loading="eager" fetchpriority="high">
+      </div>
+      <div class="hc-slide">
+        <img src="/images/corporate-headshot-austin-attorney-29.jpg" alt="Corporate headshot — Austin attorney" loading="lazy">
+      </div>
+      <div class="hc-slide">
+        <img src="/images/corporate-headshot-austin-professional-41.jpg" alt="Corporate headshot — Austin professional" loading="lazy">
+      </div>
+      <div class="hc-slide">
+        <img src="/images/corporate-headshot-austin-professional-31.jpg" alt="Corporate headshot — Austin professional" loading="lazy">
+      </div>
+      <div class="hc-slide">
+        <img src="/images/corporate-headshot-austin-executive-32.jpg" alt="Corporate headshot — Austin executive" loading="lazy">
+      </div>
+    </div>
+    <button class="hc-btn hc-prev" aria-label="Previous image">&#8249;</button>
+    <button class="hc-btn hc-next" aria-label="Next image">&#8250;</button>
+    <div class="hc-dots" role="list">
+      <button class="hc-dot hc-dot--active" aria-label="Image 1 of 5" role="listitem"></button>
+      <button class="hc-dot" aria-label="Image 2 of 5" role="listitem"></button>
+      <button class="hc-dot" aria-label="Image 3 of 5" role="listitem"></button>
+      <button class="hc-dot" aria-label="Image 4 of 5" role="listitem"></button>
+      <button class="hc-dot" aria-label="Image 5 of 5" role="listitem"></button>
+    </div>
   </div>
   <div class="hero-scroll-cue" aria-hidden="true">
     <svg class="hero-scroll-chevron" width="20" height="11" viewBox="0 0 20 11" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
       <path d="M1 1L10 10L19 1" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
     </svg>
-  </div>
-  <div id="hero-fan-wrap" aria-hidden="true">
-    <div class="hero-fan-card">
-      <img src="/images/corporate-headshot-austin-executive-36.jpg" alt="Corporate headshot — Austin executive" loading="eager" fetchpriority="high">
-    </div>
-    <div class="hero-fan-card">
-      <img src="/images/corporate-headshot-austin-attorney-29.jpg" alt="Corporate headshot — Austin attorney" loading="lazy">
-    </div>
-    <div class="hero-fan-card">
-      <img src="/images/corporate-headshot-austin-professional-41.jpg" alt="Corporate headshot — Austin professional" loading="lazy">
-    </div>
   </div>
 </section>
 
@@ -2882,53 +2897,29 @@ body.nav-open{overflow:hidden;}
   }, 900);
 })();
 
-/* ── Hero fan — measure available right space, position fan absolutely ── */
+/* ── Hero carousel — manual scroll-snap, dots + arrows ── */
 (function(){
-  function fitFan(){
-    var hero = document.getElementById('hero');
-    var content = hero && hero.querySelector('.hero-content');
-    var wrap = document.getElementById('hero-fan-wrap');
-    if(!hero || !content || !wrap) return;
-    if(getComputedStyle(wrap).display === 'none') return;
-    var hRect = hero.getBoundingClientRect();
-    var cRect = content.getBoundingClientRect();
-    var contentRight = cRect.right - hRect.left;
-    var availW = hRect.width - contentRight;
-    var availH = hRect.height;
-    console.log('[Hero fan] hero=' + Math.round(hRect.width) + 'x' + Math.round(hRect.height)
-      + ' contentRight=' + Math.round(contentRight) + 'px availW=' + Math.round(availW) + 'px availH=' + Math.round(availH) + 'px');
-    var pad = 48;
-    var cardH = Math.min(280, availH - pad * 2);
-    var cardW = Math.round(cardH * 0.7);
-    var spread = Math.min(80, (availW - cardW) / 3);
-    var totalW = cardW + spread * 2 + 24;
-    var totalH = cardH + 24;
-    var fanLeft = contentRight + (availW - totalW) / 2;
-    var fanTop = (availH - totalH) / 2;
-    wrap.style.left = Math.round(fanLeft) + 'px';
-    wrap.style.top = Math.round(fanTop) + 'px';
-    wrap.style.width = totalW + 'px';
-    wrap.style.height = totalH + 'px';
-    var cards = wrap.querySelectorAll('.hero-fan-card');
-    var rotations = [-14, 0, 14];
-    var hoverRotations = [-22, 0, 22];
-    var xOff = [0, spread, spread * 2];
-    var hoverXDelta = [-Math.round(spread * 0.4), 0, Math.round(spread * 0.4)];
-    var yOff = [10, 0, 10];
-    cards.forEach(function(card, i){
-      card.style.width = cardW + 'px';
-      card.style.height = cardH + 'px';
-      card.style.left = xOff[i] + 'px';
-      card.style.top = yOff[i] + 'px';
-      card.style.setProperty('--rot', rotations[i] + 'deg');
-      card.style.setProperty('--rot-hover', hoverRotations[i] + 'deg');
-      card.style.setProperty('--hx', hoverXDelta[i] + 'px');
-    });
+  var proof = document.getElementById('hero-proof');
+  if(!proof) return;
+  var track = proof.querySelector('.hc-track');
+  var slides = proof.querySelectorAll('.hc-slide');
+  var dots = proof.querySelectorAll('.hc-dot');
+  var prev = proof.querySelector('.hc-prev');
+  var next = proof.querySelector('.hc-next');
+  if(!track || !slides.length) return;
+  var n = slides.length;
+  function idx(){ return Math.round(track.scrollLeft / track.offsetWidth); }
+  function goTo(i){
+    var t = ((i % n) + n) % n;
+    track.scrollTo({left: t * track.offsetWidth, behavior:'smooth'});
   }
-  function init(){ fitFan(); if(document.fonts && document.fonts.ready) document.fonts.ready.then(fitFan); }
-  if(document.readyState === 'loading'){ document.addEventListener('DOMContentLoaded', init); }
-  else{ setTimeout(init, 0); }
-  window.addEventListener('resize', fitFan, {passive: true});
+  prev && prev.addEventListener('click', function(){ goTo(idx() - 1); });
+  next && next.addEventListener('click', function(){ goTo(idx() + 1); });
+  dots.forEach(function(dot, i){ dot.addEventListener('click', function(){ goTo(i); }); });
+  track.addEventListener('scroll', function(){
+    var i = idx();
+    dots.forEach(function(d, j){ d.classList.toggle('hc-dot--active', j === i); });
+  }, {passive:true});
 })();
 
 /* ── Scroll reveal — individual elements (excludes data-stagger children) ── */
