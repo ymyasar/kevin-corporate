@@ -206,9 +206,12 @@ section{ position:relative; z-index:3; }
 .sp-eyebrow{font-family:var(--font-body);font-size:11px;font-weight:400;letter-spacing:0.2em;text-transform:uppercase;color:var(--color-steel);margin:0 0 10px;}
 .sp-tagline{font-family:var(--font-heading);font-size:20px;font-weight:400;color:var(--color-text-muted);margin:0;}
 .marquee-rows{display:flex;flex-direction:column;gap:28px;}
-.marquee-outer{overflow:hidden;-webkit-mask-image:linear-gradient(to right,transparent 0%,#000 60px,#000 calc(100% - 60px),transparent 100%);mask-image:linear-gradient(to right,transparent 0%,#000 60px,#000 calc(100% - 60px),transparent 100%);}
-.marquee-inner{display:flex;align-items:center;width:max-content;animation:marquee-scroll 45s linear infinite;will-change:transform;-webkit-backface-visibility:hidden;backface-visibility:hidden;}
-.marquee-inner-rev{display:flex;align-items:center;width:max-content;animation:marquee-scroll-rev 55s linear infinite;will-change:transform;-webkit-backface-visibility:hidden;backface-visibility:hidden;}
+.marquee-outer{overflow:hidden;position:relative;}
+.marquee-outer::before,.marquee-outer::after{content:'';position:absolute;top:0;bottom:0;width:80px;z-index:2;pointer-events:none;}
+.marquee-outer::before{left:0;background:linear-gradient(to right,#fff,rgba(255,255,255,0));}
+.marquee-outer::after{right:0;background:linear-gradient(to left,#fff,rgba(255,255,255,0));}
+.marquee-inner{display:flex;align-items:center;width:max-content;animation:marquee-scroll 45s linear infinite;}
+.marquee-inner-rev{display:flex;align-items:center;width:max-content;animation:marquee-scroll-rev 55s linear infinite;}
 .wm{font-family:var(--font-heading);font-size:26px;font-weight:500;color:var(--color-navy);opacity:0.35;white-space:nowrap;padding:0 20px;transition:opacity 0.35s ease,transform 0.35s ease;cursor:default;display:inline-block;}
 .wm:hover{opacity:1;transform:scale(1.04);}
 .wm-amp{font-size:30px;line-height:1;}
@@ -217,14 +220,12 @@ section{ position:relative; z-index:3; }
 .wm-brand{font-family:var(--font-body);font-size:22px;font-weight:600;opacity:0.5;white-space:nowrap;padding:0 22px;transition:opacity 0.35s ease,transform 0.35s ease;cursor:default;display:inline-block;}
 .wm-brand:hover{opacity:1;transform:scale(1.04);}
 .marquee-logo{height:52px;width:auto;object-fit:contain;opacity:0.75;transition:opacity 0.4s var(--ease);display:inline-block;vertical-align:middle;padding:0 32px;flex-shrink:0;}
-/* Samsung is a wide wordmark — reduce height so visual weight matches square marks */
-.marquee-logo[alt="Samsung"]{height:30px!important;}
 .marquee-outer:hover .marquee-logo{opacity:1;}
 .wm-sep{display:inline-block;width:4px;height:4px;background:var(--color-slate);transform:rotate(45deg);vertical-align:middle;flex-shrink:0;}
 .ind-tag{font-family:var(--font-body);font-size:12px;font-weight:400;letter-spacing:0.18em;text-transform:uppercase;color:var(--color-navy);opacity:0.25;white-space:nowrap;padding:0 16px;cursor:default;}
 .ind-sep{display:inline-block;width:3px;height:3px;background:var(--color-slate);transform:rotate(45deg);vertical-align:middle;flex-shrink:0;opacity:0.6;}
 @keyframes marquee-scroll{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
-@keyframes marquee-scroll-rev{0%{transform:translate3d(-50%,0,0);}100%{transform:translate3d(0,0,0);}}
+@keyframes marquee-scroll-rev{0%{transform:translateX(-50%);}100%{transform:translateX(0);}}
 @media(prefers-reduced-motion:reduce){.marquee-inner,.marquee-inner-rev{animation:none;flex-wrap:wrap;justify-content:center;gap:12px;width:auto;}}
 
 /* ════════════════════════════════════════════
@@ -1891,7 +1892,7 @@ body.nav-open{overflow:hidden;}
       <img src="/images/logos/oracle.png"            alt="Oracle"               class="marquee-logo" style="height:52px"><span class="wm-sep"></span>
       <img src="/images/logos/reup-education.png"    alt="REUP Education"       class="marquee-logo" style="height:52px"><span class="wm-sep"></span>
       <img src="/images/logos/rider-levett-bucknall.png" alt="Rider Levett Bucknall" class="marquee-logo" style="height:44px"><span class="wm-sep"></span>
-      <img src="/images/logos/samsung.avif"          alt="Samsung"              class="marquee-logo" style="height:46px"><span class="wm-sep"></span>
+      <img src="/images/logos/samsung.png"           alt="Samsung"              class="marquee-logo"><span class="wm-sep"></span>
       <img src="/images/logos/ufcu.png"              alt="UFCU"                 class="marquee-logo" style="height:44px"><span class="wm-sep"></span>
     </div>
   </div>
