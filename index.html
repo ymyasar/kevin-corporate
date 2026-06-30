@@ -206,12 +206,12 @@ section{ position:relative; z-index:3; }
 .sp-eyebrow{font-family:var(--font-body);font-size:11px;font-weight:400;letter-spacing:0.2em;text-transform:uppercase;color:var(--color-steel);margin:0 0 10px;}
 .sp-tagline{font-family:var(--font-heading);font-size:20px;font-weight:400;color:var(--color-text-muted);margin:0;}
 .marquee-rows{display:flex;flex-direction:column;gap:28px;}
-.marquee-outer{overflow:hidden;position:relative;-webkit-transform:translateZ(0);transform:translateZ(0);will-change:transform;-webkit-backface-visibility:hidden;backface-visibility:hidden;}
+.marquee-outer{overflow:hidden;position:relative;}
 .marquee-outer::before,.marquee-outer::after{content:'';position:absolute;top:0;bottom:0;width:80px;z-index:2;pointer-events:none;}
 .marquee-outer::before{left:0;background:linear-gradient(to right,#fff,rgba(255,255,255,0));}
 .marquee-outer::after{right:0;background:linear-gradient(to left,#fff,rgba(255,255,255,0));}
-.marquee-inner{display:flex;align-items:center;width:max-content;animation:marquee-scroll 45s linear infinite;}
-.marquee-inner-rev{display:flex;align-items:center;width:max-content;animation:marquee-scroll-rev 55s linear infinite;}
+.marquee-inner{display:flex;align-items:center;width:max-content;}
+.marquee-inner-rev{display:flex;align-items:center;width:max-content;}
 .wm{font-family:var(--font-heading);font-size:26px;font-weight:500;color:var(--color-navy);opacity:0.35;white-space:nowrap;padding:0 20px;transition:opacity 0.35s ease,transform 0.35s ease;cursor:default;display:inline-block;}
 .wm:hover{opacity:1;transform:scale(1.04);}
 .wm-amp{font-size:30px;line-height:1;}
@@ -1899,28 +1899,63 @@ body.nav-open{overflow:hidden;}
 </section>
 <script>
 (function() {
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
   function initMarquee(id) {
     const inner = document.getElementById(id);
     if (!inner) return;
 
-    // Remove any existing clones first
-    const clones = inner.querySelectorAll('[data-clone]');
-    clones.forEach(c => c.remove());
-
-    // Clone original content once — translateX(-50%) keyframe needs exactly 2 copies
-    const items = Array.from(inner.children);
-    items.forEach(item => {
+    // Ensure exactly 2 copies (original + 1 clone) for seamless loop
+    inner.querySelectorAll('[data-clone]').forEach(c => c.remove());
+    Array.from(inner.children).forEach(item => {
       const clone = item.cloneNode(true);
       clone.setAttribute('data-clone', '1');
       clone.setAttribute('aria-hidden', 'true');
       inner.appendChild(clone);
     });
+
+    if (reduced) return; // leave strip static for reduced-motion users
+
+    const outer = inner.parentElement;
+    const PX_PER_SEC = 70.9; // 3189px / 45s — matches original CSS pace
+    let offset = 0, half = 0, raf = null, last = null;
+    let ready = false, visible = false;
+
+    const measure = () => { half = inner.scrollWidth / 2; };
+    const stop = () => { if (raf) { cancelAnimationFrame(raf); raf = null; last = null; } };
+    const maybeStart = () => { if (ready && visible && !raf) raf = requestAnimationFrame(tick); };
+
+    function tick(now) {
+      if (last === null) last = now;
+      const dt = Math.min(now - last, 50); // cap delta so tab-switch doesn't jump
+      last = now;
+      offset -= PX_PER_SEC * dt / 1000;
+      if (half > 0 && offset <= -half) offset += half;
+      inner.style.transform = `translateX(${offset}px)`;
+      raf = requestAnimationFrame(tick);
+    }
+
+    // Pause rAF when strip is off-screen
+    new IntersectionObserver(entries => {
+      visible = entries[0].isIntersecting;
+      visible ? maybeStart() : stop();
+    }, { threshold: 0 }).observe(outer);
+
+    // Recompute half-width on resize (debounced)
+    let resizeTimer;
+    window.addEventListener('resize', () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(measure, 150);
+    }, { passive: true });
+
+    // Start after load so images are decoded and scrollWidth is accurate
+    const onLoad = () => { measure(); ready = true; maybeStart(); };
+    if (document.readyState === 'complete') { onLoad(); }
+    else { window.addEventListener('load', onLoad); }
   }
 
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', function() {
-      initMarquee('mq-r1');
-    });
+    document.addEventListener('DOMContentLoaded', () => initMarquee('mq-r1'));
   } else {
     initMarquee('mq-r1');
   }
