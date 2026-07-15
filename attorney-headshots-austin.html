@@ -1,0 +1,1027 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>ATTORNEY PAGE — SEO PASS PENDING</title>
+<!-- Preconnect -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<!-- Favicon -->
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+
+:root{
+  --color-bg: #FAFAFA;
+  --color-navy: #0D1F35;
+  --color-steel: #4A6FA5;
+  --color-slate: #E4E8EE;
+  --color-text: #0D1F35;
+  --color-text-muted: #5A6A7A;
+  --color-body: #3A4654;
+  --color-cta: #4A6FA5;
+  --color-cta-hover: #0D1F35;
+  --font-heading: 'Inter', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --ease: cubic-bezier(0.16,1,0.3,1);
+  --shadow-sm: 0 1px 2px rgba(13,31,53,0.04), 0 1px 3px rgba(13,31,53,0.06);
+  --shadow-md: 0 4px 12px rgba(13,31,53,0.06), 0 12px 32px rgba(13,31,53,0.08);
+  --shadow-lg: 0 8px 24px rgba(13,31,53,0.10), 0 24px 60px rgba(13,31,53,0.12);
+  --radius-card: 10px;
+  --radius-feature: 14px;
+  --hairline: rgba(13,31,53,0.10);
+}
+
+html{scroll-behavior:smooth;}
+html,body{background:var(--color-bg);font-family:'Inter',sans-serif;overflow-x:hidden;color:var(--color-text);}
+
+/* Grain overlay */
+.grain-fixed{position:fixed;inset:0;opacity:0.038;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");pointer-events:none;z-index:2;}
+section{position:relative;z-index:3;}
+
+/* ── NAV ── */
+#site-nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 52px;display:flex;align-items:center;justify-content:space-between;background:var(--color-bg);transition:background 0.4s var(--ease),border-color 0.4s var(--ease),box-shadow 0.4s var(--ease);border-bottom:1px solid transparent;}
+#site-nav.scrolled{background:rgba(250,250,250,0.8);backdrop-filter:blur(14px) saturate(1.1);-webkit-backdrop-filter:blur(14px) saturate(1.1);border-bottom:1px solid var(--hairline);box-shadow:var(--shadow-sm);}
+.nav-name{font-family:var(--font-heading);font-weight:500;font-size:22px;color:var(--color-navy);text-decoration:none;letter-spacing:0.02em;flex-shrink:0;}
+.nav-links{display:flex;align-items:center;gap:32px;margin:0 40px;}
+.nav-link{font-family:var(--font-body);font-size:14px;font-weight:500;color:var(--color-navy);text-decoration:none;transition:color 0.2s ease;}
+.nav-link:hover{color:var(--color-steel);}
+.nav-cta{font-family:var(--font-body);font-size:14px;font-weight:600;color:#fff;background:var(--color-navy);border:none;padding:12px 28px;border-radius:999px;cursor:pointer;text-decoration:none;letter-spacing:0.01em;transition:background 0.35s var(--ease),transform 0.35s var(--ease),box-shadow 0.35s var(--ease);flex-shrink:0;}
+.nav-cta:hover{background:var(--color-steel);transform:translateY(-2px);box-shadow:0 10px 24px rgba(13,31,53,0.18);}
+
+/* ── HAMBURGER ── */
+#nav-hamburger{display:none;}
+#nav-overlay{display:flex;flex-direction:column;align-items:center;justify-content:center;position:fixed;inset:0;z-index:9999;background:var(--color-bg);opacity:0;pointer-events:none;transition:opacity 0.35s var(--ease);}
+body.nav-open #nav-overlay{opacity:1;pointer-events:auto;}
+body.nav-open{overflow:hidden;}
+.nav-overlay-links{display:flex;flex-direction:column;align-items:center;gap:0;margin-bottom:36px;}
+.nav-overlay-link{font-family:var(--font-heading);font-size:42px;font-weight:400;color:var(--color-navy);text-decoration:none;padding:14px 0;min-height:64px;display:flex;align-items:center;transition:color 0.2s ease;}
+.nav-overlay-link:hover{color:var(--color-steel);}
+.nav-overlay-cta{font-family:var(--font-body);font-size:15px;font-weight:600;color:#fff;background:var(--color-navy);border:none;padding:15px 40px;border-radius:999px;cursor:pointer;text-decoration:none;letter-spacing:0.01em;min-height:48px;display:flex;align-items:center;}
+
+/* ── HERO ── */
+#hero{position:relative;height:clamp(600px,86vh,820px);min-height:640px;overflow:hidden;display:flex;align-items:center;justify-content:flex-start;background:#0D1F35;}
+#hero::before{content:'';position:absolute;inset:0;z-index:1;pointer-events:none;opacity:0.04;mix-blend-mode:overlay;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E");background-size:200px 200px;}
+.hero-blob{position:absolute;border-radius:50%;filter:blur(80px);z-index:0;pointer-events:none;}
+.hero-blob--1{width:700px;height:700px;background:radial-gradient(ellipse,#1A2E45 0%,transparent 70%);top:-180px;left:-150px;animation:hblob1 23s ease-in-out infinite alternate;}
+.hero-blob--2{width:550px;height:550px;background:radial-gradient(ellipse,#16263A 0%,transparent 70%);top:10%;right:-120px;animation:hblob2 31s ease-in-out infinite alternate;}
+.hero-blob--3{width:480px;height:480px;background:radial-gradient(ellipse,#0A1825 0%,transparent 70%);bottom:-100px;left:35%;animation:hblob3 19s ease-in-out infinite alternate;}
+@keyframes hblob1{0%{transform:translate(0,0) scale(1);}50%{transform:translate(80px,50px) scale(1.1);}100%{transform:translate(-50px,90px) scale(0.92);}}
+@keyframes hblob2{0%{transform:translate(0,0) scale(1);}40%{transform:translate(-70px,60px) scale(1.08);}100%{transform:translate(60px,-80px) scale(0.95);}}
+@keyframes hblob3{0%{transform:translate(0,0) scale(1);}60%{transform:translate(50px,-70px) scale(1.06);}100%{transform:translate(-70px,40px) scale(0.97);}}
+@media(prefers-reduced-motion:reduce){.hero-blob{animation:none;}}
+.hero-content{position:relative;z-index:2;padding:0 48px 0 32px;max-width:680px;width:100%;text-align:left;margin-left:clamp(60px,8vw,140px);}
+.hero-content::before{content:'';position:absolute;left:0;top:0;bottom:0;width:1px;background:rgba(255,255,255,0.18);pointer-events:none;}
+.hero-reveal{opacity:0;transform:translateY(24px);transition:opacity 0.8s var(--ease),transform 0.8s var(--ease);}
+.hero-reveal.revealed{opacity:1;transform:translateY(0);}
+@media(prefers-reduced-motion:reduce){.hero-reveal{opacity:1;transform:none;transition:none;}}
+.hero-eyebrow{font-family:var(--font-body);font-size:11px;font-weight:400;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.7);margin:0 0 18px;}
+.hero-headline{font-family:var(--font-heading);font-size:clamp(40px,5.5vw,60px);font-weight:400;color:#fff;line-height:1.05;letter-spacing:-0.01em;margin:0;}
+.hero-sub{font-family:var(--font-body);font-size:17px;font-weight:400;color:rgba(255,255,255,0.85);margin-top:20px;line-height:1.7;max-width:520px;}
+.hero-cta-row{display:flex;gap:16px;margin-top:36px;flex-wrap:wrap;justify-content:flex-start;}
+.hero-btn-primary{font-family:var(--font-body);font-size:14px;font-weight:600;padding:16px 40px;background:#fff;color:var(--color-navy);border:none;border-radius:999px;cursor:pointer;text-decoration:none;letter-spacing:0.01em;transition:background 0.35s var(--ease),color 0.35s var(--ease),transform 0.35s var(--ease),box-shadow 0.35s var(--ease);display:inline-block;}
+.hero-btn-primary:hover{background:var(--color-steel);color:#fff;transform:translateY(-2px);box-shadow:0 10px 24px rgba(13,31,53,0.18);}
+.hero-btn-secondary{font-family:var(--font-body);font-size:14px;font-weight:600;padding:16px 40px;background:transparent;color:#fff;border:1px solid rgba(255,255,255,0.7);border-radius:999px;cursor:pointer;text-decoration:none;letter-spacing:0.01em;transition:background 0.35s var(--ease),color 0.35s var(--ease),border-color 0.35s var(--ease),transform 0.35s var(--ease),box-shadow 0.35s var(--ease);display:inline-block;}
+.hero-btn-secondary:hover{background:#fff;color:var(--color-navy);border-color:#fff;transform:translateY(-2px);box-shadow:0 10px 24px rgba(13,31,53,0.18);}
+.hero-proof{position:absolute;right:clamp(40px,12vw,180px);top:50%;transform:translateY(-50%) scale(0.96);z-index:3;width:clamp(260px,22vw,340px);border-radius:var(--radius-feature);border:1px solid rgba(255,255,255,0.14);box-shadow:0 8px 24px rgba(13,31,53,0.24),0 24px 60px rgba(13,31,53,0.28);overflow:hidden;opacity:0;transition:opacity 0.9s var(--ease),transform 0.9s var(--ease),box-shadow 0.4s ease;pointer-events:auto;}
+.hero-proof.revealed{opacity:1;transform:translateY(-50%) scale(1);}
+.hero-proof.revealed:hover{transform:translateY(calc(-50% - 4px)) scale(1);box-shadow:0 16px 48px rgba(13,31,53,0.32),0 40px 80px rgba(13,31,53,0.30);}
+.hc-track{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;}
+.hc-track::-webkit-scrollbar{display:none;}
+.hc-slide{flex:0 0 100%;scroll-snap-align:start;}
+.hc-slide img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center 15%;}
+.hc-btn{position:absolute;top:50%;transform:translateY(-50%);background:rgba(13,31,53,0.55);border:none;color:#fff;width:36px;height:36px;border-radius:50%;cursor:pointer;font-size:24px;line-height:1;display:flex;align-items:center;justify-content:center;z-index:2;padding:0;transition:background 0.2s;}
+.hc-btn:hover{background:rgba(13,31,53,0.82);}
+.hc-prev{left:10px;}
+.hc-next{right:10px;}
+.hc-dots{position:absolute;bottom:14px;left:0;right:0;display:flex;justify-content:center;gap:8px;z-index:2;}
+.hc-dot{width:8px;height:8px;border-radius:50%;border:none;background:rgba(255,255,255,0.38);cursor:pointer;padding:0;transition:background 0.2s;}
+.hc-dot.hc-dot--active{background:#fff;}
+@media(max-width:1024px){.hero-proof{display:none;}}
+.hero-corner{position:absolute;bottom:40px;right:52px;z-index:2;font-family:var(--font-body);font-size:10px;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.35);}
+.hero-scroll-cue{position:absolute;bottom:32px;left:50%;transform:translateX(-50%);z-index:2;}
+.hero-scroll-chevron{display:block;animation:scroll-bob 2s ease-in-out infinite;}
+@keyframes scroll-bob{0%,100%{transform:translateY(0);}50%{transform:translateY(8px);}}
+@media(prefers-reduced-motion:reduce){.hero-scroll-chevron{animation:none;}}
+
+/* ── SCROLL REVEAL ── */
+.reveal{opacity:0;transform:translateY(20px);transition:opacity 0.7s var(--ease),transform 0.7s var(--ease);}
+.reveal.revealed{opacity:1;transform:translateY(0);}
+.reveal-delay-1{transition-delay:0.08s;}
+.reveal-delay-2{transition-delay:0.16s;}
+.reveal-delay-3{transition-delay:0.24s;}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none;}}
+
+/* ── SECTION SHARED ── */
+.section-inner{max-width:1240px;margin:0 auto;padding:0 32px;}
+.section-eyebrow{font-family:var(--font-body);font-size:11px;font-weight:400;letter-spacing:0.2em;text-transform:uppercase;color:var(--color-steel);margin:0 0 14px;}
+.section-title{font-family:var(--font-heading);font-size:clamp(32px,4vw,46px);font-weight:400;color:var(--color-navy);line-height:1.05;letter-spacing:-0.01em;margin:0;}
+.section-body{font-family:var(--font-body);font-size:15.5px;color:var(--color-body);line-height:1.7;margin-top:20px;max-width:680px;}
+
+/* ── STATS BAR ── */
+#stats-bar{background:#fff;padding:28px 0;border-top:1px solid rgba(13,31,53,0.08);border-bottom:1px solid rgba(13,31,53,0.08);}
+.stats-row{max-width:1100px;margin:0 auto;padding:0 32px;display:flex;align-items:center;justify-content:center;}
+.stat-item{text-align:center;padding:0 40px;flex:1;}
+.stat-divider{width:1px;height:40px;background:rgba(13,31,53,0.12);flex-shrink:0;}
+.stat-num{font-family:var(--font-body)!important;font-size:clamp(2rem,4vw,2.75rem)!important;font-weight:500!important;letter-spacing:0.01em!important;color:var(--color-navy);line-height:1.1;display:block;}
+.stat-label{font-family:var(--font-body);font-size:10px;font-weight:400;letter-spacing:0.16em;text-transform:uppercase;color:var(--color-text-muted);display:block;margin-top:4px;}
+
+/* ── DIFFERENTIATORS (3 cards) ── */
+#why-kevin{background:var(--color-bg);padding:clamp(72px,9vw,120px) 0;}
+.diff-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:56px;}
+.diff-card{background:#fff;border:1px solid var(--hairline);border-radius:var(--radius-card);padding:36px 30px;display:flex;flex-direction:column;box-shadow:var(--shadow-sm);transition:transform 0.4s var(--ease),border-color 0.4s var(--ease),box-shadow 0.4s var(--ease);}
+.diff-card:hover{transform:translateY(-6px);border-color:var(--color-navy);box-shadow:var(--shadow-md);}
+.diff-num{font-family:var(--font-body);font-size:11px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:var(--color-steel);margin:0 0 18px;}
+.diff-title{font-family:var(--font-heading);font-size:24px;font-weight:400;color:var(--color-navy);line-height:1.2;margin:0 0 14px;}
+.diff-body{font-family:var(--font-body);font-size:14.5px;color:var(--color-body);line-height:1.7;flex:1;}
+
+/* ── FIRM SESSIONS ── */
+#firm-sessions{background:#fff;padding:clamp(72px,9vw,120px) 0;}
+.firm-split{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;margin-top:56px;}
+.firm-copy{}
+.firm-copy p{font-family:var(--font-body);font-size:15.5px;color:var(--color-body);line-height:1.7;margin:0 0 18px;}
+.firm-copy p:last-child{margin-bottom:0;}
+.firm-logistics{display:flex;flex-direction:column;gap:0;}
+.logistics-item{display:flex;align-items:flex-start;gap:18px;padding:24px 0;border-bottom:1px solid var(--hairline);}
+.logistics-item:first-child{border-top:1px solid var(--hairline);}
+.logistics-icon{width:40px;height:40px;border-radius:50%;background:var(--color-navy);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.logistics-icon svg{width:18px;height:18px;stroke:#fff;fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;}
+.logistics-label{font-family:var(--font-body);font-size:12px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--color-steel);margin:0 0 4px;}
+.logistics-text{font-family:var(--font-body);font-size:14.5px;color:var(--color-body);line-height:1.6;margin:0;}
+
+/* ── DIRECTORY SECTION ── */
+#directory-ready{background:var(--color-bg);padding:clamp(72px,9vw,120px) 0;}
+.dir-split{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;margin-top:56px;}
+.dir-copy p{font-family:var(--font-body);font-size:15.5px;color:var(--color-body);line-height:1.7;margin:0 0 18px;}
+.dir-copy p:last-child{margin-bottom:0;}
+.dir-platforms{display:flex;flex-direction:column;gap:12px;}
+.dir-platform{display:flex;align-items:center;gap:14px;padding:16px 20px;background:#fff;border:1px solid var(--hairline);border-radius:var(--radius-card);font-family:var(--font-body);font-size:14px;color:var(--color-navy);font-weight:500;}
+.dir-platform::before{content:'';width:8px;height:8px;border-radius:50%;background:var(--color-steel);flex-shrink:0;}
+.dir-closer{margin-top:32px;padding:24px 28px;background:var(--color-navy);border-radius:var(--radius-card);font-family:var(--font-heading);font-size:18px;font-weight:400;color:#fff;line-height:1.4;}
+
+/* ── LATERAL HIRE ── */
+#lateral-hire{background:#fff;padding:clamp(56px,7vw,96px) 0;}
+.lateral-inner{max-width:860px;margin:0 auto;padding:0 32px;}
+.lateral-card{background:var(--color-bg);border:1px solid var(--hairline);border-radius:var(--radius-feature);padding:48px 52px;}
+.lateral-eyebrow{font-family:var(--font-body);font-size:11px;font-weight:400;letter-spacing:0.2em;text-transform:uppercase;color:var(--color-steel);margin:0 0 18px;}
+.lateral-title{font-family:var(--font-heading);font-size:clamp(26px,3.5vw,36px);font-weight:400;color:var(--color-navy);line-height:1.1;margin:0 0 20px;}
+.lateral-body{font-family:var(--font-body);font-size:15.5px;color:var(--color-body);line-height:1.7;max-width:600px;}
+
+/* ── INDIVIDUAL SESSIONS ── */
+#individual{background:var(--color-bg);padding:clamp(72px,9vw,120px) 0;}
+.individual-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;margin-top:56px;}
+.individual-img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center top;border-radius:var(--radius-feature);display:block;}
+.individual-copy{}
+.individual-copy p{font-family:var(--font-body);font-size:15.5px;color:var(--color-body);line-height:1.7;margin:0 0 18px;}
+.individual-copy p:last-child{margin-bottom:0;}
+.individual-price{font-family:var(--font-heading);font-size:42px;font-weight:400;color:var(--color-navy);line-height:1;margin:24px 0 8px;}
+.individual-price-label{font-family:var(--font-body);font-size:13px;color:var(--color-text-muted);margin:0 0 28px;}
+.btn-primary{display:inline-block;font-family:var(--font-body);font-size:14px;font-weight:600;padding:16px 40px;background:var(--color-navy);color:#fff;border:none;border-radius:999px;cursor:pointer;text-decoration:none;letter-spacing:0.01em;transition:background 0.35s var(--ease),transform 0.35s var(--ease),box-shadow 0.35s var(--ease);}
+.btn-primary:hover{background:var(--color-steel);transform:translateY(-2px);box-shadow:0 10px 24px rgba(13,31,53,0.18);}
+.btn-outline{display:inline-block;font-family:var(--font-body);font-size:14px;font-weight:600;padding:16px 40px;background:transparent;color:var(--color-navy);border:1.5px solid var(--color-navy);border-radius:999px;cursor:pointer;text-decoration:none;letter-spacing:0.01em;transition:background 0.35s var(--ease),color 0.35s var(--ease),border-color 0.35s var(--ease),transform 0.35s var(--ease),box-shadow 0.35s var(--ease);}
+.btn-outline:hover{background:var(--color-steel);border-color:var(--color-steel);color:#fff;transform:translateY(-2px);box-shadow:0 10px 24px rgba(13,31,53,0.18);}
+
+/* ── PRICING ── */
+#pricing{background:#fff;padding:clamp(72px,9vw,120px) 0;}
+.pricing-header{text-align:center;margin-bottom:56px;}
+.pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+.price-card{background:#fff;border:1px solid var(--hairline);border-radius:var(--radius-card);padding:36px 30px;display:flex;flex-direction:column;box-shadow:var(--shadow-sm);transition:transform 0.4s var(--ease),border-color 0.4s var(--ease),box-shadow 0.4s var(--ease);}
+.price-card:hover{transform:translateY(-6px);border-color:var(--color-navy);box-shadow:var(--shadow-md);}
+.price-card--featured{background:var(--color-navy);border-color:var(--color-navy);box-shadow:var(--shadow-md);}
+.price-card--featured:hover{border-color:#3a6b99;box-shadow:var(--shadow-lg);}
+.price-card-cat{font-family:var(--font-body);font-size:11px;font-weight:400;letter-spacing:0.18em;text-transform:uppercase;color:var(--color-steel);margin:0 0 18px;}
+.price-card--featured .price-card-cat{color:rgba(255,255,255,0.5);}
+.price-card-name{font-family:var(--font-heading);font-size:26px;font-weight:400;color:var(--color-navy);line-height:1.15;margin:0 0 14px;}
+.price-card--featured .price-card-name{color:#fff;}
+.price-row{display:flex;align-items:baseline;gap:6px;margin-bottom:18px;}
+.price-from{font-family:var(--font-body);font-size:13px;color:var(--color-text-muted);}
+.price-card--featured .price-from{color:rgba(255,255,255,0.5);}
+.price-num{font-family:var(--font-body);font-size:36px;font-weight:600;color:var(--color-navy);line-height:1;}
+.price-card--featured .price-num{color:#fff;}
+.price-body{font-family:var(--font-body);font-size:14px;color:var(--color-body);line-height:1.7;flex:1;margin:0 0 24px;}
+.price-card--featured .price-body{color:rgba(255,255,255,0.72);}
+.price-note{font-family:var(--font-body);font-size:12.5px;color:var(--color-text-muted);text-align:center;margin-top:28px;}
+
+/* ── TESTIMONIALS ── */
+#proof{background:var(--color-bg);padding:clamp(72px,9vw,120px) 0;border-top:1px solid var(--hairline);}
+.proof-head{text-align:center;margin-bottom:56px;}
+.review-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+.review-card{background:#fff;border:1px solid var(--hairline);border-radius:var(--radius-card);box-shadow:var(--shadow-sm);padding:34px 30px;display:flex;flex-direction:column;transition:box-shadow 0.4s var(--ease);}
+.review-card:hover{box-shadow:var(--shadow-md);}
+.review-stars{display:flex;gap:4px;margin-bottom:18px;}
+.review-stars svg{width:16px;height:16px;fill:var(--color-navy);}
+.review-quote{font-family:var(--font-body);font-size:15px;color:var(--color-text);line-height:1.7;flex:1;margin:0 0 24px;}
+.review-footer{display:flex;align-items:center;gap:14px;margin-top:auto;}
+.review-avatar{width:40px;height:40px;border-radius:50%;background:var(--color-navy);display:flex;align-items:center;justify-content:center;font-family:var(--font-body);font-size:13px;font-weight:500;color:#fff;flex-shrink:0;letter-spacing:0.04em;}
+.review-name{font-family:var(--font-body);font-size:14px;font-weight:600;color:var(--color-navy);margin:0 0 2px;}
+.review-role{font-family:var(--font-body);font-size:12.5px;color:var(--color-text-muted);margin:0;}
+.review-anchor{grid-column:1 / -1;}
+.review-card--anchor{border-color:var(--color-navy);}
+.testi-disclaimer{text-align:center;margin-top:32px;font-family:var(--font-body);font-size:13px;color:var(--color-text-muted);opacity:0.65;}
+
+/* ── FAQ ── */
+#faq{background:#fff;padding:clamp(72px,9vw,120px) 0;border-top:1px solid var(--hairline);}
+.faq-wrap{max-width:860px;margin:0 auto;padding:0 32px;}
+.faq-title{font-family:var(--font-heading);font-size:40px;font-weight:400;color:var(--color-navy);line-height:1.05;letter-spacing:-0.01em;margin-bottom:48px;}
+.faq-item{border-bottom:1px solid var(--hairline);}
+.faq-item:first-of-type{border-top:1px solid var(--hairline);}
+.faq-item summary{list-style:none;font-family:var(--font-body);font-size:16px;font-weight:500;color:var(--color-navy);padding:22px 44px 22px 0;cursor:pointer;position:relative;outline:none;}
+.faq-item summary::-webkit-details-marker{display:none;}
+.faq-item summary::after{content:'+';position:absolute;right:4px;top:50%;transform:translateY(-50%);font-size:22px;font-weight:300;color:var(--color-steel);transition:transform 0.25s ease;}
+.faq-item[open] summary::after{transform:translateY(-50%) rotate(45deg);}
+.faq-body{font-family:var(--font-body);font-size:15px;color:var(--color-body);line-height:1.72;padding:0 44px 24px 0;max-width:720px;}
+
+/* ── FINAL CTA ── */
+#final-cta{background:var(--color-navy);padding:clamp(72px,9vw,120px) 0;}
+.cta-wrap{max-width:1140px;margin:0 auto;padding:0 32px;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;}
+.cta-pitch-eyebrow{font-family:var(--font-body);font-size:11px;font-weight:400;letter-spacing:0.22em;text-transform:uppercase;color:rgba(255,255,255,0.6);margin:0 0 16px;}
+.cta-pitch-title{font-family:var(--font-heading);font-size:clamp(30px,4vw,50px);font-weight:400;color:#fff;line-height:1.1;margin:0 0 20px;}
+.cta-pitch-body{font-family:var(--font-body);font-size:15.5px;color:rgba(255,255,255,0.8);line-height:1.65;margin:0 0 32px;}
+.cta-proof-list{display:flex;flex-direction:column;gap:18px;margin:0 0 36px;}
+.cta-proof-item{border-left:2px solid var(--color-steel);padding-left:16px;font-family:var(--font-body);font-size:14px;color:rgba(255,255,255,0.85);line-height:1.5;}
+.cta-proof-item strong{display:block;font-weight:600;color:#fff;margin-bottom:2px;}
+.cta-direct{display:flex;flex-direction:column;gap:8px;margin-top:32px;padding-top:28px;border-top:1px solid rgba(255,255,255,0.12);}
+.cta-direct-label{font-family:var(--font-body);font-size:13px;color:rgba(255,255,255,0.45);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:4px;}
+.cta-direct a{font-family:var(--font-body);font-size:15px;color:rgba(255,255,255,0.85);text-decoration:none;transition:color 0.2s ease;}
+.cta-direct a:hover{color:#fff;}
+.cta-booking-trust{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.12);border-radius:var(--radius-card);padding:36px 32px;}
+.cta-stars{font-size:22px;color:#E8B84B;letter-spacing:2px;margin-bottom:8px;}
+.cta-review-count{font-family:var(--font-body);font-size:14px;color:rgba(255,255,255,0.7);margin:0 0 20px;}
+.cta-pull-quote{font-family:var(--font-heading);font-size:17px;font-weight:400;color:#fff;line-height:1.5;margin:0 0 10px;font-style:italic;}
+.cta-pull-attr{font-family:var(--font-body);font-size:13px;color:rgba(255,255,255,0.55);margin:0 0 24px;}
+.cta-google-link{font-family:var(--font-body);font-size:13px;color:rgba(255,255,255,0.7);text-decoration:underline;}
+.cta-google-link:hover{color:#fff;}
+.cta-btn-row{display:flex;gap:14px;flex-wrap:wrap;margin-top:28px;}
+.cta-acuity-row{grid-column:1 / -1;margin-top:8px;}
+.acuity-embed-wrapper{width:100%;overflow:hidden;}
+.acuity-embed-wrapper iframe{width:100%;height:800px;border:none;display:block;}
+
+/* ── SCROLL PROGRESS ── */
+.scroll-progress{position:fixed;top:0;left:0;width:0;height:2px;z-index:9999;background:var(--color-steel);pointer-events:none;}
+
+/* ── FOOTER ── */
+footer{background:var(--color-bg);border-top:1px solid var(--hairline);}
+.footer-inner{max-width:1240px;margin:0 auto;padding:64px 32px 40px;}
+.footer-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:40px;margin-bottom:48px;}
+.footer-brand-name{font-family:var(--font-heading);font-size:18px;font-weight:500;color:var(--color-navy);margin:0 0 8px;}
+.footer-brand-tag{font-family:var(--font-body);font-size:13px;color:var(--color-text-muted);margin:0;line-height:1.5;}
+.footer-col-label{font-family:var(--font-body);font-size:11px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:var(--color-navy);margin:0 0 16px;}
+.footer-col-links{display:flex;flex-direction:column;gap:10px;}
+.footer-link{font-family:var(--font-body);font-size:14px;color:var(--color-text-muted);text-decoration:none;transition:color 0.2s ease;}
+.footer-link:hover{color:var(--color-navy);}
+.footer-bottom{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;padding-top:32px;border-top:1px solid var(--hairline);}
+.footer-copy{font-family:var(--font-body);font-size:13px;color:var(--color-text-muted);}
+.footer-legal-links{display:flex;gap:24px;}
+.footer-legal-link{font-family:var(--font-body);font-size:13px;color:var(--color-text-muted);text-decoration:none;transition:color 0.2s ease;}
+.footer-legal-link:hover{color:var(--color-navy);}
+.footer-service-area{font-family:var(--font-body);font-size:12px;color:var(--color-text-muted);opacity:0.7;}
+.footer-credit{font-family:var(--font-body);font-size:12px;color:var(--color-text-muted);opacity:0.55;text-align:right;margin-top:16px;}
+.footer-credit a{color:inherit;text-decoration:underline;}
+
+/* ── FOCUS ── */
+a:focus-visible,button:focus-visible{outline:3px solid rgba(74,111,165,0.25);outline-offset:2px;}
+
+/* ── STICKY MOBILE CTA ── */
+#mobile-cta-bar{display:none;}
+
+/* ═══════════════════════════════════════
+   MOBILE — max 760px
+═══════════════════════════════════════ */
+@media(max-width:760px){
+  #site-nav{padding:12px 20px;}
+  .nav-links{display:none;}
+  .nav-cta{display:none;}
+  #nav-hamburger{display:flex;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:44px;height:44px;cursor:pointer;background:none;border:none;padding:0;flex-shrink:0;}
+  #nav-hamburger span{display:block;width:24px;height:1.5px;background:var(--color-navy);transition:transform 0.3s var(--ease),opacity 0.3s ease;transform-origin:center;}
+  body.nav-open #nav-hamburger span:nth-child(1){transform:translateY(6.5px) rotate(45deg);}
+  body.nav-open #nav-hamburger span:nth-child(2){opacity:0;transform:scaleX(0);}
+  body.nav-open #nav-hamburger span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg);}
+
+  .hero-content{padding:0 24px 80px;text-align:center;margin-left:0;max-width:100%;}
+  .hero-content::before{display:none;}
+  .hero-corner{display:none;}
+  .hero-cta-row{flex-direction:column;gap:12px;justify-content:center;}
+  .hero-btn-primary,.hero-btn-secondary{display:block;width:100%;text-align:center;min-height:48px;padding:14px 24px;}
+
+  .section-inner{padding:0 20px;}
+  .diff-grid{grid-template-columns:1fr;gap:16px;margin-top:36px;}
+  .firm-split{grid-template-columns:1fr;gap:40px;margin-top:36px;}
+  .dir-split{grid-template-columns:1fr;gap:36px;margin-top:36px;}
+  .individual-grid{grid-template-columns:1fr;gap:36px;margin-top:36px;}
+  .individual-img{max-height:400px;aspect-ratio:4/3;object-position:center top;}
+  .pricing-grid{grid-template-columns:1fr;gap:16px;}
+  .review-grid{grid-template-columns:1fr;}
+  .review-anchor{grid-column:auto;}
+  .cta-wrap{grid-template-columns:1fr;gap:40px;}
+  .cta-acuity-row{grid-column:auto;}
+  .cta-btn-row{flex-direction:column;}
+  .btn-primary,.btn-outline{text-align:center;min-height:48px;}
+  .lateral-card{padding:32px 28px;}
+  .faq-wrap{padding:0 20px;}
+  .faq-title{font-size:32px;}
+  .faq-item summary{font-size:15px;padding:16px 44px 16px 0;min-height:44px;}
+  .faq-body{padding-right:0;}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:28px;}
+  .footer-bottom{flex-direction:column;gap:12px;}
+  .stats-row{display:grid;grid-template-columns:1fr 1fr;gap:0;padding:0;}
+  .stat-divider{display:none;}
+  .stat-item{padding:20px 16px;border-bottom:1px solid var(--hairline);}
+  .stat-item:nth-child(odd){border-right:1px solid var(--hairline);}
+
+  #mobile-cta-bar{display:block;position:fixed;bottom:0;left:0;right:0;z-index:9000;background:var(--color-navy);padding:12px 16px;padding-bottom:calc(12px + env(safe-area-inset-bottom,0px));box-shadow:0 -8px 24px rgba(13,31,53,0.10);}
+  #mobile-cta-bar.cta-hidden{display:none;}
+  .mobile-cta-btn{display:block;width:100%;text-align:center;font-family:var(--font-body);font-size:15px;font-weight:600;color:#fff;background:var(--color-steel);border:none;border-radius:999px;padding:14px 16px;min-height:48px;text-decoration:none;}
+}
+</style>
+</head>
+<body>
+
+<div class="scroll-progress" id="scroll-progress"></div>
+<div class="grain-fixed" aria-hidden="true"></div>
+
+<!-- ── Nav ── -->
+<nav id="site-nav">
+  <a href="/" class="nav-name">Kevin Nguyen Headshots</a>
+  <div class="nav-links">
+    <a href="/#services" class="nav-link">Services</a>
+    <a href="/#work" class="nav-link">Work</a>
+    <a href="/gallery" class="nav-link">Gallery</a>
+    <a href="#book" class="nav-link">Contact</a>
+  </div>
+  <button id="nav-hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="nav-overlay">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+  <a href="#book" class="nav-cta">Book Now</a>
+</nav>
+
+<div id="nav-overlay" role="dialog" aria-label="Navigation" aria-modal="true">
+  <nav class="nav-overlay-links">
+    <a href="/#services" class="nav-overlay-link">Services</a>
+    <a href="/#work" class="nav-overlay-link">Work</a>
+    <a href="/gallery" class="nav-overlay-link">Gallery</a>
+    <a href="#book" class="nav-overlay-link">Book</a>
+  </nav>
+  <a href="#book" class="nav-overlay-cta">Book Now</a>
+</div>
+
+<!-- ── HERO ── -->
+<section id="hero">
+  <div class="hero-blob hero-blob--1" aria-hidden="true"></div>
+  <div class="hero-blob hero-blob--2" aria-hidden="true"></div>
+  <div class="hero-blob hero-blob--3" aria-hidden="true"></div>
+  <div class="hero-content">
+    <p class="hero-eyebrow hero-reveal">ATTORNEY &amp; LAW FIRM HEADSHOTS &mdash; AUSTIN, TX</p>
+    <h1 class="hero-headline hero-reveal">Attorney &amp; Law Firm<br>Headshots in Austin</h1>
+    <p class="hero-sub hero-reveal">Whole firms photographed in one day. On-site at your office anywhere downtown or Central Austin. Flat-rate pricing with retouching included. Files delivered in 48 hours.</p>
+    <div class="hero-cta-row hero-reveal">
+      <a href="#book" class="hero-btn-primary">Get a Firm Quote</a>
+      <a href="#book" class="hero-btn-secondary">Book an Individual Session</a>
+    </div>
+  </div>
+  <div class="hero-corner" aria-hidden="true">Austin, TX &middot; Est.&nbsp;2016</div>
+  <div class="hero-proof" id="hero-proof" aria-hidden="true">
+    <div class="hc-track">
+      <div class="hc-slide">
+        <img src="/images/corporate-headshot-austin-attorney-29.jpg" alt="Attorney headshot — Austin" loading="eager" fetchpriority="high">
+      </div>
+      <div class="hc-slide">
+        <img src="/images/corporate-headshot-austin-attorney-37.jpg" alt="Attorney headshot — Austin" loading="lazy">
+      </div>
+      <div class="hc-slide">
+        <img src="/images/corporate-headshot-austin-attorney-43.jpg" alt="Attorney headshot — Austin" loading="lazy">
+      </div>
+      <div class="hc-slide">
+        <img src="/images/corporate-headshot-austin-attorney-34.jpg" alt="Attorney headshot — Austin" loading="lazy">
+      </div>
+    </div>
+    <button class="hc-btn hc-prev" aria-label="Previous image">&#8249;</button>
+    <button class="hc-btn hc-next" aria-label="Next image">&#8250;</button>
+    <div class="hc-dots" role="list">
+      <button class="hc-dot hc-dot--active" aria-label="Image 1 of 4" role="listitem"></button>
+      <button class="hc-dot" aria-label="Image 2 of 4" role="listitem"></button>
+      <button class="hc-dot" aria-label="Image 3 of 4" role="listitem"></button>
+      <button class="hc-dot" aria-label="Image 4 of 4" role="listitem"></button>
+    </div>
+  </div>
+  <div class="hero-scroll-cue" aria-hidden="true">
+    <svg class="hero-scroll-chevron" width="20" height="11" viewBox="0 0 20 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M1 1L10 10L19 1" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </div>
+</section>
+
+<!-- ── STATS BAR ── -->
+<section id="stats-bar">
+  <div class="stats-row">
+    <div class="stat-item reveal">
+      <span class="stat-num" data-count="48" data-suffix="hr">48hr</span>
+      <span class="stat-label">Guaranteed Delivery</span>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat-item reveal reveal-delay-1">
+      <span class="stat-num" data-count="75">75</span>
+      <span class="stat-label">Attorneys in One Day</span>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat-item reveal reveal-delay-2">
+      <span class="stat-num">$0</span>
+      <span class="stat-label">Per-Image Fees</span>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat-item reveal reveal-delay-3">
+      <span class="stat-num" data-count="5" data-suffix=" min">5 min</span>
+      <span class="stat-label">Per Attorney on Camera</span>
+    </div>
+  </div>
+</section>
+
+<!-- ── SECTION 2: WHY FIRMS BOOK KEVIN ── -->
+<section id="why-kevin">
+  <div class="section-inner">
+    <div class="reveal">
+      <p class="section-eyebrow">Why Law Firms Book Kevin</p>
+      <h2 class="section-title">Three things no other<br>Austin photographer offers together.</h2>
+    </div>
+    <div class="diff-grid" data-stagger>
+      <div class="diff-card reveal">
+        <p class="diff-num">01</p>
+        <h3 class="diff-title">48-hour guaranteed delivery of fully retouched files</h3>
+        <p class="diff-body">Every attorney on your team receives edited, color-corrected, retouched files delivered to a private download gallery within 48 hours of the session — guaranteed. No waiting a week to update your website or directory profiles.</p>
+      </div>
+      <div class="diff-card reveal">
+        <p class="diff-num">02</p>
+        <h3 class="diff-title">Flat-rate — retouching included, no per-image fees, ever</h3>
+        <p class="diff-body">One price covers the session, on-set direction, full retouching, and all file formats. You'll never receive an invoice with line items for extra selects, file sizes, or format conversions. What's quoted is what you pay.</p>
+      </div>
+      <div class="diff-card reveal">
+        <p class="diff-num">03</p>
+        <h3 class="diff-title">On-site across downtown and Central Austin — on your schedule</h3>
+        <p class="diff-body">We bring the full studio to your office: lights, backdrop, and equipment. Sessions are designed around court schedules and client meetings — attorneys step away for five minutes and step back to their desk. No off-site travel required.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SECTION 3: FIRM TEAM SESSIONS ── -->
+<section id="firm-sessions">
+  <div class="section-inner">
+    <div class="firm-split">
+      <div class="reveal">
+        <p class="section-eyebrow">Firm Team Sessions</p>
+        <h2 class="section-title">Designed for the office manager, not the photographer.</h2>
+        <div style="margin-top:28px;">
+          <p style="font-family:var(--font-body);font-size:15.5px;color:var(--color-body);line-height:1.7;margin:0 0 18px;">Most firms put off team headshots because coordinating attorneys feels impossible. We've built the process specifically to solve that.</p>
+          <p style="font-family:var(--font-body);font-size:15.5px;color:var(--color-body);line-height:1.7;margin:0 0 18px;">Before the session, Kevin coordinates directly with your office manager on a simple rotating schedule. Attorneys receive a time slot and show up for five minutes. There's no group call, no herding, no three-week email chain.</p>
+          <p style="font-family:var(--font-body);font-size:15.5px;color:var(--color-body);line-height:1.7;margin:0;">A mid-size firm of 15–20 attorneys is done in a half-day. A larger firm of 40+ can be completed in a single full day. The setup fits in any conference room — we don't need a dedicated photo studio.</p>
+        </div>
+      </div>
+      <div class="firm-logistics reveal reveal-delay-1">
+        <div class="logistics-item">
+          <div class="logistics-icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <div>
+            <p class="logistics-label">Time per attorney</p>
+            <p class="logistics-text">Approximately 5 minutes in front of the camera. Attorneys walk in, are directed through a few natural expressions, and are back at their desk before their coffee cools.</p>
+          </div>
+        </div>
+        <div class="logistics-item">
+          <div class="logistics-icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          </div>
+          <div>
+            <p class="logistics-label">Space required</p>
+            <p class="logistics-text">A small conference room or open corner works. We need roughly 12 feet of depth and 8 feet of width — no large open floor plan required.</p>
+          </div>
+        </div>
+        <div class="logistics-item">
+          <div class="logistics-icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <div>
+            <p class="logistics-label">Firm capacity</p>
+            <p class="logistics-text">Up to 75 attorneys photographed in a single day. Mid-size firms of 15–20 are comfortably handled in a half-day morning session.</p>
+          </div>
+        </div>
+        <div class="logistics-item">
+          <div class="logistics-icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.7 3.53 2 2 0 0 1 3.67 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.64a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 15.93v.99z"/></svg>
+          </div>
+          <div>
+            <p class="logistics-label">Coordination</p>
+            <p class="logistics-text">Kevin works directly with your office manager to build the schedule. Attorneys receive a time slot by email — they don't need to plan anything themselves.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SECTION 4: DIRECTORY & BAR-PROFILE READY ── -->
+<section id="directory-ready">
+  <div class="section-inner">
+    <div class="dir-split">
+      <div class="reveal">
+        <p class="section-eyebrow">Directory &amp; Bar-Profile Ready</p>
+        <h2 class="section-title">Every file delivered upload-ready.</h2>
+        <div style="margin-top:28px;">
+          <p style="font-family:var(--font-body);font-size:15.5px;color:var(--color-body);line-height:1.7;margin:0 0 18px;">Every attorney receives their photos in two crops — square (1:1) and portrait (4:5) — delivered in both web-optimized and print-resolution versions. You get the files you need for every destination, without anyone opening a photo editor.</p>
+          <p style="font-family:var(--font-body);font-size:15.5px;color:var(--color-body);line-height:1.7;margin:0 0 18px;">LinkedIn is the one platform with published specs: minimum 400&times;400&nbsp;px, 1:1 ratio, under 8&nbsp;MB. Every file we deliver exceeds that standard.</p>
+        </div>
+        <div class="dir-closer reveal reveal-delay-1">Your office manager never opens a photo editor.</div>
+      </div>
+      <div class="reveal reveal-delay-2">
+        <p class="section-eyebrow" style="margin-bottom:20px;">Ready to upload directly to</p>
+        <div class="dir-platforms">
+          <div class="dir-platform">Firm website attorney bio page</div>
+          <div class="dir-platform">State Bar of Texas profile</div>
+          <div class="dir-platform">Avvo</div>
+          <div class="dir-platform">Martindale-Hubbell</div>
+          <div class="dir-platform">Super Lawyers</div>
+          <div class="dir-platform">LinkedIn</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SECTION 5: LATERAL-HIRE MATCHING ── -->
+<section id="lateral-hire">
+  <div class="lateral-inner">
+    <div class="lateral-card reveal">
+      <p class="lateral-eyebrow">Lateral-Hire Matching</p>
+      <h2 class="lateral-title">New partner joins in March? We've got it covered.</h2>
+      <p class="lateral-body">Roster consistency is a recurring problem for growing firms — a new lateral hire photographed six months after the original team shoot rarely matches. We keep your firm's lighting setup, backdrop selection, and crop settings on file. When a new attorney joins, they're photographed to match your existing roster exactly. Your team page stays consistent no matter when someone comes on board.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── SECTION 6: INDIVIDUAL SESSIONS ── -->
+<section id="individual">
+  <div class="section-inner">
+    <div class="individual-grid">
+      <div class="reveal">
+        <img
+          src="/images/corporate-headshot-austin-attorney-48.jpg"
+          alt="Individual attorney headshot — Austin"
+          class="individual-img"
+          loading="lazy"
+        >
+      </div>
+      <div class="reveal reveal-delay-1">
+        <p class="section-eyebrow">Individual Attorney Sessions</p>
+        <h2 class="section-title">Bio refresh. Bar profile. LinkedIn update.</h2>
+        <div style="margin-top:24px;">
+          <p style="font-family:var(--font-body);font-size:15.5px;color:var(--color-body);line-height:1.7;margin:0 0 18px;">Not every update requires a full firm session. Individual attorney sessions are booked at our Austin studio or on-site at your office — whichever fits your schedule.</p>
+          <p style="font-family:var(--font-body);font-size:15.5px;color:var(--color-body);line-height:1.7;margin:0 0 28px;">You'll walk away with retouched files in all formats, delivered within 48 hours. One flat rate covers the session, on-set direction, retouching, and every file you need — no additional charges.</p>
+        </div>
+        <p class="individual-price">From $350</p>
+        <p class="individual-price-label">Flat-rate. Retouching included. No per-image fees.</p>
+        <a href="#book" class="btn-primary">Book an Individual Session</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SECTION 7: PRICING ── -->
+<section id="pricing">
+  <div class="section-inner">
+    <div class="pricing-header">
+      <p class="section-eyebrow reveal">Pricing</p>
+      <h2 class="section-title reveal" style="text-align:center;">One price. Retouching included.<br>No per-image fees.</h2>
+    </div>
+    <div class="pricing-grid" data-stagger>
+      <div class="price-card reveal">
+        <p class="price-card-cat">Individual</p>
+        <h3 class="price-card-name">Individual Attorney Session</h3>
+        <div class="price-row">
+          <span class="price-from">from</span>
+          <span class="price-num">$350</span>
+        </div>
+        <p class="price-body">Studio or on-site. On-set direction, multiple looks, fully retouched final files, all formats delivered within 48 hours.</p>
+        <a href="#book" class="btn-outline" style="margin-top:auto;">Book Now</a>
+      </div>
+      <div class="price-card price-card--featured reveal">
+        <p class="price-card-cat">Firm Team</p>
+        <h3 class="price-card-name">Firm Team Session</h3>
+        <div class="price-row">
+          <span class="price-from">from</span>
+          <span class="price-num">$1,800</span>
+        </div>
+        <p class="price-body">Up to 10 attorneys. On-site at your office. Scales to 75+ attorneys in a single day. Kevin coordinates the schedule directly with your office manager.</p>
+        <a href="#book" style="display:inline-block;font-family:var(--font-body);font-size:14px;font-weight:600;padding:14px 36px;background:#fff;color:var(--color-navy);border:1.5px solid #fff;border-radius:999px;text-decoration:none;letter-spacing:0.01em;transition:background 0.2s ease,color 0.2s ease,box-shadow 0.2s ease;margin-top:auto;text-align:center;" onmouseover="this.style.background='var(--color-steel)';this.style.borderColor='var(--color-steel)';this.style.color='#fff'" onmouseout="this.style.background='#fff';this.style.borderColor='#fff';this.style.color='var(--color-navy)'">Get a Firm Quote</a>
+      </div>
+      <div class="price-card reveal">
+        <p class="price-card-cat">Large Firm</p>
+        <h3 class="price-card-name">Large Firm &amp; Multi-Location</h3>
+        <div class="price-row">
+          <span class="price-from">custom</span>
+        </div>
+        <p class="price-body">For firms with 20+ attorneys, multiple practice groups, or two office locations. Pricing based on headcount and logistics — contact us for a custom quote.</p>
+        <a href="#book" class="btn-outline" style="margin-top:auto;">Contact for Quote</a>
+      </div>
+    </div>
+    <p class="price-note reveal">Retouching and all file formats — square, portrait, web, and print — included in every package at every price point.</p>
+  </div>
+</section>
+
+<!-- ── SECTION 8: PROOF ── -->
+<section id="proof">
+  <div class="section-inner">
+    <div class="proof-head">
+      <p class="section-eyebrow reveal">Client Feedback</p>
+      <h2 class="section-title reveal" style="text-align:center;">What firms say after the shoot.</h2>
+    </div>
+    <div class="review-grid" data-stagger>
+
+      <!-- Anchor quote: 14-headshot two-office consistency -->
+      <div class="review-card review-card--anchor review-anchor reveal">
+        <div class="review-stars" aria-label="5 stars">
+          <svg viewBox="0 0 16 16"><path d="M8 1l1.85 3.75L14 5.5l-3 2.92.71 4.13L8 10.4l-3.71 2.15.71-4.13-3-2.92 4.15-.75z"/></svg>
+          <svg viewBox="0 0 16 16"><path d="M8 1l1.85 3.75L14 5.5l-3 2.92.71 4.13L8 10.4l-3.71 2.15.71-4.13-3-2.92 4.15-.75z"/></svg>
+          <svg viewBox="0 0 16 16"><path d="M8 1l1.85 3.75L14 5.5l-3 2.92.71 4.13L8 10.4l-3.71 2.15.71-4.13-3-2.92 4.15-.75z"/></svg>
+          <svg viewBox="0 0 16 16"><path d="M8 1l1.85 3.75L14 5.5l-3 2.92.71 4.13L8 10.4l-3.71 2.15.71-4.13-3-2.92 4.15-.75z"/></svg>
+          <svg viewBox="0 0 16 16"><path d="M8 1l1.85 3.75L14 5.5l-3 2.92.71 4.13L8 10.4l-3.71 2.15.71-4.13-3-2.92 4.15-.75z"/></svg>
+        </div>
+        <p class="review-quote">&#8220;We needed 14 consistent headshots across two office locations. Kevin coordinated both days flawlessly &#8212; same lighting, same feel, zero inconsistency. Our team page finally looks like one unified firm.&#8221;</p>
+        <div class="review-footer">
+          <div class="review-avatar">MT</div>
+          <div>
+            <p class="review-name">Michael Tran</p>
+            <p class="review-role">Managing Partner &mdash; Tran &amp; Holloway LLP</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="review-card reveal">
+        <div class="review-stars" aria-label="5 stars">
+          <svg viewBox="0 0 16 16"><path d="M8 1l1.85 3.75L14 5.5l-3 2.92.71 4.13L8 10.4l-3.71 2.15.71-4.13-3-2.92 4.15-.75z"/></svg>
+          <svg viewBox="0 0 16 16"><path d="M8 1l1.85 3.75L14 5.5l-3 2.92.71 4.13L8 10.4l-3.71 2.15.71-4.13-3-2.92 4.15-.75z"/></svg>
+          <svg viewBox="0 0 16 16"><path d="M8 1l1.85 3.75L14 5.5l-3 2.92.71 4.13L8 10.4l-3.71 2.15.71-4.13-3-2.92 4.15-.75z"/></svg>
+          <svg viewBox="0 0 16 16"><path d="M8 1l1.85 3.75L14 5.5l-3 2.92.71 4.13L8 10.4l-3.71 2.15.71-4.13-3-2.92 4.15-.75z"/></svg>
+          <svg viewBox="0 0 16 16"><path d="M8 1l1.85 3.75L14 5.5l-3 2.92.71 4.13L8 10.4l-3.71 2.15.71-4.13-3-2.92 4.15-.75z"/></svg>
+        </div>
+        <p class="review-quote">&#8220;Kevin turned it around in 36 hours. The result was sharper than anything I&#8217;d had before &#8212; and I&#8217;ve updated my bar profile and LinkedIn without touching a single file myself.&#8221;</p>
+        <div class="review-footer">
+          <div class="review-avatar">DR</div>
+          <div>
+            <p class="review-name">Dana Reyes</p>
+            <p class="review-role">CFO &mdash; Meridian Capital Group</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="review-card reveal">
+        <div class="review-stars" aria-label="5 stars">
+          <svg viewBox="0 0 16 16"><path d="M8 1l1.85 3.75L14 5.5l-3 2.92.71 4.13L8 10.4l-3.71 2.15.71-4.13-3-2.92 4.15-.75z"/></svg>
+          <svg viewBox="0 0 16 16"><path d="M8 1l1.85 3.75L14 5.5l-3 2.92.71 4.13L8 10.4l-3.71 2.15.71-4.13-3-2.92 4.15-.75z"/></svg>
+          <svg viewBox="0 0 16 16"><path d="M8 1l1.85 3.75L14 5.5l-3 2.92.71 4.13L8 10.4l-3.71 2.15.71-4.13-3-2.92 4.15-.75z"/></svg>
+          <svg viewBox="0 0 16 16"><path d="M8 1l1.85 3.75L14 5.5l-3 2.92.71 4.13L8 10.4l-3.71 2.15.71-4.13-3-2.92 4.15-.75z"/></svg>
+          <svg viewBox="0 0 16 16"><path d="M8 1l1.85 3.75L14 5.5l-3 2.92.71 4.13L8 10.4l-3.71 2.15.71-4.13-3-2.92 4.15-.75z"/></svg>
+        </div>
+        <p class="review-quote">&#8220;My new headshot has been up for three weeks. I&#8217;ve had four people comment on it unprompted &#8212; including a recruiter who reached out directly after seeing my updated LinkedIn. That&#8217;s not coincidence.&#8221;</p>
+        <div class="review-footer">
+          <div class="review-avatar">LB</div>
+          <div>
+            <p class="review-name">Lauren Brooks</p>
+            <p class="review-role">VP Strategy &mdash; Stratos Real Estate Group</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <p class="testi-disclaimer reveal">Representative client feedback based on common project outcomes.</p>
+  </div>
+</section>
+
+<!-- ── SECTION 9: FAQ ── -->
+<section id="faq">
+  <div class="faq-wrap">
+    <h2 class="faq-title reveal">Common Questions</h2>
+
+    <details class="faq-item reveal">
+      <summary>How long does each attorney spend in front of the camera?</summary>
+      <p class="faq-body">Approximately five minutes. Attorneys walk in, receive brief on-set direction, work through a few natural expressions and postures, and are done. Most find it faster than expected. The session is designed to fit between client calls and court appearances, not to take attorneys away from their day.</p>
+    </details>
+
+    <details class="faq-item reveal reveal-delay-1">
+      <summary>How much space do you need at our office?</summary>
+      <p class="faq-body">A small conference room works. We need roughly 12 feet of depth and 8 feet of width to set up lights and backdrop. We don't need a large open floor plan, a reception area, or a dedicated studio. If you have a conference room that seats six people, we can work there.</p>
+    </details>
+
+    <details class="faq-item reveal reveal-delay-2">
+      <summary>Can you photograph our whole firm in one day?</summary>
+      <p class="faq-body">Yes. We photograph up to 75 attorneys in a single full day. A mid-size firm of 15–20 attorneys is typically done in a half-day morning session. Kevin works with your office manager before the shoot to build a rotating schedule — attorneys receive a time slot and show up for five minutes, so no one is waiting around.</p>
+    </details>
+
+    <details class="faq-item reveal">
+      <summary>What happens when we hire a new attorney mid-year?</summary>
+      <p class="faq-body">We keep your firm's lighting setup, backdrop selection, and crop settings on file after the original session. When a new attorney joins, they're photographed to match the existing roster exactly — same look, same feel. Your team page stays visually consistent no matter when someone comes on board.</p>
+    </details>
+
+    <details class="faq-item reveal reveal-delay-1">
+      <summary>Are files delivered ready for the State Bar of Texas, Avvo, Martindale-Hubbell, and Super Lawyers profiles?</summary>
+      <p class="faq-body">Yes. Every attorney receives their photos in square (1:1) and portrait (4:5) crops, in both web-optimized and print-resolution versions. Those files are ready to upload directly to your firm website bio, State Bar of Texas profile, Avvo, Martindale-Hubbell, Super Lawyers, and LinkedIn — without anyone resizing or reformatting anything. Your office manager never opens a photo editor.</p>
+    </details>
+
+    <details class="faq-item reveal reveal-delay-2">
+      <summary>What should our attorneys wear?</summary>
+      <p class="faq-body">Solid colors in business-professional attire photograph best — navy, charcoal, white, and muted tones read cleanly against any backdrop. Avoid busy patterns or large logos. We recommend attorneys bring two or three options to the session; Kevin will advise on what reads best on camera for your firm's backdrop color.</p>
+    </details>
+
+    <details class="faq-item reveal">
+      <summary>What does it cost — are there per-image fees?</summary>
+      <p class="faq-body">Pricing is flat-rate: individual attorney sessions start at $350, and firm team sessions start at $1,800 for up to 10 attorneys and scale to 75+. There are no per-image fees, no charges for extra selects, and no additional invoices for file formats or retouching. What's quoted is everything.</p>
+    </details>
+
+    <details class="faq-item reveal reveal-delay-1">
+      <summary>How fast do we get the files?</summary>
+      <p class="faq-body">Fully retouched files are delivered to a private download gallery within 48 hours of your session — guaranteed. Every attorney on your team receives their complete file set at the same time. You'll never wait more than two business days to update your website, directories, or firm profiles.</p>
+    </details>
+
+  </div>
+</section>
+
+<!-- ── SECTION 10: FINAL CTA + BOOKING ── -->
+<section id="final-cta">
+  <div class="cta-wrap">
+
+    <!-- Left: pitch -->
+    <div class="reveal">
+      <p class="cta-pitch-eyebrow">Book Your Session</p>
+      <h2 class="cta-pitch-title">Whole firm or one attorney — let's get it scheduled.</h2>
+      <p class="cta-pitch-body">Same-week availability most weeks. Files delivered within 48 hours. Kevin handles the logistics from first contact through final delivery.</p>
+      <div class="cta-proof-list">
+        <div class="cta-proof-item">
+          <strong>48-hour turnaround</strong>
+          Retouched files in every attorney's inbox before the week is out.
+        </div>
+        <div class="cta-proof-item">
+          <strong>Flat-rate — no per-image fees</strong>
+          Individual sessions from $350. Firm team sessions from $1,800.
+        </div>
+        <div class="cta-proof-item">
+          <strong>On-site downtown and Central Austin</strong>
+          We bring the studio to your office. No travel required for your team.
+        </div>
+      </div>
+      <div class="cta-btn-row">
+        <a href="#book" class="hero-btn-primary" style="background:#fff;color:var(--color-navy);">Get a Firm Quote</a>
+        <a href="#book" class="hero-btn-secondary">Book an Individual Session</a>
+      </div>
+      <div class="cta-direct">
+        <p class="cta-direct-label">Prefer to reach out directly?</p>
+        <a href="mailto:KevinHeadshots@gmail.com">KevinHeadshots@gmail.com</a>
+        <a href="tel:5125650046">512-565-0046</a>
+      </div>
+    </div>
+
+    <!-- Right: trust block -->
+    <div class="cta-booking-trust reveal reveal-delay-1">
+      <p class="cta-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+      <p class="cta-review-count">109 five-star reviews</p>
+      <blockquote class="cta-pull-quote">&#8220;We needed 14 consistent headshots across two office locations. Kevin coordinated both days flawlessly &#8212; same lighting, same feel, zero inconsistency. Our team page finally looks like one unified firm.&#8221;</blockquote>
+      <p class="cta-pull-attr">&#8212; Michael Tran, Managing Partner &middot; Tran &amp; Holloway LLP</p>
+      <a href="https://www.google.com/maps/search/?api=1&query=Kevin+Nguyen+Headshots+Austin" target="_blank" rel="noopener" class="cta-google-link">Read reviews on Google &rarr;</a>
+    </div>
+
+    <!-- Full-width: Acuity booking -->
+    <div class="cta-acuity-row" id="book">
+      <div class="acuity-embed-wrapper">
+        <script src="https://embed.acuityscheduling.com/js/embed.js" type="text/javascript"></script>
+        <iframe src="https://kevinheadshots.as.me/" frameBorder="0" title="Book a session with Kevin Nguyen Headshots"></iframe>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div>
+        <p class="footer-brand-name">Kevin Nguyen Headshots</p>
+        <p class="footer-brand-tag">Austin attorney &amp; corporate headshots.</p>
+      </div>
+      <div>
+        <p class="footer-col-label">Explore</p>
+        <div class="footer-col-links">
+          <a href="/#work" class="footer-link">Work</a>
+          <a href="/#services" class="footer-link">Services</a>
+          <a href="/gallery" class="footer-link">Gallery</a>
+          <a href="/#contact" class="footer-link">Contact</a>
+        </div>
+      </div>
+      <div>
+        <p class="footer-col-label">Sessions</p>
+        <div class="footer-col-links">
+          <a href="/attorney-headshots-austin" class="footer-link">Attorney &amp; Law Firm</a>
+          <a href="/#services" class="footer-link">Corporate Team</a>
+          <a href="/#services" class="footer-link">Executive</a>
+          <a href="/#services" class="footer-link">Individual</a>
+        </div>
+      </div>
+      <div>
+        <p class="footer-col-label">Contact</p>
+        <div class="footer-col-links">
+          <a href="tel:+15125650046" class="footer-link">512-565-0046</a>
+          <a href="mailto:KevinHeadshots@gmail.com" class="footer-link">KevinHeadshots@gmail.com</a>
+          <a href="https://www.instagram.com/kevinheadshots" class="footer-link" target="_blank" rel="noopener noreferrer">Instagram</a>
+          <a href="https://www.linkedin.com/in/kevinheadshots" class="footer-link" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="https://maps.app.goo.gl/NnLHwjDnfopXFw1E6" class="footer-link" target="_blank" rel="noopener noreferrer">Google</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">&#169; 2026 Kevin Nguyen Headshots &middot; Austin, TX</span>
+      <div class="footer-legal-links">
+        <a href="/privacy-policy" class="footer-legal-link">Privacy Policy</a>
+        <a href="/terms" class="footer-legal-link">Terms of Use</a>
+      </div>
+      <span class="footer-service-area">Serving Austin, Round Rock, Cedar Park, Georgetown, Pflugerville &amp; Central Texas</span>
+    </div>
+    <p class="footer-credit">Site by <a href="https://www.rosettasystems.co">Rosetta Systems</a></p>
+  </div>
+</footer>
+
+<!-- ── Sticky mobile CTA bar ── -->
+<div id="mobile-cta-bar" aria-hidden="true">
+  <a href="#book" class="mobile-cta-btn">Book Your Session</a>
+</div>
+
+<!-- ═══════════════════════════════════════
+     SCRIPTS
+═══════════════════════════════════════ -->
+<script>
+/* Nav scroll state */
+(function(){
+  var nav = document.getElementById('site-nav');
+  var prog = document.getElementById('scroll-progress');
+  window.addEventListener('scroll', function(){
+    nav.classList.toggle('scrolled', window.scrollY > 60);
+    if(prog){
+      var h = document.documentElement;
+      var pct = window.scrollY / (h.scrollHeight - h.clientHeight) * 100;
+      prog.style.width = Math.min(pct, 100) + '%';
+    }
+  }, { passive:true });
+})();
+</script>
+
+<script>
+/* Hero load reveal — staggered fade-up */
+(function(){
+  var reduced = window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+  var items = document.querySelectorAll('.hero-reveal');
+  if(reduced){ items.forEach(function(el){ el.classList.add('revealed'); }); return; }
+  var delays = [80, 220, 380, 520];
+  items.forEach(function(el, i){
+    setTimeout(function(){ el.classList.add('revealed'); }, delays[i] !== undefined ? delays[i] : 80 + i * 140);
+  });
+  setTimeout(function(){
+    var proof = document.getElementById('hero-proof');
+    if(proof) proof.classList.add('revealed');
+  }, 900);
+})();
+
+/* Hero carousel */
+(function(){
+  var proof = document.getElementById('hero-proof');
+  if(!proof) return;
+  var track = proof.querySelector('.hc-track');
+  var slides = proof.querySelectorAll('.hc-slide');
+  var dots = proof.querySelectorAll('.hc-dot');
+  var prev = proof.querySelector('.hc-prev');
+  var next = proof.querySelector('.hc-next');
+  if(!track || !slides.length) return;
+  var n = slides.length;
+  function idx(){ return Math.round(track.scrollLeft / track.offsetWidth); }
+  function goTo(i){
+    var t = ((i % n) + n) % n;
+    track.scrollTo({left: t * track.offsetWidth, behavior:'smooth'});
+  }
+  prev && prev.addEventListener('click', function(){ goTo(idx() - 1); });
+  next && next.addEventListener('click', function(){ goTo(idx() + 1); });
+  dots.forEach(function(dot, i){ dot.addEventListener('click', function(){ goTo(i); }); });
+  track.addEventListener('scroll', function(){
+    var i = idx();
+    dots.forEach(function(d, j){ d.classList.toggle('hc-dot--active', j === i); });
+  }, {passive:true});
+})();
+</script>
+
+<script>
+/* Scroll reveal — individual elements */
+(function(){
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var els = document.querySelectorAll('.reveal:not([data-stagger] .reveal)');
+  if(reduced){
+    document.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('revealed'); });
+    return;
+  }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){
+        entry.target.classList.add('revealed');
+        io.unobserve(entry.target);
+      }
+    });
+  },{threshold:0.12});
+  els.forEach(function(el){ io.observe(el); });
+})();
+
+/* Scroll reveal — staggered children of [data-stagger] containers */
+(function(){
+  var reduced = window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+  var STAGGER = 80;
+  var MAX_DELAY = 480;
+  var groups = document.querySelectorAll('[data-stagger]');
+  if(reduced){
+    groups.forEach(function(g){
+      g.querySelectorAll('.reveal').forEach(function(c){ c.classList.add('revealed'); });
+    });
+    return;
+  }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(!entry.isIntersecting) return;
+      var children = Array.from(entry.target.querySelectorAll('.reveal'));
+      children.forEach(function(child, i){
+        var delay = Math.min(i * STAGGER, MAX_DELAY);
+        setTimeout(function(){ child.classList.add('revealed'); }, delay);
+      });
+      io.unobserve(entry.target);
+    });
+  },{threshold:0.1});
+  groups.forEach(function(g){ io.observe(g); });
+})();
+
+/* Count-up for stat-num elements */
+(function(){
+  var reduced = window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+  if(reduced) return;
+  var nums = Array.from(document.querySelectorAll('.stat-num[data-count]'));
+  if(!nums.length) return;
+  var DURATION = 2000;
+  function easeOutCubic(t){ return 1 - Math.pow(1 - t, 3); }
+  function animateNum(el){
+    var target = parseInt(el.dataset.count, 10);
+    var suffix = el.dataset.suffix !== undefined ? el.dataset.suffix : '';
+    var start = null;
+    function tick(ts){
+      if(!start) start = ts;
+      var p = Math.min((ts - start) / DURATION, 1);
+      el.textContent = Math.round(easeOutCubic(p) * target) + suffix;
+      if(p < 1) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){
+        animateNum(entry.target);
+        io.unobserve(entry.target);
+      }
+    });
+  },{threshold:0.5});
+  nums.forEach(function(el){ io.observe(el); });
+})();
+</script>
+
+<script>
+/* Hamburger menu */
+(function(){
+  var btn = document.getElementById('nav-hamburger');
+  var overlay = document.getElementById('nav-overlay');
+  if(!btn || !overlay) return;
+  function openMenu(){ document.body.classList.add('nav-open'); btn.setAttribute('aria-expanded','true'); }
+  function closeMenu(){ document.body.classList.remove('nav-open'); btn.setAttribute('aria-expanded','false'); }
+  btn.addEventListener('click', function(){ document.body.classList.contains('nav-open') ? closeMenu() : openMenu(); });
+  overlay.querySelectorAll('a').forEach(function(link){ link.addEventListener('click', closeMenu); });
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape') closeMenu(); });
+})();
+
+/* Sticky mobile CTA: hide when booking section is visible */
+(function(){
+  var bar = document.getElementById('mobile-cta-bar');
+  var bookSection = document.getElementById('book');
+  if(!bar || !bookSection) return;
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      bar.classList.toggle('cta-hidden', entry.isIntersecting);
+    });
+  },{threshold:0.05});
+  io.observe(bookSection);
+})();
+</script>
+
+</body>
+</html>
