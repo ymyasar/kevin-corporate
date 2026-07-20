@@ -2357,13 +2357,50 @@ body.nav-open{overflow:hidden;}
       </div>
     </div>
 
-    <!-- Right: trust / review block -->
-    <div class="booking-trust reveal reveal-delay-1">
-      <div class="booking-stars">★★★★★</div>
-      <p class="booking-review-count">109 five-star reviews</p>
-      <blockquote class="booking-pull-quote">&#8220;He was incredibly professional, friendly, and made everyone feel comfortable in front of the camera.&#8221;</blockquote>
-      <p class="booking-pull-attr">&#8212; Danielle Gervasi</p>
-      <a href="https://www.google.com/maps/search/?api=1&query=Kevin+Nguyen+Headshots+Austin" target="_blank" rel="noopener" class="booking-google-link">Read reviews on Google →</a>
+    <!-- Right: contact form -->
+    <div class="contact-form-card reveal reveal-delay-1">
+      <p style="font-family:var(--font-body);font-size:11px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:var(--color-text-muted);margin:0 0 24px;">Send a message</p>
+      <form id="contact-form" novalidate>
+        <!-- Honeypot — hidden from humans, filled by bots -->
+        <input name="website" type="text" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;opacity:0;height:0;width:0;">
+        <!-- Page-load timestamp for bot speed check -->
+        <input type="hidden" name="_ts" id="cf-ts">
+
+        <div class="cfc-field">
+          <label class="cfc-label" for="cf-name">Name <span style="color:var(--color-steel)">*</span></label>
+          <input class="cfc-input" id="cf-name" name="name" type="text" placeholder="Jane Smith" required autocomplete="name">
+        </div>
+        <div class="cfc-field">
+          <label class="cfc-label" for="cf-email">Email <span style="color:var(--color-steel)">*</span></label>
+          <input class="cfc-input" id="cf-email" name="email" type="email" placeholder="jane@company.com" required autocomplete="email">
+        </div>
+        <div class="cfc-field">
+          <label class="cfc-label" for="cf-phone">Phone</label>
+          <input class="cfc-input" id="cf-phone" name="phone" type="tel" placeholder="512-555-0100" autocomplete="tel">
+        </div>
+        <div class="cfc-field">
+          <label class="cfc-label" for="cf-company">Company / Firm</label>
+          <input class="cfc-input" id="cf-company" name="company" type="text" placeholder="Acme Corp" autocomplete="organization">
+        </div>
+        <div class="cfc-field">
+          <label class="cfc-label" for="cf-session">Session Type <span style="color:var(--color-steel)">*</span></label>
+          <select class="cfc-input cfc-select" id="cf-session" name="session" required>
+            <option value="" disabled selected>Select a session type</option>
+            <option value="Standard Headshot">Standard Headshot</option>
+            <option value="Enterprise Headshot">Enterprise Headshot</option>
+            <option value="Corporate Team">Corporate Team</option>
+            <option value="Personal Branding">Personal Branding</option>
+            <option value="Attorney / Law Firm">Attorney / Law Firm</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        <div class="cfc-field">
+          <label class="cfc-label" for="cf-message">Message <span style="color:var(--color-steel)">*</span></label>
+          <textarea class="cfc-input" id="cf-message" name="message" rows="4" placeholder="Tell Kevin about your project…" required style="resize:none;"></textarea>
+        </div>
+        <button type="submit" class="contact-submit" id="cf-submit">Send Message</button>
+        <div id="cf-status" style="display:none;margin-top:16px;font-family:var(--font-body);font-size:14px;line-height:1.6;text-align:center;padding:12px;border-radius:var(--radius-card);"></div>
+      </form>
     </div>
 
     <!-- Full-width: Acuity iframe -->
@@ -3079,6 +3116,79 @@ body.nav-open{overflow:hidden;}
     });
   },{threshold:0.05});
   io.observe(contact);
+})();
+</script>
+
+<script>
+/* ── Contact form ── */
+(function(){
+  var ts = document.getElementById('cf-ts');
+  if(ts) ts.value = Date.now();
+
+  var form = document.getElementById('contact-form');
+  if(!form) return;
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var btn = document.getElementById('cf-submit');
+    var status = document.getElementById('cf-status');
+    var name = form.elements['name'].value.trim();
+    var email = form.elements['email'].value.trim();
+    var session = form.elements['session'].value.trim();
+    var message = form.elements['message'].value.trim();
+
+    if(!name || !email || !session || !message){
+      status.style.display = 'block';
+      status.style.background = 'rgba(192,57,43,0.08)';
+      status.style.color = '#c0392b';
+      status.textContent = 'Please fill in all required fields.';
+      return;
+    }
+
+    btn.disabled = true;
+    btn.style.opacity = '0.6';
+    btn.style.cursor = 'not-allowed';
+    btn.textContent = 'Sending…';
+    status.style.display = 'none';
+
+    fetch('/api/contact', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({
+        name: name,
+        email: email,
+        phone: form.elements['phone'].value.trim(),
+        company: form.elements['company'].value.trim(),
+        session: session,
+        message: message,
+        website: form.elements['website'].value,
+        _ts: form.elements['_ts'].value
+      })
+    })
+    .then(function(r){ return r.json(); })
+    .then(function(data){
+      if(data.ok){
+        form.style.display = 'none';
+        status.style.display = 'block';
+        status.style.background = 'rgba(13,31,53,0.06)';
+        status.style.color = 'var(--color-navy)';
+        status.style.fontWeight = '500';
+        status.textContent = 'Thanks — Kevin will get back to you within one business day.';
+      } else {
+        throw new Error(data.error || 'server error');
+      }
+    })
+    .catch(function(){
+      btn.disabled = false;
+      btn.style.opacity = '';
+      btn.style.cursor = '';
+      btn.textContent = 'Send Message';
+      status.style.display = 'block';
+      status.style.background = 'rgba(192,57,43,0.08)';
+      status.style.color = '#c0392b';
+      status.innerHTML = 'Something went wrong. Email <a href="mailto:KevinHeadshots@gmail.com" style="color:inherit;font-weight:600;">KevinHeadshots@gmail.com</a> or call <a href="tel:5125650046" style="color:inherit;font-weight:600;">512-565-0046</a>.';
+    });
+  });
 })();
 </script>
 
