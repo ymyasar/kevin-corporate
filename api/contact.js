@@ -100,7 +100,8 @@ module.exports = async function handler(req, res) {
 
   try {
     await resend.emails.send({
-      from: 'inquiries@kevinheadshots.com',
+      // TODO: switch back to inquiries@kevinheadshots.com once the domain is verified in Resend
+      from: 'Kevin Nguyen Headshots <onboarding@resend.dev>',
       to: 'KevinHeadshots@gmail.com',
       replyTo: email,
       subject: `New inquiry — ${session} — ${name}`,
