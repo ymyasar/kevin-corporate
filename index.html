@@ -1701,6 +1701,43 @@ body.nav-open{overflow:hidden;}
 .booking-pull-attr{font-size:13px;opacity:0.55;margin:0;color:#fff;}
 .booking-google-link{font-size:13px;opacity:0.7;text-decoration:underline;color:#fff;}
 .booking-google-link:hover{opacity:1;}
+
+/* ── Desktop hero: 5-image static spread (≥1025px) ── */
+@media(min-width:1025px){
+  .hero-proof{
+    left:calc(clamp(60px,8vw,140px) + 692px);
+    right:0;
+    top:0;
+    bottom:0;
+    width:auto;
+    transform:none;
+    border-radius:0;
+    border:none;
+    box-shadow:none;
+  }
+  .hero-proof.revealed{transform:none;opacity:1;}
+  .hc-track{
+    height:100%;
+    overflow:hidden;
+    scroll-snap-type:none;
+    gap:8px;
+    align-items:stretch;
+  }
+  .hc-slide{
+    flex:1 1 0;
+    min-width:0;
+    height:100%;
+    scroll-snap-align:none;
+  }
+  .hc-slide img{
+    width:100%;
+    height:100%;
+    aspect-ratio:unset;
+    border-radius:var(--radius-card);
+    object-position:center 20%;
+  }
+  .hc-btn,.hc-dots{display:none;}
+}
 </style>
 
 <script type="application/ld+json">
@@ -1844,10 +1881,10 @@ body.nav-open{overflow:hidden;}
         <img src="/images/corporate-headshot-austin-executive-36.jpg" alt="Corporate headshot — Austin executive" loading="eager" fetchpriority="high">
       </div>
       <div class="hc-slide">
-        <img src="/images/corporate-headshot-austin-attorney-29.jpg" alt="Corporate headshot — Austin attorney" loading="lazy">
+        <img src="/images/corporate-headshot-austin-professional-41.jpg" alt="Corporate headshot — Austin professional" loading="lazy">
       </div>
       <div class="hc-slide">
-        <img src="/images/corporate-headshot-austin-professional-41.jpg" alt="Corporate headshot — Austin professional" loading="lazy">
+        <img src="/images/corporate-headshot-austin-attorney-29.jpg" alt="Corporate headshot — Austin attorney" loading="lazy">
       </div>
       <div class="hc-slide">
         <img src="/images/corporate-headshot-austin-professional-31.jpg" alt="Corporate headshot — Austin professional" loading="lazy">
