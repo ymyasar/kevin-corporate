@@ -1702,7 +1702,8 @@ body.nav-open{overflow:hidden;}
 .booking-google-link{font-size:13px;opacity:0.7;text-decoration:underline;color:#fff;}
 .booking-google-link:hover{opacity:1;}
 
-/* ── Desktop hero: 5-image static spread (≥1025px) ── */
+/* ── Desktop hero: fanned overlapping gallery (≥1025px) ── */
+/* Math: 5 cards × 24% width, step = 19% → overlap = 5% of container = 20.8% of card width → ~80% of each image visible */
 @media(min-width:1025px){
   .hero-proof{
     left:calc(clamp(60px,8vw,140px) + 692px);
@@ -1714,28 +1715,44 @@ body.nav-open{overflow:hidden;}
     border-radius:0;
     border:none;
     box-shadow:none;
+    overflow:hidden;
   }
   .hero-proof.revealed{transform:none;opacity:1;}
+  .hero-proof.revealed:hover{transform:none;box-shadow:none;}
+  /* Switch track from scrollable flex to a relative-positioned block so children can be absolutely placed */
   .hc-track{
+    display:block;
+    position:relative;
+    width:100%;
     height:100%;
-    overflow:hidden;
+    overflow:visible;
     scroll-snap-type:none;
-    gap:8px;
-    align-items:stretch;
+    gap:0;
   }
+  /* Each card: extend 20px beyond track top/bottom so translateY fan offsets never expose a gap */
   .hc-slide{
-    flex:1 1 0;
-    min-width:0;
-    height:100%;
+    position:absolute;
+    top:-20px;
+    bottom:-20px;
+    width:24%;
     scroll-snap-align:none;
   }
   .hc-slide img{
     width:100%;
     height:100%;
+    object-fit:cover;
     aspect-ratio:unset;
-    border-radius:var(--radius-card);
     object-position:center 20%;
+    border-radius:var(--radius-card);
+    /* Left-edge shadow so overlapping seams read as depth */
+    box-shadow:-6px 0 20px rgba(13,31,53,0.35);
   }
+  /* z-index left→right; alternating ±20px vertical offset; ≤1° rotation */
+  .hc-slide:nth-child(1){left:0%;  z-index:1; transform:translateY(20px)  rotate(-1deg);}
+  .hc-slide:nth-child(2){left:19%; z-index:2; transform:translateY(-20px) rotate(-0.5deg);}
+  .hc-slide:nth-child(3){left:38%; z-index:3; transform:translateY(20px)  rotate(0deg);}
+  .hc-slide:nth-child(4){left:57%; z-index:4; transform:translateY(-20px) rotate(0.5deg);}
+  .hc-slide:nth-child(5){left:76%; z-index:5; transform:translateY(20px)  rotate(1deg);}
   .hc-btn,.hc-dots{display:none;}
 }
 </style>
