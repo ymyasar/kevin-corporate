@@ -3171,9 +3171,11 @@ body.nav-open{overflow:hidden;}
         _ts: form.elements['_ts'].value
       })
     })
-    .then(function(r){ return r.json(); })
-    .then(function(data){
-      if(data.ok){
+    .then(function(r){
+      return r.json().then(function(data){ return { httpOk: r.ok, data: data }; });
+    })
+    .then(function(result){
+      if(result.httpOk && result.data && result.data.ok){
         form.style.display = 'none';
         status.style.display = 'block';
         status.style.background = 'rgba(13,31,53,0.06)';
@@ -3181,7 +3183,7 @@ body.nav-open{overflow:hidden;}
         status.style.fontWeight = '500';
         status.textContent = 'Thanks — Kevin will get back to you within one business day.';
       } else {
-        throw new Error(data.error || 'server error');
+        throw new Error((result.data && result.data.error) || 'server error');
       }
     })
     .catch(function(){
