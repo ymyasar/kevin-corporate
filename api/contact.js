@@ -60,13 +60,12 @@ module.exports = async function handler(req, res) {
     return res.status(200).json({ ok: true });
   }
 
-  // Timing guard — fail open: only block when elapsed is a positive value under 2000 ms.
-  // If _ts is missing, unparseable, negative, or implausibly large (>1 hour), allow through.
+  // Timing guard — log only, never block. A fast submission from a real user
+  // combined with a permanent success button state would silently destroy an enquiry.
   const ts = parseInt(body._ts, 10);
   const elapsed = isNaN(ts) ? -1 : Date.now() - ts;
   if (elapsed > 0 && elapsed < 2000) {
-    console.log(`[CONTACT] BLOCKED_TIMING ${elapsed}ms`);
-    return res.status(200).json({ ok: true });
+    console.log(`[CONTACT] SUSPICIOUS_TIMING ${elapsed}ms`);
   }
 
   // Required fields
