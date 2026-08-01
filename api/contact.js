@@ -112,8 +112,7 @@ module.exports = async function handler(req, res) {
 
   try {
     const { data, error } = await resend.emails.send({
-      // TODO: switch back to inquiries@kevinheadshots.com once the domain is verified in Resend
-      from: 'Kevin Nguyen Headshots <onboarding@resend.dev>',
+      from: 'Kevin Nguyen Headshots <inquiries@kevinheadshots.com>',
       to: 'KevinHeadshots@gmail.com',
       bcc: 'yasar@rosettasystems.co',
       replyTo: email,
