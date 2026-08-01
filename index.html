@@ -3151,6 +3151,10 @@ body.nav-open{overflow:hidden;}
       return;
     }
 
+    // Lock width before first label change so the button never resizes
+    if(!btn.style.minWidth) btn.style.minWidth = btn.offsetWidth + 'px';
+
+    // SUBMITTING state
     btn.disabled = true;
     btn.style.opacity = '0.6';
     btn.style.cursor = 'not-allowed';
@@ -3176,7 +3180,8 @@ body.nav-open{overflow:hidden;}
     })
     .then(function(result){
       if(result.httpOk && result.data && result.data.ok){
-        form.style.display = 'none';
+        // SUCCESS state — button stays disabled permanently, cannot double-submit
+        btn.textContent = 'Message Sent';
         status.style.display = 'block';
         status.style.background = 'rgba(13,31,53,0.06)';
         status.style.color = 'var(--color-navy)';
@@ -3187,6 +3192,7 @@ body.nav-open{overflow:hidden;}
       }
     })
     .catch(function(){
+      // ERROR state — re-enable for retry
       btn.disabled = false;
       btn.style.opacity = '';
       btn.style.cursor = '';
